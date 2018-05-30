@@ -6,24 +6,65 @@
     <details key="documentation" value="TODO: Add documentation for recipeManger. Hint: You may copy this element in the Ecore editor to add documentation to EClasses, EOperations, ..."/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Recipe" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="existsOf" upperBound="-1"
-        eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="existsOf" lowerBound="1"
+        upperBound="-1" eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//Rating"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" unique="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Duration" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Difficulty" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="needs" upperBound="-1"
+        eType="#//KitchenUtensil"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//FoodCategory"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Ingredient" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Ingredient" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Amount" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Unit" lowerBound="1" eType="#//Unit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FoodCategory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="User">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="write" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="writes" upperBound="-1"
         eType="#//Rating"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="call" eType="#//Recipe"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calls" eType="#//Recipe"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" lowerBound="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//User">
     <eStructuralFeatures xsi:type="ecore:EReference" name="isOwner" eType="#//Recipe"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Rating"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Rating">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Stars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Comment" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Unit">
+    <eLiterals name="ml"/>
+    <eLiterals name="l"/>
+    <eLiterals name="g"/>
+    <eLiterals name="kg"/>
+    <eLiterals name="tsp"/>
+    <eLiterals name="mg"/>
+    <eLiterals name="tbsp"/>
+    <eLiterals name="pcs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KitchenUtensil">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RecipeManager" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kitchenUtensil" upperBound="-1"
+        eType="#//KitchenUtensil" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="foodCategory" upperBound="-1"
+        eType="#//FoodCategory" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="user" eType="#//User" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>
