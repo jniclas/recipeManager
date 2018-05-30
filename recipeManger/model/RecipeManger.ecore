@@ -6,4 +6,5 @@
     <details key="documentation" value="TODO: Add documentation for recipeManger. Hint: You may copy this element in the Ecore editor to add documentation to EClasses, EOperations, ..."/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Test"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Test Dirk"/>
 </ecore:EPackage>
