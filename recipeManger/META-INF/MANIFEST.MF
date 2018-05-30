@@ -1,5 +1,8 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: recipeManger;singleton:=true
+Export-Package: recipeManger.impl,
+ recipeManger,
+ recipeManger.util
 Bundle-Name: recipeManger
 Bundle-Version: 0.0.1.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
