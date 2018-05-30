@@ -5,13 +5,25 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="TODO: Add documentation for recipeManger. Hint: You may copy this element in the Ecore editor to add documentation to EClasses, EOperations, ..."/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Recipe">
+  <eClassifiers xsi:type="ecore:EClass" name="Recipe" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="existsOf" upperBound="-1"
         eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//Rating"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Ingredients"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IngredientsGroup"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ingredient" eSuperTypes="#//Component"/>
   <eClassifiers xsi:type="ecore:EClass" name="Type"/>
-  <eClassifiers xsi:type="ecore:EClass" name="User"/>
+  <eClassifiers xsi:type="ecore:EClass" name="User">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="write" upperBound="-1"
+        eType="#//Rating"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="call" eType="#//Recipe"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//User">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isOwner" eType="#//Recipe"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rating"/>
 </ecore:EPackage>
