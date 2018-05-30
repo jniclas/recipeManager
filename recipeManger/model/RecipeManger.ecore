@@ -5,9 +5,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="TODO: Add documentation for recipeManger. Hint: You may copy this element in the Ecore editor to add documentation to EClasses, EOperations, ..."/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Recipe" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="existsOf" lowerBound="1"
-        upperBound="-1" eType="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Recipe">
     <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//Rating"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" unique="false" lowerBound="1"
@@ -18,11 +16,14 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="needs" upperBound="-1"
         eType="#//KitchenUtensil"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="foodCategory" upperBound="-1"
+        eType="#//FoodCategory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasIngredients" upperBound="-1"
+        eType="#//Ingredient" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasRecipes" upperBound="-1"
+        eType="#//Recipe"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="isIn" upperBound="-1" eType="#//FoodCategory"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Ingredient" eSuperTypes="#//Component">
+  <eClassifiers xsi:type="ecore:EClass" name="Ingredient">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Amount" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
