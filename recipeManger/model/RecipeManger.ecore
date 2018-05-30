@@ -20,7 +20,7 @@
         eType="#//KitchenUtensil"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//FoodCategory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isIn" upperBound="-1" eType="#//FoodCategory"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ingredient" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -36,7 +36,7 @@
         eType="#//Rating"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="calls" eType="#//Recipe"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//User">
     <eStructuralFeatures xsi:type="ecore:EReference" name="isOwner" eType="#//Recipe"
@@ -49,13 +49,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Unit">
     <eLiterals name="ml"/>
-    <eLiterals name="l"/>
-    <eLiterals name="g"/>
-    <eLiterals name="kg"/>
-    <eLiterals name="tsp"/>
-    <eLiterals name="mg"/>
-    <eLiterals name="tbsp"/>
-    <eLiterals name="pcs"/>
+    <eLiterals name="l" value="1"/>
+    <eLiterals name="g" value="2"/>
+    <eLiterals name="kg" value="3"/>
+    <eLiterals name="tsp" value="4"/>
+    <eLiterals name="mg" value="5"/>
+    <eLiterals name="tbsp" value="6"/>
+    <eLiterals name="pcs" value="7"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KitchenUtensil">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
