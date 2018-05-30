@@ -7,4 +7,5 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Test"/>
   <eClassifiers xsi:type="ecore:EClass" name="Test Dirk"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Test Niclas 2"/>
 </ecore:EPackage>
