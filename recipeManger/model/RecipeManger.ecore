@@ -22,12 +22,16 @@
         eType="#//Ingredient" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasRecipes" upperBound="-1"
         eType="#//Recipe"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has veganism level" lowerBound="1"
+        eType="#//VeganismLevel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ingredient">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Amount" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Unit" lowerBound="1" eType="#//Unit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has veganism level" lowerBound="1"
+        eType="#//VeganismLevel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FoodCategory">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -68,5 +72,11 @@
         eType="#//FoodCategory" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="user" upperBound="-1" eType="#//User"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="veganismLevel" lowerBound="3"
+        upperBound="3" eType="#//VeganismLevel" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VeganismLevel" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Vegan" eSuperTypes="#//VeganismLevel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Carnivorous" eSuperTypes="#//VeganismLevel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Vegetaric" eSuperTypes="#//VeganismLevel"/>
 </ecore:EPackage>
