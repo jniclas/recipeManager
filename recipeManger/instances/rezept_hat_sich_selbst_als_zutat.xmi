@@ -6,15 +6,20 @@
     xmlns:recipeManger="platform:/resource/recipeManger/model/RecipeManger.ecore">
   <user xsi:type="recipeManger:Author"
       Email="ole@mail.com"
-      Name="Ole"
-      writes="//@user.0/@isOwner.0/@has.0">
+      Name="Ole">
     <isOwner
         Name="Käsekuchen"
+        hasRecipes="//@user.0/@isOwner.0"
         hasVeganismLevel="//@veganismLevel.0">
       <has Stars="5"
-          Comment="Käsekuchen schmeckt meeega geil"/>
+          Comment="Käsekuchen schmeckt meeega geil"
+          geschriebenVon="//@user.1"/>
     </isOwner>
   </user>
+  <user xsi:type="recipeManger:Author"
+      Email="jens@upb.de"
+      Name="Jens"
+      writes="//@user.0/@isOwner.0/@has.0"/>
   <veganismLevel
       xsi:type="recipeManger:Vegan"/>
   <veganismLevel

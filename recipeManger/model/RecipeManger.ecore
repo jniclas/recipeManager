@@ -7,7 +7,7 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Recipe">
     <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//Rating"
-        containment="true"/>
+        containment="true" eOpposite="#//Rating/bewertet"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" unique="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Duration" unique="false"
@@ -45,12 +45,16 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="writes" upperBound="-1"
-        eType="#//Rating"/>
+        eType="#//Rating" eOpposite="#//Rating/geschriebenVon"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rating">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Stars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Comment" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bewertet" lowerBound="1"
+        eType="#//Recipe" eOpposite="#//Recipe/has"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="geschriebenVon" lowerBound="1"
+        eType="#//Author" eOpposite="#//Author/writes"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Unit">
     <eLiterals name="ml"/>
