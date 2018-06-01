@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recipeManger:RecipeManager
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:recipeManger="platform:/resource/recipeManger/model/RecipeManger.ecore">
+  <user xsi:type="recipeManger:Author"
+      writes="//@user.0/@isOwner/@has.0">
+    <isOwner>
+      <has/>
+    </isOwner>
+  </user>
+</recipeManger:RecipeManager>

@@ -14,7 +14,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Difficulty" unique="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="needs" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredUtilities" upperBound="-1"
         eType="#//KitchenUtensil"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="foodCategory" upperBound="-1"
         eType="#//FoodCategory"/>
