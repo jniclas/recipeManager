@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recipeManger:RecipeManager
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:recipeManger="platform:/resource/recipeManger/model/RecipeManger.ecore">
+  <user xsi:type="recipeManger:Author"
+      Email="björn@mail.com"
+      Name="Björn">
+    <isOwner
+        Name="Schlagsahne"
+        hasVeganismLevel="//@veganismLevel.2">
+      <hasIngredients
+          Name="Hackfleisch Halb und Halb"
+          Amount="500"
+          Unit="g"
+          hasVeganismLevel="//@veganismLevel.1"/>
+    </isOwner>
+  </user>
+  <veganismLevel
+      xsi:type="recipeManger:Vegan"/>
+  <veganismLevel
+      xsi:type="recipeManger:Carnivorous"/>
+  <veganismLevel
+      xsi:type="recipeManger:Vegetaric"/>
+</recipeManger:RecipeManager>
