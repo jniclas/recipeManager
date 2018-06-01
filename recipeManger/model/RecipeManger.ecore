@@ -33,15 +33,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="User">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="writes" upperBound="-1"
-        eType="#//Rating"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="calls" eType="#//Recipe"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//User">
     <eStructuralFeatures xsi:type="ecore:EReference" name="isOwner" eType="#//Recipe"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="writes" upperBound="-1"
+        eType="#//Rating"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rating">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Stars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
