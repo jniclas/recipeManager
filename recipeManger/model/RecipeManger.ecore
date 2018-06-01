@@ -22,7 +22,7 @@
         eType="#//Ingredient" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasRecipes" upperBound="-1"
         eType="#//Recipe"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has veganism level" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasVeganismLevel" lowerBound="1"
         eType="#//VeganismLevel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ingredient">
@@ -30,7 +30,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Amount" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Unit" lowerBound="1" eType="#//Unit"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="has veganism level" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasVeganismLevel" lowerBound="1"
         eType="#//VeganismLevel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FoodCategory">
