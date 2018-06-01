@@ -4,10 +4,15 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:recipeManger="platform:/resource/recipeManger/model/RecipeManger.ecore">
-  <user xsi:type="recipeManger:Author"
-      writes="//@user.0/@isOwner/@has.0">
-    <isOwner>
-      <has/>
-    </isOwner>
+  <kitchenUtensil/>
+  <kitchenUtensil/>
+  <foodCategory/>
+  <foodCategory/>
+  <user xsi:type="recipeManger:Author">
+    <isOwner/>
+    <isOwner/>
   </user>
+  <user xsi:type="recipeManger:Author"/>
+  <user/>
+  <user/>
 </recipeManger:RecipeManager>
