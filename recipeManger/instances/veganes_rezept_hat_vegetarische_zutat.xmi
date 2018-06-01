@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recipeManger:RecipeManager
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:recipeManger="platform:/resource/recipeManger/model/RecipeManger.ecore">
+  <kitchenUtensil
+      Name="Backofen"/>
+  <user/>
+  <user xsi:type="recipeManger:Author"
+      Email="Herber@web.de"
+      Name="Herbert"
+      writes="//@user.3/@isOwner.0/@has.0">
+    <isOwner
+        Name="Pizza"
+        hasRecipes="//@user.3/@isOwner.0"
+        hasVeganismLevel="//@veganismLevel.0">
+      <has Stars="5"
+          Comment="für Pizza von Peter"
+          geschriebenVon="//@user.3"/>
+      <has Stars="1"
+          Comment="für Pizza von Johnny"
+          geschriebenVon="//@user.2"/>
+      <hasIngredients
+          Name="Tomatensoße"
+          Amount="400"
+          hasVeganismLevel="//@veganismLevel.2"/>
+    </isOwner>
+  </user>
+  <user xsi:type="recipeManger:Author"
+      calls="//@user.1/@isOwner.0"
+      Email="johnny@web.de"
+      Name="Johnny"
+      writes="//@user.1/@isOwner.0/@has.1"/>
+  <user xsi:type="recipeManger:Author"
+      calls="//@user.1/@isOwner.0"
+      Email="Peter@web"
+      Name="Peter"
+      writes="//@user.1/@isOwner.0/@has.0">
+    <isOwner
+        Name="Pizzateig"
+        hasVeganismLevel="//@veganismLevel.0">
+      <has Comment="für Pizzateig"
+          geschriebenVon="//@user.1"/>
+    </isOwner>
+  </user>
+  <veganismLevel
+      xsi:type="recipeManger:Vegan"/>
+  <veganismLevel
+      xsi:type="recipeManger:Carnivorous"/>
+  <veganismLevel
+      xsi:type="recipeManger:Vegetaric"/>
+</recipeManger:RecipeManager>
