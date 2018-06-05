@@ -36,16 +36,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="FoodCategory">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="User">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="calls" eType="#//Recipe"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//User">
+  <eClassifiers xsi:type="ecore:EClass" name="Author">
     <eStructuralFeatures xsi:type="ecore:EReference" name="isOwner" upperBound="-1"
         eType="#//Recipe" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="writes" upperBound="-1"
         eType="#//Rating" eOpposite="#//Rating/geschriebenVon"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calls" eType="#//Recipe"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rating">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Stars" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -74,8 +72,8 @@
         eType="#//KitchenUtensil" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="foodCategory" upperBound="-1"
         eType="#//FoodCategory" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="user" upperBound="-1" eType="#//User"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" upperBound="-1"
+        eType="#//Author" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="veganismLevel" lowerBound="3"
         upperBound="3" eType="#//VeganismLevel" containment="true"/>
   </eClassifiers>
