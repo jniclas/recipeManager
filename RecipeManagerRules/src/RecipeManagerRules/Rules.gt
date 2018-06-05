@@ -1,0 +1,99 @@
+import "platform:/resource/recipeManger/model/RecipeManger.ecore"
+
+pattern noSelfRating {
+	rating: Rating
+	recipe: Recipe {
+		-has -> rating
+	}
+	author: Author {
+		-isOwner -> recipe
+		- writes -> rating
+	}
+}
+
+pattern onlyOneRatingPerRecipeByAuther {
+	rating1: Rating
+	rating2: Rating
+	recipe: Recipe {
+		-has -> rating1
+		-has -> rating2
+	}
+	author: Author {
+		-writes -> rating1
+		-writes -> rating2
+	}
+}
+
+pattern recipeNotContainingItSelf {
+	recipe: Recipe {
+		-hasRecipes -> recipe
+	}
+}
+
+
+pattern veganRecipeHasCanivorousIngredient {
+	levelCarn: Carnivorous
+	ingredient: Ingredient {
+		-hasVeganismLevel -> levelCarn
+	}
+	level: Vegan
+	recipe: Recipe {
+		-hasVeganismLevel -> level
+		-hasIngredients -> ingredient
+	}
+}
+pattern veganRecipeHasVegetaricIngredient {
+	levelVeg: Vegetaric
+	ingredient: Ingredient {
+		-hasVeganismLevel -> levelVeg
+	}
+	level: Vegan
+	recipe: Recipe {
+		-hasVeganismLevel -> level
+		-hasIngredients -> ingredient
+	}
+}
+pattern veganRecipeHasCanivorousRecipe {
+	levelCarn: Carnivorous
+	ingredient: Recipe {
+		-hasVeganismLevel -> levelCarn
+	}
+	level: Vegan
+	recipe: Recipe {
+		-hasVeganismLevel -> level
+		-hasRecipes -> ingredient
+	}
+}
+pattern veganRecipeHasVegetaricRecipe {
+	levelVeg: Vegetaric
+	ingredient: Recipe {
+		-hasVeganismLevel -> levelVeg
+	}
+	level: Vegan
+	recipe: Recipe {
+		-hasVeganismLevel -> level
+		-hasRecipes -> ingredient
+	}
+}
+pattern vegetaricRecipeHasCanivorousRecipe {
+	levelCarn: Carnivorous
+	ingredient: Recipe {
+		-hasVeganismLevel -> levelCarn
+	}
+	level: Vegetaric
+	recipe: Recipe {
+		-hasVeganismLevel -> level
+		-hasRecipes -> ingredient
+	}
+}
+pattern vegetaricRecipeHasCanivorousIngredient {
+	levelCarn: Carnivorous
+	ingredient: Ingredient {
+		-hasVeganismLevel -> levelCarn
+	}
+	level: Vegetaric
+	recipe: Recipe {
+		-hasVeganismLevel -> level
+		-hasIngredients -> ingredient
+	}
+}
