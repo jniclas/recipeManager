@@ -1,0 +1,39 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
+
+RecipeManager:
+	'author' Authorblock = Authorblock  
+	'recipe' Recipeblock = Recipeblock
+;
+
+Authorblock:
+	"{" authors+= Author ("," authors+= Author)* "}"
+;
+
+Author:
+	name = ID "{" 
+		"email" "=" Email = STRING
+		"isOwner" "=" "[" isOwner += [Recipe] ("," isOwner+=[Recipe])* "]"
+		"writes" "=" "[" writes += [Rating] ("," writes+=[Rating])* "]"
+		
+	"}"
+;
+
+Rating:
+	
+;
+
+Recipe:
+	
+;
+
+Recipeblock:
+	
+;
