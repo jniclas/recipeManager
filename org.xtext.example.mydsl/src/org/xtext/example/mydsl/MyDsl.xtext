@@ -2,15 +2,10 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 
 generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
 
 RecipeManager:
-	'author' Authorblock = Authorblock  
-	'recipe' Recipeblock = Recipeblock
+	'authors' ':' Authorblock = Authorblock  
+	'recipes' ':' Recipeblock = Recipeblock
 ;
 
 Authorblock:
@@ -18,22 +13,64 @@ Authorblock:
 ;
 
 Author:
-	name = ID "{" 
-		"email" "=" Email = STRING
-		"isOwner" "=" "[" isOwner += [Recipe] ("," isOwner+=[Recipe])* "]"
-		"writes" "=" "[" writes += [Rating] ("," writes+=[Rating])* "]"
-		
+	name = ID ':' "{" 
+		"email" ":" Email = STRING 
+		( ',' "isOwner" ":" "[" isOwner += [Recipe] ("," isOwner+=[Recipe])* "]" )?
+		(',' "writes" ":" "[" writes += Rating ("," writes+=Rating)* "]")?
+		(',' "calls" ":" "[" calls += [Recipe] ("," calls+=[Recipe])* "]" )?
 	"}"
 ;
 
+Recipeblock:
+	'{'
+		recipes+=Recipe (',' recipes+=Recipe)*
+ 	'}'
+;
+
 Rating:
-	
+	'{'
+		'Stars' ':' stars=INT ','
+		'Comment' ':' comment=STRING ','
+		'Recipe' ':' bewertet=[Recipe] ','
+		'written' 'by' ':' writtenBy=[Author]','
+	 '}'
 ;
 
 Recipe:
-	
+	name=ID ':' '{'
+		'Author' ':' author=[Author]','
+		'VeganismLevel' ':' vegan=VeganismLevel ','
+		'Duration' ':' duration=INT ','
+		'Difficulty' ':' difficulty=INT ','
+		'KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (',' kitchenUtensils+=KitchenUtensil)* ']' ','
+		'foodCategory' ':' foodCategory=FoodCategory ','
+		'Ingredients' ':' '[' ingredients+=Ingridient (',' ingredients+=Ingridient)*']'
+ 	'}'
 ;
 
-Recipeblock:
-	
+KitchenUtensil:
+	name=(STRING | 'furnace' | 'stovetop' | 'rolling pin')
+;
+
+FoodCategory:
+	name=STRING
+;
+
+Ingridient:
+	('{'
+		'Name' ':' name=STRING ','
+		'Amount' ':' amount=INT ','
+		'Unit' ':' unit=Unit ','
+		'VeganismLevel'':' veganismLevel=VeganismLevel
+ 	'}'
+ 	| recipe=[Recipe]
+ 	)
+;
+
+VeganismLevel:
+	('Vegan' | 'Vegetaric' | 'Carnivorous')
+;
+
+Unit:
+	('ml' | 'l' | 'g' | 'kg' |'tsp' | 'mg' | 'tbsp' | 'pcs')
 ;
