@@ -2,24 +2,14 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="myDsl" nsURI="http://www.xtext.org/example/mydsl/MyDsl" nsPrefix="myDsl">
   <eClassifiers xsi:type="ecore:EClass" name="RecipeManager">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Authorblock" eType="#//Authorblock"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Recipeblock" eType="#//Recipeblock"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Authorblock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="authors" upperBound="-1"
         eType="#//Author" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recipes" upperBound="-1"
+        eType="#//Recipe" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Author">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="calls" unique="false" upperBound="-1"
-        eType="#//Recipe"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Recipeblock">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="recipes" upperBound="-1"
-        eType="#//Recipe" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rating">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stars" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

@@ -68,22 +68,22 @@ public interface MyDslPackage extends EPackage
   int RECIPE_MANAGER = 0;
 
   /**
-   * The feature id for the '<em><b>Authorblock</b></em>' containment reference.
+   * The feature id for the '<em><b>Authors</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECIPE_MANAGER__AUTHORBLOCK = 0;
+  int RECIPE_MANAGER__AUTHORS = 0;
 
   /**
-   * The feature id for the '<em><b>Recipeblock</b></em>' containment reference.
+   * The feature id for the '<em><b>Recipes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECIPE_MANAGER__RECIPEBLOCK = 1;
+  int RECIPE_MANAGER__RECIPES = 1;
 
   /**
    * The number of structural features of the '<em>Recipe Manager</em>' class.
@@ -95,34 +95,6 @@ public interface MyDslPackage extends EPackage
   int RECIPE_MANAGER_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.AuthorblockImpl <em>Authorblock</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.AuthorblockImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getAuthorblock()
-   * @generated
-   */
-  int AUTHORBLOCK = 1;
-
-  /**
-   * The feature id for the '<em><b>Authors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AUTHORBLOCK__AUTHORS = 0;
-
-  /**
-   * The number of structural features of the '<em>Authorblock</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AUTHORBLOCK_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.AuthorImpl <em>Author</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -130,7 +102,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getAuthor()
    * @generated
    */
-  int AUTHOR = 2;
+  int AUTHOR = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -151,50 +123,13 @@ public interface MyDslPackage extends EPackage
   int AUTHOR__EMAIL = 1;
 
   /**
-   * The feature id for the '<em><b>Calls</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AUTHOR__CALLS = 2;
-
-  /**
    * The number of structural features of the '<em>Author</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AUTHOR_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.RecipeblockImpl <em>Recipeblock</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.RecipeblockImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getRecipeblock()
-   * @generated
-   */
-  int RECIPEBLOCK = 3;
-
-  /**
-   * The feature id for the '<em><b>Recipes</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RECIPEBLOCK__RECIPES = 0;
-
-  /**
-   * The number of structural features of the '<em>Recipeblock</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RECIPEBLOCK_FEATURE_COUNT = 1;
+  int AUTHOR_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.RatingImpl <em>Rating</em>}' class.
@@ -204,7 +139,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getRating()
    * @generated
    */
-  int RATING = 4;
+  int RATING = 2;
 
   /**
    * The feature id for the '<em><b>Stars</b></em>' attribute.
@@ -250,7 +185,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getRecipe()
    * @generated
    */
-  int RECIPE = 5;
+  int RECIPE = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -350,7 +285,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getKitchenUtensil()
    * @generated
    */
-  int KITCHEN_UTENSIL = 6;
+  int KITCHEN_UTENSIL = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -378,7 +313,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFoodCategory()
    * @generated
    */
-  int FOOD_CATEGORY = 7;
+  int FOOD_CATEGORY = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -406,7 +341,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getIngredient()
    * @generated
    */
-  int INGREDIENT = 8;
+  int INGREDIENT = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -474,47 +409,26 @@ public interface MyDslPackage extends EPackage
   EClass getRecipeManager();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.RecipeManager#getAuthorblock <em>Authorblock</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Authorblock</em>'.
-   * @see org.xtext.example.mydsl.myDsl.RecipeManager#getAuthorblock()
-   * @see #getRecipeManager()
-   * @generated
-   */
-  EReference getRecipeManager_Authorblock();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.RecipeManager#getRecipeblock <em>Recipeblock</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Recipeblock</em>'.
-   * @see org.xtext.example.mydsl.myDsl.RecipeManager#getRecipeblock()
-   * @see #getRecipeManager()
-   * @generated
-   */
-  EReference getRecipeManager_Recipeblock();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Authorblock <em>Authorblock</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Authorblock</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Authorblock
-   * @generated
-   */
-  EClass getAuthorblock();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Authorblock#getAuthors <em>Authors</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.RecipeManager#getAuthors <em>Authors</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Authors</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Authorblock#getAuthors()
-   * @see #getAuthorblock()
+   * @see org.xtext.example.mydsl.myDsl.RecipeManager#getAuthors()
+   * @see #getRecipeManager()
    * @generated
    */
-  EReference getAuthorblock_Authors();
+  EReference getRecipeManager_Authors();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.RecipeManager#getRecipes <em>Recipes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Recipes</em>'.
+   * @see org.xtext.example.mydsl.myDsl.RecipeManager#getRecipes()
+   * @see #getRecipeManager()
+   * @generated
+   */
+  EReference getRecipeManager_Recipes();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Author <em>Author</em>}'.
@@ -547,38 +461,6 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EAttribute getAuthor_Email();
-
-  /**
-   * Returns the meta object for the reference list '{@link org.xtext.example.mydsl.myDsl.Author#getCalls <em>Calls</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Calls</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Author#getCalls()
-   * @see #getAuthor()
-   * @generated
-   */
-  EReference getAuthor_Calls();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Recipeblock <em>Recipeblock</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Recipeblock</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Recipeblock
-   * @generated
-   */
-  EClass getRecipeblock();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Recipeblock#getRecipes <em>Recipes</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Recipes</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Recipeblock#getRecipes()
-   * @see #getRecipeblock()
-   * @generated
-   */
-  EReference getRecipeblock_Recipes();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Rating <em>Rating</em>}'.
@@ -873,38 +755,20 @@ public interface MyDslPackage extends EPackage
     EClass RECIPE_MANAGER = eINSTANCE.getRecipeManager();
 
     /**
-     * The meta object literal for the '<em><b>Authorblock</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RECIPE_MANAGER__AUTHORBLOCK = eINSTANCE.getRecipeManager_Authorblock();
-
-    /**
-     * The meta object literal for the '<em><b>Recipeblock</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RECIPE_MANAGER__RECIPEBLOCK = eINSTANCE.getRecipeManager_Recipeblock();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.AuthorblockImpl <em>Authorblock</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.AuthorblockImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getAuthorblock()
-     * @generated
-     */
-    EClass AUTHORBLOCK = eINSTANCE.getAuthorblock();
-
-    /**
      * The meta object literal for the '<em><b>Authors</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference AUTHORBLOCK__AUTHORS = eINSTANCE.getAuthorblock_Authors();
+    EReference RECIPE_MANAGER__AUTHORS = eINSTANCE.getRecipeManager_Authors();
+
+    /**
+     * The meta object literal for the '<em><b>Recipes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECIPE_MANAGER__RECIPES = eINSTANCE.getRecipeManager_Recipes();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.AuthorImpl <em>Author</em>}' class.
@@ -931,32 +795,6 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute AUTHOR__EMAIL = eINSTANCE.getAuthor_Email();
-
-    /**
-     * The meta object literal for the '<em><b>Calls</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference AUTHOR__CALLS = eINSTANCE.getAuthor_Calls();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.RecipeblockImpl <em>Recipeblock</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.RecipeblockImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getRecipeblock()
-     * @generated
-     */
-    EClass RECIPEBLOCK = eINSTANCE.getRecipeblock();
-
-    /**
-     * The meta object literal for the '<em><b>Recipes</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RECIPEBLOCK__RECIPES = eINSTANCE.getRecipeblock_Recipes();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.RatingImpl <em>Rating</em>}' class.

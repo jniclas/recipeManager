@@ -3,8 +3,6 @@
  */
 package org.xtext.example.mydsl.myDsl;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Author#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Author#getEmail <em>Email</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Author#getCalls <em>Calls</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getAuthor()
@@ -78,21 +75,5 @@ public interface Author extends EObject
    * @generated
    */
   void setEmail(String value);
-
-  /**
-   * Returns the value of the '<em><b>Calls</b></em>' reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Recipe}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Calls</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Calls</em>' reference list.
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getAuthor_Calls()
-   * @model
-   * @generated
-   */
-  EList<Recipe> getCalls();
 
 } // Author

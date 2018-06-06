@@ -3,22 +3,15 @@
  */
 package org.xtext.example.mydsl.myDsl.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.xtext.example.mydsl.myDsl.Author;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
-import org.xtext.example.mydsl.myDsl.Recipe;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +23,6 @@ import org.xtext.example.mydsl.myDsl.Recipe;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.AuthorImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.AuthorImpl#getEmail <em>Email</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.AuthorImpl#getCalls <em>Calls</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,16 +68,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
    * @ordered
    */
   protected String email = EMAIL_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getCalls() <em>Calls</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCalls()
-   * @generated
-   * @ordered
-   */
-  protected EList<Recipe> calls;
 
   /**
    * <!-- begin-user-doc -->
@@ -159,20 +141,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Recipe> getCalls()
-  {
-    if (calls == null)
-    {
-      calls = new EObjectResolvingEList<Recipe>(Recipe.class, this, MyDslPackage.AUTHOR__CALLS);
-    }
-    return calls;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -182,8 +150,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
         return getName();
       case MyDslPackage.AUTHOR__EMAIL:
         return getEmail();
-      case MyDslPackage.AUTHOR__CALLS:
-        return getCalls();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -193,7 +159,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -204,10 +169,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
         return;
       case MyDslPackage.AUTHOR__EMAIL:
         setEmail((String)newValue);
-        return;
-      case MyDslPackage.AUTHOR__CALLS:
-        getCalls().clear();
-        getCalls().addAll((Collection<? extends Recipe>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -229,9 +190,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
       case MyDslPackage.AUTHOR__EMAIL:
         setEmail(EMAIL_EDEFAULT);
         return;
-      case MyDslPackage.AUTHOR__CALLS:
-        getCalls().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -250,8 +208,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MyDslPackage.AUTHOR__EMAIL:
         return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
-      case MyDslPackage.AUTHOR__CALLS:
-        return calls != null && !calls.isEmpty();
     }
     return super.eIsSet(featureID);
   }

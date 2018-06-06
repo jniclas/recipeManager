@@ -81,19 +81,9 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createRecipeManagerAdapter();
       }
       @Override
-      public Adapter caseAuthorblock(Authorblock object)
-      {
-        return createAuthorblockAdapter();
-      }
-      @Override
       public Adapter caseAuthor(Author object)
       {
         return createAuthorAdapter();
-      }
-      @Override
-      public Adapter caseRecipeblock(Recipeblock object)
-      {
-        return createRecipeblockAdapter();
       }
       @Override
       public Adapter caseRating(Rating object)
@@ -158,21 +148,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Authorblock <em>Authorblock</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.Authorblock
-   * @generated
-   */
-  public Adapter createAuthorblockAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Author <em>Author</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -183,21 +158,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAuthorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Recipeblock <em>Recipeblock</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.Recipeblock
-   * @generated
-   */
-  public Adapter createRecipeblockAdapter()
   {
     return null;
   }

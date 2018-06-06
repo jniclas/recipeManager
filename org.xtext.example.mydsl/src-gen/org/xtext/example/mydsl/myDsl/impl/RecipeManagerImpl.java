@@ -3,19 +3,24 @@
  */
 package org.xtext.example.mydsl.myDsl.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.example.mydsl.myDsl.Authorblock;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.xtext.example.mydsl.myDsl.Author;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
+import org.xtext.example.mydsl.myDsl.Recipe;
 import org.xtext.example.mydsl.myDsl.RecipeManager;
-import org.xtext.example.mydsl.myDsl.Recipeblock;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,8 +30,8 @@ import org.xtext.example.mydsl.myDsl.Recipeblock;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeManagerImpl#getAuthorblock <em>Authorblock</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeManagerImpl#getRecipeblock <em>Recipeblock</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeManagerImpl#getAuthors <em>Authors</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeManagerImpl#getRecipes <em>Recipes</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,24 +39,24 @@ import org.xtext.example.mydsl.myDsl.Recipeblock;
 public class RecipeManagerImpl extends MinimalEObjectImpl.Container implements RecipeManager
 {
   /**
-   * The cached value of the '{@link #getAuthorblock() <em>Authorblock</em>}' containment reference.
+   * The cached value of the '{@link #getAuthors() <em>Authors</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAuthorblock()
+   * @see #getAuthors()
    * @generated
    * @ordered
    */
-  protected Authorblock authorblock;
+  protected EList<Author> authors;
 
   /**
-   * The cached value of the '{@link #getRecipeblock() <em>Recipeblock</em>}' containment reference.
+   * The cached value of the '{@link #getRecipes() <em>Recipes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRecipeblock()
+   * @see #getRecipes()
    * @generated
    * @ordered
    */
-  protected Recipeblock recipeblock;
+  protected EList<Recipe> recipes;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,26 +84,13 @@ public class RecipeManagerImpl extends MinimalEObjectImpl.Container implements R
    * <!-- end-user-doc -->
    * @generated
    */
-  public Authorblock getAuthorblock()
+  public EList<Author> getAuthors()
   {
-    return authorblock;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAuthorblock(Authorblock newAuthorblock, NotificationChain msgs)
-  {
-    Authorblock oldAuthorblock = authorblock;
-    authorblock = newAuthorblock;
-    if (eNotificationRequired())
+    if (authors == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE_MANAGER__AUTHORBLOCK, oldAuthorblock, newAuthorblock);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      authors = new EObjectContainmentEList<Author>(Author.class, this, MyDslPackage.RECIPE_MANAGER__AUTHORS);
     }
-    return msgs;
+    return authors;
   }
 
   /**
@@ -106,68 +98,13 @@ public class RecipeManagerImpl extends MinimalEObjectImpl.Container implements R
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAuthorblock(Authorblock newAuthorblock)
+  public EList<Recipe> getRecipes()
   {
-    if (newAuthorblock != authorblock)
+    if (recipes == null)
     {
-      NotificationChain msgs = null;
-      if (authorblock != null)
-        msgs = ((InternalEObject)authorblock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RECIPE_MANAGER__AUTHORBLOCK, null, msgs);
-      if (newAuthorblock != null)
-        msgs = ((InternalEObject)newAuthorblock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RECIPE_MANAGER__AUTHORBLOCK, null, msgs);
-      msgs = basicSetAuthorblock(newAuthorblock, msgs);
-      if (msgs != null) msgs.dispatch();
+      recipes = new EObjectContainmentEList<Recipe>(Recipe.class, this, MyDslPackage.RECIPE_MANAGER__RECIPES);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE_MANAGER__AUTHORBLOCK, newAuthorblock, newAuthorblock));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Recipeblock getRecipeblock()
-  {
-    return recipeblock;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetRecipeblock(Recipeblock newRecipeblock, NotificationChain msgs)
-  {
-    Recipeblock oldRecipeblock = recipeblock;
-    recipeblock = newRecipeblock;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE_MANAGER__RECIPEBLOCK, oldRecipeblock, newRecipeblock);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRecipeblock(Recipeblock newRecipeblock)
-  {
-    if (newRecipeblock != recipeblock)
-    {
-      NotificationChain msgs = null;
-      if (recipeblock != null)
-        msgs = ((InternalEObject)recipeblock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RECIPE_MANAGER__RECIPEBLOCK, null, msgs);
-      if (newRecipeblock != null)
-        msgs = ((InternalEObject)newRecipeblock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RECIPE_MANAGER__RECIPEBLOCK, null, msgs);
-      msgs = basicSetRecipeblock(newRecipeblock, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE_MANAGER__RECIPEBLOCK, newRecipeblock, newRecipeblock));
+    return recipes;
   }
 
   /**
@@ -180,10 +117,10 @@ public class RecipeManagerImpl extends MinimalEObjectImpl.Container implements R
   {
     switch (featureID)
     {
-      case MyDslPackage.RECIPE_MANAGER__AUTHORBLOCK:
-        return basicSetAuthorblock(null, msgs);
-      case MyDslPackage.RECIPE_MANAGER__RECIPEBLOCK:
-        return basicSetRecipeblock(null, msgs);
+      case MyDslPackage.RECIPE_MANAGER__AUTHORS:
+        return ((InternalEList<?>)getAuthors()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.RECIPE_MANAGER__RECIPES:
+        return ((InternalEList<?>)getRecipes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,10 +135,10 @@ public class RecipeManagerImpl extends MinimalEObjectImpl.Container implements R
   {
     switch (featureID)
     {
-      case MyDslPackage.RECIPE_MANAGER__AUTHORBLOCK:
-        return getAuthorblock();
-      case MyDslPackage.RECIPE_MANAGER__RECIPEBLOCK:
-        return getRecipeblock();
+      case MyDslPackage.RECIPE_MANAGER__AUTHORS:
+        return getAuthors();
+      case MyDslPackage.RECIPE_MANAGER__RECIPES:
+        return getRecipes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -211,16 +148,19 @@ public class RecipeManagerImpl extends MinimalEObjectImpl.Container implements R
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MyDslPackage.RECIPE_MANAGER__AUTHORBLOCK:
-        setAuthorblock((Authorblock)newValue);
+      case MyDslPackage.RECIPE_MANAGER__AUTHORS:
+        getAuthors().clear();
+        getAuthors().addAll((Collection<? extends Author>)newValue);
         return;
-      case MyDslPackage.RECIPE_MANAGER__RECIPEBLOCK:
-        setRecipeblock((Recipeblock)newValue);
+      case MyDslPackage.RECIPE_MANAGER__RECIPES:
+        getRecipes().clear();
+        getRecipes().addAll((Collection<? extends Recipe>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +176,11 @@ public class RecipeManagerImpl extends MinimalEObjectImpl.Container implements R
   {
     switch (featureID)
     {
-      case MyDslPackage.RECIPE_MANAGER__AUTHORBLOCK:
-        setAuthorblock((Authorblock)null);
+      case MyDslPackage.RECIPE_MANAGER__AUTHORS:
+        getAuthors().clear();
         return;
-      case MyDslPackage.RECIPE_MANAGER__RECIPEBLOCK:
-        setRecipeblock((Recipeblock)null);
+      case MyDslPackage.RECIPE_MANAGER__RECIPES:
+        getRecipes().clear();
         return;
     }
     super.eUnset(featureID);
@@ -256,10 +196,10 @@ public class RecipeManagerImpl extends MinimalEObjectImpl.Container implements R
   {
     switch (featureID)
     {
-      case MyDslPackage.RECIPE_MANAGER__AUTHORBLOCK:
-        return authorblock != null;
-      case MyDslPackage.RECIPE_MANAGER__RECIPEBLOCK:
-        return recipeblock != null;
+      case MyDslPackage.RECIPE_MANAGER__AUTHORS:
+        return authors != null && !authors.isEmpty();
+      case MyDslPackage.RECIPE_MANAGER__RECIPES:
+        return recipes != null && !recipes.isEmpty();
     }
     return super.eIsSet(featureID);
   }

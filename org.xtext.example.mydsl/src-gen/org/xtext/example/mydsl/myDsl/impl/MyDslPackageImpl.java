@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.mydsl.myDsl.Author;
-import org.xtext.example.mydsl.myDsl.Authorblock;
 import org.xtext.example.mydsl.myDsl.FoodCategory;
 import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.KitchenUtensil;
@@ -20,7 +19,6 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Rating;
 import org.xtext.example.mydsl.myDsl.Recipe;
 import org.xtext.example.mydsl.myDsl.RecipeManager;
-import org.xtext.example.mydsl.myDsl.Recipeblock;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,21 +40,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass authorblockEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass authorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass recipeblockEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -171,7 +155,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRecipeManager_Authorblock()
+  public EReference getRecipeManager_Authors()
   {
     return (EReference)recipeManagerEClass.getEStructuralFeatures().get(0);
   }
@@ -181,29 +165,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRecipeManager_Recipeblock()
+  public EReference getRecipeManager_Recipes()
   {
     return (EReference)recipeManagerEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getAuthorblock()
-  {
-    return authorblockEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAuthorblock_Authors()
-  {
-    return (EReference)authorblockEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -234,36 +198,6 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
   public EAttribute getAuthor_Email()
   {
     return (EAttribute)authorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAuthor_Calls()
-  {
-    return (EReference)authorEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getRecipeblock()
-  {
-    return recipeblockEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRecipeblock_Recipes()
-  {
-    return (EReference)recipeblockEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -537,19 +471,12 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     // Create classes and their features
     recipeManagerEClass = createEClass(RECIPE_MANAGER);
-    createEReference(recipeManagerEClass, RECIPE_MANAGER__AUTHORBLOCK);
-    createEReference(recipeManagerEClass, RECIPE_MANAGER__RECIPEBLOCK);
-
-    authorblockEClass = createEClass(AUTHORBLOCK);
-    createEReference(authorblockEClass, AUTHORBLOCK__AUTHORS);
+    createEReference(recipeManagerEClass, RECIPE_MANAGER__AUTHORS);
+    createEReference(recipeManagerEClass, RECIPE_MANAGER__RECIPES);
 
     authorEClass = createEClass(AUTHOR);
     createEAttribute(authorEClass, AUTHOR__NAME);
     createEAttribute(authorEClass, AUTHOR__EMAIL);
-    createEReference(authorEClass, AUTHOR__CALLS);
-
-    recipeblockEClass = createEClass(RECIPEBLOCK);
-    createEReference(recipeblockEClass, RECIPEBLOCK__RECIPES);
 
     ratingEClass = createEClass(RATING);
     createEAttribute(ratingEClass, RATING__STARS);
@@ -613,19 +540,12 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(recipeManagerEClass, RecipeManager.class, "RecipeManager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRecipeManager_Authorblock(), this.getAuthorblock(), null, "Authorblock", null, 0, 1, RecipeManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRecipeManager_Recipeblock(), this.getRecipeblock(), null, "Recipeblock", null, 0, 1, RecipeManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(authorblockEClass, Authorblock.class, "Authorblock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAuthorblock_Authors(), this.getAuthor(), null, "authors", null, 0, -1, Authorblock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecipeManager_Authors(), this.getAuthor(), null, "authors", null, 0, -1, RecipeManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecipeManager_Recipes(), this.getRecipe(), null, "recipes", null, 0, -1, RecipeManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(authorEClass, Author.class, "Author", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAuthor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAuthor_Email(), ecorePackage.getEString(), "Email", null, 0, 1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAuthor_Calls(), this.getRecipe(), null, "calls", null, 0, -1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(recipeblockEClass, Recipeblock.class, "Recipeblock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRecipeblock_Recipes(), this.getRecipe(), null, "recipes", null, 0, -1, Recipeblock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ratingEClass, Rating.class, "Rating", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRating_Stars(), ecorePackage.getEInt(), "stars", null, 0, 1, Rating.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

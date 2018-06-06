@@ -80,24 +80,10 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.AUTHORBLOCK:
-      {
-        Authorblock authorblock = (Authorblock)theEObject;
-        T result = caseAuthorblock(authorblock);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MyDslPackage.AUTHOR:
       {
         Author author = (Author)theEObject;
         T result = caseAuthor(author);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MyDslPackage.RECIPEBLOCK:
-      {
-        Recipeblock recipeblock = (Recipeblock)theEObject;
-        T result = caseRecipeblock(recipeblock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -157,22 +143,6 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Authorblock</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Authorblock</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAuthorblock(Authorblock object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Author</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -184,22 +154,6 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAuthor(Author object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Recipeblock</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Recipeblock</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseRecipeblock(Recipeblock object)
   {
     return null;
   }

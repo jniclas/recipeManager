@@ -33,15 +33,6 @@ public interface MyDslFactory extends EFactory
   RecipeManager createRecipeManager();
 
   /**
-   * Returns a new object of class '<em>Authorblock</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Authorblock</em>'.
-   * @generated
-   */
-  Authorblock createAuthorblock();
-
-  /**
    * Returns a new object of class '<em>Author</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -49,15 +40,6 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   Author createAuthor();
-
-  /**
-   * Returns a new object of class '<em>Recipeblock</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Recipeblock</em>'.
-   * @generated
-   */
-  Recipeblock createRecipeblock();
 
   /**
    * Returns a new object of class '<em>Rating</em>'.

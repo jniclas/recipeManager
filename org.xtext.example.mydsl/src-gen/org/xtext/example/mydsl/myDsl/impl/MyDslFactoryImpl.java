@@ -66,9 +66,7 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
     switch (eClass.getClassifierID())
     {
       case MyDslPackage.RECIPE_MANAGER: return createRecipeManager();
-      case MyDslPackage.AUTHORBLOCK: return createAuthorblock();
       case MyDslPackage.AUTHOR: return createAuthor();
-      case MyDslPackage.RECIPEBLOCK: return createRecipeblock();
       case MyDslPackage.RATING: return createRating();
       case MyDslPackage.RECIPE: return createRecipe();
       case MyDslPackage.KITCHEN_UTENSIL: return createKitchenUtensil();
@@ -95,32 +93,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Authorblock createAuthorblock()
-  {
-    AuthorblockImpl authorblock = new AuthorblockImpl();
-    return authorblock;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Author createAuthor()
   {
     AuthorImpl author = new AuthorImpl();
     return author;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Recipeblock createRecipeblock()
-  {
-    RecipeblockImpl recipeblock = new RecipeblockImpl();
-    return recipeblock;
   }
 
   /**

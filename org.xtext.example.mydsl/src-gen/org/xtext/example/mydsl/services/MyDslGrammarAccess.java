@@ -28,19 +28,32 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAuthorsKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cAuthorblockAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cAuthorblockAuthorblockParserRuleCall_2_0 = (RuleCall)cAuthorblockAssignment_2.eContents().get(0);
-		private final Keyword cRecipesKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cRecipeblockAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cRecipeblockRecipeblockParserRuleCall_5_0 = (RuleCall)cRecipeblockAssignment_5.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cAuthorsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cAuthorsAuthorParserRuleCall_3_0 = (RuleCall)cAuthorsAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cAuthorsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cAuthorsAuthorParserRuleCall_4_1_0 = (RuleCall)cAuthorsAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cRecipesKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cRecipesAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cRecipesRecipeParserRuleCall_9_0 = (RuleCall)cRecipesAssignment_9.eContents().get(0);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Keyword cCommaKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Assignment cRecipesAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final RuleCall cRecipesRecipeParserRuleCall_10_1_0 = (RuleCall)cRecipesAssignment_10_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//RecipeManager:
-		//	'authors' ':' Authorblock=Authorblock
-		//	'recipes' ':' Recipeblock=Recipeblock;
+		//	'authors' ':' "{" authors+=Author (',' authors+=Author)* "}"
+		//	'recipes' ':' '{' recipes+=Recipe (',' recipes+=Recipe)* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'authors' ':' Authorblock=Authorblock 'recipes' ':' Recipeblock=Recipeblock
+		//'authors' ':' "{" authors+=Author (',' authors+=Author)* "}" 'recipes' ':' '{' recipes+=Recipe (',' recipes+=Recipe)*
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'authors'
@@ -49,66 +62,59 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//Authorblock=Authorblock
-		public Assignment getAuthorblockAssignment_2() { return cAuthorblockAssignment_2; }
-		
-		//Authorblock
-		public RuleCall getAuthorblockAuthorblockParserRuleCall_2_0() { return cAuthorblockAuthorblockParserRuleCall_2_0; }
-		
-		//'recipes'
-		public Keyword getRecipesKeyword_3() { return cRecipesKeyword_3; }
-		
-		//':'
-		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
-		
-		//Recipeblock=Recipeblock
-		public Assignment getRecipeblockAssignment_5() { return cRecipeblockAssignment_5; }
-		
-		//Recipeblock
-		public RuleCall getRecipeblockRecipeblockParserRuleCall_5_0() { return cRecipeblockRecipeblockParserRuleCall_5_0; }
-	}
-	public class AuthorblockElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Authorblock");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cAuthorsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cAuthorsAuthorParserRuleCall_1_0 = (RuleCall)cAuthorsAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cAuthorsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cAuthorsAuthorParserRuleCall_2_1_0 = (RuleCall)cAuthorsAssignment_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//Authorblock:
-		//	"{" authors+=Author ("," authors+=Author)* "}";
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"{" authors+=Author ("," authors+=Author)* "}"
-		public Group getGroup() { return cGroup; }
-		
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//authors+=Author
-		public Assignment getAuthorsAssignment_1() { return cAuthorsAssignment_1; }
+		public Assignment getAuthorsAssignment_3() { return cAuthorsAssignment_3; }
 		
 		//Author
-		public RuleCall getAuthorsAuthorParserRuleCall_1_0() { return cAuthorsAuthorParserRuleCall_1_0; }
+		public RuleCall getAuthorsAuthorParserRuleCall_3_0() { return cAuthorsAuthorParserRuleCall_3_0; }
 		
-		//("," authors+=Author)*
-		public Group getGroup_2() { return cGroup_2; }
+		//(',' authors+=Author)*
+		public Group getGroup_4() { return cGroup_4; }
 		
-		//","
-		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+		//','
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
 		
 		//authors+=Author
-		public Assignment getAuthorsAssignment_2_1() { return cAuthorsAssignment_2_1; }
+		public Assignment getAuthorsAssignment_4_1() { return cAuthorsAssignment_4_1; }
 		
 		//Author
-		public RuleCall getAuthorsAuthorParserRuleCall_2_1_0() { return cAuthorsAuthorParserRuleCall_2_1_0; }
+		public RuleCall getAuthorsAuthorParserRuleCall_4_1_0() { return cAuthorsAuthorParserRuleCall_4_1_0; }
 		
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		
+		//'recipes'
+		public Keyword getRecipesKeyword_6() { return cRecipesKeyword_6; }
+		
+		//':'
+		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
+		
+		//recipes+=Recipe
+		public Assignment getRecipesAssignment_9() { return cRecipesAssignment_9; }
+		
+		//Recipe
+		public RuleCall getRecipesRecipeParserRuleCall_9_0() { return cRecipesRecipeParserRuleCall_9_0; }
+		
+		//(',' recipes+=Recipe)*
+		public Group getGroup_10() { return cGroup_10; }
+		
+		//','
+		public Keyword getCommaKeyword_10_0() { return cCommaKeyword_10_0; }
+		
+		//recipes+=Recipe
+		public Assignment getRecipesAssignment_10_1() { return cRecipesAssignment_10_1; }
+		
+		//Recipe
+		public RuleCall getRecipesRecipeParserRuleCall_10_1_0() { return cRecipesRecipeParserRuleCall_10_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 	public class AuthorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Author");
@@ -116,34 +122,14 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cEmailKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cEmailAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cEmailSTRINGTerminalRuleCall_5_0 = (RuleCall)cEmailAssignment_5.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cCallsKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Keyword cColonKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
-		private final Keyword cLeftSquareBracketKeyword_6_3 = (Keyword)cGroup_6.eContents().get(3);
-		private final Assignment cCallsAssignment_6_4 = (Assignment)cGroup_6.eContents().get(4);
-		private final CrossReference cCallsRecipeCrossReference_6_4_0 = (CrossReference)cCallsAssignment_6_4.eContents().get(0);
-		private final RuleCall cCallsRecipeIDTerminalRuleCall_6_4_0_1 = (RuleCall)cCallsRecipeCrossReference_6_4_0.eContents().get(1);
-		private final Group cGroup_6_5 = (Group)cGroup_6.eContents().get(5);
-		private final Keyword cCommaKeyword_6_5_0 = (Keyword)cGroup_6_5.eContents().get(0);
-		private final Assignment cCallsAssignment_6_5_1 = (Assignment)cGroup_6_5.eContents().get(1);
-		private final CrossReference cCallsRecipeCrossReference_6_5_1_0 = (CrossReference)cCallsAssignment_6_5_1.eContents().get(0);
-		private final RuleCall cCallsRecipeIDTerminalRuleCall_6_5_1_0_1 = (RuleCall)cCallsRecipeCrossReference_6_5_1_0.eContents().get(1);
-		private final Keyword cRightSquareBracketKeyword_6_6 = (Keyword)cGroup_6.eContents().get(6);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cEmailAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cEmailSTRINGTerminalRuleCall_2_0 = (RuleCall)cEmailAssignment_2.eContents().get(0);
 		
 		//Author:
-		//	name=ID ':' "{"
-		//	"email" ":" Email=STRING (',' "calls" ":" "[" calls+=[Recipe] ("," calls+=[Recipe])* "]")?
-		//	"}";
+		//	name=ID ':' Email=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ':' "{" "email" ":" Email=STRING (',' "calls" ":" "[" calls+=[Recipe] ("," calls+=[Recipe])* "]")? "}"
+		//name=ID ':' Email=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -155,110 +141,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//"email"
-		public Keyword getEmailKeyword_3() { return cEmailKeyword_3; }
-		
-		//":"
-		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
-		
 		//Email=STRING
-		public Assignment getEmailAssignment_5() { return cEmailAssignment_5; }
+		public Assignment getEmailAssignment_2() { return cEmailAssignment_2; }
 		
 		//STRING
-		public RuleCall getEmailSTRINGTerminalRuleCall_5_0() { return cEmailSTRINGTerminalRuleCall_5_0; }
-		
-		//(',' "calls" ":" "[" calls+=[Recipe] ("," calls+=[Recipe])* "]")?
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//','
-		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
-		
-		//"calls"
-		public Keyword getCallsKeyword_6_1() { return cCallsKeyword_6_1; }
-		
-		//":"
-		public Keyword getColonKeyword_6_2() { return cColonKeyword_6_2; }
-		
-		//"["
-		public Keyword getLeftSquareBracketKeyword_6_3() { return cLeftSquareBracketKeyword_6_3; }
-		
-		//calls+=[Recipe]
-		public Assignment getCallsAssignment_6_4() { return cCallsAssignment_6_4; }
-		
-		//[Recipe]
-		public CrossReference getCallsRecipeCrossReference_6_4_0() { return cCallsRecipeCrossReference_6_4_0; }
-		
-		//ID
-		public RuleCall getCallsRecipeIDTerminalRuleCall_6_4_0_1() { return cCallsRecipeIDTerminalRuleCall_6_4_0_1; }
-		
-		//("," calls+=[Recipe])*
-		public Group getGroup_6_5() { return cGroup_6_5; }
-		
-		//","
-		public Keyword getCommaKeyword_6_5_0() { return cCommaKeyword_6_5_0; }
-		
-		//calls+=[Recipe]
-		public Assignment getCallsAssignment_6_5_1() { return cCallsAssignment_6_5_1; }
-		
-		//[Recipe]
-		public CrossReference getCallsRecipeCrossReference_6_5_1_0() { return cCallsRecipeCrossReference_6_5_1_0; }
-		
-		//ID
-		public RuleCall getCallsRecipeIDTerminalRuleCall_6_5_1_0_1() { return cCallsRecipeIDTerminalRuleCall_6_5_1_0_1; }
-		
-		//"]"
-		public Keyword getRightSquareBracketKeyword_6_6() { return cRightSquareBracketKeyword_6_6; }
-		
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
-	}
-	public class RecipeblockElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Recipeblock");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cRecipesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cRecipesRecipeParserRuleCall_1_0 = (RuleCall)cRecipesAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cRecipesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cRecipesRecipeParserRuleCall_2_1_0 = (RuleCall)cRecipesAssignment_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//Recipeblock:
-		//	'{'
-		//	recipes+=Recipe (',' recipes+=Recipe)*
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'{' recipes+=Recipe (',' recipes+=Recipe)* '}'
-		public Group getGroup() { return cGroup; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
-		
-		//recipes+=Recipe
-		public Assignment getRecipesAssignment_1() { return cRecipesAssignment_1; }
-		
-		//Recipe
-		public RuleCall getRecipesRecipeParserRuleCall_1_0() { return cRecipesRecipeParserRuleCall_1_0; }
-		
-		//(',' recipes+=Recipe)*
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//','
-		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
-		
-		//recipes+=Recipe
-		public Assignment getRecipesAssignment_2_1() { return cRecipesAssignment_2_1; }
-		
-		//Recipe
-		public RuleCall getRecipesRecipeParserRuleCall_2_1_0() { return cRecipesRecipeParserRuleCall_2_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public RuleCall getEmailSTRINGTerminalRuleCall_2_0() { return cEmailSTRINGTerminalRuleCall_2_0; }
 	}
 	public class RatingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Rating");
@@ -892,9 +779,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private final RecipeManagerElements pRecipeManager;
-	private final AuthorblockElements pAuthorblock;
 	private final AuthorElements pAuthor;
-	private final RecipeblockElements pRecipeblock;
 	private final RatingElements pRating;
 	private final RecipeElements pRecipe;
 	private final KitchenUtensilElements pKitchenUtensil;
@@ -913,9 +798,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pRecipeManager = new RecipeManagerElements();
-		this.pAuthorblock = new AuthorblockElements();
 		this.pAuthor = new AuthorElements();
-		this.pRecipeblock = new RecipeblockElements();
 		this.pRating = new RatingElements();
 		this.pRecipe = new RecipeElements();
 		this.pKitchenUtensil = new KitchenUtensilElements();
@@ -953,8 +836,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//RecipeManager:
-	//	'authors' ':' Authorblock=Authorblock
-	//	'recipes' ':' Recipeblock=Recipeblock;
+	//	'authors' ':' "{" authors+=Author (',' authors+=Author)* "}"
+	//	'recipes' ':' '{' recipes+=Recipe (',' recipes+=Recipe)* '}';
 	public RecipeManagerElements getRecipeManagerAccess() {
 		return pRecipeManager;
 	}
@@ -963,38 +846,14 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getRecipeManagerAccess().getRule();
 	}
 	
-	//Authorblock:
-	//	"{" authors+=Author ("," authors+=Author)* "}";
-	public AuthorblockElements getAuthorblockAccess() {
-		return pAuthorblock;
-	}
-	
-	public ParserRule getAuthorblockRule() {
-		return getAuthorblockAccess().getRule();
-	}
-	
 	//Author:
-	//	name=ID ':' "{"
-	//	"email" ":" Email=STRING (',' "calls" ":" "[" calls+=[Recipe] ("," calls+=[Recipe])* "]")?
-	//	"}";
+	//	name=ID ':' Email=STRING;
 	public AuthorElements getAuthorAccess() {
 		return pAuthor;
 	}
 	
 	public ParserRule getAuthorRule() {
 		return getAuthorAccess().getRule();
-	}
-	
-	//Recipeblock:
-	//	'{'
-	//	recipes+=Recipe (',' recipes+=Recipe)*
-	//	'}';
-	public RecipeblockElements getRecipeblockAccess() {
-		return pRecipeblock;
-	}
-	
-	public ParserRule getRecipeblockRule() {
-		return getRecipeblockAccess().getRule();
 	}
 	
 	//Rating:

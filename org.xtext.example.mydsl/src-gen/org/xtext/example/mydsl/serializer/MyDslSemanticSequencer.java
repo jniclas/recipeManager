@@ -15,7 +15,6 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.mydsl.myDsl.Author;
-import org.xtext.example.mydsl.myDsl.Authorblock;
 import org.xtext.example.mydsl.myDsl.FoodCategory;
 import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.KitchenUtensil;
@@ -23,7 +22,6 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Rating;
 import org.xtext.example.mydsl.myDsl.Recipe;
 import org.xtext.example.mydsl.myDsl.RecipeManager;
-import org.xtext.example.mydsl.myDsl.Recipeblock;
 import org.xtext.example.mydsl.services.MyDslGrammarAccess;
 
 @SuppressWarnings("all")
@@ -43,9 +41,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.AUTHOR:
 				sequence_Author(context, (Author) semanticObject); 
 				return; 
-			case MyDslPackage.AUTHORBLOCK:
-				sequence_Authorblock(context, (Authorblock) semanticObject); 
-				return; 
 			case MyDslPackage.FOOD_CATEGORY:
 				sequence_FoodCategory(context, (FoodCategory) semanticObject); 
 				return; 
@@ -64,9 +59,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.RECIPE_MANAGER:
 				sequence_RecipeManager(context, (RecipeManager) semanticObject); 
 				return; 
-			case MyDslPackage.RECIPEBLOCK:
-				sequence_Recipeblock(context, (Recipeblock) semanticObject); 
-				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -77,22 +69,19 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Author returns Author
 	 *
 	 * Constraint:
-	 *     (name=ID Email=STRING (calls+=[Recipe|ID] calls+=[Recipe|ID]*)?)
+	 *     (name=ID Email=STRING)
 	 */
 	protected void sequence_Author(ISerializationContext context, Author semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Authorblock returns Authorblock
-	 *
-	 * Constraint:
-	 *     (authors+=Author authors+=Author*)
-	 */
-	protected void sequence_Authorblock(ISerializationContext context, Authorblock semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.AUTHOR__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.AUTHOR__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.AUTHOR__EMAIL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.AUTHOR__EMAIL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAuthorAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getAuthorAccess().getEmailSTRINGTerminalRuleCall_2_0(), semanticObject.getEmail());
+		feeder.finish();
 	}
 	
 	
@@ -155,19 +144,10 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     RecipeManager returns RecipeManager
 	 *
 	 * Constraint:
-	 *     (Authorblock=Authorblock Recipeblock=Recipeblock)
+	 *     (authors+=Author authors+=Author* recipes+=Recipe recipes+=Recipe*)
 	 */
 	protected void sequence_RecipeManager(ISerializationContext context, RecipeManager semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.RECIPE_MANAGER__AUTHORBLOCK) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.RECIPE_MANAGER__AUTHORBLOCK));
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.RECIPE_MANAGER__RECIPEBLOCK) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.RECIPE_MANAGER__RECIPEBLOCK));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRecipeManagerAccess().getAuthorblockAuthorblockParserRuleCall_2_0(), semanticObject.getAuthorblock());
-		feeder.accept(grammarAccess.getRecipeManagerAccess().getRecipeblockRecipeblockParserRuleCall_5_0(), semanticObject.getRecipeblock());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -190,18 +170,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     )
 	 */
 	protected void sequence_Recipe(ISerializationContext context, Recipe semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Recipeblock returns Recipeblock
-	 *
-	 * Constraint:
-	 *     (recipes+=Recipe recipes+=Recipe*)
-	 */
-	protected void sequence_Recipeblock(ISerializationContext context, Recipeblock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

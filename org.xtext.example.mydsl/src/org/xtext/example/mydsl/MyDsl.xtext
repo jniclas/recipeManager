@@ -4,27 +4,15 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
 
 RecipeManager:
-	'authors' ':' Authorblock = Authorblock  
-	'recipes' ':' Recipeblock = Recipeblock
+	'authors' ':' "{" authors+= Author (',' authors+= Author)* "}"
+	'recipes' ':' '{'  recipes+=Recipe (',' recipes+=Recipe)*'}'
 ;
 
-Authorblock:
-	"{" authors+= Author ("," authors+= Author)* "}"
-;
 
 Author:
-	name = ID ':' "{" 
-		"email" ":" Email = STRING 
-		//( ',' "isOwner" ":" "[" isOwner += [Recipe] ("," isOwner+=[Recipe])* "]" )?
-		(',' "calls" ":" "[" calls += [Recipe] ("," calls+=[Recipe])* "]" )?
-	"}"
+	name = ID ':' Email=STRING
 ;
 
-Recipeblock:
-	'{'
-		recipes+=Recipe (',' recipes+=Recipe)*
- 	'}'
-;
 
 Rating:
 	'{'
