@@ -123,56 +123,27 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEmailSTRINGTerminalRuleCall_5_0 = (RuleCall)cEmailAssignment_5.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cIsOwnerKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Keyword cCallsKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Keyword cColonKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
 		private final Keyword cLeftSquareBracketKeyword_6_3 = (Keyword)cGroup_6.eContents().get(3);
-		private final Assignment cIsOwnerAssignment_6_4 = (Assignment)cGroup_6.eContents().get(4);
-		private final CrossReference cIsOwnerRecipeCrossReference_6_4_0 = (CrossReference)cIsOwnerAssignment_6_4.eContents().get(0);
-		private final RuleCall cIsOwnerRecipeIDTerminalRuleCall_6_4_0_1 = (RuleCall)cIsOwnerRecipeCrossReference_6_4_0.eContents().get(1);
+		private final Assignment cCallsAssignment_6_4 = (Assignment)cGroup_6.eContents().get(4);
+		private final CrossReference cCallsRecipeCrossReference_6_4_0 = (CrossReference)cCallsAssignment_6_4.eContents().get(0);
+		private final RuleCall cCallsRecipeIDTerminalRuleCall_6_4_0_1 = (RuleCall)cCallsRecipeCrossReference_6_4_0.eContents().get(1);
 		private final Group cGroup_6_5 = (Group)cGroup_6.eContents().get(5);
 		private final Keyword cCommaKeyword_6_5_0 = (Keyword)cGroup_6_5.eContents().get(0);
-		private final Assignment cIsOwnerAssignment_6_5_1 = (Assignment)cGroup_6_5.eContents().get(1);
-		private final CrossReference cIsOwnerRecipeCrossReference_6_5_1_0 = (CrossReference)cIsOwnerAssignment_6_5_1.eContents().get(0);
-		private final RuleCall cIsOwnerRecipeIDTerminalRuleCall_6_5_1_0_1 = (RuleCall)cIsOwnerRecipeCrossReference_6_5_1_0.eContents().get(1);
+		private final Assignment cCallsAssignment_6_5_1 = (Assignment)cGroup_6_5.eContents().get(1);
+		private final CrossReference cCallsRecipeCrossReference_6_5_1_0 = (CrossReference)cCallsAssignment_6_5_1.eContents().get(0);
+		private final RuleCall cCallsRecipeIDTerminalRuleCall_6_5_1_0_1 = (RuleCall)cCallsRecipeCrossReference_6_5_1_0.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_6_6 = (Keyword)cGroup_6.eContents().get(6);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cCommaKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cWritesKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Keyword cColonKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
-		private final Keyword cLeftSquareBracketKeyword_7_3 = (Keyword)cGroup_7.eContents().get(3);
-		private final Assignment cWritesAssignment_7_4 = (Assignment)cGroup_7.eContents().get(4);
-		private final RuleCall cWritesRatingParserRuleCall_7_4_0 = (RuleCall)cWritesAssignment_7_4.eContents().get(0);
-		private final Group cGroup_7_5 = (Group)cGroup_7.eContents().get(5);
-		private final Keyword cCommaKeyword_7_5_0 = (Keyword)cGroup_7_5.eContents().get(0);
-		private final Assignment cWritesAssignment_7_5_1 = (Assignment)cGroup_7_5.eContents().get(1);
-		private final RuleCall cWritesRatingParserRuleCall_7_5_1_0 = (RuleCall)cWritesAssignment_7_5_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_7_6 = (Keyword)cGroup_7.eContents().get(6);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cCommaKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cCallsKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Keyword cColonKeyword_8_2 = (Keyword)cGroup_8.eContents().get(2);
-		private final Keyword cLeftSquareBracketKeyword_8_3 = (Keyword)cGroup_8.eContents().get(3);
-		private final Assignment cCallsAssignment_8_4 = (Assignment)cGroup_8.eContents().get(4);
-		private final CrossReference cCallsRecipeCrossReference_8_4_0 = (CrossReference)cCallsAssignment_8_4.eContents().get(0);
-		private final RuleCall cCallsRecipeIDTerminalRuleCall_8_4_0_1 = (RuleCall)cCallsRecipeCrossReference_8_4_0.eContents().get(1);
-		private final Group cGroup_8_5 = (Group)cGroup_8.eContents().get(5);
-		private final Keyword cCommaKeyword_8_5_0 = (Keyword)cGroup_8_5.eContents().get(0);
-		private final Assignment cCallsAssignment_8_5_1 = (Assignment)cGroup_8_5.eContents().get(1);
-		private final CrossReference cCallsRecipeCrossReference_8_5_1_0 = (CrossReference)cCallsAssignment_8_5_1.eContents().get(0);
-		private final RuleCall cCallsRecipeIDTerminalRuleCall_8_5_1_0_1 = (RuleCall)cCallsRecipeCrossReference_8_5_1_0.eContents().get(1);
-		private final Keyword cRightSquareBracketKeyword_8_6 = (Keyword)cGroup_8.eContents().get(6);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Author:
 		//	name=ID ':' "{"
-		//	"email" ":" Email=STRING (',' "isOwner" ":" "[" isOwner+=[Recipe] ("," isOwner+=[Recipe])* "]")? (',' "writes" ":"
-		//	"[" writes+=Rating ("," writes+=Rating)* "]")? (',' "calls" ":" "[" calls+=[Recipe] ("," calls+=[Recipe])* "]")?
+		//	"email" ":" Email=STRING (',' "calls" ":" "[" calls+=[Recipe] ("," calls+=[Recipe])* "]")?
 		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ':' "{" "email" ":" Email=STRING (',' "isOwner" ":" "[" isOwner+=[Recipe] ("," isOwner+=[Recipe])* "]")? (','
-		//"writes" ":" "[" writes+=Rating ("," writes+=Rating)* "]")? (',' "calls" ":" "[" calls+=[Recipe] (","
-		//calls+=[Recipe])* "]")? "}"
+		//name=ID ':' "{" "email" ":" Email=STRING (',' "calls" ":" "[" calls+=[Recipe] ("," calls+=[Recipe])* "]")? "}"
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -199,14 +170,14 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getEmailSTRINGTerminalRuleCall_5_0() { return cEmailSTRINGTerminalRuleCall_5_0; }
 		
-		//(',' "isOwner" ":" "[" isOwner+=[Recipe] ("," isOwner+=[Recipe])* "]")?
+		//(',' "calls" ":" "[" calls+=[Recipe] ("," calls+=[Recipe])* "]")?
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//','
 		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
 		
-		//"isOwner"
-		public Keyword getIsOwnerKeyword_6_1() { return cIsOwnerKeyword_6_1; }
+		//"calls"
+		public Keyword getCallsKeyword_6_1() { return cCallsKeyword_6_1; }
 		
 		//":"
 		public Keyword getColonKeyword_6_2() { return cColonKeyword_6_2; }
@@ -214,113 +185,35 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"["
 		public Keyword getLeftSquareBracketKeyword_6_3() { return cLeftSquareBracketKeyword_6_3; }
 		
-		//isOwner+=[Recipe]
-		public Assignment getIsOwnerAssignment_6_4() { return cIsOwnerAssignment_6_4; }
+		//calls+=[Recipe]
+		public Assignment getCallsAssignment_6_4() { return cCallsAssignment_6_4; }
 		
 		//[Recipe]
-		public CrossReference getIsOwnerRecipeCrossReference_6_4_0() { return cIsOwnerRecipeCrossReference_6_4_0; }
+		public CrossReference getCallsRecipeCrossReference_6_4_0() { return cCallsRecipeCrossReference_6_4_0; }
 		
 		//ID
-		public RuleCall getIsOwnerRecipeIDTerminalRuleCall_6_4_0_1() { return cIsOwnerRecipeIDTerminalRuleCall_6_4_0_1; }
+		public RuleCall getCallsRecipeIDTerminalRuleCall_6_4_0_1() { return cCallsRecipeIDTerminalRuleCall_6_4_0_1; }
 		
-		//("," isOwner+=[Recipe])*
+		//("," calls+=[Recipe])*
 		public Group getGroup_6_5() { return cGroup_6_5; }
 		
 		//","
 		public Keyword getCommaKeyword_6_5_0() { return cCommaKeyword_6_5_0; }
 		
-		//isOwner+=[Recipe]
-		public Assignment getIsOwnerAssignment_6_5_1() { return cIsOwnerAssignment_6_5_1; }
+		//calls+=[Recipe]
+		public Assignment getCallsAssignment_6_5_1() { return cCallsAssignment_6_5_1; }
 		
 		//[Recipe]
-		public CrossReference getIsOwnerRecipeCrossReference_6_5_1_0() { return cIsOwnerRecipeCrossReference_6_5_1_0; }
+		public CrossReference getCallsRecipeCrossReference_6_5_1_0() { return cCallsRecipeCrossReference_6_5_1_0; }
 		
 		//ID
-		public RuleCall getIsOwnerRecipeIDTerminalRuleCall_6_5_1_0_1() { return cIsOwnerRecipeIDTerminalRuleCall_6_5_1_0_1; }
+		public RuleCall getCallsRecipeIDTerminalRuleCall_6_5_1_0_1() { return cCallsRecipeIDTerminalRuleCall_6_5_1_0_1; }
 		
 		//"]"
 		public Keyword getRightSquareBracketKeyword_6_6() { return cRightSquareBracketKeyword_6_6; }
 		
-		//(',' "writes" ":" "[" writes+=Rating ("," writes+=Rating)* "]")?
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//','
-		public Keyword getCommaKeyword_7_0() { return cCommaKeyword_7_0; }
-		
-		//"writes"
-		public Keyword getWritesKeyword_7_1() { return cWritesKeyword_7_1; }
-		
-		//":"
-		public Keyword getColonKeyword_7_2() { return cColonKeyword_7_2; }
-		
-		//"["
-		public Keyword getLeftSquareBracketKeyword_7_3() { return cLeftSquareBracketKeyword_7_3; }
-		
-		//writes+=Rating
-		public Assignment getWritesAssignment_7_4() { return cWritesAssignment_7_4; }
-		
-		//Rating
-		public RuleCall getWritesRatingParserRuleCall_7_4_0() { return cWritesRatingParserRuleCall_7_4_0; }
-		
-		//("," writes+=Rating)*
-		public Group getGroup_7_5() { return cGroup_7_5; }
-		
-		//","
-		public Keyword getCommaKeyword_7_5_0() { return cCommaKeyword_7_5_0; }
-		
-		//writes+=Rating
-		public Assignment getWritesAssignment_7_5_1() { return cWritesAssignment_7_5_1; }
-		
-		//Rating
-		public RuleCall getWritesRatingParserRuleCall_7_5_1_0() { return cWritesRatingParserRuleCall_7_5_1_0; }
-		
-		//"]"
-		public Keyword getRightSquareBracketKeyword_7_6() { return cRightSquareBracketKeyword_7_6; }
-		
-		//(',' "calls" ":" "[" calls+=[Recipe] ("," calls+=[Recipe])* "]")?
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//','
-		public Keyword getCommaKeyword_8_0() { return cCommaKeyword_8_0; }
-		
-		//"calls"
-		public Keyword getCallsKeyword_8_1() { return cCallsKeyword_8_1; }
-		
-		//":"
-		public Keyword getColonKeyword_8_2() { return cColonKeyword_8_2; }
-		
-		//"["
-		public Keyword getLeftSquareBracketKeyword_8_3() { return cLeftSquareBracketKeyword_8_3; }
-		
-		//calls+=[Recipe]
-		public Assignment getCallsAssignment_8_4() { return cCallsAssignment_8_4; }
-		
-		//[Recipe]
-		public CrossReference getCallsRecipeCrossReference_8_4_0() { return cCallsRecipeCrossReference_8_4_0; }
-		
-		//ID
-		public RuleCall getCallsRecipeIDTerminalRuleCall_8_4_0_1() { return cCallsRecipeIDTerminalRuleCall_8_4_0_1; }
-		
-		//("," calls+=[Recipe])*
-		public Group getGroup_8_5() { return cGroup_8_5; }
-		
-		//","
-		public Keyword getCommaKeyword_8_5_0() { return cCommaKeyword_8_5_0; }
-		
-		//calls+=[Recipe]
-		public Assignment getCallsAssignment_8_5_1() { return cCallsAssignment_8_5_1; }
-		
-		//[Recipe]
-		public CrossReference getCallsRecipeCrossReference_8_5_1_0() { return cCallsRecipeCrossReference_8_5_1_0; }
-		
-		//ID
-		public RuleCall getCallsRecipeIDTerminalRuleCall_8_5_1_0_1() { return cCallsRecipeIDTerminalRuleCall_8_5_1_0_1; }
-		
-		//"]"
-		public Keyword getRightSquareBracketKeyword_8_6() { return cRightSquareBracketKeyword_8_6; }
-		
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class RecipeblockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Recipeblock");
@@ -376,37 +269,27 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cStarsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cStarsINTTerminalRuleCall_3_0 = (RuleCall)cStarsAssignment_3.eContents().get(0);
 		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cCommentKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cCommentAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cCommentSTRINGTerminalRuleCall_7_0 = (RuleCall)cCommentAssignment_7.eContents().get(0);
-		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cRecipeKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cBewertetAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final CrossReference cBewertetRecipeCrossReference_11_0 = (CrossReference)cBewertetAssignment_11.eContents().get(0);
-		private final RuleCall cBewertetRecipeIDTerminalRuleCall_11_0_1 = (RuleCall)cBewertetRecipeCrossReference_11_0.eContents().get(1);
-		private final Keyword cCommaKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Keyword cWrittenKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Keyword cByKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Keyword cColonKeyword_15 = (Keyword)cGroup.eContents().get(15);
-		private final Assignment cWrittenByAssignment_16 = (Assignment)cGroup.eContents().get(16);
-		private final CrossReference cWrittenByAuthorCrossReference_16_0 = (CrossReference)cWrittenByAssignment_16.eContents().get(0);
-		private final RuleCall cWrittenByAuthorIDTerminalRuleCall_16_0_1 = (RuleCall)cWrittenByAuthorCrossReference_16_0.eContents().get(1);
-		private final Keyword cCommaKeyword_17 = (Keyword)cGroup.eContents().get(17);
-		private final Keyword cRightCurlyBracketKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommentKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cCommentAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cCommentSTRINGTerminalRuleCall_5_2_0 = (RuleCall)cCommentAssignment_5_2.eContents().get(0);
+		private final Keyword cCommaKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
+		private final Keyword cAuthorKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cAuthorAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cAuthorAuthorCrossReference_8_0 = (CrossReference)cAuthorAssignment_8.eContents().get(0);
+		private final RuleCall cAuthorAuthorIDTerminalRuleCall_8_0_1 = (RuleCall)cAuthorAuthorCrossReference_8_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Rating:
 		//	'{'
-		//	'Stars' ':' stars=INT ','
-		//	'Comment' ':' comment=STRING ','
-		//	'Recipe' ':' bewertet=[Recipe] ','
-		//	'written' 'by' ':' writtenBy=[Author] ','
+		//	'Stars' ':' stars=INT ',' ('Comment' ':' comment=STRING ',')?
+		//	'Author' ':' author=[Author]
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'{' 'Stars' ':' stars=INT ',' 'Comment' ':' comment=STRING ',' 'Recipe' ':' bewertet=[Recipe] ',' 'written' 'by' ':'
-		//writtenBy=[Author] ',' '}'
+		//'{' 'Stars' ':' stars=INT ',' ('Comment' ':' comment=STRING ',')? 'Author' ':' author=[Author] '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'{'
@@ -427,62 +310,41 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//','
 		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 		
+		//('Comment' ':' comment=STRING ',')?
+		public Group getGroup_5() { return cGroup_5; }
+		
 		//'Comment'
-		public Keyword getCommentKeyword_5() { return cCommentKeyword_5; }
+		public Keyword getCommentKeyword_5_0() { return cCommentKeyword_5_0; }
 		
 		//':'
-		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 		
 		//comment=STRING
-		public Assignment getCommentAssignment_7() { return cCommentAssignment_7; }
+		public Assignment getCommentAssignment_5_2() { return cCommentAssignment_5_2; }
 		
 		//STRING
-		public RuleCall getCommentSTRINGTerminalRuleCall_7_0() { return cCommentSTRINGTerminalRuleCall_7_0; }
+		public RuleCall getCommentSTRINGTerminalRuleCall_5_2_0() { return cCommentSTRINGTerminalRuleCall_5_2_0; }
 		
 		//','
-		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
+		public Keyword getCommaKeyword_5_3() { return cCommaKeyword_5_3; }
 		
-		//'Recipe'
-		public Keyword getRecipeKeyword_9() { return cRecipeKeyword_9; }
-		
-		//':'
-		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
-		
-		//bewertet=[Recipe]
-		public Assignment getBewertetAssignment_11() { return cBewertetAssignment_11; }
-		
-		//[Recipe]
-		public CrossReference getBewertetRecipeCrossReference_11_0() { return cBewertetRecipeCrossReference_11_0; }
-		
-		//ID
-		public RuleCall getBewertetRecipeIDTerminalRuleCall_11_0_1() { return cBewertetRecipeIDTerminalRuleCall_11_0_1; }
-		
-		//','
-		public Keyword getCommaKeyword_12() { return cCommaKeyword_12; }
-		
-		//'written'
-		public Keyword getWrittenKeyword_13() { return cWrittenKeyword_13; }
-		
-		//'by'
-		public Keyword getByKeyword_14() { return cByKeyword_14; }
+		//'Author'
+		public Keyword getAuthorKeyword_6() { return cAuthorKeyword_6; }
 		
 		//':'
-		public Keyword getColonKeyword_15() { return cColonKeyword_15; }
+		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
 		
-		//writtenBy=[Author]
-		public Assignment getWrittenByAssignment_16() { return cWrittenByAssignment_16; }
+		//author=[Author]
+		public Assignment getAuthorAssignment_8() { return cAuthorAssignment_8; }
 		
 		//[Author]
-		public CrossReference getWrittenByAuthorCrossReference_16_0() { return cWrittenByAuthorCrossReference_16_0; }
+		public CrossReference getAuthorAuthorCrossReference_8_0() { return cAuthorAuthorCrossReference_8_0; }
 		
 		//ID
-		public RuleCall getWrittenByAuthorIDTerminalRuleCall_16_0_1() { return cWrittenByAuthorIDTerminalRuleCall_16_0_1; }
-		
-		//','
-		public Keyword getCommaKeyword_17() { return cCommaKeyword_17; }
+		public RuleCall getAuthorAuthorIDTerminalRuleCall_8_0_1() { return cAuthorAuthorIDTerminalRuleCall_8_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_18() { return cRightCurlyBracketKeyword_18; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class RecipeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Recipe");
@@ -512,50 +374,72 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDifficultyAssignment_17 = (Assignment)cGroup.eContents().get(17);
 		private final RuleCall cDifficultyINTTerminalRuleCall_17_0 = (RuleCall)cDifficultyAssignment_17.eContents().get(0);
 		private final Keyword cCommaKeyword_18 = (Keyword)cGroup.eContents().get(18);
-		private final Keyword cKitchenUtensilsKeyword_19 = (Keyword)cGroup.eContents().get(19);
-		private final Keyword cColonKeyword_20 = (Keyword)cGroup.eContents().get(20);
-		private final Keyword cLeftSquareBracketKeyword_21 = (Keyword)cGroup.eContents().get(21);
-		private final Assignment cKitchenUtensilsAssignment_22 = (Assignment)cGroup.eContents().get(22);
-		private final RuleCall cKitchenUtensilsKitchenUtensilParserRuleCall_22_0 = (RuleCall)cKitchenUtensilsAssignment_22.eContents().get(0);
-		private final Group cGroup_23 = (Group)cGroup.eContents().get(23);
-		private final Keyword cCommaKeyword_23_0 = (Keyword)cGroup_23.eContents().get(0);
-		private final Assignment cKitchenUtensilsAssignment_23_1 = (Assignment)cGroup_23.eContents().get(1);
-		private final RuleCall cKitchenUtensilsKitchenUtensilParserRuleCall_23_1_0 = (RuleCall)cKitchenUtensilsAssignment_23_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_24 = (Keyword)cGroup.eContents().get(24);
-		private final Keyword cCommaKeyword_25 = (Keyword)cGroup.eContents().get(25);
-		private final Keyword cFoodCategoryKeyword_26 = (Keyword)cGroup.eContents().get(26);
-		private final Keyword cColonKeyword_27 = (Keyword)cGroup.eContents().get(27);
-		private final Assignment cFoodCategoryAssignment_28 = (Assignment)cGroup.eContents().get(28);
-		private final RuleCall cFoodCategoryFoodCategoryParserRuleCall_28_0 = (RuleCall)cFoodCategoryAssignment_28.eContents().get(0);
-		private final Keyword cCommaKeyword_29 = (Keyword)cGroup.eContents().get(29);
-		private final Keyword cIngredientsKeyword_30 = (Keyword)cGroup.eContents().get(30);
-		private final Keyword cColonKeyword_31 = (Keyword)cGroup.eContents().get(31);
-		private final Keyword cLeftSquareBracketKeyword_32 = (Keyword)cGroup.eContents().get(32);
-		private final Assignment cIngredientsAssignment_33 = (Assignment)cGroup.eContents().get(33);
-		private final RuleCall cIngredientsIngridientParserRuleCall_33_0 = (RuleCall)cIngredientsAssignment_33.eContents().get(0);
-		private final Group cGroup_34 = (Group)cGroup.eContents().get(34);
-		private final Keyword cCommaKeyword_34_0 = (Keyword)cGroup_34.eContents().get(0);
-		private final Assignment cIngredientsAssignment_34_1 = (Assignment)cGroup_34.eContents().get(1);
-		private final RuleCall cIngredientsIngridientParserRuleCall_34_1_0 = (RuleCall)cIngredientsAssignment_34_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_35 = (Keyword)cGroup.eContents().get(35);
-		private final Keyword cRightCurlyBracketKeyword_36 = (Keyword)cGroup.eContents().get(36);
+		private final Group cGroup_19 = (Group)cGroup.eContents().get(19);
+		private final Keyword cKitchenUtensilsKeyword_19_0 = (Keyword)cGroup_19.eContents().get(0);
+		private final Keyword cColonKeyword_19_1 = (Keyword)cGroup_19.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_19_2 = (Keyword)cGroup_19.eContents().get(2);
+		private final Assignment cKitchenUtensilsAssignment_19_3 = (Assignment)cGroup_19.eContents().get(3);
+		private final RuleCall cKitchenUtensilsKitchenUtensilParserRuleCall_19_3_0 = (RuleCall)cKitchenUtensilsAssignment_19_3.eContents().get(0);
+		private final Group cGroup_19_4 = (Group)cGroup_19.eContents().get(4);
+		private final Keyword cCommaKeyword_19_4_0 = (Keyword)cGroup_19_4.eContents().get(0);
+		private final Assignment cKitchenUtensilsAssignment_19_4_1 = (Assignment)cGroup_19_4.eContents().get(1);
+		private final RuleCall cKitchenUtensilsKitchenUtensilParserRuleCall_19_4_1_0 = (RuleCall)cKitchenUtensilsAssignment_19_4_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_19_5 = (Keyword)cGroup_19.eContents().get(5);
+		private final Keyword cCommaKeyword_19_6 = (Keyword)cGroup_19.eContents().get(6);
+		private final Group cGroup_20 = (Group)cGroup.eContents().get(20);
+		private final Keyword cFoodCategoryKeyword_20_0 = (Keyword)cGroup_20.eContents().get(0);
+		private final Keyword cColonKeyword_20_1 = (Keyword)cGroup_20.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_20_2 = (Keyword)cGroup_20.eContents().get(2);
+		private final Assignment cFoodCategoryAssignment_20_3 = (Assignment)cGroup_20.eContents().get(3);
+		private final RuleCall cFoodCategoryFoodCategoryParserRuleCall_20_3_0 = (RuleCall)cFoodCategoryAssignment_20_3.eContents().get(0);
+		private final Group cGroup_20_4 = (Group)cGroup_20.eContents().get(4);
+		private final Keyword cCommaKeyword_20_4_0 = (Keyword)cGroup_20_4.eContents().get(0);
+		private final Assignment cFoodCategoryAssignment_20_4_1 = (Assignment)cGroup_20_4.eContents().get(1);
+		private final RuleCall cFoodCategoryFoodCategoryParserRuleCall_20_4_1_0 = (RuleCall)cFoodCategoryAssignment_20_4_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_20_5 = (Keyword)cGroup_20.eContents().get(5);
+		private final Keyword cCommaKeyword_20_6 = (Keyword)cGroup_20.eContents().get(6);
+		private final Keyword cIngredientsKeyword_21 = (Keyword)cGroup.eContents().get(21);
+		private final Keyword cColonKeyword_22 = (Keyword)cGroup.eContents().get(22);
+		private final Keyword cLeftSquareBracketKeyword_23 = (Keyword)cGroup.eContents().get(23);
+		private final Assignment cIngredientAssignment_24 = (Assignment)cGroup.eContents().get(24);
+		private final RuleCall cIngredientIngredientParserRuleCall_24_0 = (RuleCall)cIngredientAssignment_24.eContents().get(0);
+		private final Group cGroup_25 = (Group)cGroup.eContents().get(25);
+		private final Keyword cCommaKeyword_25_0 = (Keyword)cGroup_25.eContents().get(0);
+		private final Assignment cIngredientAssignment_25_1 = (Assignment)cGroup_25.eContents().get(1);
+		private final RuleCall cIngredientIngredientParserRuleCall_25_1_0 = (RuleCall)cIngredientAssignment_25_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_26 = (Keyword)cGroup.eContents().get(26);
+		private final Group cGroup_27 = (Group)cGroup.eContents().get(27);
+		private final Keyword cCommaKeyword_27_0 = (Keyword)cGroup_27.eContents().get(0);
+		private final Keyword cRatingsKeyword_27_1 = (Keyword)cGroup_27.eContents().get(1);
+		private final Keyword cColonKeyword_27_2 = (Keyword)cGroup_27.eContents().get(2);
+		private final Keyword cLeftSquareBracketKeyword_27_3 = (Keyword)cGroup_27.eContents().get(3);
+		private final Assignment cRatingsAssignment_27_4 = (Assignment)cGroup_27.eContents().get(4);
+		private final RuleCall cRatingsRatingParserRuleCall_27_4_0 = (RuleCall)cRatingsAssignment_27_4.eContents().get(0);
+		private final Group cGroup_27_5 = (Group)cGroup_27.eContents().get(5);
+		private final Keyword cCommaKeyword_27_5_0 = (Keyword)cGroup_27_5.eContents().get(0);
+		private final Assignment cRatingsAssignment_27_5_1 = (Assignment)cGroup_27_5.eContents().get(1);
+		private final RuleCall cRatingsRatingParserRuleCall_27_5_1_0 = (RuleCall)cRatingsAssignment_27_5_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_27_6 = (Keyword)cGroup_27.eContents().get(6);
+		private final Keyword cRightCurlyBracketKeyword_28 = (Keyword)cGroup.eContents().get(28);
 		
 		//Recipe:
 		//	name=ID ':' '{'
 		//	'Author' ':' author=[Author] ','
 		//	'VeganismLevel' ':' vegan=VeganismLevel ','
 		//	'Duration' ':' duration=INT ','
-		//	'Difficulty' ':' difficulty=INT ','
-		//	'KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (',' kitchenUtensils+=KitchenUtensil)* ']' ','
-		//	'foodCategory' ':' foodCategory=FoodCategory ','
-		//	'Ingredients' ':' '[' ingredients+=Ingridient (',' ingredients+=Ingridient)* ']'
+		//	'Difficulty' ':' difficulty=INT ',' ('KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (','
+		//	kitchenUtensils+=KitchenUtensil)* ']' ',')? ('foodCategory' ':' '[' foodCategory+=FoodCategory (','
+		//	foodCategory+=FoodCategory)* ']' ',')?
+		//	'Ingredients' ':' '[' ingredient+=Ingredient (',' ingredient+=Ingredient)* ']' (',' "Ratings" ":" "[" ratings+=Rating
+		//	("," ratings+=Rating)* "]")?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//name=ID ':' '{' 'Author' ':' author=[Author] ',' 'VeganismLevel' ':' vegan=VeganismLevel ',' 'Duration' ':' duration=INT
-		//',' 'Difficulty' ':' difficulty=INT ',' 'KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (','
-		//kitchenUtensils+=KitchenUtensil)* ']' ',' 'foodCategory' ':' foodCategory=FoodCategory ',' 'Ingredients' ':' '['
-		//ingredients+=Ingridient (',' ingredients+=Ingridient)* ']' '}'
+		//',' 'Difficulty' ':' difficulty=INT ',' ('KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (','
+		//kitchenUtensils+=KitchenUtensil)* ']' ',')? ('foodCategory' ':' '[' foodCategory+=FoodCategory (','
+		//foodCategory+=FoodCategory)* ']' ',')? 'Ingredients' ':' '[' ingredient+=Ingredient (',' ingredient+=Ingredient)* ']'
+		//(',' "Ratings" ":" "[" ratings+=Rating ("," ratings+=Rating)* "]")? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -633,86 +517,146 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//','
 		public Keyword getCommaKeyword_18() { return cCommaKeyword_18; }
 		
+		//('KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (',' kitchenUtensils+=KitchenUtensil)* ']' ',')?
+		public Group getGroup_19() { return cGroup_19; }
+		
 		//'KitchenUtensils'
-		public Keyword getKitchenUtensilsKeyword_19() { return cKitchenUtensilsKeyword_19; }
+		public Keyword getKitchenUtensilsKeyword_19_0() { return cKitchenUtensilsKeyword_19_0; }
 		
 		//':'
-		public Keyword getColonKeyword_20() { return cColonKeyword_20; }
+		public Keyword getColonKeyword_19_1() { return cColonKeyword_19_1; }
 		
 		//'['
-		public Keyword getLeftSquareBracketKeyword_21() { return cLeftSquareBracketKeyword_21; }
+		public Keyword getLeftSquareBracketKeyword_19_2() { return cLeftSquareBracketKeyword_19_2; }
 		
 		//kitchenUtensils+=KitchenUtensil
-		public Assignment getKitchenUtensilsAssignment_22() { return cKitchenUtensilsAssignment_22; }
+		public Assignment getKitchenUtensilsAssignment_19_3() { return cKitchenUtensilsAssignment_19_3; }
 		
 		//KitchenUtensil
-		public RuleCall getKitchenUtensilsKitchenUtensilParserRuleCall_22_0() { return cKitchenUtensilsKitchenUtensilParserRuleCall_22_0; }
+		public RuleCall getKitchenUtensilsKitchenUtensilParserRuleCall_19_3_0() { return cKitchenUtensilsKitchenUtensilParserRuleCall_19_3_0; }
 		
 		//(',' kitchenUtensils+=KitchenUtensil)*
-		public Group getGroup_23() { return cGroup_23; }
+		public Group getGroup_19_4() { return cGroup_19_4; }
 		
 		//','
-		public Keyword getCommaKeyword_23_0() { return cCommaKeyword_23_0; }
+		public Keyword getCommaKeyword_19_4_0() { return cCommaKeyword_19_4_0; }
 		
 		//kitchenUtensils+=KitchenUtensil
-		public Assignment getKitchenUtensilsAssignment_23_1() { return cKitchenUtensilsAssignment_23_1; }
+		public Assignment getKitchenUtensilsAssignment_19_4_1() { return cKitchenUtensilsAssignment_19_4_1; }
 		
 		//KitchenUtensil
-		public RuleCall getKitchenUtensilsKitchenUtensilParserRuleCall_23_1_0() { return cKitchenUtensilsKitchenUtensilParserRuleCall_23_1_0; }
+		public RuleCall getKitchenUtensilsKitchenUtensilParserRuleCall_19_4_1_0() { return cKitchenUtensilsKitchenUtensilParserRuleCall_19_4_1_0; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_24() { return cRightSquareBracketKeyword_24; }
+		public Keyword getRightSquareBracketKeyword_19_5() { return cRightSquareBracketKeyword_19_5; }
 		
 		//','
-		public Keyword getCommaKeyword_25() { return cCommaKeyword_25; }
+		public Keyword getCommaKeyword_19_6() { return cCommaKeyword_19_6; }
+		
+		//('foodCategory' ':' '[' foodCategory+=FoodCategory (',' foodCategory+=FoodCategory)* ']' ',')?
+		public Group getGroup_20() { return cGroup_20; }
 		
 		//'foodCategory'
-		public Keyword getFoodCategoryKeyword_26() { return cFoodCategoryKeyword_26; }
+		public Keyword getFoodCategoryKeyword_20_0() { return cFoodCategoryKeyword_20_0; }
 		
 		//':'
-		public Keyword getColonKeyword_27() { return cColonKeyword_27; }
-		
-		//foodCategory=FoodCategory
-		public Assignment getFoodCategoryAssignment_28() { return cFoodCategoryAssignment_28; }
-		
-		//FoodCategory
-		public RuleCall getFoodCategoryFoodCategoryParserRuleCall_28_0() { return cFoodCategoryFoodCategoryParserRuleCall_28_0; }
-		
-		//','
-		public Keyword getCommaKeyword_29() { return cCommaKeyword_29; }
-		
-		//'Ingredients'
-		public Keyword getIngredientsKeyword_30() { return cIngredientsKeyword_30; }
-		
-		//':'
-		public Keyword getColonKeyword_31() { return cColonKeyword_31; }
+		public Keyword getColonKeyword_20_1() { return cColonKeyword_20_1; }
 		
 		//'['
-		public Keyword getLeftSquareBracketKeyword_32() { return cLeftSquareBracketKeyword_32; }
+		public Keyword getLeftSquareBracketKeyword_20_2() { return cLeftSquareBracketKeyword_20_2; }
 		
-		//ingredients+=Ingridient
-		public Assignment getIngredientsAssignment_33() { return cIngredientsAssignment_33; }
+		//foodCategory+=FoodCategory
+		public Assignment getFoodCategoryAssignment_20_3() { return cFoodCategoryAssignment_20_3; }
 		
-		//Ingridient
-		public RuleCall getIngredientsIngridientParserRuleCall_33_0() { return cIngredientsIngridientParserRuleCall_33_0; }
+		//FoodCategory
+		public RuleCall getFoodCategoryFoodCategoryParserRuleCall_20_3_0() { return cFoodCategoryFoodCategoryParserRuleCall_20_3_0; }
 		
-		//(',' ingredients+=Ingridient)*
-		public Group getGroup_34() { return cGroup_34; }
+		//(',' foodCategory+=FoodCategory)*
+		public Group getGroup_20_4() { return cGroup_20_4; }
 		
 		//','
-		public Keyword getCommaKeyword_34_0() { return cCommaKeyword_34_0; }
+		public Keyword getCommaKeyword_20_4_0() { return cCommaKeyword_20_4_0; }
 		
-		//ingredients+=Ingridient
-		public Assignment getIngredientsAssignment_34_1() { return cIngredientsAssignment_34_1; }
+		//foodCategory+=FoodCategory
+		public Assignment getFoodCategoryAssignment_20_4_1() { return cFoodCategoryAssignment_20_4_1; }
 		
-		//Ingridient
-		public RuleCall getIngredientsIngridientParserRuleCall_34_1_0() { return cIngredientsIngridientParserRuleCall_34_1_0; }
+		//FoodCategory
+		public RuleCall getFoodCategoryFoodCategoryParserRuleCall_20_4_1_0() { return cFoodCategoryFoodCategoryParserRuleCall_20_4_1_0; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_35() { return cRightSquareBracketKeyword_35; }
+		public Keyword getRightSquareBracketKeyword_20_5() { return cRightSquareBracketKeyword_20_5; }
+		
+		//','
+		public Keyword getCommaKeyword_20_6() { return cCommaKeyword_20_6; }
+		
+		//'Ingredients'
+		public Keyword getIngredientsKeyword_21() { return cIngredientsKeyword_21; }
+		
+		//':'
+		public Keyword getColonKeyword_22() { return cColonKeyword_22; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_23() { return cLeftSquareBracketKeyword_23; }
+		
+		//ingredient+=Ingredient
+		public Assignment getIngredientAssignment_24() { return cIngredientAssignment_24; }
+		
+		//Ingredient
+		public RuleCall getIngredientIngredientParserRuleCall_24_0() { return cIngredientIngredientParserRuleCall_24_0; }
+		
+		//(',' ingredient+=Ingredient)*
+		public Group getGroup_25() { return cGroup_25; }
+		
+		//','
+		public Keyword getCommaKeyword_25_0() { return cCommaKeyword_25_0; }
+		
+		//ingredient+=Ingredient
+		public Assignment getIngredientAssignment_25_1() { return cIngredientAssignment_25_1; }
+		
+		//Ingredient
+		public RuleCall getIngredientIngredientParserRuleCall_25_1_0() { return cIngredientIngredientParserRuleCall_25_1_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_26() { return cRightSquareBracketKeyword_26; }
+		
+		//(',' "Ratings" ":" "[" ratings+=Rating ("," ratings+=Rating)* "]")?
+		public Group getGroup_27() { return cGroup_27; }
+		
+		//','
+		public Keyword getCommaKeyword_27_0() { return cCommaKeyword_27_0; }
+		
+		//"Ratings"
+		public Keyword getRatingsKeyword_27_1() { return cRatingsKeyword_27_1; }
+		
+		//":"
+		public Keyword getColonKeyword_27_2() { return cColonKeyword_27_2; }
+		
+		//"["
+		public Keyword getLeftSquareBracketKeyword_27_3() { return cLeftSquareBracketKeyword_27_3; }
+		
+		//ratings+=Rating
+		public Assignment getRatingsAssignment_27_4() { return cRatingsAssignment_27_4; }
+		
+		//Rating
+		public RuleCall getRatingsRatingParserRuleCall_27_4_0() { return cRatingsRatingParserRuleCall_27_4_0; }
+		
+		//("," ratings+=Rating)*
+		public Group getGroup_27_5() { return cGroup_27_5; }
+		
+		//","
+		public Keyword getCommaKeyword_27_5_0() { return cCommaKeyword_27_5_0; }
+		
+		//ratings+=Rating
+		public Assignment getRatingsAssignment_27_5_1() { return cRatingsAssignment_27_5_1; }
+		
+		//Rating
+		public RuleCall getRatingsRatingParserRuleCall_27_5_1_0() { return cRatingsRatingParserRuleCall_27_5_1_0; }
+		
+		//"]"
+		public Keyword getRightSquareBracketKeyword_27_6() { return cRightSquareBracketKeyword_27_6; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_36() { return cRightCurlyBracketKeyword_36; }
+		public Keyword getRightCurlyBracketKeyword_28() { return cRightCurlyBracketKeyword_28; }
 	}
 	public class KitchenUtensilElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.KitchenUtensil");
@@ -760,8 +704,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_0() { return cNameSTRINGTerminalRuleCall_0; }
 	}
-	public class IngridientElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Ingridient");
+	public class IngredientElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Ingredient");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
@@ -789,7 +733,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cRecipeRecipeCrossReference_1_0 = (CrossReference)cRecipeAssignment_1.eContents().get(0);
 		private final RuleCall cRecipeRecipeIDTerminalRuleCall_1_0_1 = (RuleCall)cRecipeRecipeCrossReference_1_0.eContents().get(1);
 		
-		//Ingridient:
+		//Ingredient:
 		//	'{'
 		//	'Name' ':' name=STRING ','
 		//	'Amount' ':' amount=INT ','
@@ -955,7 +899,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final RecipeElements pRecipe;
 	private final KitchenUtensilElements pKitchenUtensil;
 	private final FoodCategoryElements pFoodCategory;
-	private final IngridientElements pIngridient;
+	private final IngredientElements pIngredient;
 	private final VeganismLevelElements pVeganismLevel;
 	private final UnitElements pUnit;
 	
@@ -976,7 +920,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pRecipe = new RecipeElements();
 		this.pKitchenUtensil = new KitchenUtensilElements();
 		this.pFoodCategory = new FoodCategoryElements();
-		this.pIngridient = new IngridientElements();
+		this.pIngredient = new IngredientElements();
 		this.pVeganismLevel = new VeganismLevelElements();
 		this.pUnit = new UnitElements();
 	}
@@ -1031,8 +975,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Author:
 	//	name=ID ':' "{"
-	//	"email" ":" Email=STRING (',' "isOwner" ":" "[" isOwner+=[Recipe] ("," isOwner+=[Recipe])* "]")? (',' "writes" ":"
-	//	"[" writes+=Rating ("," writes+=Rating)* "]")? (',' "calls" ":" "[" calls+=[Recipe] ("," calls+=[Recipe])* "]")?
+	//	"email" ":" Email=STRING (',' "calls" ":" "[" calls+=[Recipe] ("," calls+=[Recipe])* "]")?
 	//	"}";
 	public AuthorElements getAuthorAccess() {
 		return pAuthor;
@@ -1056,10 +999,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Rating:
 	//	'{'
-	//	'Stars' ':' stars=INT ','
-	//	'Comment' ':' comment=STRING ','
-	//	'Recipe' ':' bewertet=[Recipe] ','
-	//	'written' 'by' ':' writtenBy=[Author] ','
+	//	'Stars' ':' stars=INT ',' ('Comment' ':' comment=STRING ',')?
+	//	'Author' ':' author=[Author]
 	//	'}';
 	public RatingElements getRatingAccess() {
 		return pRating;
@@ -1074,10 +1015,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'Author' ':' author=[Author] ','
 	//	'VeganismLevel' ':' vegan=VeganismLevel ','
 	//	'Duration' ':' duration=INT ','
-	//	'Difficulty' ':' difficulty=INT ','
-	//	'KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (',' kitchenUtensils+=KitchenUtensil)* ']' ','
-	//	'foodCategory' ':' foodCategory=FoodCategory ','
-	//	'Ingredients' ':' '[' ingredients+=Ingridient (',' ingredients+=Ingridient)* ']'
+	//	'Difficulty' ':' difficulty=INT ',' ('KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (','
+	//	kitchenUtensils+=KitchenUtensil)* ']' ',')? ('foodCategory' ':' '[' foodCategory+=FoodCategory (','
+	//	foodCategory+=FoodCategory)* ']' ',')?
+	//	'Ingredients' ':' '[' ingredient+=Ingredient (',' ingredient+=Ingredient)* ']' (',' "Ratings" ":" "[" ratings+=Rating
+	//	("," ratings+=Rating)* "]")?
 	//	'}';
 	public RecipeElements getRecipeAccess() {
 		return pRecipe;
@@ -1107,7 +1049,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getFoodCategoryAccess().getRule();
 	}
 	
-	//Ingridient:
+	//Ingredient:
 	//	'{'
 	//	'Name' ':' name=STRING ','
 	//	'Amount' ':' amount=INT ','
@@ -1115,12 +1057,12 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'VeganismLevel' ':' veganismLevel=VeganismLevel
 	//	'}'
 	//	| recipe=[Recipe];
-	public IngridientElements getIngridientAccess() {
-		return pIngridient;
+	public IngredientElements getIngredientAccess() {
+		return pIngredient;
 	}
 	
-	public ParserRule getIngridientRule() {
-		return getIngridientAccess().getRule();
+	public ParserRule getIngredientRule() {
+		return getIngredientAccess().getRule();
 	}
 	
 	//VeganismLevel:

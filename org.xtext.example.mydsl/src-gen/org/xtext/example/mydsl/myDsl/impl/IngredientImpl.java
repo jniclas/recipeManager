@@ -11,28 +11,28 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.example.mydsl.myDsl.Ingridient;
+import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Recipe;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Ingridient</b></em>'.
+ * An implementation of the model object '<em><b>Ingredient</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.IngridientImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.IngridientImpl#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.IngridientImpl#getUnit <em>Unit</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.IngridientImpl#getVeganismLevel <em>Veganism Level</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.IngridientImpl#getRecipe <em>Recipe</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.IngredientImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.IngredientImpl#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.IngredientImpl#getUnit <em>Unit</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.IngredientImpl#getVeganismLevel <em>Veganism Level</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.IngredientImpl#getRecipe <em>Recipe</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingridient
+public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingredient
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -129,7 +129,7 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
    * <!-- end-user-doc -->
    * @generated
    */
-  protected IngridientImpl()
+  protected IngredientImpl()
   {
     super();
   }
@@ -142,7 +142,7 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.INGRIDIENT;
+    return MyDslPackage.Literals.INGREDIENT;
   }
 
   /**
@@ -165,7 +165,7 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INGRIDIENT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INGREDIENT__NAME, oldName, name));
   }
 
   /**
@@ -188,7 +188,7 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
     int oldAmount = amount;
     amount = newAmount;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INGRIDIENT__AMOUNT, oldAmount, amount));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INGREDIENT__AMOUNT, oldAmount, amount));
   }
 
   /**
@@ -211,7 +211,7 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
     String oldUnit = unit;
     unit = newUnit;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INGRIDIENT__UNIT, oldUnit, unit));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INGREDIENT__UNIT, oldUnit, unit));
   }
 
   /**
@@ -234,7 +234,7 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
     String oldVeganismLevel = veganismLevel;
     veganismLevel = newVeganismLevel;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INGRIDIENT__VEGANISM_LEVEL, oldVeganismLevel, veganismLevel));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INGREDIENT__VEGANISM_LEVEL, oldVeganismLevel, veganismLevel));
   }
 
   /**
@@ -251,7 +251,7 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
       if (recipe != oldRecipe)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MyDslPackage.INGRIDIENT__RECIPE, oldRecipe, recipe));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MyDslPackage.INGREDIENT__RECIPE, oldRecipe, recipe));
       }
     }
     return recipe;
@@ -277,7 +277,7 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
     Recipe oldRecipe = recipe;
     recipe = newRecipe;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INGRIDIENT__RECIPE, oldRecipe, recipe));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.INGREDIENT__RECIPE, oldRecipe, recipe));
   }
 
   /**
@@ -290,15 +290,15 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
   {
     switch (featureID)
     {
-      case MyDslPackage.INGRIDIENT__NAME:
+      case MyDslPackage.INGREDIENT__NAME:
         return getName();
-      case MyDslPackage.INGRIDIENT__AMOUNT:
+      case MyDslPackage.INGREDIENT__AMOUNT:
         return getAmount();
-      case MyDslPackage.INGRIDIENT__UNIT:
+      case MyDslPackage.INGREDIENT__UNIT:
         return getUnit();
-      case MyDslPackage.INGRIDIENT__VEGANISM_LEVEL:
+      case MyDslPackage.INGREDIENT__VEGANISM_LEVEL:
         return getVeganismLevel();
-      case MyDslPackage.INGRIDIENT__RECIPE:
+      case MyDslPackage.INGREDIENT__RECIPE:
         if (resolve) return getRecipe();
         return basicGetRecipe();
     }
@@ -315,19 +315,19 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
   {
     switch (featureID)
     {
-      case MyDslPackage.INGRIDIENT__NAME:
+      case MyDslPackage.INGREDIENT__NAME:
         setName((String)newValue);
         return;
-      case MyDslPackage.INGRIDIENT__AMOUNT:
+      case MyDslPackage.INGREDIENT__AMOUNT:
         setAmount((Integer)newValue);
         return;
-      case MyDslPackage.INGRIDIENT__UNIT:
+      case MyDslPackage.INGREDIENT__UNIT:
         setUnit((String)newValue);
         return;
-      case MyDslPackage.INGRIDIENT__VEGANISM_LEVEL:
+      case MyDslPackage.INGREDIENT__VEGANISM_LEVEL:
         setVeganismLevel((String)newValue);
         return;
-      case MyDslPackage.INGRIDIENT__RECIPE:
+      case MyDslPackage.INGREDIENT__RECIPE:
         setRecipe((Recipe)newValue);
         return;
     }
@@ -344,19 +344,19 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
   {
     switch (featureID)
     {
-      case MyDslPackage.INGRIDIENT__NAME:
+      case MyDslPackage.INGREDIENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case MyDslPackage.INGRIDIENT__AMOUNT:
+      case MyDslPackage.INGREDIENT__AMOUNT:
         setAmount(AMOUNT_EDEFAULT);
         return;
-      case MyDslPackage.INGRIDIENT__UNIT:
+      case MyDslPackage.INGREDIENT__UNIT:
         setUnit(UNIT_EDEFAULT);
         return;
-      case MyDslPackage.INGRIDIENT__VEGANISM_LEVEL:
+      case MyDslPackage.INGREDIENT__VEGANISM_LEVEL:
         setVeganismLevel(VEGANISM_LEVEL_EDEFAULT);
         return;
-      case MyDslPackage.INGRIDIENT__RECIPE:
+      case MyDslPackage.INGREDIENT__RECIPE:
         setRecipe((Recipe)null);
         return;
     }
@@ -373,15 +373,15 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
   {
     switch (featureID)
     {
-      case MyDslPackage.INGRIDIENT__NAME:
+      case MyDslPackage.INGREDIENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case MyDslPackage.INGRIDIENT__AMOUNT:
+      case MyDslPackage.INGREDIENT__AMOUNT:
         return amount != AMOUNT_EDEFAULT;
-      case MyDslPackage.INGRIDIENT__UNIT:
+      case MyDslPackage.INGREDIENT__UNIT:
         return UNIT_EDEFAULT == null ? unit != null : !UNIT_EDEFAULT.equals(unit);
-      case MyDslPackage.INGRIDIENT__VEGANISM_LEVEL:
+      case MyDslPackage.INGREDIENT__VEGANISM_LEVEL:
         return VEGANISM_LEVEL_EDEFAULT == null ? veganismLevel != null : !VEGANISM_LEVEL_EDEFAULT.equals(veganismLevel);
-      case MyDslPackage.INGRIDIENT__RECIPE:
+      case MyDslPackage.INGREDIENT__RECIPE:
         return recipe != null;
     }
     return super.eIsSet(featureID);
@@ -410,4 +410,4 @@ public class IngridientImpl extends MinimalEObjectImpl.Container implements Ingr
     return result.toString();
   }
 
-} //IngridientImpl
+} //IngredientImpl

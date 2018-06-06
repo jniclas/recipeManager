@@ -21,9 +21,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.mydsl.myDsl.Author;
 import org.xtext.example.mydsl.myDsl.FoodCategory;
-import org.xtext.example.mydsl.myDsl.Ingridient;
+import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.KitchenUtensil;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
+import org.xtext.example.mydsl.myDsl.Rating;
 import org.xtext.example.mydsl.myDsl.Recipe;
 
 /**
@@ -41,7 +42,8 @@ import org.xtext.example.mydsl.myDsl.Recipe;
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl#getDifficulty <em>Difficulty</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl#getKitchenUtensils <em>Kitchen Utensils</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl#getFoodCategory <em>Food Category</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl#getIngredients <em>Ingredients</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl#getIngredient <em>Ingredient</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl#getRatings <em>Ratings</em>}</li>
  * </ul>
  *
  * @generated
@@ -149,24 +151,34 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
   protected EList<KitchenUtensil> kitchenUtensils;
 
   /**
-   * The cached value of the '{@link #getFoodCategory() <em>Food Category</em>}' containment reference.
+   * The cached value of the '{@link #getFoodCategory() <em>Food Category</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFoodCategory()
    * @generated
    * @ordered
    */
-  protected FoodCategory foodCategory;
+  protected EList<FoodCategory> foodCategory;
 
   /**
-   * The cached value of the '{@link #getIngredients() <em>Ingredients</em>}' containment reference list.
+   * The cached value of the '{@link #getIngredient() <em>Ingredient</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIngredients()
+   * @see #getIngredient()
    * @generated
    * @ordered
    */
-  protected EList<Ingridient> ingredients;
+  protected EList<Ingredient> ingredient;
+
+  /**
+   * The cached value of the '{@link #getRatings() <em>Ratings</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRatings()
+   * @generated
+   * @ordered
+   */
+  protected EList<Rating> ratings;
 
   /**
    * <!-- begin-user-doc -->
@@ -343,8 +355,12 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * <!-- end-user-doc -->
    * @generated
    */
-  public FoodCategory getFoodCategory()
+  public EList<FoodCategory> getFoodCategory()
   {
+    if (foodCategory == null)
+    {
+      foodCategory = new EObjectContainmentEList<FoodCategory>(FoodCategory.class, this, MyDslPackage.RECIPE__FOOD_CATEGORY);
+    }
     return foodCategory;
   }
 
@@ -353,16 +369,13 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFoodCategory(FoodCategory newFoodCategory, NotificationChain msgs)
+  public EList<Ingredient> getIngredient()
   {
-    FoodCategory oldFoodCategory = foodCategory;
-    foodCategory = newFoodCategory;
-    if (eNotificationRequired())
+    if (ingredient == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE__FOOD_CATEGORY, oldFoodCategory, newFoodCategory);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ingredient = new EObjectContainmentEList<Ingredient>(Ingredient.class, this, MyDslPackage.RECIPE__INGREDIENT);
     }
-    return msgs;
+    return ingredient;
   }
 
   /**
@@ -370,34 +383,13 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFoodCategory(FoodCategory newFoodCategory)
+  public EList<Rating> getRatings()
   {
-    if (newFoodCategory != foodCategory)
+    if (ratings == null)
     {
-      NotificationChain msgs = null;
-      if (foodCategory != null)
-        msgs = ((InternalEObject)foodCategory).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RECIPE__FOOD_CATEGORY, null, msgs);
-      if (newFoodCategory != null)
-        msgs = ((InternalEObject)newFoodCategory).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RECIPE__FOOD_CATEGORY, null, msgs);
-      msgs = basicSetFoodCategory(newFoodCategory, msgs);
-      if (msgs != null) msgs.dispatch();
+      ratings = new EObjectContainmentEList<Rating>(Rating.class, this, MyDslPackage.RECIPE__RATINGS);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE__FOOD_CATEGORY, newFoodCategory, newFoodCategory));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Ingridient> getIngredients()
-  {
-    if (ingredients == null)
-    {
-      ingredients = new EObjectContainmentEList<Ingridient>(Ingridient.class, this, MyDslPackage.RECIPE__INGREDIENTS);
-    }
-    return ingredients;
+    return ratings;
   }
 
   /**
@@ -413,9 +405,11 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
       case MyDslPackage.RECIPE__KITCHEN_UTENSILS:
         return ((InternalEList<?>)getKitchenUtensils()).basicRemove(otherEnd, msgs);
       case MyDslPackage.RECIPE__FOOD_CATEGORY:
-        return basicSetFoodCategory(null, msgs);
-      case MyDslPackage.RECIPE__INGREDIENTS:
-        return ((InternalEList<?>)getIngredients()).basicRemove(otherEnd, msgs);
+        return ((InternalEList<?>)getFoodCategory()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.RECIPE__INGREDIENT:
+        return ((InternalEList<?>)getIngredient()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.RECIPE__RATINGS:
+        return ((InternalEList<?>)getRatings()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -445,8 +439,10 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
         return getKitchenUtensils();
       case MyDslPackage.RECIPE__FOOD_CATEGORY:
         return getFoodCategory();
-      case MyDslPackage.RECIPE__INGREDIENTS:
-        return getIngredients();
+      case MyDslPackage.RECIPE__INGREDIENT:
+        return getIngredient();
+      case MyDslPackage.RECIPE__RATINGS:
+        return getRatings();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -482,11 +478,16 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
         getKitchenUtensils().addAll((Collection<? extends KitchenUtensil>)newValue);
         return;
       case MyDslPackage.RECIPE__FOOD_CATEGORY:
-        setFoodCategory((FoodCategory)newValue);
+        getFoodCategory().clear();
+        getFoodCategory().addAll((Collection<? extends FoodCategory>)newValue);
         return;
-      case MyDslPackage.RECIPE__INGREDIENTS:
-        getIngredients().clear();
-        getIngredients().addAll((Collection<? extends Ingridient>)newValue);
+      case MyDslPackage.RECIPE__INGREDIENT:
+        getIngredient().clear();
+        getIngredient().addAll((Collection<? extends Ingredient>)newValue);
+        return;
+      case MyDslPackage.RECIPE__RATINGS:
+        getRatings().clear();
+        getRatings().addAll((Collection<? extends Rating>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -521,10 +522,13 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
         getKitchenUtensils().clear();
         return;
       case MyDslPackage.RECIPE__FOOD_CATEGORY:
-        setFoodCategory((FoodCategory)null);
+        getFoodCategory().clear();
         return;
-      case MyDslPackage.RECIPE__INGREDIENTS:
-        getIngredients().clear();
+      case MyDslPackage.RECIPE__INGREDIENT:
+        getIngredient().clear();
+        return;
+      case MyDslPackage.RECIPE__RATINGS:
+        getRatings().clear();
         return;
     }
     super.eUnset(featureID);
@@ -553,9 +557,11 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
       case MyDslPackage.RECIPE__KITCHEN_UTENSILS:
         return kitchenUtensils != null && !kitchenUtensils.isEmpty();
       case MyDslPackage.RECIPE__FOOD_CATEGORY:
-        return foodCategory != null;
-      case MyDslPackage.RECIPE__INGREDIENTS:
-        return ingredients != null && !ingredients.isEmpty();
+        return foodCategory != null && !foodCategory.isEmpty();
+      case MyDslPackage.RECIPE__INGREDIENT:
+        return ingredient != null && !ingredient.isEmpty();
+      case MyDslPackage.RECIPE__RATINGS:
+        return ratings != null && !ratings.isEmpty();
     }
     return super.eIsSet(featureID);
   }

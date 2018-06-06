@@ -18,8 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Author#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Author#getEmail <em>Email</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Author#getIsOwner <em>Is Owner</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Author#getWrites <em>Writes</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Author#getCalls <em>Calls</em>}</li>
  * </ul>
  *
@@ -80,38 +78,6 @@ public interface Author extends EObject
    * @generated
    */
   void setEmail(String value);
-
-  /**
-   * Returns the value of the '<em><b>Is Owner</b></em>' reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Recipe}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Is Owner</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Is Owner</em>' reference list.
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getAuthor_IsOwner()
-   * @model
-   * @generated
-   */
-  EList<Recipe> getIsOwner();
-
-  /**
-   * Returns the value of the '<em><b>Writes</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Rating}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Writes</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Writes</em>' containment reference list.
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getAuthor_Writes()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Rating> getWrites();
 
   /**
    * Returns the value of the '<em><b>Calls</b></em>' reference list.

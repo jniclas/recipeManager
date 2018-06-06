@@ -277,9 +277,9 @@ ruleAuthor returns [EObject current=null]
 			{
 				newLeafNode(otherlv_6, grammarAccess.getAuthorAccess().getCommaKeyword_6_0());
 			}
-			otherlv_7='isOwner'
+			otherlv_7='calls'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getAuthorAccess().getIsOwnerKeyword_6_1());
+				newLeafNode(otherlv_7, grammarAccess.getAuthorAccess().getCallsKeyword_6_1());
 			}
 			otherlv_8=':'
 			{
@@ -298,7 +298,7 @@ ruleAuthor returns [EObject current=null]
 					}
 					otherlv_10=RULE_ID
 					{
-						newLeafNode(otherlv_10, grammarAccess.getAuthorAccess().getIsOwnerRecipeCrossReference_6_4_0());
+						newLeafNode(otherlv_10, grammarAccess.getAuthorAccess().getCallsRecipeCrossReference_6_4_0());
 					}
 				)
 			)
@@ -316,7 +316,7 @@ ruleAuthor returns [EObject current=null]
 						}
 						otherlv_12=RULE_ID
 						{
-							newLeafNode(otherlv_12, grammarAccess.getAuthorAccess().getIsOwnerRecipeCrossReference_6_5_1_0());
+							newLeafNode(otherlv_12, grammarAccess.getAuthorAccess().getCallsRecipeCrossReference_6_5_1_0());
 						}
 					)
 				)
@@ -326,129 +326,9 @@ ruleAuthor returns [EObject current=null]
 				newLeafNode(otherlv_13, grammarAccess.getAuthorAccess().getRightSquareBracketKeyword_6_6());
 			}
 		)?
-		(
-			otherlv_14=','
-			{
-				newLeafNode(otherlv_14, grammarAccess.getAuthorAccess().getCommaKeyword_7_0());
-			}
-			otherlv_15='writes'
-			{
-				newLeafNode(otherlv_15, grammarAccess.getAuthorAccess().getWritesKeyword_7_1());
-			}
-			otherlv_16=':'
-			{
-				newLeafNode(otherlv_16, grammarAccess.getAuthorAccess().getColonKeyword_7_2());
-			}
-			otherlv_17='['
-			{
-				newLeafNode(otherlv_17, grammarAccess.getAuthorAccess().getLeftSquareBracketKeyword_7_3());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAuthorAccess().getWritesRatingParserRuleCall_7_4_0());
-					}
-					lv_writes_18_0=ruleRating
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAuthorRule());
-						}
-						add(
-							$current,
-							"writes",
-							lv_writes_18_0,
-							"org.xtext.example.mydsl.MyDsl.Rating");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_19=','
-				{
-					newLeafNode(otherlv_19, grammarAccess.getAuthorAccess().getCommaKeyword_7_5_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getAuthorAccess().getWritesRatingParserRuleCall_7_5_1_0());
-						}
-						lv_writes_20_0=ruleRating
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getAuthorRule());
-							}
-							add(
-								$current,
-								"writes",
-								lv_writes_20_0,
-								"org.xtext.example.mydsl.MyDsl.Rating");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_21=']'
-			{
-				newLeafNode(otherlv_21, grammarAccess.getAuthorAccess().getRightSquareBracketKeyword_7_6());
-			}
-		)?
-		(
-			otherlv_22=','
-			{
-				newLeafNode(otherlv_22, grammarAccess.getAuthorAccess().getCommaKeyword_8_0());
-			}
-			otherlv_23='calls'
-			{
-				newLeafNode(otherlv_23, grammarAccess.getAuthorAccess().getCallsKeyword_8_1());
-			}
-			otherlv_24=':'
-			{
-				newLeafNode(otherlv_24, grammarAccess.getAuthorAccess().getColonKeyword_8_2());
-			}
-			otherlv_25='['
-			{
-				newLeafNode(otherlv_25, grammarAccess.getAuthorAccess().getLeftSquareBracketKeyword_8_3());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAuthorRule());
-						}
-					}
-					otherlv_26=RULE_ID
-					{
-						newLeafNode(otherlv_26, grammarAccess.getAuthorAccess().getCallsRecipeCrossReference_8_4_0());
-					}
-				)
-			)
-			(
-				otherlv_27=','
-				{
-					newLeafNode(otherlv_27, grammarAccess.getAuthorAccess().getCommaKeyword_8_5_0());
-				}
-				(
-					(
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getAuthorRule());
-							}
-						}
-						otherlv_28=RULE_ID
-						{
-							newLeafNode(otherlv_28, grammarAccess.getAuthorAccess().getCallsRecipeCrossReference_8_5_1_0());
-						}
-					)
-				)
-			)*
-			otherlv_29=']'
-			{
-				newLeafNode(otherlv_29, grammarAccess.getAuthorAccess().getRightSquareBracketKeyword_8_6());
-			}
-		)?
-		otherlv_30='}'
+		otherlv_14='}'
 		{
-			newLeafNode(otherlv_30, grammarAccess.getAuthorAccess().getRightCurlyBracketKeyword_9());
+			newLeafNode(otherlv_14, grammarAccess.getAuthorAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
@@ -574,43 +454,45 @@ ruleRating returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getRatingAccess().getCommaKeyword_4());
 		}
-		otherlv_5='Comment'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getRatingAccess().getCommentKeyword_5());
-		}
-		otherlv_6=':'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getRatingAccess().getColonKeyword_6());
-		}
 		(
+			otherlv_5='Comment'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getRatingAccess().getCommentKeyword_5_0());
+			}
+			otherlv_6=':'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getRatingAccess().getColonKeyword_5_1());
+			}
 			(
-				lv_comment_7_0=RULE_STRING
-				{
-					newLeafNode(lv_comment_7_0, grammarAccess.getRatingAccess().getCommentSTRINGTerminalRuleCall_7_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRatingRule());
+				(
+					lv_comment_7_0=RULE_STRING
+					{
+						newLeafNode(lv_comment_7_0, grammarAccess.getRatingAccess().getCommentSTRINGTerminalRuleCall_5_2_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"comment",
-						lv_comment_7_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRatingRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"comment",
+							lv_comment_7_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
 			)
-		)
-		otherlv_8=','
+			otherlv_8=','
+			{
+				newLeafNode(otherlv_8, grammarAccess.getRatingAccess().getCommaKeyword_5_3());
+			}
+		)?
+		otherlv_9='Author'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getRatingAccess().getCommaKeyword_8());
-		}
-		otherlv_9='Recipe'
-		{
-			newLeafNode(otherlv_9, grammarAccess.getRatingAccess().getRecipeKeyword_9());
+			newLeafNode(otherlv_9, grammarAccess.getRatingAccess().getAuthorKeyword_6());
 		}
 		otherlv_10=':'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getRatingAccess().getColonKeyword_10());
+			newLeafNode(otherlv_10, grammarAccess.getRatingAccess().getColonKeyword_7());
 		}
 		(
 			(
@@ -621,46 +503,13 @@ ruleRating returns [EObject current=null]
 				}
 				otherlv_11=RULE_ID
 				{
-					newLeafNode(otherlv_11, grammarAccess.getRatingAccess().getBewertetRecipeCrossReference_11_0());
+					newLeafNode(otherlv_11, grammarAccess.getRatingAccess().getAuthorAuthorCrossReference_8_0());
 				}
 			)
 		)
-		otherlv_12=','
+		otherlv_12='}'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getRatingAccess().getCommaKeyword_12());
-		}
-		otherlv_13='written'
-		{
-			newLeafNode(otherlv_13, grammarAccess.getRatingAccess().getWrittenKeyword_13());
-		}
-		otherlv_14='by'
-		{
-			newLeafNode(otherlv_14, grammarAccess.getRatingAccess().getByKeyword_14());
-		}
-		otherlv_15=':'
-		{
-			newLeafNode(otherlv_15, grammarAccess.getRatingAccess().getColonKeyword_15());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRatingRule());
-					}
-				}
-				otherlv_16=RULE_ID
-				{
-					newLeafNode(otherlv_16, grammarAccess.getRatingAccess().getWrittenByAuthorCrossReference_16_0());
-				}
-			)
-		)
-		otherlv_17=','
-		{
-			newLeafNode(otherlv_17, grammarAccess.getRatingAccess().getCommaKeyword_17());
-		}
-		otherlv_18='}'
-		{
-			newLeafNode(otherlv_18, grammarAccess.getRatingAccess().getRightCurlyBracketKeyword_18());
+			newLeafNode(otherlv_12, grammarAccess.getRatingAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;
@@ -823,48 +672,25 @@ ruleRecipe returns [EObject current=null]
 		{
 			newLeafNode(otherlv_18, grammarAccess.getRecipeAccess().getCommaKeyword_18());
 		}
-		otherlv_19='KitchenUtensils'
-		{
-			newLeafNode(otherlv_19, grammarAccess.getRecipeAccess().getKitchenUtensilsKeyword_19());
-		}
-		otherlv_20=':'
-		{
-			newLeafNode(otherlv_20, grammarAccess.getRecipeAccess().getColonKeyword_20());
-		}
-		otherlv_21='['
-		{
-			newLeafNode(otherlv_21, grammarAccess.getRecipeAccess().getLeftSquareBracketKeyword_21());
-		}
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getRecipeAccess().getKitchenUtensilsKitchenUtensilParserRuleCall_22_0());
-				}
-				lv_kitchenUtensils_22_0=ruleKitchenUtensil
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRecipeRule());
-					}
-					add(
-						$current,
-						"kitchenUtensils",
-						lv_kitchenUtensils_22_0,
-						"org.xtext.example.mydsl.MyDsl.KitchenUtensil");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_23=','
+			otherlv_19='KitchenUtensils'
 			{
-				newLeafNode(otherlv_23, grammarAccess.getRecipeAccess().getCommaKeyword_23_0());
+				newLeafNode(otherlv_19, grammarAccess.getRecipeAccess().getKitchenUtensilsKeyword_19_0());
+			}
+			otherlv_20=':'
+			{
+				newLeafNode(otherlv_20, grammarAccess.getRecipeAccess().getColonKeyword_19_1());
+			}
+			otherlv_21='['
+			{
+				newLeafNode(otherlv_21, grammarAccess.getRecipeAccess().getLeftSquareBracketKeyword_19_2());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRecipeAccess().getKitchenUtensilsKitchenUtensilParserRuleCall_23_1_0());
+						newCompositeNode(grammarAccess.getRecipeAccess().getKitchenUtensilsKitchenUtensilParserRuleCall_19_3_0());
 					}
-					lv_kitchenUtensils_24_0=ruleKitchenUtensil
+					lv_kitchenUtensils_22_0=ruleKitchenUtensil
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRecipeRule());
@@ -872,115 +698,241 @@ ruleRecipe returns [EObject current=null]
 						add(
 							$current,
 							"kitchenUtensils",
-							lv_kitchenUtensils_24_0,
+							lv_kitchenUtensils_22_0,
 							"org.xtext.example.mydsl.MyDsl.KitchenUtensil");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-		)*
-		otherlv_25=']'
-		{
-			newLeafNode(otherlv_25, grammarAccess.getRecipeAccess().getRightSquareBracketKeyword_24());
-		}
-		otherlv_26=','
-		{
-			newLeafNode(otherlv_26, grammarAccess.getRecipeAccess().getCommaKeyword_25());
-		}
-		otherlv_27='foodCategory'
-		{
-			newLeafNode(otherlv_27, grammarAccess.getRecipeAccess().getFoodCategoryKeyword_26());
-		}
-		otherlv_28=':'
-		{
-			newLeafNode(otherlv_28, grammarAccess.getRecipeAccess().getColonKeyword_27());
-		}
-		(
 			(
+				otherlv_23=','
 				{
-					newCompositeNode(grammarAccess.getRecipeAccess().getFoodCategoryFoodCategoryParserRuleCall_28_0());
+					newLeafNode(otherlv_23, grammarAccess.getRecipeAccess().getCommaKeyword_19_4_0());
 				}
-				lv_foodCategory_29_0=ruleFoodCategory
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRecipeRule());
-					}
-					set(
-						$current,
-						"foodCategory",
-						lv_foodCategory_29_0,
-						"org.xtext.example.mydsl.MyDsl.FoodCategory");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_30=','
-		{
-			newLeafNode(otherlv_30, grammarAccess.getRecipeAccess().getCommaKeyword_29());
-		}
-		otherlv_31='Ingredients'
-		{
-			newLeafNode(otherlv_31, grammarAccess.getRecipeAccess().getIngredientsKeyword_30());
-		}
-		otherlv_32=':'
-		{
-			newLeafNode(otherlv_32, grammarAccess.getRecipeAccess().getColonKeyword_31());
-		}
-		otherlv_33='['
-		{
-			newLeafNode(otherlv_33, grammarAccess.getRecipeAccess().getLeftSquareBracketKeyword_32());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getRecipeAccess().getIngredientsIngridientParserRuleCall_33_0());
-				}
-				lv_ingredients_34_0=ruleIngridient
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRecipeRule());
-					}
-					add(
-						$current,
-						"ingredients",
-						lv_ingredients_34_0,
-						"org.xtext.example.mydsl.MyDsl.Ingridient");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_35=','
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getRecipeAccess().getKitchenUtensilsKitchenUtensilParserRuleCall_19_4_1_0());
+						}
+						lv_kitchenUtensils_24_0=ruleKitchenUtensil
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getRecipeRule());
+							}
+							add(
+								$current,
+								"kitchenUtensils",
+								lv_kitchenUtensils_24_0,
+								"org.xtext.example.mydsl.MyDsl.KitchenUtensil");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+			otherlv_25=']'
 			{
-				newLeafNode(otherlv_35, grammarAccess.getRecipeAccess().getCommaKeyword_34_0());
+				newLeafNode(otherlv_25, grammarAccess.getRecipeAccess().getRightSquareBracketKeyword_19_5());
+			}
+			otherlv_26=','
+			{
+				newLeafNode(otherlv_26, grammarAccess.getRecipeAccess().getCommaKeyword_19_6());
+			}
+		)?
+		(
+			otherlv_27='foodCategory'
+			{
+				newLeafNode(otherlv_27, grammarAccess.getRecipeAccess().getFoodCategoryKeyword_20_0());
+			}
+			otherlv_28=':'
+			{
+				newLeafNode(otherlv_28, grammarAccess.getRecipeAccess().getColonKeyword_20_1());
+			}
+			otherlv_29='['
+			{
+				newLeafNode(otherlv_29, grammarAccess.getRecipeAccess().getLeftSquareBracketKeyword_20_2());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRecipeAccess().getIngredientsIngridientParserRuleCall_34_1_0());
+						newCompositeNode(grammarAccess.getRecipeAccess().getFoodCategoryFoodCategoryParserRuleCall_20_3_0());
 					}
-					lv_ingredients_36_0=ruleIngridient
+					lv_foodCategory_30_0=ruleFoodCategory
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRecipeRule());
 						}
 						add(
 							$current,
-							"ingredients",
-							lv_ingredients_36_0,
-							"org.xtext.example.mydsl.MyDsl.Ingridient");
+							"foodCategory",
+							lv_foodCategory_30_0,
+							"org.xtext.example.mydsl.MyDsl.FoodCategory");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_31=','
+				{
+					newLeafNode(otherlv_31, grammarAccess.getRecipeAccess().getCommaKeyword_20_4_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getRecipeAccess().getFoodCategoryFoodCategoryParserRuleCall_20_4_1_0());
+						}
+						lv_foodCategory_32_0=ruleFoodCategory
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getRecipeRule());
+							}
+							add(
+								$current,
+								"foodCategory",
+								lv_foodCategory_32_0,
+								"org.xtext.example.mydsl.MyDsl.FoodCategory");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+			otherlv_33=']'
+			{
+				newLeafNode(otherlv_33, grammarAccess.getRecipeAccess().getRightSquareBracketKeyword_20_5());
+			}
+			otherlv_34=','
+			{
+				newLeafNode(otherlv_34, grammarAccess.getRecipeAccess().getCommaKeyword_20_6());
+			}
+		)?
+		otherlv_35='Ingredients'
+		{
+			newLeafNode(otherlv_35, grammarAccess.getRecipeAccess().getIngredientsKeyword_21());
+		}
+		otherlv_36=':'
+		{
+			newLeafNode(otherlv_36, grammarAccess.getRecipeAccess().getColonKeyword_22());
+		}
+		otherlv_37='['
+		{
+			newLeafNode(otherlv_37, grammarAccess.getRecipeAccess().getLeftSquareBracketKeyword_23());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRecipeAccess().getIngredientIngredientParserRuleCall_24_0());
+				}
+				lv_ingredient_38_0=ruleIngredient
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRecipeRule());
+					}
+					add(
+						$current,
+						"ingredient",
+						lv_ingredient_38_0,
+						"org.xtext.example.mydsl.MyDsl.Ingredient");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_39=','
+			{
+				newLeafNode(otherlv_39, grammarAccess.getRecipeAccess().getCommaKeyword_25_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getRecipeAccess().getIngredientIngredientParserRuleCall_25_1_0());
+					}
+					lv_ingredient_40_0=ruleIngredient
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getRecipeRule());
+						}
+						add(
+							$current,
+							"ingredient",
+							lv_ingredient_40_0,
+							"org.xtext.example.mydsl.MyDsl.Ingredient");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_37=']'
+		otherlv_41=']'
 		{
-			newLeafNode(otherlv_37, grammarAccess.getRecipeAccess().getRightSquareBracketKeyword_35());
+			newLeafNode(otherlv_41, grammarAccess.getRecipeAccess().getRightSquareBracketKeyword_26());
 		}
-		otherlv_38='}'
+		(
+			otherlv_42=','
+			{
+				newLeafNode(otherlv_42, grammarAccess.getRecipeAccess().getCommaKeyword_27_0());
+			}
+			otherlv_43='Ratings'
+			{
+				newLeafNode(otherlv_43, grammarAccess.getRecipeAccess().getRatingsKeyword_27_1());
+			}
+			otherlv_44=':'
+			{
+				newLeafNode(otherlv_44, grammarAccess.getRecipeAccess().getColonKeyword_27_2());
+			}
+			otherlv_45='['
+			{
+				newLeafNode(otherlv_45, grammarAccess.getRecipeAccess().getLeftSquareBracketKeyword_27_3());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getRecipeAccess().getRatingsRatingParserRuleCall_27_4_0());
+					}
+					lv_ratings_46_0=ruleRating
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getRecipeRule());
+						}
+						add(
+							$current,
+							"ratings",
+							lv_ratings_46_0,
+							"org.xtext.example.mydsl.MyDsl.Rating");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_47=','
+				{
+					newLeafNode(otherlv_47, grammarAccess.getRecipeAccess().getCommaKeyword_27_5_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getRecipeAccess().getRatingsRatingParserRuleCall_27_5_1_0());
+						}
+						lv_ratings_48_0=ruleRating
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getRecipeRule());
+							}
+							add(
+								$current,
+								"ratings",
+								lv_ratings_48_0,
+								"org.xtext.example.mydsl.MyDsl.Rating");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+			otherlv_49=']'
+			{
+				newLeafNode(otherlv_49, grammarAccess.getRecipeAccess().getRightSquareBracketKeyword_27_6());
+			}
+		)?
+		otherlv_50='}'
 		{
-			newLeafNode(otherlv_38, grammarAccess.getRecipeAccess().getRightCurlyBracketKeyword_36());
+			newLeafNode(otherlv_50, grammarAccess.getRecipeAccess().getRightCurlyBracketKeyword_28());
 		}
 	)
 ;
@@ -1090,15 +1042,15 @@ ruleFoodCategory returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleIngridient
-entryRuleIngridient returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getIngridientRule()); }
-	iv_ruleIngridient=ruleIngridient
-	{ $current=$iv_ruleIngridient.current; }
+// Entry rule entryRuleIngredient
+entryRuleIngredient returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIngredientRule()); }
+	iv_ruleIngredient=ruleIngredient
+	{ $current=$iv_ruleIngredient.current; }
 	EOF;
 
-// Rule Ingridient
-ruleIngridient returns [EObject current=null]
+// Rule Ingredient
+ruleIngredient returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1109,25 +1061,25 @@ ruleIngridient returns [EObject current=null]
 		(
 			otherlv_0='{'
 			{
-				newLeafNode(otherlv_0, grammarAccess.getIngridientAccess().getLeftCurlyBracketKeyword_0_0());
+				newLeafNode(otherlv_0, grammarAccess.getIngredientAccess().getLeftCurlyBracketKeyword_0_0());
 			}
 			otherlv_1='Name'
 			{
-				newLeafNode(otherlv_1, grammarAccess.getIngridientAccess().getNameKeyword_0_1());
+				newLeafNode(otherlv_1, grammarAccess.getIngredientAccess().getNameKeyword_0_1());
 			}
 			otherlv_2=':'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getIngridientAccess().getColonKeyword_0_2());
+				newLeafNode(otherlv_2, grammarAccess.getIngredientAccess().getColonKeyword_0_2());
 			}
 			(
 				(
 					lv_name_3_0=RULE_STRING
 					{
-						newLeafNode(lv_name_3_0, grammarAccess.getIngridientAccess().getNameSTRINGTerminalRuleCall_0_3_0());
+						newLeafNode(lv_name_3_0, grammarAccess.getIngredientAccess().getNameSTRINGTerminalRuleCall_0_3_0());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getIngridientRule());
+							$current = createModelElement(grammarAccess.getIngredientRule());
 						}
 						setWithLastConsumed(
 							$current,
@@ -1139,25 +1091,25 @@ ruleIngridient returns [EObject current=null]
 			)
 			otherlv_4=','
 			{
-				newLeafNode(otherlv_4, grammarAccess.getIngridientAccess().getCommaKeyword_0_4());
+				newLeafNode(otherlv_4, grammarAccess.getIngredientAccess().getCommaKeyword_0_4());
 			}
 			otherlv_5='Amount'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getIngridientAccess().getAmountKeyword_0_5());
+				newLeafNode(otherlv_5, grammarAccess.getIngredientAccess().getAmountKeyword_0_5());
 			}
 			otherlv_6=':'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getIngridientAccess().getColonKeyword_0_6());
+				newLeafNode(otherlv_6, grammarAccess.getIngredientAccess().getColonKeyword_0_6());
 			}
 			(
 				(
 					lv_amount_7_0=RULE_INT
 					{
-						newLeafNode(lv_amount_7_0, grammarAccess.getIngridientAccess().getAmountINTTerminalRuleCall_0_7_0());
+						newLeafNode(lv_amount_7_0, grammarAccess.getIngredientAccess().getAmountINTTerminalRuleCall_0_7_0());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getIngridientRule());
+							$current = createModelElement(grammarAccess.getIngredientRule());
 						}
 						setWithLastConsumed(
 							$current,
@@ -1169,25 +1121,25 @@ ruleIngridient returns [EObject current=null]
 			)
 			otherlv_8=','
 			{
-				newLeafNode(otherlv_8, grammarAccess.getIngridientAccess().getCommaKeyword_0_8());
+				newLeafNode(otherlv_8, grammarAccess.getIngredientAccess().getCommaKeyword_0_8());
 			}
 			otherlv_9='Unit'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getIngridientAccess().getUnitKeyword_0_9());
+				newLeafNode(otherlv_9, grammarAccess.getIngredientAccess().getUnitKeyword_0_9());
 			}
 			otherlv_10=':'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getIngridientAccess().getColonKeyword_0_10());
+				newLeafNode(otherlv_10, grammarAccess.getIngredientAccess().getColonKeyword_0_10());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getIngridientAccess().getUnitUnitParserRuleCall_0_11_0());
+						newCompositeNode(grammarAccess.getIngredientAccess().getUnitUnitParserRuleCall_0_11_0());
 					}
 					lv_unit_11_0=ruleUnit
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getIngridientRule());
+							$current = createModelElementForParent(grammarAccess.getIngredientRule());
 						}
 						set(
 							$current,
@@ -1200,25 +1152,25 @@ ruleIngridient returns [EObject current=null]
 			)
 			otherlv_12=','
 			{
-				newLeafNode(otherlv_12, grammarAccess.getIngridientAccess().getCommaKeyword_0_12());
+				newLeafNode(otherlv_12, grammarAccess.getIngredientAccess().getCommaKeyword_0_12());
 			}
 			otherlv_13='VeganismLevel'
 			{
-				newLeafNode(otherlv_13, grammarAccess.getIngridientAccess().getVeganismLevelKeyword_0_13());
+				newLeafNode(otherlv_13, grammarAccess.getIngredientAccess().getVeganismLevelKeyword_0_13());
 			}
 			otherlv_14=':'
 			{
-				newLeafNode(otherlv_14, grammarAccess.getIngridientAccess().getColonKeyword_0_14());
+				newLeafNode(otherlv_14, grammarAccess.getIngredientAccess().getColonKeyword_0_14());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getIngridientAccess().getVeganismLevelVeganismLevelParserRuleCall_0_15_0());
+						newCompositeNode(grammarAccess.getIngredientAccess().getVeganismLevelVeganismLevelParserRuleCall_0_15_0());
 					}
 					lv_veganismLevel_15_0=ruleVeganismLevel
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getIngridientRule());
+							$current = createModelElementForParent(grammarAccess.getIngredientRule());
 						}
 						set(
 							$current,
@@ -1231,7 +1183,7 @@ ruleIngridient returns [EObject current=null]
 			)
 			otherlv_16='}'
 			{
-				newLeafNode(otherlv_16, grammarAccess.getIngridientAccess().getRightCurlyBracketKeyword_0_16());
+				newLeafNode(otherlv_16, grammarAccess.getIngredientAccess().getRightCurlyBracketKeyword_0_16());
 			}
 		)
 		    |
@@ -1239,12 +1191,12 @@ ruleIngridient returns [EObject current=null]
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getIngridientRule());
+						$current = createModelElement(grammarAccess.getIngredientRule());
 					}
 				}
 				otherlv_17=RULE_ID
 				{
-					newLeafNode(otherlv_17, grammarAccess.getIngridientAccess().getRecipeRecipeCrossReference_1_0());
+					newLeafNode(otherlv_17, grammarAccess.getIngredientAccess().getRecipeRecipeCrossReference_1_0());
 				}
 			)
 		)

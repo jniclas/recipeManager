@@ -129,10 +129,10 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.INGRIDIENT:
+      case MyDslPackage.INGREDIENT:
       {
-        Ingridient ingridient = (Ingridient)theEObject;
-        T result = caseIngridient(ingridient);
+        Ingredient ingredient = (Ingredient)theEObject;
+        T result = caseIngredient(ingredient);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -269,17 +269,17 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Ingridient</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Ingredient</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Ingridient</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Ingredient</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseIngridient(Ingridient object)
+  public T caseIngredient(Ingredient object)
   {
     return null;
   }

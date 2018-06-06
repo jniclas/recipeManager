@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Rating#getStars <em>Stars</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Rating#getComment <em>Comment</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Rating#getBewertet <em>Bewertet</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Rating#getWrittenBy <em>Written By</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Rating#getAuthor <em>Author</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRating()
@@ -79,55 +78,29 @@ public interface Rating extends EObject
   void setComment(String value);
 
   /**
-   * Returns the value of the '<em><b>Bewertet</b></em>' reference.
+   * Returns the value of the '<em><b>Author</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Bewertet</em>' reference isn't clear,
+   * If the meaning of the '<em>Author</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Bewertet</em>' reference.
-   * @see #setBewertet(Recipe)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRating_Bewertet()
+   * @return the value of the '<em>Author</em>' reference.
+   * @see #setAuthor(Author)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRating_Author()
    * @model
    * @generated
    */
-  Recipe getBewertet();
+  Author getAuthor();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Rating#getBewertet <em>Bewertet</em>}' reference.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Rating#getAuthor <em>Author</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Bewertet</em>' reference.
-   * @see #getBewertet()
+   * @param value the new value of the '<em>Author</em>' reference.
+   * @see #getAuthor()
    * @generated
    */
-  void setBewertet(Recipe value);
-
-  /**
-   * Returns the value of the '<em><b>Written By</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Written By</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Written By</em>' reference.
-   * @see #setWrittenBy(Author)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRating_WrittenBy()
-   * @model
-   * @generated
-   */
-  Author getWrittenBy();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Rating#getWrittenBy <em>Written By</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Written By</em>' reference.
-   * @see #getWrittenBy()
-   * @generated
-   */
-  void setWrittenBy(Author value);
+  void setAuthor(Author value);
 
 } // Rating

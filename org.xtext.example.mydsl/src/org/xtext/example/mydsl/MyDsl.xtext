@@ -15,8 +15,7 @@ Authorblock:
 Author:
 	name = ID ':' "{" 
 		"email" ":" Email = STRING 
-		( ',' "isOwner" ":" "[" isOwner += [Recipe] ("," isOwner+=[Recipe])* "]" )?
-		(',' "writes" ":" "[" writes += Rating ("," writes+=Rating)* "]")?
+		//( ',' "isOwner" ":" "[" isOwner += [Recipe] ("," isOwner+=[Recipe])* "]" )?
 		(',' "calls" ":" "[" calls += [Recipe] ("," calls+=[Recipe])* "]" )?
 	"}"
 ;
@@ -30,9 +29,8 @@ Recipeblock:
 Rating:
 	'{'
 		'Stars' ':' stars=INT ','
-		'Comment' ':' comment=STRING ','
-		'Recipe' ':' bewertet=[Recipe] ','
-		'written' 'by' ':' writtenBy=[Author]','
+		('Comment' ':' comment=STRING ',')?
+		'Author' ':' author=[Author]
 	 '}'
 ;
 
@@ -42,9 +40,10 @@ Recipe:
 		'VeganismLevel' ':' vegan=VeganismLevel ','
 		'Duration' ':' duration=INT ','
 		'Difficulty' ':' difficulty=INT ','
-		'KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (',' kitchenUtensils+=KitchenUtensil)* ']' ','
-		'foodCategory' ':' foodCategory=FoodCategory ','
-		'Ingredients' ':' '[' ingredients+=Ingridient (',' ingredients+=Ingridient)*']'
+		('KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (',' kitchenUtensils+=KitchenUtensil)* ']' ',')?
+		('foodCategory' ':' '[' foodCategory+=FoodCategory (',' foodCategory+=FoodCategory)*']' ',')?
+		'Ingredients' ':' '[' ingredient+=Ingredient (',' ingredient+=Ingredient)*']'
+		(',' "Ratings" ":" "[" ratings += Rating ("," ratings+=Rating)* "]")?
  	'}'
 ;
 
@@ -56,7 +55,7 @@ FoodCategory:
 	name=STRING
 ;
 
-Ingridient:
+Ingredient:
 	('{'
 		'Name' ':' name=STRING ','
 		'Amount' ':' amount=INT ','

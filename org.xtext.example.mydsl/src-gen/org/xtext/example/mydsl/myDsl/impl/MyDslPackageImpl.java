@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.xtext.example.mydsl.myDsl.Author;
 import org.xtext.example.mydsl.myDsl.Authorblock;
 import org.xtext.example.mydsl.myDsl.FoodCategory;
-import org.xtext.example.mydsl.myDsl.Ingridient;
+import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.KitchenUtensil;
 import org.xtext.example.mydsl.myDsl.MyDslFactory;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
@@ -91,7 +91,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass ingridientEClass = null;
+  private EClass ingredientEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -241,29 +241,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAuthor_IsOwner()
-  {
-    return (EReference)authorEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAuthor_Writes()
-  {
-    return (EReference)authorEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getAuthor_Calls()
   {
-    return (EReference)authorEClass.getEStructuralFeatures().get(4);
+    return (EReference)authorEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -321,19 +301,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRating_Bewertet()
+  public EReference getRating_Author()
   {
     return (EReference)ratingEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRating_WrittenBy()
-  {
-    return (EReference)ratingEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -421,9 +391,19 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRecipe_Ingredients()
+  public EReference getRecipe_Ingredient()
   {
     return (EReference)recipeEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRecipe_Ratings()
+  {
+    return (EReference)recipeEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -471,9 +451,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getIngridient()
+  public EClass getIngredient()
   {
-    return ingridientEClass;
+    return ingredientEClass;
   }
 
   /**
@@ -481,9 +461,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIngridient_Name()
+  public EAttribute getIngredient_Name()
   {
-    return (EAttribute)ingridientEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)ingredientEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -491,9 +471,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIngridient_Amount()
+  public EAttribute getIngredient_Amount()
   {
-    return (EAttribute)ingridientEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)ingredientEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -501,9 +481,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIngridient_Unit()
+  public EAttribute getIngredient_Unit()
   {
-    return (EAttribute)ingridientEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)ingredientEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -511,9 +491,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIngridient_VeganismLevel()
+  public EAttribute getIngredient_VeganismLevel()
   {
-    return (EAttribute)ingridientEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)ingredientEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -521,9 +501,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getIngridient_Recipe()
+  public EReference getIngredient_Recipe()
   {
-    return (EReference)ingridientEClass.getEStructuralFeatures().get(4);
+    return (EReference)ingredientEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -566,8 +546,6 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     authorEClass = createEClass(AUTHOR);
     createEAttribute(authorEClass, AUTHOR__NAME);
     createEAttribute(authorEClass, AUTHOR__EMAIL);
-    createEReference(authorEClass, AUTHOR__IS_OWNER);
-    createEReference(authorEClass, AUTHOR__WRITES);
     createEReference(authorEClass, AUTHOR__CALLS);
 
     recipeblockEClass = createEClass(RECIPEBLOCK);
@@ -576,8 +554,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     ratingEClass = createEClass(RATING);
     createEAttribute(ratingEClass, RATING__STARS);
     createEAttribute(ratingEClass, RATING__COMMENT);
-    createEReference(ratingEClass, RATING__BEWERTET);
-    createEReference(ratingEClass, RATING__WRITTEN_BY);
+    createEReference(ratingEClass, RATING__AUTHOR);
 
     recipeEClass = createEClass(RECIPE);
     createEAttribute(recipeEClass, RECIPE__NAME);
@@ -587,7 +564,8 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEAttribute(recipeEClass, RECIPE__DIFFICULTY);
     createEReference(recipeEClass, RECIPE__KITCHEN_UTENSILS);
     createEReference(recipeEClass, RECIPE__FOOD_CATEGORY);
-    createEReference(recipeEClass, RECIPE__INGREDIENTS);
+    createEReference(recipeEClass, RECIPE__INGREDIENT);
+    createEReference(recipeEClass, RECIPE__RATINGS);
 
     kitchenUtensilEClass = createEClass(KITCHEN_UTENSIL);
     createEAttribute(kitchenUtensilEClass, KITCHEN_UTENSIL__NAME);
@@ -595,12 +573,12 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     foodCategoryEClass = createEClass(FOOD_CATEGORY);
     createEAttribute(foodCategoryEClass, FOOD_CATEGORY__NAME);
 
-    ingridientEClass = createEClass(INGRIDIENT);
-    createEAttribute(ingridientEClass, INGRIDIENT__NAME);
-    createEAttribute(ingridientEClass, INGRIDIENT__AMOUNT);
-    createEAttribute(ingridientEClass, INGRIDIENT__UNIT);
-    createEAttribute(ingridientEClass, INGRIDIENT__VEGANISM_LEVEL);
-    createEReference(ingridientEClass, INGRIDIENT__RECIPE);
+    ingredientEClass = createEClass(INGREDIENT);
+    createEAttribute(ingredientEClass, INGREDIENT__NAME);
+    createEAttribute(ingredientEClass, INGREDIENT__AMOUNT);
+    createEAttribute(ingredientEClass, INGREDIENT__UNIT);
+    createEAttribute(ingredientEClass, INGREDIENT__VEGANISM_LEVEL);
+    createEReference(ingredientEClass, INGREDIENT__RECIPE);
   }
 
   /**
@@ -644,8 +622,6 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(authorEClass, Author.class, "Author", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAuthor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAuthor_Email(), ecorePackage.getEString(), "Email", null, 0, 1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAuthor_IsOwner(), this.getRecipe(), null, "isOwner", null, 0, -1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAuthor_Writes(), this.getRating(), null, "writes", null, 0, -1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAuthor_Calls(), this.getRecipe(), null, "calls", null, 0, -1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(recipeblockEClass, Recipeblock.class, "Recipeblock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -654,8 +630,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(ratingEClass, Rating.class, "Rating", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRating_Stars(), ecorePackage.getEInt(), "stars", null, 0, 1, Rating.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRating_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Rating.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRating_Bewertet(), this.getRecipe(), null, "bewertet", null, 0, 1, Rating.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRating_WrittenBy(), this.getAuthor(), null, "writtenBy", null, 0, 1, Rating.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRating_Author(), this.getAuthor(), null, "author", null, 0, 1, Rating.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(recipeEClass, Recipe.class, "Recipe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRecipe_Name(), ecorePackage.getEString(), "name", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -664,8 +639,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEAttribute(getRecipe_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRecipe_Difficulty(), ecorePackage.getEInt(), "difficulty", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecipe_KitchenUtensils(), this.getKitchenUtensil(), null, "kitchenUtensils", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRecipe_FoodCategory(), this.getFoodCategory(), null, "foodCategory", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRecipe_Ingredients(), this.getIngridient(), null, "ingredients", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecipe_FoodCategory(), this.getFoodCategory(), null, "foodCategory", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecipe_Ingredient(), this.getIngredient(), null, "ingredient", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecipe_Ratings(), this.getRating(), null, "ratings", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(kitchenUtensilEClass, KitchenUtensil.class, "KitchenUtensil", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getKitchenUtensil_Name(), ecorePackage.getEString(), "name", null, 0, 1, KitchenUtensil.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -673,12 +649,12 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(foodCategoryEClass, FoodCategory.class, "FoodCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFoodCategory_Name(), ecorePackage.getEString(), "name", null, 0, 1, FoodCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(ingridientEClass, Ingridient.class, "Ingridient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIngridient_Name(), ecorePackage.getEString(), "name", null, 0, 1, Ingridient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIngridient_Amount(), ecorePackage.getEInt(), "amount", null, 0, 1, Ingridient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIngridient_Unit(), ecorePackage.getEString(), "unit", null, 0, 1, Ingridient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIngridient_VeganismLevel(), ecorePackage.getEString(), "veganismLevel", null, 0, 1, Ingridient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIngridient_Recipe(), this.getRecipe(), null, "recipe", null, 0, 1, Ingridient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(ingredientEClass, Ingredient.class, "Ingredient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIngredient_Name(), ecorePackage.getEString(), "name", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIngredient_Amount(), ecorePackage.getEInt(), "amount", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIngredient_Unit(), ecorePackage.getEString(), "unit", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIngredient_VeganismLevel(), ecorePackage.getEString(), "veganismLevel", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIngredient_Recipe(), this.getRecipe(), null, "recipe", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

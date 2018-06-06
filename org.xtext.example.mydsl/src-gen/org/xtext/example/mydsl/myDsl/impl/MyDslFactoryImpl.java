@@ -73,7 +73,7 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.RECIPE: return createRecipe();
       case MyDslPackage.KITCHEN_UTENSIL: return createKitchenUtensil();
       case MyDslPackage.FOOD_CATEGORY: return createFoodCategory();
-      case MyDslPackage.INGRIDIENT: return createIngridient();
+      case MyDslPackage.INGREDIENT: return createIngredient();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -172,10 +172,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Ingridient createIngridient()
+  public Ingredient createIngredient()
   {
-    IngridientImpl ingridient = new IngridientImpl();
-    return ingridient;
+    IngredientImpl ingredient = new IngredientImpl();
+    return ingredient;
   }
 
   /**

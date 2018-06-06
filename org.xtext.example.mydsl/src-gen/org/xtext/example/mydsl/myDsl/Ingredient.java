@@ -7,25 +7,25 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Ingridient</b></em>'.
+ * A representation of the model object '<em><b>Ingredient</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Ingridient#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Ingridient#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Ingridient#getUnit <em>Unit</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Ingridient#getVeganismLevel <em>Veganism Level</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Ingridient#getRecipe <em>Recipe</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Ingredient#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Ingredient#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Ingredient#getUnit <em>Unit</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Ingredient#getVeganismLevel <em>Veganism Level</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Ingredient#getRecipe <em>Recipe</em>}</li>
  * </ul>
  *
- * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngridient()
+ * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngredient()
  * @model
  * @generated
  */
-public interface Ingridient extends EObject
+public interface Ingredient extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -37,14 +37,14 @@ public interface Ingridient extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngridient_Name()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngredient_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Ingridient#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Ingredient#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -63,14 +63,14 @@ public interface Ingridient extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Amount</em>' attribute.
    * @see #setAmount(int)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngridient_Amount()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngredient_Amount()
    * @model
    * @generated
    */
   int getAmount();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Ingridient#getAmount <em>Amount</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Ingredient#getAmount <em>Amount</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Amount</em>' attribute.
@@ -89,14 +89,14 @@ public interface Ingridient extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Unit</em>' attribute.
    * @see #setUnit(String)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngridient_Unit()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngredient_Unit()
    * @model
    * @generated
    */
   String getUnit();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Ingridient#getUnit <em>Unit</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Ingredient#getUnit <em>Unit</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Unit</em>' attribute.
@@ -115,14 +115,14 @@ public interface Ingridient extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Veganism Level</em>' attribute.
    * @see #setVeganismLevel(String)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngridient_VeganismLevel()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngredient_VeganismLevel()
    * @model
    * @generated
    */
   String getVeganismLevel();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Ingridient#getVeganismLevel <em>Veganism Level</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Ingredient#getVeganismLevel <em>Veganism Level</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Veganism Level</em>' attribute.
@@ -141,14 +141,14 @@ public interface Ingridient extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Recipe</em>' reference.
    * @see #setRecipe(Recipe)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngridient_Recipe()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngredient_Recipe()
    * @model
    * @generated
    */
   Recipe getRecipe();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Ingridient#getRecipe <em>Recipe</em>}' reference.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Ingredient#getRecipe <em>Recipe</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Recipe</em>' reference.
@@ -157,4 +157,4 @@ public interface Ingridient extends EObject
    */
   void setRecipe(Recipe value);
 
-} // Ingridient
+} // Ingredient

@@ -116,9 +116,9 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createFoodCategoryAdapter();
       }
       @Override
-      public Adapter caseIngridient(Ingridient object)
+      public Adapter caseIngredient(Ingredient object)
       {
-        return createIngridientAdapter();
+        return createIngredientAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -263,16 +263,16 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Ingridient <em>Ingridient</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Ingredient <em>Ingredient</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.Ingridient
+   * @see org.xtext.example.mydsl.myDsl.Ingredient
    * @generated
    */
-  public Adapter createIngridientAdapter()
+  public Adapter createIngredientAdapter()
   {
     return null;
   }

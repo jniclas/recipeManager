@@ -23,7 +23,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.mydsl.myDsl.Recipe#getDifficulty <em>Difficulty</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Recipe#getKitchenUtensils <em>Kitchen Utensils</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Recipe#getFoodCategory <em>Food Category</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Recipe#getIngredients <em>Ingredients</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Recipe#getIngredient <em>Ingredient</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Recipe#getRatings <em>Ratings</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRecipe()
@@ -179,45 +180,51 @@ public interface Recipe extends EObject
   EList<KitchenUtensil> getKitchenUtensils();
 
   /**
-   * Returns the value of the '<em><b>Food Category</b></em>' containment reference.
+   * Returns the value of the '<em><b>Food Category</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.FoodCategory}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Food Category</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Food Category</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Food Category</em>' containment reference.
-   * @see #setFoodCategory(FoodCategory)
+   * @return the value of the '<em>Food Category</em>' containment reference list.
    * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRecipe_FoodCategory()
    * @model containment="true"
    * @generated
    */
-  FoodCategory getFoodCategory();
+  EList<FoodCategory> getFoodCategory();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Recipe#getFoodCategory <em>Food Category</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Food Category</em>' containment reference.
-   * @see #getFoodCategory()
-   * @generated
-   */
-  void setFoodCategory(FoodCategory value);
-
-  /**
-   * Returns the value of the '<em><b>Ingredients</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Ingridient}.
+   * Returns the value of the '<em><b>Ingredient</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Ingredient}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Ingredients</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Ingredient</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ingredients</em>' containment reference list.
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRecipe_Ingredients()
+   * @return the value of the '<em>Ingredient</em>' containment reference list.
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRecipe_Ingredient()
    * @model containment="true"
    * @generated
    */
-  EList<Ingridient> getIngredients();
+  EList<Ingredient> getIngredient();
+
+  /**
+   * Returns the value of the '<em><b>Ratings</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Rating}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ratings</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ratings</em>' containment reference list.
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRecipe_Ratings()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Rating> getRatings();
 
 } // Recipe

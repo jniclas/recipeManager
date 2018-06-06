@@ -151,31 +151,13 @@ public interface MyDslPackage extends EPackage
   int AUTHOR__EMAIL = 1;
 
   /**
-   * The feature id for the '<em><b>Is Owner</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AUTHOR__IS_OWNER = 2;
-
-  /**
-   * The feature id for the '<em><b>Writes</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AUTHOR__WRITES = 3;
-
-  /**
    * The feature id for the '<em><b>Calls</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AUTHOR__CALLS = 4;
+  int AUTHOR__CALLS = 2;
 
   /**
    * The number of structural features of the '<em>Author</em>' class.
@@ -184,7 +166,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AUTHOR_FEATURE_COUNT = 5;
+  int AUTHOR_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.RecipeblockImpl <em>Recipeblock</em>}' class.
@@ -243,22 +225,13 @@ public interface MyDslPackage extends EPackage
   int RATING__COMMENT = 1;
 
   /**
-   * The feature id for the '<em><b>Bewertet</b></em>' reference.
+   * The feature id for the '<em><b>Author</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RATING__BEWERTET = 2;
-
-  /**
-   * The feature id for the '<em><b>Written By</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RATING__WRITTEN_BY = 3;
+  int RATING__AUTHOR = 2;
 
   /**
    * The number of structural features of the '<em>Rating</em>' class.
@@ -267,7 +240,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RATING_FEATURE_COUNT = 4;
+  int RATING_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl <em>Recipe</em>}' class.
@@ -334,7 +307,7 @@ public interface MyDslPackage extends EPackage
   int RECIPE__KITCHEN_UTENSILS = 5;
 
   /**
-   * The feature id for the '<em><b>Food Category</b></em>' containment reference.
+   * The feature id for the '<em><b>Food Category</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -343,13 +316,22 @@ public interface MyDslPackage extends EPackage
   int RECIPE__FOOD_CATEGORY = 6;
 
   /**
-   * The feature id for the '<em><b>Ingredients</b></em>' containment reference list.
+   * The feature id for the '<em><b>Ingredient</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECIPE__INGREDIENTS = 7;
+  int RECIPE__INGREDIENT = 7;
+
+  /**
+   * The feature id for the '<em><b>Ratings</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECIPE__RATINGS = 8;
 
   /**
    * The number of structural features of the '<em>Recipe</em>' class.
@@ -358,7 +340,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECIPE_FEATURE_COUNT = 8;
+  int RECIPE_FEATURE_COUNT = 9;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.KitchenUtensilImpl <em>Kitchen Utensil</em>}' class.
@@ -417,14 +399,14 @@ public interface MyDslPackage extends EPackage
   int FOOD_CATEGORY_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.IngridientImpl <em>Ingridient</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.IngredientImpl <em>Ingredient</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.IngridientImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getIngridient()
+   * @see org.xtext.example.mydsl.myDsl.impl.IngredientImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getIngredient()
    * @generated
    */
-  int INGRIDIENT = 8;
+  int INGREDIENT = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -433,7 +415,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INGRIDIENT__NAME = 0;
+  int INGREDIENT__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -442,7 +424,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INGRIDIENT__AMOUNT = 1;
+  int INGREDIENT__AMOUNT = 1;
 
   /**
    * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -451,7 +433,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INGRIDIENT__UNIT = 2;
+  int INGREDIENT__UNIT = 2;
 
   /**
    * The feature id for the '<em><b>Veganism Level</b></em>' attribute.
@@ -460,7 +442,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INGRIDIENT__VEGANISM_LEVEL = 3;
+  int INGREDIENT__VEGANISM_LEVEL = 3;
 
   /**
    * The feature id for the '<em><b>Recipe</b></em>' reference.
@@ -469,16 +451,16 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INGRIDIENT__RECIPE = 4;
+  int INGREDIENT__RECIPE = 4;
 
   /**
-   * The number of structural features of the '<em>Ingridient</em>' class.
+   * The number of structural features of the '<em>Ingredient</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INGRIDIENT_FEATURE_COUNT = 5;
+  int INGREDIENT_FEATURE_COUNT = 5;
 
 
   /**
@@ -567,28 +549,6 @@ public interface MyDslPackage extends EPackage
   EAttribute getAuthor_Email();
 
   /**
-   * Returns the meta object for the reference list '{@link org.xtext.example.mydsl.myDsl.Author#getIsOwner <em>Is Owner</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Is Owner</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Author#getIsOwner()
-   * @see #getAuthor()
-   * @generated
-   */
-  EReference getAuthor_IsOwner();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Author#getWrites <em>Writes</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Writes</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Author#getWrites()
-   * @see #getAuthor()
-   * @generated
-   */
-  EReference getAuthor_Writes();
-
-  /**
    * Returns the meta object for the reference list '{@link org.xtext.example.mydsl.myDsl.Author#getCalls <em>Calls</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -653,26 +613,15 @@ public interface MyDslPackage extends EPackage
   EAttribute getRating_Comment();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.example.mydsl.myDsl.Rating#getBewertet <em>Bewertet</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.mydsl.myDsl.Rating#getAuthor <em>Author</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Bewertet</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Rating#getBewertet()
+   * @return the meta object for the reference '<em>Author</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Rating#getAuthor()
    * @see #getRating()
    * @generated
    */
-  EReference getRating_Bewertet();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.example.mydsl.myDsl.Rating#getWrittenBy <em>Written By</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Written By</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Rating#getWrittenBy()
-   * @see #getRating()
-   * @generated
-   */
-  EReference getRating_WrittenBy();
+  EReference getRating_Author();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Recipe <em>Recipe</em>}'.
@@ -751,10 +700,10 @@ public interface MyDslPackage extends EPackage
   EReference getRecipe_KitchenUtensils();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Recipe#getFoodCategory <em>Food Category</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Recipe#getFoodCategory <em>Food Category</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Food Category</em>'.
+   * @return the meta object for the containment reference list '<em>Food Category</em>'.
    * @see org.xtext.example.mydsl.myDsl.Recipe#getFoodCategory()
    * @see #getRecipe()
    * @generated
@@ -762,15 +711,26 @@ public interface MyDslPackage extends EPackage
   EReference getRecipe_FoodCategory();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Recipe#getIngredients <em>Ingredients</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Recipe#getIngredient <em>Ingredient</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Ingredients</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Recipe#getIngredients()
+   * @return the meta object for the containment reference list '<em>Ingredient</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Recipe#getIngredient()
    * @see #getRecipe()
    * @generated
    */
-  EReference getRecipe_Ingredients();
+  EReference getRecipe_Ingredient();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Recipe#getRatings <em>Ratings</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Ratings</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Recipe#getRatings()
+   * @see #getRecipe()
+   * @generated
+   */
+  EReference getRecipe_Ratings();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.KitchenUtensil <em>Kitchen Utensil</em>}'.
@@ -815,69 +775,69 @@ public interface MyDslPackage extends EPackage
   EAttribute getFoodCategory_Name();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Ingridient <em>Ingridient</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Ingredient <em>Ingredient</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Ingridient</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Ingridient
+   * @return the meta object for class '<em>Ingredient</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Ingredient
    * @generated
    */
-  EClass getIngridient();
+  EClass getIngredient();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Ingridient#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Ingredient#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Ingridient#getName()
-   * @see #getIngridient()
+   * @see org.xtext.example.mydsl.myDsl.Ingredient#getName()
+   * @see #getIngredient()
    * @generated
    */
-  EAttribute getIngridient_Name();
+  EAttribute getIngredient_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Ingridient#getAmount <em>Amount</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Ingredient#getAmount <em>Amount</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Amount</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Ingridient#getAmount()
-   * @see #getIngridient()
+   * @see org.xtext.example.mydsl.myDsl.Ingredient#getAmount()
+   * @see #getIngredient()
    * @generated
    */
-  EAttribute getIngridient_Amount();
+  EAttribute getIngredient_Amount();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Ingridient#getUnit <em>Unit</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Ingredient#getUnit <em>Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Unit</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Ingridient#getUnit()
-   * @see #getIngridient()
+   * @see org.xtext.example.mydsl.myDsl.Ingredient#getUnit()
+   * @see #getIngredient()
    * @generated
    */
-  EAttribute getIngridient_Unit();
+  EAttribute getIngredient_Unit();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Ingridient#getVeganismLevel <em>Veganism Level</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Ingredient#getVeganismLevel <em>Veganism Level</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Veganism Level</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Ingridient#getVeganismLevel()
-   * @see #getIngridient()
+   * @see org.xtext.example.mydsl.myDsl.Ingredient#getVeganismLevel()
+   * @see #getIngredient()
    * @generated
    */
-  EAttribute getIngridient_VeganismLevel();
+  EAttribute getIngredient_VeganismLevel();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.example.mydsl.myDsl.Ingridient#getRecipe <em>Recipe</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.mydsl.myDsl.Ingredient#getRecipe <em>Recipe</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Recipe</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Ingridient#getRecipe()
-   * @see #getIngridient()
+   * @see org.xtext.example.mydsl.myDsl.Ingredient#getRecipe()
+   * @see #getIngredient()
    * @generated
    */
-  EReference getIngridient_Recipe();
+  EReference getIngredient_Recipe();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -973,22 +933,6 @@ public interface MyDslPackage extends EPackage
     EAttribute AUTHOR__EMAIL = eINSTANCE.getAuthor_Email();
 
     /**
-     * The meta object literal for the '<em><b>Is Owner</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference AUTHOR__IS_OWNER = eINSTANCE.getAuthor_IsOwner();
-
-    /**
-     * The meta object literal for the '<em><b>Writes</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference AUTHOR__WRITES = eINSTANCE.getAuthor_Writes();
-
-    /**
      * The meta object literal for the '<em><b>Calls</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1041,20 +985,12 @@ public interface MyDslPackage extends EPackage
     EAttribute RATING__COMMENT = eINSTANCE.getRating_Comment();
 
     /**
-     * The meta object literal for the '<em><b>Bewertet</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Author</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RATING__BEWERTET = eINSTANCE.getRating_Bewertet();
-
-    /**
-     * The meta object literal for the '<em><b>Written By</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RATING__WRITTEN_BY = eINSTANCE.getRating_WrittenBy();
+    EReference RATING__AUTHOR = eINSTANCE.getRating_Author();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl <em>Recipe</em>}' class.
@@ -1115,7 +1051,7 @@ public interface MyDslPackage extends EPackage
     EReference RECIPE__KITCHEN_UTENSILS = eINSTANCE.getRecipe_KitchenUtensils();
 
     /**
-     * The meta object literal for the '<em><b>Food Category</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Food Category</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1123,12 +1059,20 @@ public interface MyDslPackage extends EPackage
     EReference RECIPE__FOOD_CATEGORY = eINSTANCE.getRecipe_FoodCategory();
 
     /**
-     * The meta object literal for the '<em><b>Ingredients</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Ingredient</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RECIPE__INGREDIENTS = eINSTANCE.getRecipe_Ingredients();
+    EReference RECIPE__INGREDIENT = eINSTANCE.getRecipe_Ingredient();
+
+    /**
+     * The meta object literal for the '<em><b>Ratings</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECIPE__RATINGS = eINSTANCE.getRecipe_Ratings();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.KitchenUtensilImpl <em>Kitchen Utensil</em>}' class.
@@ -1167,14 +1111,14 @@ public interface MyDslPackage extends EPackage
     EAttribute FOOD_CATEGORY__NAME = eINSTANCE.getFoodCategory_Name();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.IngridientImpl <em>Ingridient</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.IngredientImpl <em>Ingredient</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.IngridientImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getIngridient()
+     * @see org.xtext.example.mydsl.myDsl.impl.IngredientImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getIngredient()
      * @generated
      */
-    EClass INGRIDIENT = eINSTANCE.getIngridient();
+    EClass INGREDIENT = eINSTANCE.getIngredient();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1182,7 +1126,7 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INGRIDIENT__NAME = eINSTANCE.getIngridient_Name();
+    EAttribute INGREDIENT__NAME = eINSTANCE.getIngredient_Name();
 
     /**
      * The meta object literal for the '<em><b>Amount</b></em>' attribute feature.
@@ -1190,7 +1134,7 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INGRIDIENT__AMOUNT = eINSTANCE.getIngridient_Amount();
+    EAttribute INGREDIENT__AMOUNT = eINSTANCE.getIngredient_Amount();
 
     /**
      * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
@@ -1198,7 +1142,7 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INGRIDIENT__UNIT = eINSTANCE.getIngridient_Unit();
+    EAttribute INGREDIENT__UNIT = eINSTANCE.getIngredient_Unit();
 
     /**
      * The meta object literal for the '<em><b>Veganism Level</b></em>' attribute feature.
@@ -1206,7 +1150,7 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INGRIDIENT__VEGANISM_LEVEL = eINSTANCE.getIngridient_VeganismLevel();
+    EAttribute INGREDIENT__VEGANISM_LEVEL = eINSTANCE.getIngredient_VeganismLevel();
 
     /**
      * The meta object literal for the '<em><b>Recipe</b></em>' reference feature.
@@ -1214,7 +1158,7 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INGRIDIENT__RECIPE = eINSTANCE.getIngridient_Recipe();
+    EReference INGREDIENT__RECIPE = eINSTANCE.getIngredient_Recipe();
 
   }
 

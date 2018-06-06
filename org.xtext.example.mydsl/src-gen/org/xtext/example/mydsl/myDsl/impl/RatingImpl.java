@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.xtext.example.mydsl.myDsl.Author;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Rating;
-import org.xtext.example.mydsl.myDsl.Recipe;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,8 +25,7 @@ import org.xtext.example.mydsl.myDsl.Recipe;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RatingImpl#getStars <em>Stars</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RatingImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RatingImpl#getBewertet <em>Bewertet</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RatingImpl#getWrittenBy <em>Written By</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RatingImpl#getAuthor <em>Author</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,24 +73,14 @@ public class RatingImpl extends MinimalEObjectImpl.Container implements Rating
   protected String comment = COMMENT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getBewertet() <em>Bewertet</em>}' reference.
+   * The cached value of the '{@link #getAuthor() <em>Author</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBewertet()
+   * @see #getAuthor()
    * @generated
    * @ordered
    */
-  protected Recipe bewertet;
-
-  /**
-   * The cached value of the '{@link #getWrittenBy() <em>Written By</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getWrittenBy()
-   * @generated
-   * @ordered
-   */
-  protected Author writtenBy;
+  protected Author author;
 
   /**
    * <!-- begin-user-doc -->
@@ -166,19 +154,19 @@ public class RatingImpl extends MinimalEObjectImpl.Container implements Rating
    * <!-- end-user-doc -->
    * @generated
    */
-  public Recipe getBewertet()
+  public Author getAuthor()
   {
-    if (bewertet != null && bewertet.eIsProxy())
+    if (author != null && author.eIsProxy())
     {
-      InternalEObject oldBewertet = (InternalEObject)bewertet;
-      bewertet = (Recipe)eResolveProxy(oldBewertet);
-      if (bewertet != oldBewertet)
+      InternalEObject oldAuthor = (InternalEObject)author;
+      author = (Author)eResolveProxy(oldAuthor);
+      if (author != oldAuthor)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MyDslPackage.RATING__BEWERTET, oldBewertet, bewertet));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MyDslPackage.RATING__AUTHOR, oldAuthor, author));
       }
     }
-    return bewertet;
+    return author;
   }
 
   /**
@@ -186,9 +174,9 @@ public class RatingImpl extends MinimalEObjectImpl.Container implements Rating
    * <!-- end-user-doc -->
    * @generated
    */
-  public Recipe basicGetBewertet()
+  public Author basicGetAuthor()
   {
-    return bewertet;
+    return author;
   }
 
   /**
@@ -196,55 +184,12 @@ public class RatingImpl extends MinimalEObjectImpl.Container implements Rating
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBewertet(Recipe newBewertet)
+  public void setAuthor(Author newAuthor)
   {
-    Recipe oldBewertet = bewertet;
-    bewertet = newBewertet;
+    Author oldAuthor = author;
+    author = newAuthor;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.RATING__BEWERTET, oldBewertet, bewertet));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Author getWrittenBy()
-  {
-    if (writtenBy != null && writtenBy.eIsProxy())
-    {
-      InternalEObject oldWrittenBy = (InternalEObject)writtenBy;
-      writtenBy = (Author)eResolveProxy(oldWrittenBy);
-      if (writtenBy != oldWrittenBy)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MyDslPackage.RATING__WRITTEN_BY, oldWrittenBy, writtenBy));
-      }
-    }
-    return writtenBy;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Author basicGetWrittenBy()
-  {
-    return writtenBy;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setWrittenBy(Author newWrittenBy)
-  {
-    Author oldWrittenBy = writtenBy;
-    writtenBy = newWrittenBy;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.RATING__WRITTEN_BY, oldWrittenBy, writtenBy));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.RATING__AUTHOR, oldAuthor, author));
   }
 
   /**
@@ -261,12 +206,9 @@ public class RatingImpl extends MinimalEObjectImpl.Container implements Rating
         return getStars();
       case MyDslPackage.RATING__COMMENT:
         return getComment();
-      case MyDslPackage.RATING__BEWERTET:
-        if (resolve) return getBewertet();
-        return basicGetBewertet();
-      case MyDslPackage.RATING__WRITTEN_BY:
-        if (resolve) return getWrittenBy();
-        return basicGetWrittenBy();
+      case MyDslPackage.RATING__AUTHOR:
+        if (resolve) return getAuthor();
+        return basicGetAuthor();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -287,11 +229,8 @@ public class RatingImpl extends MinimalEObjectImpl.Container implements Rating
       case MyDslPackage.RATING__COMMENT:
         setComment((String)newValue);
         return;
-      case MyDslPackage.RATING__BEWERTET:
-        setBewertet((Recipe)newValue);
-        return;
-      case MyDslPackage.RATING__WRITTEN_BY:
-        setWrittenBy((Author)newValue);
+      case MyDslPackage.RATING__AUTHOR:
+        setAuthor((Author)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -313,11 +252,8 @@ public class RatingImpl extends MinimalEObjectImpl.Container implements Rating
       case MyDslPackage.RATING__COMMENT:
         setComment(COMMENT_EDEFAULT);
         return;
-      case MyDslPackage.RATING__BEWERTET:
-        setBewertet((Recipe)null);
-        return;
-      case MyDslPackage.RATING__WRITTEN_BY:
-        setWrittenBy((Author)null);
+      case MyDslPackage.RATING__AUTHOR:
+        setAuthor((Author)null);
         return;
     }
     super.eUnset(featureID);
@@ -337,10 +273,8 @@ public class RatingImpl extends MinimalEObjectImpl.Container implements Rating
         return stars != STARS_EDEFAULT;
       case MyDslPackage.RATING__COMMENT:
         return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-      case MyDslPackage.RATING__BEWERTET:
-        return bewertet != null;
-      case MyDslPackage.RATING__WRITTEN_BY:
-        return writtenBy != null;
+      case MyDslPackage.RATING__AUTHOR:
+        return author != null;
     }
     return super.eIsSet(featureID);
   }

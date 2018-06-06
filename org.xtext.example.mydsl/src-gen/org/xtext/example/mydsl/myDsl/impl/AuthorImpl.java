@@ -6,23 +6,18 @@ package org.xtext.example.mydsl.myDsl.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.mydsl.myDsl.Author;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
-import org.xtext.example.mydsl.myDsl.Rating;
 import org.xtext.example.mydsl.myDsl.Recipe;
 
 /**
@@ -35,8 +30,6 @@ import org.xtext.example.mydsl.myDsl.Recipe;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.AuthorImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.AuthorImpl#getEmail <em>Email</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.AuthorImpl#getIsOwner <em>Is Owner</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.AuthorImpl#getWrites <em>Writes</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.AuthorImpl#getCalls <em>Calls</em>}</li>
  * </ul>
  *
@@ -83,26 +76,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
    * @ordered
    */
   protected String email = EMAIL_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getIsOwner() <em>Is Owner</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIsOwner()
-   * @generated
-   * @ordered
-   */
-  protected EList<Recipe> isOwner;
-
-  /**
-   * The cached value of the '{@link #getWrites() <em>Writes</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getWrites()
-   * @generated
-   * @ordered
-   */
-  protected EList<Rating> writes;
 
   /**
    * The cached value of the '{@link #getCalls() <em>Calls</em>}' reference list.
@@ -186,34 +159,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Recipe> getIsOwner()
-  {
-    if (isOwner == null)
-    {
-      isOwner = new EObjectResolvingEList<Recipe>(Recipe.class, this, MyDslPackage.AUTHOR__IS_OWNER);
-    }
-    return isOwner;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Rating> getWrites()
-  {
-    if (writes == null)
-    {
-      writes = new EObjectContainmentEList<Rating>(Rating.class, this, MyDslPackage.AUTHOR__WRITES);
-    }
-    return writes;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Recipe> getCalls()
   {
     if (calls == null)
@@ -221,22 +166,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
       calls = new EObjectResolvingEList<Recipe>(Recipe.class, this, MyDslPackage.AUTHOR__CALLS);
     }
     return calls;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MyDslPackage.AUTHOR__WRITES:
-        return ((InternalEList<?>)getWrites()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -253,10 +182,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
         return getName();
       case MyDslPackage.AUTHOR__EMAIL:
         return getEmail();
-      case MyDslPackage.AUTHOR__IS_OWNER:
-        return getIsOwner();
-      case MyDslPackage.AUTHOR__WRITES:
-        return getWrites();
       case MyDslPackage.AUTHOR__CALLS:
         return getCalls();
     }
@@ -279,14 +204,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
         return;
       case MyDslPackage.AUTHOR__EMAIL:
         setEmail((String)newValue);
-        return;
-      case MyDslPackage.AUTHOR__IS_OWNER:
-        getIsOwner().clear();
-        getIsOwner().addAll((Collection<? extends Recipe>)newValue);
-        return;
-      case MyDslPackage.AUTHOR__WRITES:
-        getWrites().clear();
-        getWrites().addAll((Collection<? extends Rating>)newValue);
         return;
       case MyDslPackage.AUTHOR__CALLS:
         getCalls().clear();
@@ -312,12 +229,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
       case MyDslPackage.AUTHOR__EMAIL:
         setEmail(EMAIL_EDEFAULT);
         return;
-      case MyDslPackage.AUTHOR__IS_OWNER:
-        getIsOwner().clear();
-        return;
-      case MyDslPackage.AUTHOR__WRITES:
-        getWrites().clear();
-        return;
       case MyDslPackage.AUTHOR__CALLS:
         getCalls().clear();
         return;
@@ -339,10 +250,6 @@ public class AuthorImpl extends MinimalEObjectImpl.Container implements Author
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MyDslPackage.AUTHOR__EMAIL:
         return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
-      case MyDslPackage.AUTHOR__IS_OWNER:
-        return isOwner != null && !isOwner.isEmpty();
-      case MyDslPackage.AUTHOR__WRITES:
-        return writes != null && !writes.isEmpty();
       case MyDslPackage.AUTHOR__CALLS:
         return calls != null && !calls.isEmpty();
     }

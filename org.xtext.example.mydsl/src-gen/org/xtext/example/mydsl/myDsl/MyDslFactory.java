@@ -96,13 +96,13 @@ public interface MyDslFactory extends EFactory
   FoodCategory createFoodCategory();
 
   /**
-   * Returns a new object of class '<em>Ingridient</em>'.
+   * Returns a new object of class '<em>Ingredient</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Ingridient</em>'.
+   * @return a new object of class '<em>Ingredient</em>'.
    * @generated
    */
-  Ingridient createIngridient();
+  Ingredient createIngredient();
 
   /**
    * Returns the package supported by this factory.
