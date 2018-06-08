@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.mydsl.myDsl.Author;
+import org.xtext.example.mydsl.myDsl.DifficultyLevel;
 import org.xtext.example.mydsl.myDsl.FoodCategory;
 import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.KitchenUtensil;
@@ -121,24 +122,14 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
   protected int duration = DURATION_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDifficulty() <em>Difficulty</em>}' attribute.
+   * The cached value of the '{@link #getDifficulty() <em>Difficulty</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDifficulty()
    * @generated
    * @ordered
    */
-  protected static final int DIFFICULTY_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getDifficulty() <em>Difficulty</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDifficulty()
-   * @generated
-   * @ordered
-   */
-  protected int difficulty = DIFFICULTY_EDEFAULT;
+  protected DifficultyLevel difficulty;
 
   /**
    * The cached value of the '{@link #getKitchenUtensils() <em>Kitchen Utensils</em>}' containment reference list.
@@ -318,7 +309,7 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getDifficulty()
+  public DifficultyLevel getDifficulty()
   {
     return difficulty;
   }
@@ -328,12 +319,37 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDifficulty(int newDifficulty)
+  public NotificationChain basicSetDifficulty(DifficultyLevel newDifficulty, NotificationChain msgs)
   {
-    int oldDifficulty = difficulty;
+    DifficultyLevel oldDifficulty = difficulty;
     difficulty = newDifficulty;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE__DIFFICULTY, oldDifficulty, difficulty));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE__DIFFICULTY, oldDifficulty, newDifficulty);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDifficulty(DifficultyLevel newDifficulty)
+  {
+    if (newDifficulty != difficulty)
+    {
+      NotificationChain msgs = null;
+      if (difficulty != null)
+        msgs = ((InternalEObject)difficulty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RECIPE__DIFFICULTY, null, msgs);
+      if (newDifficulty != null)
+        msgs = ((InternalEObject)newDifficulty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RECIPE__DIFFICULTY, null, msgs);
+      msgs = basicSetDifficulty(newDifficulty, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE__DIFFICULTY, newDifficulty, newDifficulty));
   }
 
   /**
@@ -402,6 +418,8 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
   {
     switch (featureID)
     {
+      case MyDslPackage.RECIPE__DIFFICULTY:
+        return basicSetDifficulty(null, msgs);
       case MyDslPackage.RECIPE__KITCHEN_UTENSILS:
         return ((InternalEList<?>)getKitchenUtensils()).basicRemove(otherEnd, msgs);
       case MyDslPackage.RECIPE__FOOD_CATEGORY:
@@ -471,7 +489,7 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
         setDuration((Integer)newValue);
         return;
       case MyDslPackage.RECIPE__DIFFICULTY:
-        setDifficulty((Integer)newValue);
+        setDifficulty((DifficultyLevel)newValue);
         return;
       case MyDslPackage.RECIPE__KITCHEN_UTENSILS:
         getKitchenUtensils().clear();
@@ -516,7 +534,7 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
         setDuration(DURATION_EDEFAULT);
         return;
       case MyDslPackage.RECIPE__DIFFICULTY:
-        setDifficulty(DIFFICULTY_EDEFAULT);
+        setDifficulty((DifficultyLevel)null);
         return;
       case MyDslPackage.RECIPE__KITCHEN_UTENSILS:
         getKitchenUtensils().clear();
@@ -553,7 +571,7 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
       case MyDslPackage.RECIPE__DURATION:
         return duration != DURATION_EDEFAULT;
       case MyDslPackage.RECIPE__DIFFICULTY:
-        return difficulty != DIFFICULTY_EDEFAULT;
+        return difficulty != null;
       case MyDslPackage.RECIPE__KITCHEN_UTENSILS:
         return kitchenUtensils != null && !kitchenUtensils.isEmpty();
       case MyDslPackage.RECIPE__FOOD_CATEGORY:
@@ -583,8 +601,6 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
     result.append(vegan);
     result.append(", duration: ");
     result.append(duration);
-    result.append(", difficulty: ");
-    result.append(difficulty);
     result.append(')');
     return result.toString();
   }

@@ -24,7 +24,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Recipe/author"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Recipe/vegan"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Recipe/duration"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Recipe/difficulty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Recipe/difficulty"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Recipe/kitchenUtensils"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Recipe/foodCategory"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Recipe/ingredient"/>
@@ -32,6 +32,9 @@
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//KitchenUtensil">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//KitchenUtensil/name"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//DifficultyLevel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//DifficultyLevel/name"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//FoodCategory">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//FoodCategory/name"/>

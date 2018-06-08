@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.mydsl.myDsl.Author;
+import org.xtext.example.mydsl.myDsl.DifficultyLevel;
 import org.xtext.example.mydsl.myDsl.FoodCategory;
 import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.KitchenUtensil;
@@ -62,6 +63,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   private EClass kitchenUtensilEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass difficultyLevelEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -295,9 +303,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRecipe_Difficulty()
+  public EReference getRecipe_Difficulty()
   {
-    return (EAttribute)recipeEClass.getEStructuralFeatures().get(4);
+    return (EReference)recipeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -358,6 +366,26 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
   public EAttribute getKitchenUtensil_Name()
   {
     return (EAttribute)kitchenUtensilEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDifficultyLevel()
+  {
+    return difficultyLevelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDifficultyLevel_Name()
+  {
+    return (EAttribute)difficultyLevelEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -488,7 +516,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEReference(recipeEClass, RECIPE__AUTHOR);
     createEAttribute(recipeEClass, RECIPE__VEGAN);
     createEAttribute(recipeEClass, RECIPE__DURATION);
-    createEAttribute(recipeEClass, RECIPE__DIFFICULTY);
+    createEReference(recipeEClass, RECIPE__DIFFICULTY);
     createEReference(recipeEClass, RECIPE__KITCHEN_UTENSILS);
     createEReference(recipeEClass, RECIPE__FOOD_CATEGORY);
     createEReference(recipeEClass, RECIPE__INGREDIENT);
@@ -496,6 +524,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     kitchenUtensilEClass = createEClass(KITCHEN_UTENSIL);
     createEAttribute(kitchenUtensilEClass, KITCHEN_UTENSIL__NAME);
+
+    difficultyLevelEClass = createEClass(DIFFICULTY_LEVEL);
+    createEAttribute(difficultyLevelEClass, DIFFICULTY_LEVEL__NAME);
 
     foodCategoryEClass = createEClass(FOOD_CATEGORY);
     createEAttribute(foodCategoryEClass, FOOD_CATEGORY__NAME);
@@ -557,7 +588,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEReference(getRecipe_Author(), this.getAuthor(), null, "author", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRecipe_Vegan(), ecorePackage.getEString(), "vegan", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRecipe_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRecipe_Difficulty(), ecorePackage.getEInt(), "difficulty", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecipe_Difficulty(), this.getDifficultyLevel(), null, "difficulty", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecipe_KitchenUtensils(), this.getKitchenUtensil(), null, "kitchenUtensils", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecipe_FoodCategory(), this.getFoodCategory(), null, "foodCategory", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecipe_Ingredient(), this.getIngredient(), null, "ingredient", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -565,6 +596,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     initEClass(kitchenUtensilEClass, KitchenUtensil.class, "KitchenUtensil", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getKitchenUtensil_Name(), ecorePackage.getEString(), "name", null, 0, 1, KitchenUtensil.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(difficultyLevelEClass, DifficultyLevel.class, "DifficultyLevel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDifficultyLevel_Name(), ecorePackage.getEString(), "name", null, 0, 1, DifficultyLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(foodCategoryEClass, FoodCategory.class, "FoodCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFoodCategory_Name(), ecorePackage.getEString(), "name", null, 0, 1, FoodCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

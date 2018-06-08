@@ -101,6 +101,11 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createKitchenUtensilAdapter();
       }
       @Override
+      public Adapter caseDifficultyLevel(DifficultyLevel object)
+      {
+        return createDifficultyLevelAdapter();
+      }
+      @Override
       public Adapter caseFoodCategory(FoodCategory object)
       {
         return createFoodCategoryAdapter();
@@ -203,6 +208,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createKitchenUtensilAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.DifficultyLevel <em>Difficulty Level</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.DifficultyLevel
+   * @generated
+   */
+  public Adapter createDifficultyLevelAdapter()
   {
     return null;
   }

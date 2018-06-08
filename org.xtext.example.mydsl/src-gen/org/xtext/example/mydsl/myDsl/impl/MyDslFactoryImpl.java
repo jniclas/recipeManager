@@ -70,6 +70,7 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.RATING: return createRating();
       case MyDslPackage.RECIPE: return createRecipe();
       case MyDslPackage.KITCHEN_UTENSIL: return createKitchenUtensil();
+      case MyDslPackage.DIFFICULTY_LEVEL: return createDifficultyLevel();
       case MyDslPackage.FOOD_CATEGORY: return createFoodCategory();
       case MyDslPackage.INGREDIENT: return createIngredient();
       default:
@@ -130,6 +131,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     KitchenUtensilImpl kitchenUtensil = new KitchenUtensilImpl();
     return kitchenUtensil;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DifficultyLevel createDifficultyLevel()
+  {
+    DifficultyLevelImpl difficultyLevel = new DifficultyLevelImpl();
+    return difficultyLevel;
   }
 
   /**

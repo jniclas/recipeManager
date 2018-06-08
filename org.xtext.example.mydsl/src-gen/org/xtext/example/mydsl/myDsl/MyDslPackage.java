@@ -224,7 +224,7 @@ public interface MyDslPackage extends EPackage
   int RECIPE__DURATION = 3;
 
   /**
-   * The feature id for the '<em><b>Difficulty</b></em>' attribute.
+   * The feature id for the '<em><b>Difficulty</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -306,6 +306,34 @@ public interface MyDslPackage extends EPackage
   int KITCHEN_UTENSIL_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.DifficultyLevelImpl <em>Difficulty Level</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.DifficultyLevelImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getDifficultyLevel()
+   * @generated
+   */
+  int DIFFICULTY_LEVEL = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIFFICULTY_LEVEL__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Difficulty Level</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIFFICULTY_LEVEL_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.FoodCategoryImpl <em>Food Category</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -313,7 +341,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFoodCategory()
    * @generated
    */
-  int FOOD_CATEGORY = 5;
+  int FOOD_CATEGORY = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -341,7 +369,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getIngredient()
    * @generated
    */
-  int INGREDIENT = 6;
+  int INGREDIENT = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -560,15 +588,15 @@ public interface MyDslPackage extends EPackage
   EAttribute getRecipe_Duration();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Recipe#getDifficulty <em>Difficulty</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Recipe#getDifficulty <em>Difficulty</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Difficulty</em>'.
+   * @return the meta object for the containment reference '<em>Difficulty</em>'.
    * @see org.xtext.example.mydsl.myDsl.Recipe#getDifficulty()
    * @see #getRecipe()
    * @generated
    */
-  EAttribute getRecipe_Difficulty();
+  EReference getRecipe_Difficulty();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Recipe#getKitchenUtensils <em>Kitchen Utensils</em>}'.
@@ -634,6 +662,27 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EAttribute getKitchenUtensil_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.DifficultyLevel <em>Difficulty Level</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Difficulty Level</em>'.
+   * @see org.xtext.example.mydsl.myDsl.DifficultyLevel
+   * @generated
+   */
+  EClass getDifficultyLevel();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.DifficultyLevel#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.myDsl.DifficultyLevel#getName()
+   * @see #getDifficultyLevel()
+   * @generated
+   */
+  EAttribute getDifficultyLevel_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.FoodCategory <em>Food Category</em>}'.
@@ -873,12 +922,12 @@ public interface MyDslPackage extends EPackage
     EAttribute RECIPE__DURATION = eINSTANCE.getRecipe_Duration();
 
     /**
-     * The meta object literal for the '<em><b>Difficulty</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Difficulty</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RECIPE__DIFFICULTY = eINSTANCE.getRecipe_Difficulty();
+    EReference RECIPE__DIFFICULTY = eINSTANCE.getRecipe_Difficulty();
 
     /**
      * The meta object literal for the '<em><b>Kitchen Utensils</b></em>' containment reference list feature.
@@ -929,6 +978,24 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute KITCHEN_UTENSIL__NAME = eINSTANCE.getKitchenUtensil_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.DifficultyLevelImpl <em>Difficulty Level</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.DifficultyLevelImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getDifficultyLevel()
+     * @generated
+     */
+    EClass DIFFICULTY_LEVEL = eINSTANCE.getDifficultyLevel();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIFFICULTY_LEVEL__NAME = eINSTANCE.getDifficultyLevel_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.FoodCategoryImpl <em>Food Category</em>}' class.

@@ -27,109 +27,79 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.RecipeManager");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAuthorsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cEOLParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cAuthorsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAuthorsAuthorParserRuleCall_2_0 = (RuleCall)cAuthorsAssignment_2.eContents().get(0);
 		private final Assignment cAuthorsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cAuthorsAuthorParserRuleCall_3_0 = (RuleCall)cAuthorsAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cAuthorsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cAuthorsAuthorParserRuleCall_4_1_0 = (RuleCall)cAuthorsAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cRecipesKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cRecipesAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cRecipesRecipeParserRuleCall_9_0 = (RuleCall)cRecipesAssignment_9.eContents().get(0);
-		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cCommaKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Assignment cRecipesAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
-		private final RuleCall cRecipesRecipeParserRuleCall_10_1_0 = (RuleCall)cRecipesAssignment_10_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cRecipesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final RuleCall cEOLParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final Assignment cRecipesAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cRecipesRecipeParserRuleCall_4_2_0 = (RuleCall)cRecipesAssignment_4_2.eContents().get(0);
+		private final Assignment cRecipesAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
+		private final RuleCall cRecipesRecipeParserRuleCall_4_3_0 = (RuleCall)cRecipesAssignment_4_3.eContents().get(0);
 		
 		//RecipeManager:
-		//	'authors' ':' "{" authors+=Author (',' authors+=Author)* "}"
-		//	'recipes' ':' '{' recipes+=Recipe (',' recipes+=Recipe)* '}';
+		//	'authors' EOL authors+=Author authors+=Author* ('recipes' EOL recipes+=Recipe recipes+=Recipe*)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'authors' ':' "{" authors+=Author (',' authors+=Author)* "}" 'recipes' ':' '{' recipes+=Recipe (',' recipes+=Recipe)*
-		//'}'
+		//'authors' EOL authors+=Author authors+=Author* ('recipes' EOL recipes+=Recipe recipes+=Recipe*)?
 		public Group getGroup() { return cGroup; }
 		
 		//'authors'
 		public Keyword getAuthorsKeyword_0() { return cAuthorsKeyword_0; }
 		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-		
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_1() { return cEOLParserRuleCall_1; }
 		
 		//authors+=Author
+		public Assignment getAuthorsAssignment_2() { return cAuthorsAssignment_2; }
+		
+		//Author
+		public RuleCall getAuthorsAuthorParserRuleCall_2_0() { return cAuthorsAuthorParserRuleCall_2_0; }
+		
+		//authors+=Author*
 		public Assignment getAuthorsAssignment_3() { return cAuthorsAssignment_3; }
 		
 		//Author
 		public RuleCall getAuthorsAuthorParserRuleCall_3_0() { return cAuthorsAuthorParserRuleCall_3_0; }
 		
-		//(',' authors+=Author)*
+		//('recipes' EOL recipes+=Recipe recipes+=Recipe*)?
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//','
-		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
-		
-		//authors+=Author
-		public Assignment getAuthorsAssignment_4_1() { return cAuthorsAssignment_4_1; }
-		
-		//Author
-		public RuleCall getAuthorsAuthorParserRuleCall_4_1_0() { return cAuthorsAuthorParserRuleCall_4_1_0; }
-		
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-		
 		//'recipes'
-		public Keyword getRecipesKeyword_6() { return cRecipesKeyword_6; }
+		public Keyword getRecipesKeyword_4_0() { return cRecipesKeyword_4_0; }
 		
-		//':'
-		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_4_1() { return cEOLParserRuleCall_4_1; }
 		
 		//recipes+=Recipe
-		public Assignment getRecipesAssignment_9() { return cRecipesAssignment_9; }
+		public Assignment getRecipesAssignment_4_2() { return cRecipesAssignment_4_2; }
 		
 		//Recipe
-		public RuleCall getRecipesRecipeParserRuleCall_9_0() { return cRecipesRecipeParserRuleCall_9_0; }
+		public RuleCall getRecipesRecipeParserRuleCall_4_2_0() { return cRecipesRecipeParserRuleCall_4_2_0; }
 		
-		//(',' recipes+=Recipe)*
-		public Group getGroup_10() { return cGroup_10; }
-		
-		//','
-		public Keyword getCommaKeyword_10_0() { return cCommaKeyword_10_0; }
-		
-		//recipes+=Recipe
-		public Assignment getRecipesAssignment_10_1() { return cRecipesAssignment_10_1; }
+		//recipes+=Recipe*
+		public Assignment getRecipesAssignment_4_3() { return cRecipesAssignment_4_3; }
 		
 		//Recipe
-		public RuleCall getRecipesRecipeParserRuleCall_10_1_0() { return cRecipesRecipeParserRuleCall_10_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public RuleCall getRecipesRecipeParserRuleCall_4_3_0() { return cRecipesRecipeParserRuleCall_4_3_0; }
 	}
 	public class AuthorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Author");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cEmailAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cEmailSTRINGTerminalRuleCall_2_0 = (RuleCall)cEmailAssignment_2.eContents().get(0);
+		private final Assignment cEmailAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cEmailSTRINGTerminalRuleCall_1_0 = (RuleCall)cEmailAssignment_1.eContents().get(0);
+		private final RuleCall cEOLParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//Author:
-		//	name=ID ':' Email=STRING;
+		//	name=ID Email=STRING EOL;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ':' Email=STRING
+		//name=ID Email=STRING EOL
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -138,195 +108,133 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-		
 		//Email=STRING
-		public Assignment getEmailAssignment_2() { return cEmailAssignment_2; }
+		public Assignment getEmailAssignment_1() { return cEmailAssignment_1; }
 		
 		//STRING
-		public RuleCall getEmailSTRINGTerminalRuleCall_2_0() { return cEmailSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getEmailSTRINGTerminalRuleCall_1_0() { return cEmailSTRINGTerminalRuleCall_1_0; }
+		
+		//EOL
+		public RuleCall getEOLParserRuleCall_2() { return cEOLParserRuleCall_2; }
 	}
 	public class RatingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Rating");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cStarsKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cStarsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cStarsINTTerminalRuleCall_3_0 = (RuleCall)cStarsAssignment_3.eContents().get(0);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cCommentKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cCommentAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cCommentSTRINGTerminalRuleCall_5_2_0 = (RuleCall)cCommentAssignment_5_2.eContents().get(0);
-		private final Keyword cCommaKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
-		private final Keyword cAuthorKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cAuthorAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cAuthorAuthorCrossReference_8_0 = (CrossReference)cAuthorAssignment_8.eContents().get(0);
-		private final RuleCall cAuthorAuthorIDTerminalRuleCall_8_0_1 = (RuleCall)cAuthorAuthorCrossReference_8_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cStarsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cStarsINTTerminalRuleCall_0_0 = (RuleCall)cStarsAssignment_0.eContents().get(0);
+		private final Keyword cCommaKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cCommentAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCommentSTRINGTerminalRuleCall_2_0 = (RuleCall)cCommentAssignment_2.eContents().get(0);
+		private final Keyword cVonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAuthorAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cAuthorAuthorCrossReference_4_0 = (CrossReference)cAuthorAssignment_4.eContents().get(0);
+		private final RuleCall cAuthorAuthorIDTerminalRuleCall_4_0_1 = (RuleCall)cAuthorAuthorCrossReference_4_0.eContents().get(1);
 		
 		//Rating:
-		//	'{'
-		//	'Stars' ':' stars=INT ',' ('Comment' ':' comment=STRING ',')?
-		//	'Author' ':' author=[Author]
-		//	'}';
+		//	stars=INT ',' comment=STRING 'von' author=[Author];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'{' 'Stars' ':' stars=INT ',' ('Comment' ':' comment=STRING ',')? 'Author' ':' author=[Author] '}'
+		//stars=INT ',' comment=STRING 'von' author=[Author]
 		public Group getGroup() { return cGroup; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
-		
-		//'Stars'
-		public Keyword getStarsKeyword_1() { return cStarsKeyword_1; }
-		
-		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
-		
 		//stars=INT
-		public Assignment getStarsAssignment_3() { return cStarsAssignment_3; }
+		public Assignment getStarsAssignment_0() { return cStarsAssignment_0; }
 		
 		//INT
-		public RuleCall getStarsINTTerminalRuleCall_3_0() { return cStarsINTTerminalRuleCall_3_0; }
+		public RuleCall getStarsINTTerminalRuleCall_0_0() { return cStarsINTTerminalRuleCall_0_0; }
 		
 		//','
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
-		
-		//('Comment' ':' comment=STRING ',')?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'Comment'
-		public Keyword getCommentKeyword_5_0() { return cCommentKeyword_5_0; }
-		
-		//':'
-		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
+		public Keyword getCommaKeyword_1() { return cCommaKeyword_1; }
 		
 		//comment=STRING
-		public Assignment getCommentAssignment_5_2() { return cCommentAssignment_5_2; }
+		public Assignment getCommentAssignment_2() { return cCommentAssignment_2; }
 		
 		//STRING
-		public RuleCall getCommentSTRINGTerminalRuleCall_5_2_0() { return cCommentSTRINGTerminalRuleCall_5_2_0; }
+		public RuleCall getCommentSTRINGTerminalRuleCall_2_0() { return cCommentSTRINGTerminalRuleCall_2_0; }
 		
-		//','
-		public Keyword getCommaKeyword_5_3() { return cCommaKeyword_5_3; }
-		
-		//'Author'
-		public Keyword getAuthorKeyword_6() { return cAuthorKeyword_6; }
-		
-		//':'
-		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
+		//'von'
+		public Keyword getVonKeyword_3() { return cVonKeyword_3; }
 		
 		//author=[Author]
-		public Assignment getAuthorAssignment_8() { return cAuthorAssignment_8; }
+		public Assignment getAuthorAssignment_4() { return cAuthorAssignment_4; }
 		
 		//[Author]
-		public CrossReference getAuthorAuthorCrossReference_8_0() { return cAuthorAuthorCrossReference_8_0; }
+		public CrossReference getAuthorAuthorCrossReference_4_0() { return cAuthorAuthorCrossReference_4_0; }
 		
 		//ID
-		public RuleCall getAuthorAuthorIDTerminalRuleCall_8_0_1() { return cAuthorAuthorIDTerminalRuleCall_8_0_1; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public RuleCall getAuthorAuthorIDTerminalRuleCall_4_0_1() { return cAuthorAuthorIDTerminalRuleCall_4_0_1; }
 	}
 	public class RecipeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Recipe");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cAuthorKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cAuthorAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cAuthorAuthorCrossReference_5_0 = (CrossReference)cAuthorAssignment_5.eContents().get(0);
-		private final RuleCall cAuthorAuthorIDTerminalRuleCall_5_0_1 = (RuleCall)cAuthorAuthorCrossReference_5_0.eContents().get(1);
-		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cVeganismLevelKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cColonKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cVeganAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cVeganVeganismLevelParserRuleCall_9_0 = (RuleCall)cVeganAssignment_9.eContents().get(0);
-		private final Keyword cCommaKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cDurationKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Keyword cColonKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Assignment cDurationAssignment_13 = (Assignment)cGroup.eContents().get(13);
-		private final RuleCall cDurationINTTerminalRuleCall_13_0 = (RuleCall)cDurationAssignment_13.eContents().get(0);
-		private final Keyword cCommaKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Keyword cDifficultyKeyword_15 = (Keyword)cGroup.eContents().get(15);
-		private final Keyword cColonKeyword_16 = (Keyword)cGroup.eContents().get(16);
-		private final Assignment cDifficultyAssignment_17 = (Assignment)cGroup.eContents().get(17);
-		private final RuleCall cDifficultyINTTerminalRuleCall_17_0 = (RuleCall)cDifficultyAssignment_17.eContents().get(0);
-		private final Keyword cCommaKeyword_18 = (Keyword)cGroup.eContents().get(18);
-		private final Group cGroup_19 = (Group)cGroup.eContents().get(19);
-		private final Keyword cKitchenUtensilsKeyword_19_0 = (Keyword)cGroup_19.eContents().get(0);
-		private final Keyword cColonKeyword_19_1 = (Keyword)cGroup_19.eContents().get(1);
-		private final Keyword cLeftSquareBracketKeyword_19_2 = (Keyword)cGroup_19.eContents().get(2);
-		private final Assignment cKitchenUtensilsAssignment_19_3 = (Assignment)cGroup_19.eContents().get(3);
-		private final RuleCall cKitchenUtensilsKitchenUtensilParserRuleCall_19_3_0 = (RuleCall)cKitchenUtensilsAssignment_19_3.eContents().get(0);
-		private final Group cGroup_19_4 = (Group)cGroup_19.eContents().get(4);
-		private final Keyword cCommaKeyword_19_4_0 = (Keyword)cGroup_19_4.eContents().get(0);
-		private final Assignment cKitchenUtensilsAssignment_19_4_1 = (Assignment)cGroup_19_4.eContents().get(1);
-		private final RuleCall cKitchenUtensilsKitchenUtensilParserRuleCall_19_4_1_0 = (RuleCall)cKitchenUtensilsAssignment_19_4_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_19_5 = (Keyword)cGroup_19.eContents().get(5);
-		private final Keyword cCommaKeyword_19_6 = (Keyword)cGroup_19.eContents().get(6);
+		private final Keyword cVonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cAuthorAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cAuthorAuthorCrossReference_2_0 = (CrossReference)cAuthorAssignment_2.eContents().get(0);
+		private final RuleCall cAuthorAuthorIDTerminalRuleCall_2_0_1 = (RuleCall)cAuthorAuthorCrossReference_2_0.eContents().get(1);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cVeganAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cVeganVeganismLevelParserRuleCall_4_0 = (RuleCall)cVeganAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cDurationAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cDurationINTTerminalRuleCall_6_0 = (RuleCall)cDurationAssignment_6.eContents().get(0);
+		private final Keyword cMinKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cDifficultyAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cDifficultyDifficultyLevelParserRuleCall_9_0 = (RuleCall)cDifficultyAssignment_9.eContents().get(0);
+		private final RuleCall cEOLParserRuleCall_10 = (RuleCall)cGroup.eContents().get(10);
+		private final Keyword cKitchenUtensilsKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final RuleCall cEOLParserRuleCall_12 = (RuleCall)cGroup.eContents().get(12);
+		private final Assignment cKitchenUtensilsAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cKitchenUtensilsKitchenUtensilParserRuleCall_13_0 = (RuleCall)cKitchenUtensilsAssignment_13.eContents().get(0);
+		private final RuleCall cEOLParserRuleCall_14 = (RuleCall)cGroup.eContents().get(14);
+		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
+		private final Assignment cKitchenUtensilsAssignment_15_0 = (Assignment)cGroup_15.eContents().get(0);
+		private final RuleCall cKitchenUtensilsKitchenUtensilParserRuleCall_15_0_0 = (RuleCall)cKitchenUtensilsAssignment_15_0.eContents().get(0);
+		private final RuleCall cEOLParserRuleCall_15_1 = (RuleCall)cGroup_15.eContents().get(1);
+		private final Keyword cFoodCategoriesKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final RuleCall cEOLParserRuleCall_17 = (RuleCall)cGroup.eContents().get(17);
+		private final Assignment cFoodCategoryAssignment_18 = (Assignment)cGroup.eContents().get(18);
+		private final RuleCall cFoodCategoryFoodCategoryParserRuleCall_18_0 = (RuleCall)cFoodCategoryAssignment_18.eContents().get(0);
+		private final RuleCall cEOLParserRuleCall_19 = (RuleCall)cGroup.eContents().get(19);
 		private final Group cGroup_20 = (Group)cGroup.eContents().get(20);
-		private final Keyword cFoodCategoryKeyword_20_0 = (Keyword)cGroup_20.eContents().get(0);
-		private final Keyword cColonKeyword_20_1 = (Keyword)cGroup_20.eContents().get(1);
-		private final Keyword cLeftSquareBracketKeyword_20_2 = (Keyword)cGroup_20.eContents().get(2);
-		private final Assignment cFoodCategoryAssignment_20_3 = (Assignment)cGroup_20.eContents().get(3);
-		private final RuleCall cFoodCategoryFoodCategoryParserRuleCall_20_3_0 = (RuleCall)cFoodCategoryAssignment_20_3.eContents().get(0);
-		private final Group cGroup_20_4 = (Group)cGroup_20.eContents().get(4);
-		private final Keyword cCommaKeyword_20_4_0 = (Keyword)cGroup_20_4.eContents().get(0);
-		private final Assignment cFoodCategoryAssignment_20_4_1 = (Assignment)cGroup_20_4.eContents().get(1);
-		private final RuleCall cFoodCategoryFoodCategoryParserRuleCall_20_4_1_0 = (RuleCall)cFoodCategoryAssignment_20_4_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_20_5 = (Keyword)cGroup_20.eContents().get(5);
-		private final Keyword cCommaKeyword_20_6 = (Keyword)cGroup_20.eContents().get(6);
+		private final Assignment cFoodCategoryAssignment_20_0 = (Assignment)cGroup_20.eContents().get(0);
+		private final RuleCall cFoodCategoryFoodCategoryParserRuleCall_20_0_0 = (RuleCall)cFoodCategoryAssignment_20_0.eContents().get(0);
+		private final RuleCall cEOLParserRuleCall_20_1 = (RuleCall)cGroup_20.eContents().get(1);
 		private final Keyword cIngredientsKeyword_21 = (Keyword)cGroup.eContents().get(21);
-		private final Keyword cColonKeyword_22 = (Keyword)cGroup.eContents().get(22);
-		private final Keyword cLeftSquareBracketKeyword_23 = (Keyword)cGroup.eContents().get(23);
+		private final RuleCall cEOLParserRuleCall_22 = (RuleCall)cGroup.eContents().get(22);
+		private final Keyword cHyphenMinusSpaceKeyword_23 = (Keyword)cGroup.eContents().get(23);
 		private final Assignment cIngredientAssignment_24 = (Assignment)cGroup.eContents().get(24);
 		private final RuleCall cIngredientIngredientParserRuleCall_24_0 = (RuleCall)cIngredientAssignment_24.eContents().get(0);
-		private final Group cGroup_25 = (Group)cGroup.eContents().get(25);
-		private final Keyword cCommaKeyword_25_0 = (Keyword)cGroup_25.eContents().get(0);
-		private final Assignment cIngredientAssignment_25_1 = (Assignment)cGroup_25.eContents().get(1);
-		private final RuleCall cIngredientIngredientParserRuleCall_25_1_0 = (RuleCall)cIngredientAssignment_25_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_26 = (Keyword)cGroup.eContents().get(26);
-		private final Group cGroup_27 = (Group)cGroup.eContents().get(27);
-		private final Keyword cCommaKeyword_27_0 = (Keyword)cGroup_27.eContents().get(0);
-		private final Keyword cRatingsKeyword_27_1 = (Keyword)cGroup_27.eContents().get(1);
-		private final Keyword cColonKeyword_27_2 = (Keyword)cGroup_27.eContents().get(2);
-		private final Keyword cLeftSquareBracketKeyword_27_3 = (Keyword)cGroup_27.eContents().get(3);
-		private final Assignment cRatingsAssignment_27_4 = (Assignment)cGroup_27.eContents().get(4);
-		private final RuleCall cRatingsRatingParserRuleCall_27_4_0 = (RuleCall)cRatingsAssignment_27_4.eContents().get(0);
-		private final Group cGroup_27_5 = (Group)cGroup_27.eContents().get(5);
-		private final Keyword cCommaKeyword_27_5_0 = (Keyword)cGroup_27_5.eContents().get(0);
-		private final Assignment cRatingsAssignment_27_5_1 = (Assignment)cGroup_27_5.eContents().get(1);
-		private final RuleCall cRatingsRatingParserRuleCall_27_5_1_0 = (RuleCall)cRatingsAssignment_27_5_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_27_6 = (Keyword)cGroup_27.eContents().get(6);
-		private final Keyword cRightCurlyBracketKeyword_28 = (Keyword)cGroup.eContents().get(28);
+		private final RuleCall cEOLParserRuleCall_25 = (RuleCall)cGroup.eContents().get(25);
+		private final Group cGroup_26 = (Group)cGroup.eContents().get(26);
+		private final Keyword cHyphenMinusSpaceKeyword_26_0 = (Keyword)cGroup_26.eContents().get(0);
+		private final Assignment cIngredientAssignment_26_1 = (Assignment)cGroup_26.eContents().get(1);
+		private final RuleCall cIngredientIngredientParserRuleCall_26_1_0 = (RuleCall)cIngredientAssignment_26_1.eContents().get(0);
+		private final RuleCall cEOLParserRuleCall_26_2 = (RuleCall)cGroup_26.eContents().get(2);
+		private final Keyword cRatingsKeyword_27 = (Keyword)cGroup.eContents().get(27);
+		private final RuleCall cEOLParserRuleCall_28 = (RuleCall)cGroup.eContents().get(28);
+		private final Assignment cRatingsAssignment_29 = (Assignment)cGroup.eContents().get(29);
+		private final RuleCall cRatingsRatingParserRuleCall_29_0 = (RuleCall)cRatingsAssignment_29.eContents().get(0);
+		private final RuleCall cEOLParserRuleCall_30 = (RuleCall)cGroup.eContents().get(30);
+		private final Group cGroup_31 = (Group)cGroup.eContents().get(31);
+		private final Assignment cRatingsAssignment_31_0 = (Assignment)cGroup_31.eContents().get(0);
+		private final RuleCall cRatingsRatingParserRuleCall_31_0_0 = (RuleCall)cRatingsAssignment_31_0.eContents().get(0);
+		private final RuleCall cEOLParserRuleCall_31_1 = (RuleCall)cGroup_31.eContents().get(1);
 		
 		//Recipe:
-		//	name=ID ':' '{'
-		//	'Author' ':' author=[Author] ','
-		//	'VeganismLevel' ':' vegan=VeganismLevel ','
-		//	'Duration' ':' duration=INT ','
-		//	'Difficulty' ':' difficulty=INT ',' ('KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (','
-		//	kitchenUtensils+=KitchenUtensil)* ']' ',')? ('foodCategory' ':' '[' foodCategory+=FoodCategory (','
-		//	foodCategory+=FoodCategory)* ']' ',')?
-		//	'Ingredients' ':' '[' ingredient+=Ingredient (',' ingredient+=Ingredient)* ']' (',' "Ratings" ":" "[" ratings+=Rating
-		//	("," ratings+=Rating)* "]")?
-		//	'}';
+		//	name=ID 'von' author=[Author] ',' vegan=VeganismLevel ',' duration=INT 'min' ',' difficulty=DifficultyLevel EOL
+		//	'Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil EOL (kitchenUtensils+=KitchenUtensil EOL)*
+		//	'Food Categories' EOL foodCategory+=FoodCategory EOL (foodCategory+=FoodCategory EOL)*
+		//	'Ingredients' EOL '- ' ingredient+=Ingredient EOL ('- ' ingredient+=Ingredient EOL)*
+		//	'Ratings' EOL ratings+=Rating EOL (ratings+=Rating EOL)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ':' '{' 'Author' ':' author=[Author] ',' 'VeganismLevel' ':' vegan=VeganismLevel ',' 'Duration' ':' duration=INT
-		//',' 'Difficulty' ':' difficulty=INT ',' ('KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (','
-		//kitchenUtensils+=KitchenUtensil)* ']' ',')? ('foodCategory' ':' '[' foodCategory+=FoodCategory (','
-		//foodCategory+=FoodCategory)* ']' ',')? 'Ingredients' ':' '[' ingredient+=Ingredient (',' ingredient+=Ingredient)* ']'
-		//(',' "Ratings" ":" "[" ratings+=Rating ("," ratings+=Rating)* "]")? '}'
+		//name=ID 'von' author=[Author] ',' vegan=VeganismLevel ',' duration=INT 'min' ',' difficulty=DifficultyLevel EOL
+		//'Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil EOL (kitchenUtensils+=KitchenUtensil EOL)* 'Food Categories'
+		//EOL foodCategory+=FoodCategory EOL (foodCategory+=FoodCategory EOL)* 'Ingredients' EOL '- ' ingredient+=Ingredient EOL
+		//('- ' ingredient+=Ingredient EOL)* 'Ratings' EOL ratings+=Rating EOL (ratings+=Rating EOL)*
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -335,155 +243,113 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//'Author'
-		public Keyword getAuthorKeyword_3() { return cAuthorKeyword_3; }
-		
-		//':'
-		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		//'von'
+		public Keyword getVonKeyword_1() { return cVonKeyword_1; }
 		
 		//author=[Author]
-		public Assignment getAuthorAssignment_5() { return cAuthorAssignment_5; }
+		public Assignment getAuthorAssignment_2() { return cAuthorAssignment_2; }
 		
 		//[Author]
-		public CrossReference getAuthorAuthorCrossReference_5_0() { return cAuthorAuthorCrossReference_5_0; }
+		public CrossReference getAuthorAuthorCrossReference_2_0() { return cAuthorAuthorCrossReference_2_0; }
 		
 		//ID
-		public RuleCall getAuthorAuthorIDTerminalRuleCall_5_0_1() { return cAuthorAuthorIDTerminalRuleCall_5_0_1; }
+		public RuleCall getAuthorAuthorIDTerminalRuleCall_2_0_1() { return cAuthorAuthorIDTerminalRuleCall_2_0_1; }
 		
 		//','
-		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
-		
-		//'VeganismLevel'
-		public Keyword getVeganismLevelKeyword_7() { return cVeganismLevelKeyword_7; }
-		
-		//':'
-		public Keyword getColonKeyword_8() { return cColonKeyword_8; }
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 		
 		//vegan=VeganismLevel
-		public Assignment getVeganAssignment_9() { return cVeganAssignment_9; }
+		public Assignment getVeganAssignment_4() { return cVeganAssignment_4; }
 		
 		//VeganismLevel
-		public RuleCall getVeganVeganismLevelParserRuleCall_9_0() { return cVeganVeganismLevelParserRuleCall_9_0; }
+		public RuleCall getVeganVeganismLevelParserRuleCall_4_0() { return cVeganVeganismLevelParserRuleCall_4_0; }
 		
 		//','
-		public Keyword getCommaKeyword_10() { return cCommaKeyword_10; }
-		
-		//'Duration'
-		public Keyword getDurationKeyword_11() { return cDurationKeyword_11; }
-		
-		//':'
-		public Keyword getColonKeyword_12() { return cColonKeyword_12; }
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
 		//duration=INT
-		public Assignment getDurationAssignment_13() { return cDurationAssignment_13; }
+		public Assignment getDurationAssignment_6() { return cDurationAssignment_6; }
 		
 		//INT
-		public RuleCall getDurationINTTerminalRuleCall_13_0() { return cDurationINTTerminalRuleCall_13_0; }
+		public RuleCall getDurationINTTerminalRuleCall_6_0() { return cDurationINTTerminalRuleCall_6_0; }
+		
+		//'min'
+		public Keyword getMinKeyword_7() { return cMinKeyword_7; }
 		
 		//','
-		public Keyword getCommaKeyword_14() { return cCommaKeyword_14; }
+		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
 		
-		//'Difficulty'
-		public Keyword getDifficultyKeyword_15() { return cDifficultyKeyword_15; }
+		//difficulty=DifficultyLevel
+		public Assignment getDifficultyAssignment_9() { return cDifficultyAssignment_9; }
 		
-		//':'
-		public Keyword getColonKeyword_16() { return cColonKeyword_16; }
+		//DifficultyLevel
+		public RuleCall getDifficultyDifficultyLevelParserRuleCall_9_0() { return cDifficultyDifficultyLevelParserRuleCall_9_0; }
 		
-		//difficulty=INT
-		public Assignment getDifficultyAssignment_17() { return cDifficultyAssignment_17; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_10() { return cEOLParserRuleCall_10; }
 		
-		//INT
-		public RuleCall getDifficultyINTTerminalRuleCall_17_0() { return cDifficultyINTTerminalRuleCall_17_0; }
+		//'Kitchen Utensils'
+		public Keyword getKitchenUtensilsKeyword_11() { return cKitchenUtensilsKeyword_11; }
 		
-		//','
-		public Keyword getCommaKeyword_18() { return cCommaKeyword_18; }
-		
-		//('KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (',' kitchenUtensils+=KitchenUtensil)* ']' ',')?
-		public Group getGroup_19() { return cGroup_19; }
-		
-		//'KitchenUtensils'
-		public Keyword getKitchenUtensilsKeyword_19_0() { return cKitchenUtensilsKeyword_19_0; }
-		
-		//':'
-		public Keyword getColonKeyword_19_1() { return cColonKeyword_19_1; }
-		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_19_2() { return cLeftSquareBracketKeyword_19_2; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_12() { return cEOLParserRuleCall_12; }
 		
 		//kitchenUtensils+=KitchenUtensil
-		public Assignment getKitchenUtensilsAssignment_19_3() { return cKitchenUtensilsAssignment_19_3; }
+		public Assignment getKitchenUtensilsAssignment_13() { return cKitchenUtensilsAssignment_13; }
 		
 		//KitchenUtensil
-		public RuleCall getKitchenUtensilsKitchenUtensilParserRuleCall_19_3_0() { return cKitchenUtensilsKitchenUtensilParserRuleCall_19_3_0; }
+		public RuleCall getKitchenUtensilsKitchenUtensilParserRuleCall_13_0() { return cKitchenUtensilsKitchenUtensilParserRuleCall_13_0; }
 		
-		//(',' kitchenUtensils+=KitchenUtensil)*
-		public Group getGroup_19_4() { return cGroup_19_4; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_14() { return cEOLParserRuleCall_14; }
 		
-		//','
-		public Keyword getCommaKeyword_19_4_0() { return cCommaKeyword_19_4_0; }
+		//(kitchenUtensils+=KitchenUtensil EOL)*
+		public Group getGroup_15() { return cGroup_15; }
 		
 		//kitchenUtensils+=KitchenUtensil
-		public Assignment getKitchenUtensilsAssignment_19_4_1() { return cKitchenUtensilsAssignment_19_4_1; }
+		public Assignment getKitchenUtensilsAssignment_15_0() { return cKitchenUtensilsAssignment_15_0; }
 		
 		//KitchenUtensil
-		public RuleCall getKitchenUtensilsKitchenUtensilParserRuleCall_19_4_1_0() { return cKitchenUtensilsKitchenUtensilParserRuleCall_19_4_1_0; }
+		public RuleCall getKitchenUtensilsKitchenUtensilParserRuleCall_15_0_0() { return cKitchenUtensilsKitchenUtensilParserRuleCall_15_0_0; }
 		
-		//']'
-		public Keyword getRightSquareBracketKeyword_19_5() { return cRightSquareBracketKeyword_19_5; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_15_1() { return cEOLParserRuleCall_15_1; }
 		
-		//','
-		public Keyword getCommaKeyword_19_6() { return cCommaKeyword_19_6; }
+		//'Food Categories'
+		public Keyword getFoodCategoriesKeyword_16() { return cFoodCategoriesKeyword_16; }
 		
-		//('foodCategory' ':' '[' foodCategory+=FoodCategory (',' foodCategory+=FoodCategory)* ']' ',')?
+		//EOL
+		public RuleCall getEOLParserRuleCall_17() { return cEOLParserRuleCall_17; }
+		
+		//foodCategory+=FoodCategory
+		public Assignment getFoodCategoryAssignment_18() { return cFoodCategoryAssignment_18; }
+		
+		//FoodCategory
+		public RuleCall getFoodCategoryFoodCategoryParserRuleCall_18_0() { return cFoodCategoryFoodCategoryParserRuleCall_18_0; }
+		
+		//EOL
+		public RuleCall getEOLParserRuleCall_19() { return cEOLParserRuleCall_19; }
+		
+		//(foodCategory+=FoodCategory EOL)*
 		public Group getGroup_20() { return cGroup_20; }
 		
-		//'foodCategory'
-		public Keyword getFoodCategoryKeyword_20_0() { return cFoodCategoryKeyword_20_0; }
-		
-		//':'
-		public Keyword getColonKeyword_20_1() { return cColonKeyword_20_1; }
-		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_20_2() { return cLeftSquareBracketKeyword_20_2; }
-		
 		//foodCategory+=FoodCategory
-		public Assignment getFoodCategoryAssignment_20_3() { return cFoodCategoryAssignment_20_3; }
+		public Assignment getFoodCategoryAssignment_20_0() { return cFoodCategoryAssignment_20_0; }
 		
 		//FoodCategory
-		public RuleCall getFoodCategoryFoodCategoryParserRuleCall_20_3_0() { return cFoodCategoryFoodCategoryParserRuleCall_20_3_0; }
+		public RuleCall getFoodCategoryFoodCategoryParserRuleCall_20_0_0() { return cFoodCategoryFoodCategoryParserRuleCall_20_0_0; }
 		
-		//(',' foodCategory+=FoodCategory)*
-		public Group getGroup_20_4() { return cGroup_20_4; }
-		
-		//','
-		public Keyword getCommaKeyword_20_4_0() { return cCommaKeyword_20_4_0; }
-		
-		//foodCategory+=FoodCategory
-		public Assignment getFoodCategoryAssignment_20_4_1() { return cFoodCategoryAssignment_20_4_1; }
-		
-		//FoodCategory
-		public RuleCall getFoodCategoryFoodCategoryParserRuleCall_20_4_1_0() { return cFoodCategoryFoodCategoryParserRuleCall_20_4_1_0; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_20_5() { return cRightSquareBracketKeyword_20_5; }
-		
-		//','
-		public Keyword getCommaKeyword_20_6() { return cCommaKeyword_20_6; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_20_1() { return cEOLParserRuleCall_20_1; }
 		
 		//'Ingredients'
 		public Keyword getIngredientsKeyword_21() { return cIngredientsKeyword_21; }
 		
-		//':'
-		public Keyword getColonKeyword_22() { return cColonKeyword_22; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_22() { return cEOLParserRuleCall_22; }
 		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_23() { return cLeftSquareBracketKeyword_23; }
+		//'- '
+		public Keyword getHyphenMinusSpaceKeyword_23() { return cHyphenMinusSpaceKeyword_23; }
 		
 		//ingredient+=Ingredient
 		public Assignment getIngredientAssignment_24() { return cIngredientAssignment_24; }
@@ -491,59 +357,50 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Ingredient
 		public RuleCall getIngredientIngredientParserRuleCall_24_0() { return cIngredientIngredientParserRuleCall_24_0; }
 		
-		//(',' ingredient+=Ingredient)*
-		public Group getGroup_25() { return cGroup_25; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_25() { return cEOLParserRuleCall_25; }
 		
-		//','
-		public Keyword getCommaKeyword_25_0() { return cCommaKeyword_25_0; }
+		//('- ' ingredient+=Ingredient EOL)*
+		public Group getGroup_26() { return cGroup_26; }
+		
+		//'- '
+		public Keyword getHyphenMinusSpaceKeyword_26_0() { return cHyphenMinusSpaceKeyword_26_0; }
 		
 		//ingredient+=Ingredient
-		public Assignment getIngredientAssignment_25_1() { return cIngredientAssignment_25_1; }
+		public Assignment getIngredientAssignment_26_1() { return cIngredientAssignment_26_1; }
 		
 		//Ingredient
-		public RuleCall getIngredientIngredientParserRuleCall_25_1_0() { return cIngredientIngredientParserRuleCall_25_1_0; }
+		public RuleCall getIngredientIngredientParserRuleCall_26_1_0() { return cIngredientIngredientParserRuleCall_26_1_0; }
 		
-		//']'
-		public Keyword getRightSquareBracketKeyword_26() { return cRightSquareBracketKeyword_26; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_26_2() { return cEOLParserRuleCall_26_2; }
 		
-		//(',' "Ratings" ":" "[" ratings+=Rating ("," ratings+=Rating)* "]")?
-		public Group getGroup_27() { return cGroup_27; }
+		//'Ratings'
+		public Keyword getRatingsKeyword_27() { return cRatingsKeyword_27; }
 		
-		//','
-		public Keyword getCommaKeyword_27_0() { return cCommaKeyword_27_0; }
-		
-		//"Ratings"
-		public Keyword getRatingsKeyword_27_1() { return cRatingsKeyword_27_1; }
-		
-		//":"
-		public Keyword getColonKeyword_27_2() { return cColonKeyword_27_2; }
-		
-		//"["
-		public Keyword getLeftSquareBracketKeyword_27_3() { return cLeftSquareBracketKeyword_27_3; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_28() { return cEOLParserRuleCall_28; }
 		
 		//ratings+=Rating
-		public Assignment getRatingsAssignment_27_4() { return cRatingsAssignment_27_4; }
+		public Assignment getRatingsAssignment_29() { return cRatingsAssignment_29; }
 		
 		//Rating
-		public RuleCall getRatingsRatingParserRuleCall_27_4_0() { return cRatingsRatingParserRuleCall_27_4_0; }
+		public RuleCall getRatingsRatingParserRuleCall_29_0() { return cRatingsRatingParserRuleCall_29_0; }
 		
-		//("," ratings+=Rating)*
-		public Group getGroup_27_5() { return cGroup_27_5; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_30() { return cEOLParserRuleCall_30; }
 		
-		//","
-		public Keyword getCommaKeyword_27_5_0() { return cCommaKeyword_27_5_0; }
+		//(ratings+=Rating EOL)*
+		public Group getGroup_31() { return cGroup_31; }
 		
 		//ratings+=Rating
-		public Assignment getRatingsAssignment_27_5_1() { return cRatingsAssignment_27_5_1; }
+		public Assignment getRatingsAssignment_31_0() { return cRatingsAssignment_31_0; }
 		
 		//Rating
-		public RuleCall getRatingsRatingParserRuleCall_27_5_1_0() { return cRatingsRatingParserRuleCall_27_5_1_0; }
+		public RuleCall getRatingsRatingParserRuleCall_31_0_0() { return cRatingsRatingParserRuleCall_31_0_0; }
 		
-		//"]"
-		public Keyword getRightSquareBracketKeyword_27_6() { return cRightSquareBracketKeyword_27_6; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_28() { return cRightCurlyBracketKeyword_28; }
+		//EOL
+		public RuleCall getEOLParserRuleCall_31_1() { return cEOLParserRuleCall_31_1; }
 	}
 	public class KitchenUtensilElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.KitchenUtensil");
@@ -576,6 +433,33 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'rolling pin'
 		public Keyword getNameRollingPinKeyword_0_3() { return cNameRollingPinKeyword_0_3; }
 	}
+	public class DifficultyLevelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.DifficultyLevel");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cNameAlternatives_0 = (Alternatives)cNameAssignment.eContents().get(0);
+		private final Keyword cNameEasyKeyword_0_0 = (Keyword)cNameAlternatives_0.eContents().get(0);
+		private final Keyword cNameMediumKeyword_0_1 = (Keyword)cNameAlternatives_0.eContents().get(1);
+		private final Keyword cNameHardKeyword_0_2 = (Keyword)cNameAlternatives_0.eContents().get(2);
+		
+		//DifficultyLevel:
+		//	name=('easy' | 'medium' | 'hard');
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=('easy' | 'medium' | 'hard')
+		public Assignment getNameAssignment() { return cNameAssignment; }
+		
+		//('easy' | 'medium' | 'hard')
+		public Alternatives getNameAlternatives_0() { return cNameAlternatives_0; }
+		
+		//'easy'
+		public Keyword getNameEasyKeyword_0_0() { return cNameEasyKeyword_0_0; }
+		
+		//'medium'
+		public Keyword getNameMediumKeyword_0_1() { return cNameMediumKeyword_0_1; }
+		
+		//'hard'
+		public Keyword getNameHardKeyword_0_2() { return cNameHardKeyword_0_2; }
+	}
 	public class FoodCategoryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.FoodCategory");
 		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
@@ -595,111 +479,55 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Ingredient");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Keyword cNameKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Keyword cColonKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Assignment cNameAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
-		private final RuleCall cNameSTRINGTerminalRuleCall_0_3_0 = (RuleCall)cNameAssignment_0_3.eContents().get(0);
-		private final Keyword cCommaKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
-		private final Keyword cAmountKeyword_0_5 = (Keyword)cGroup_0.eContents().get(5);
-		private final Keyword cColonKeyword_0_6 = (Keyword)cGroup_0.eContents().get(6);
-		private final Assignment cAmountAssignment_0_7 = (Assignment)cGroup_0.eContents().get(7);
-		private final RuleCall cAmountINTTerminalRuleCall_0_7_0 = (RuleCall)cAmountAssignment_0_7.eContents().get(0);
-		private final Keyword cCommaKeyword_0_8 = (Keyword)cGroup_0.eContents().get(8);
-		private final Keyword cUnitKeyword_0_9 = (Keyword)cGroup_0.eContents().get(9);
-		private final Keyword cColonKeyword_0_10 = (Keyword)cGroup_0.eContents().get(10);
-		private final Assignment cUnitAssignment_0_11 = (Assignment)cGroup_0.eContents().get(11);
-		private final RuleCall cUnitUnitParserRuleCall_0_11_0 = (RuleCall)cUnitAssignment_0_11.eContents().get(0);
-		private final Keyword cCommaKeyword_0_12 = (Keyword)cGroup_0.eContents().get(12);
-		private final Keyword cVeganismLevelKeyword_0_13 = (Keyword)cGroup_0.eContents().get(13);
-		private final Keyword cColonKeyword_0_14 = (Keyword)cGroup_0.eContents().get(14);
-		private final Assignment cVeganismLevelAssignment_0_15 = (Assignment)cGroup_0.eContents().get(15);
-		private final RuleCall cVeganismLevelVeganismLevelParserRuleCall_0_15_0 = (RuleCall)cVeganismLevelAssignment_0_15.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_0_16 = (Keyword)cGroup_0.eContents().get(16);
+		private final Assignment cNameAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_0_0_0 = (RuleCall)cNameAssignment_0_0.eContents().get(0);
+		private final Assignment cAmountAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cAmountINTTerminalRuleCall_0_1_0 = (RuleCall)cAmountAssignment_0_1.eContents().get(0);
+		private final Assignment cUnitAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cUnitUnitParserRuleCall_0_2_0 = (RuleCall)cUnitAssignment_0_2.eContents().get(0);
+		private final Keyword cCommaKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Assignment cVeganismLevelAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final RuleCall cVeganismLevelVeganismLevelParserRuleCall_0_4_0 = (RuleCall)cVeganismLevelAssignment_0_4.eContents().get(0);
 		private final Assignment cRecipeAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final CrossReference cRecipeRecipeCrossReference_1_0 = (CrossReference)cRecipeAssignment_1.eContents().get(0);
 		private final RuleCall cRecipeRecipeIDTerminalRuleCall_1_0_1 = (RuleCall)cRecipeRecipeCrossReference_1_0.eContents().get(1);
 		
 		//Ingredient:
-		//	'{'
-		//	'Name' ':' name=STRING ','
-		//	'Amount' ':' amount=INT ','
-		//	'Unit' ':' unit=Unit ','
-		//	'VeganismLevel' ':' veganismLevel=VeganismLevel
-		//	'}'
-		//	| recipe=[Recipe];
+		//	name=STRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel | recipe=[Recipe];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'{' 'Name' ':' name=STRING ',' 'Amount' ':' amount=INT ',' 'Unit' ':' unit=Unit ',' 'VeganismLevel' ':'
-		//veganismLevel=VeganismLevel '}' | recipe=[Recipe]
+		//name=STRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel | recipe=[Recipe]
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'{' 'Name' ':' name=STRING ',' 'Amount' ':' amount=INT ',' 'Unit' ':' unit=Unit ',' 'VeganismLevel' ':'
-		//veganismLevel=VeganismLevel '}'
+		//name=STRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_0_0() { return cLeftCurlyBracketKeyword_0_0; }
-		
-		//'Name'
-		public Keyword getNameKeyword_0_1() { return cNameKeyword_0_1; }
-		
-		//':'
-		public Keyword getColonKeyword_0_2() { return cColonKeyword_0_2; }
-		
 		//name=STRING
-		public Assignment getNameAssignment_0_3() { return cNameAssignment_0_3; }
+		public Assignment getNameAssignment_0_0() { return cNameAssignment_0_0; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_0_3_0() { return cNameSTRINGTerminalRuleCall_0_3_0; }
-		
-		//','
-		public Keyword getCommaKeyword_0_4() { return cCommaKeyword_0_4; }
-		
-		//'Amount'
-		public Keyword getAmountKeyword_0_5() { return cAmountKeyword_0_5; }
-		
-		//':'
-		public Keyword getColonKeyword_0_6() { return cColonKeyword_0_6; }
+		public RuleCall getNameSTRINGTerminalRuleCall_0_0_0() { return cNameSTRINGTerminalRuleCall_0_0_0; }
 		
 		//amount=INT
-		public Assignment getAmountAssignment_0_7() { return cAmountAssignment_0_7; }
+		public Assignment getAmountAssignment_0_1() { return cAmountAssignment_0_1; }
 		
 		//INT
-		public RuleCall getAmountINTTerminalRuleCall_0_7_0() { return cAmountINTTerminalRuleCall_0_7_0; }
-		
-		//','
-		public Keyword getCommaKeyword_0_8() { return cCommaKeyword_0_8; }
-		
-		//'Unit'
-		public Keyword getUnitKeyword_0_9() { return cUnitKeyword_0_9; }
-		
-		//':'
-		public Keyword getColonKeyword_0_10() { return cColonKeyword_0_10; }
+		public RuleCall getAmountINTTerminalRuleCall_0_1_0() { return cAmountINTTerminalRuleCall_0_1_0; }
 		
 		//unit=Unit
-		public Assignment getUnitAssignment_0_11() { return cUnitAssignment_0_11; }
+		public Assignment getUnitAssignment_0_2() { return cUnitAssignment_0_2; }
 		
 		//Unit
-		public RuleCall getUnitUnitParserRuleCall_0_11_0() { return cUnitUnitParserRuleCall_0_11_0; }
+		public RuleCall getUnitUnitParserRuleCall_0_2_0() { return cUnitUnitParserRuleCall_0_2_0; }
 		
 		//','
-		public Keyword getCommaKeyword_0_12() { return cCommaKeyword_0_12; }
-		
-		//'VeganismLevel'
-		public Keyword getVeganismLevelKeyword_0_13() { return cVeganismLevelKeyword_0_13; }
-		
-		//':'
-		public Keyword getColonKeyword_0_14() { return cColonKeyword_0_14; }
+		public Keyword getCommaKeyword_0_3() { return cCommaKeyword_0_3; }
 		
 		//veganismLevel=VeganismLevel
-		public Assignment getVeganismLevelAssignment_0_15() { return cVeganismLevelAssignment_0_15; }
+		public Assignment getVeganismLevelAssignment_0_4() { return cVeganismLevelAssignment_0_4; }
 		
 		//VeganismLevel
-		public RuleCall getVeganismLevelVeganismLevelParserRuleCall_0_15_0() { return cVeganismLevelVeganismLevelParserRuleCall_0_15_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_0_16() { return cRightCurlyBracketKeyword_0_16; }
+		public RuleCall getVeganismLevelVeganismLevelParserRuleCall_0_4_0() { return cVeganismLevelVeganismLevelParserRuleCall_0_4_0; }
 		
 		//recipe=[Recipe]
 		public Assignment getRecipeAssignment_1() { return cRecipeAssignment_1; }
@@ -776,6 +604,25 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'pcs'
 		public Keyword getPcsKeyword_7() { return cPcsKeyword_7; }
 	}
+	public class EOLElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.EOL");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cNEWLINETerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSL_COMMENTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//EOL:
+		//	NEWLINE | SL_COMMENT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//NEWLINE | SL_COMMENT
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//NEWLINE
+		public RuleCall getNEWLINETerminalRuleCall_0() { return cNEWLINETerminalRuleCall_0; }
+		
+		//SL_COMMENT
+		public RuleCall getSL_COMMENTTerminalRuleCall_1() { return cSL_COMMENTTerminalRuleCall_1; }
+	}
 	
 	
 	private final RecipeManagerElements pRecipeManager;
@@ -783,10 +630,14 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final RatingElements pRating;
 	private final RecipeElements pRecipe;
 	private final KitchenUtensilElements pKitchenUtensil;
+	private final DifficultyLevelElements pDifficultyLevel;
 	private final FoodCategoryElements pFoodCategory;
 	private final IngredientElements pIngredient;
 	private final VeganismLevelElements pVeganismLevel;
 	private final UnitElements pUnit;
+	private final EOLElements pEOL;
+	private final TerminalRule tSL_COMMENT;
+	private final TerminalRule tNEWLINE;
 	
 	private final Grammar grammar;
 	
@@ -802,10 +653,14 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pRating = new RatingElements();
 		this.pRecipe = new RecipeElements();
 		this.pKitchenUtensil = new KitchenUtensilElements();
+		this.pDifficultyLevel = new DifficultyLevelElements();
 		this.pFoodCategory = new FoodCategoryElements();
 		this.pIngredient = new IngredientElements();
 		this.pVeganismLevel = new VeganismLevelElements();
 		this.pUnit = new UnitElements();
+		this.pEOL = new EOLElements();
+		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.SL_COMMENT");
+		this.tNEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.NEWLINE");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -836,8 +691,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//RecipeManager:
-	//	'authors' ':' "{" authors+=Author (',' authors+=Author)* "}"
-	//	'recipes' ':' '{' recipes+=Recipe (',' recipes+=Recipe)* '}';
+	//	'authors' EOL authors+=Author authors+=Author* ('recipes' EOL recipes+=Recipe recipes+=Recipe*)?;
 	public RecipeManagerElements getRecipeManagerAccess() {
 		return pRecipeManager;
 	}
@@ -847,7 +701,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Author:
-	//	name=ID ':' Email=STRING;
+	//	name=ID Email=STRING EOL;
 	public AuthorElements getAuthorAccess() {
 		return pAuthor;
 	}
@@ -857,10 +711,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Rating:
-	//	'{'
-	//	'Stars' ':' stars=INT ',' ('Comment' ':' comment=STRING ',')?
-	//	'Author' ':' author=[Author]
-	//	'}';
+	//	stars=INT ',' comment=STRING 'von' author=[Author];
 	public RatingElements getRatingAccess() {
 		return pRating;
 	}
@@ -870,16 +721,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Recipe:
-	//	name=ID ':' '{'
-	//	'Author' ':' author=[Author] ','
-	//	'VeganismLevel' ':' vegan=VeganismLevel ','
-	//	'Duration' ':' duration=INT ','
-	//	'Difficulty' ':' difficulty=INT ',' ('KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (','
-	//	kitchenUtensils+=KitchenUtensil)* ']' ',')? ('foodCategory' ':' '[' foodCategory+=FoodCategory (','
-	//	foodCategory+=FoodCategory)* ']' ',')?
-	//	'Ingredients' ':' '[' ingredient+=Ingredient (',' ingredient+=Ingredient)* ']' (',' "Ratings" ":" "[" ratings+=Rating
-	//	("," ratings+=Rating)* "]")?
-	//	'}';
+	//	name=ID 'von' author=[Author] ',' vegan=VeganismLevel ',' duration=INT 'min' ',' difficulty=DifficultyLevel EOL
+	//	'Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil EOL (kitchenUtensils+=KitchenUtensil EOL)*
+	//	'Food Categories' EOL foodCategory+=FoodCategory EOL (foodCategory+=FoodCategory EOL)*
+	//	'Ingredients' EOL '- ' ingredient+=Ingredient EOL ('- ' ingredient+=Ingredient EOL)*
+	//	'Ratings' EOL ratings+=Rating EOL (ratings+=Rating EOL)*;
 	public RecipeElements getRecipeAccess() {
 		return pRecipe;
 	}
@@ -898,6 +744,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getKitchenUtensilAccess().getRule();
 	}
 	
+	//DifficultyLevel:
+	//	name=('easy' | 'medium' | 'hard');
+	public DifficultyLevelElements getDifficultyLevelAccess() {
+		return pDifficultyLevel;
+	}
+	
+	public ParserRule getDifficultyLevelRule() {
+		return getDifficultyLevelAccess().getRule();
+	}
+	
 	//FoodCategory:
 	//	name=STRING;
 	public FoodCategoryElements getFoodCategoryAccess() {
@@ -909,13 +765,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Ingredient:
-	//	'{'
-	//	'Name' ':' name=STRING ','
-	//	'Amount' ':' amount=INT ','
-	//	'Unit' ':' unit=Unit ','
-	//	'VeganismLevel' ':' veganismLevel=VeganismLevel
-	//	'}'
-	//	| recipe=[Recipe];
+	//	name=STRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel | recipe=[Recipe];
 	public IngredientElements getIngredientAccess() {
 		return pIngredient;
 	}
@@ -944,6 +794,28 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getUnitAccess().getRule();
 	}
 	
+	//EOL:
+	//	NEWLINE | SL_COMMENT;
+	public EOLElements getEOLAccess() {
+		return pEOL;
+	}
+	
+	public ParserRule getEOLRule() {
+		return getEOLAccess().getRule();
+	}
+	
+	//@ Override terminal SL_COMMENT:
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	public TerminalRule getSL_COMMENTRule() {
+		return tSL_COMMENT;
+	}
+	
+	//terminal NEWLINE:
+	//	'\r'? '\n';
+	public TerminalRule getNEWLINERule() {
+		return tNEWLINE;
+	}
+	
 	//terminal ID:
 	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
@@ -966,12 +838,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'/*'->'*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
-	}
-	
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
-	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
 	}
 	
 	//terminal WS:

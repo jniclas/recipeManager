@@ -138,30 +138,30 @@ public interface Recipe extends EObject
   void setDuration(int value);
 
   /**
-   * Returns the value of the '<em><b>Difficulty</b></em>' attribute.
+   * Returns the value of the '<em><b>Difficulty</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Difficulty</em>' attribute isn't clear,
+   * If the meaning of the '<em>Difficulty</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Difficulty</em>' attribute.
-   * @see #setDifficulty(int)
+   * @return the value of the '<em>Difficulty</em>' containment reference.
+   * @see #setDifficulty(DifficultyLevel)
    * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRecipe_Difficulty()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  int getDifficulty();
+  DifficultyLevel getDifficulty();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Recipe#getDifficulty <em>Difficulty</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Recipe#getDifficulty <em>Difficulty</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Difficulty</em>' attribute.
+   * @param value the new value of the '<em>Difficulty</em>' containment reference.
    * @see #getDifficulty()
    * @generated
    */
-  void setDifficulty(int value);
+  void setDifficulty(DifficultyLevel value);
 
   /**
    * Returns the value of the '<em><b>Kitchen Utensils</b></em>' containment reference list.

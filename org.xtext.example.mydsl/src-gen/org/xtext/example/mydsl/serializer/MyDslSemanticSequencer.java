@@ -15,6 +15,7 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.mydsl.myDsl.Author;
+import org.xtext.example.mydsl.myDsl.DifficultyLevel;
 import org.xtext.example.mydsl.myDsl.FoodCategory;
 import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.KitchenUtensil;
@@ -40,6 +41,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			switch (semanticObject.eClass().getClassifierID()) {
 			case MyDslPackage.AUTHOR:
 				sequence_Author(context, (Author) semanticObject); 
+				return; 
+			case MyDslPackage.DIFFICULTY_LEVEL:
+				sequence_DifficultyLevel(context, (DifficultyLevel) semanticObject); 
 				return; 
 			case MyDslPackage.FOOD_CATEGORY:
 				sequence_FoodCategory(context, (FoodCategory) semanticObject); 
@@ -80,8 +84,20 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAuthorAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getAuthorAccess().getEmailSTRINGTerminalRuleCall_2_0(), semanticObject.getEmail());
+		feeder.accept(grammarAccess.getAuthorAccess().getEmailSTRINGTerminalRuleCall_1_0(), semanticObject.getEmail());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DifficultyLevel returns DifficultyLevel
+	 *
+	 * Constraint:
+	 *     (name='easy' | name='medium' | name='hard')
+	 */
+	protected void sequence_DifficultyLevel(ISerializationContext context, DifficultyLevel semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -132,10 +148,22 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Rating returns Rating
 	 *
 	 * Constraint:
-	 *     (stars=INT comment=STRING? author=[Author|ID])
+	 *     (stars=INT comment=STRING author=[Author|ID])
 	 */
 	protected void sequence_Rating(ISerializationContext context, Rating semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.RATING__STARS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.RATING__STARS));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.RATING__COMMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.RATING__COMMENT));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.RATING__AUTHOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.RATING__AUTHOR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRatingAccess().getStarsINTTerminalRuleCall_0_0(), semanticObject.getStars());
+		feeder.accept(grammarAccess.getRatingAccess().getCommentSTRINGTerminalRuleCall_2_0(), semanticObject.getComment());
+		feeder.accept(grammarAccess.getRatingAccess().getAuthorAuthorIDTerminalRuleCall_4_0_1(), semanticObject.eGet(MyDslPackage.Literals.RATING__AUTHOR, false));
+		feeder.finish();
 	}
 	
 	
@@ -144,7 +172,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     RecipeManager returns RecipeManager
 	 *
 	 * Constraint:
-	 *     (authors+=Author authors+=Author* recipes+=Recipe recipes+=Recipe*)
+	 *     (authors+=Author authors+=Author* (recipes+=Recipe recipes+=Recipe*)?)
 	 */
 	protected void sequence_RecipeManager(ISerializationContext context, RecipeManager semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -161,12 +189,15 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         author=[Author|ID] 
 	 *         vegan=VeganismLevel 
 	 *         duration=INT 
-	 *         difficulty=INT 
-	 *         (kitchenUtensils+=KitchenUtensil kitchenUtensils+=KitchenUtensil*)? 
-	 *         (foodCategory+=FoodCategory foodCategory+=FoodCategory*)? 
+	 *         difficulty=DifficultyLevel 
+	 *         kitchenUtensils+=KitchenUtensil 
+	 *         kitchenUtensils+=KitchenUtensil* 
+	 *         foodCategory+=FoodCategory 
+	 *         foodCategory+=FoodCategory* 
 	 *         ingredient+=Ingredient 
 	 *         ingredient+=Ingredient* 
-	 *         (ratings+=Rating ratings+=Rating*)?
+	 *         ratings+=Rating 
+	 *         ratings+=Rating*
 	 *     )
 	 */
 	protected void sequence_Recipe(ISerializationContext context, Recipe semanticObject) {

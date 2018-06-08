@@ -69,6 +69,15 @@ public interface MyDslFactory extends EFactory
   KitchenUtensil createKitchenUtensil();
 
   /**
+   * Returns a new object of class '<em>Difficulty Level</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Difficulty Level</em>'.
+   * @generated
+   */
+  DifficultyLevel createDifficultyLevel();
+
+  /**
    * Returns a new object of class '<em>Food Category</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

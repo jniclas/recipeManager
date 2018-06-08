@@ -3,40 +3,36 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
 
+
+
 RecipeManager:
-	'authors' ':' "{" authors+= Author (',' authors+= Author)* "}"
-	'recipes' ':' '{'  recipes+=Recipe (',' recipes+=Recipe)*'}'
+	'authors' EOL authors+= Author (authors+= Author)* 
+	('recipes' EOL recipes+=Recipe (recipes+=Recipe)*)?
 ;
 
 
 Author:
-	name = ID ':' Email=STRING
+	name = ID  Email=STRING EOL
 ;
 
 
 Rating:
-	'{'
-		'Stars' ':' stars=INT ','
-		('Comment' ':' comment=STRING ',')?
-		'Author' ':' author=[Author]
-	 '}'
+	 stars=INT ','comment=STRING 'von' author=[Author]
 ;
 
 Recipe:
-	name=ID ':' '{'
-		'Author' ':' author=[Author]','
-		'VeganismLevel' ':' vegan=VeganismLevel ','
-		'Duration' ':' duration=INT ','
-		'Difficulty' ':' difficulty=INT ','
-		('KitchenUtensils' ':' '[' kitchenUtensils+=KitchenUtensil (',' kitchenUtensils+=KitchenUtensil)* ']' ',')?
-		('foodCategory' ':' '[' foodCategory+=FoodCategory (',' foodCategory+=FoodCategory)*']' ',')?
-		'Ingredients' ':' '[' ingredient+=Ingredient (',' ingredient+=Ingredient)*']'
-		(',' "Ratings" ":" "[" ratings += Rating ("," ratings+=Rating)* "]")?
- 	'}'
+	name=ID 'von' author=[Author] ',' vegan=VeganismLevel ',' duration=INT 'min' ',' difficulty=DifficultyLevel EOL
+	'Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil EOL ( kitchenUtensils+=KitchenUtensil EOL)*
+	'Food Categories' EOL foodCategory+=FoodCategory EOL ( foodCategory+=FoodCategory EOL)*
+	'Ingredients' EOL '- ' ingredient+=Ingredient EOL ('- ' ingredient+=Ingredient EOL)*
+	'Ratings' EOL ratings += Rating EOL ( ratings+=Rating EOL)*
 ;
 
 KitchenUtensil:
 	name=(STRING | 'furnace' | 'stovetop' | 'rolling pin')
+;
+DifficultyLevel:
+	name=('easy' | 'medium' | 'hard')
 ;
 
 FoodCategory:
@@ -44,12 +40,7 @@ FoodCategory:
 ;
 
 Ingredient:
-	('{'
-		'Name' ':' name=STRING ','
-		'Amount' ':' amount=INT ','
-		'Unit' ':' unit=Unit ','
-		'VeganismLevel'':' veganismLevel=VeganismLevel
- 	'}'
+	((name=STRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel)
  	| recipe=[Recipe]
  	)
 ;
@@ -61,3 +52,12 @@ VeganismLevel:
 Unit:
 	('ml' | 'l' | 'g' | 'kg' |'tsp' | 'mg' | 'tbsp' | 'pcs')
 ;
+EOL:
+	NEWLINE | SL_COMMENT;
+
+@Override 
+terminal SL_COMMENT:
+	'//' !('\n'|'\r')* ('\r'? '\n')?;
+	
+terminal NEWLINE:
+	('\r'? '\n');
