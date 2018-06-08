@@ -73,7 +73,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Author returns Author
 	 *
 	 * Constraint:
-	 *     (name=ID Email=STRING)
+	 *     (name=ID Email=QSTRING)
 	 */
 	protected void sequence_Author(ISerializationContext context, Author semanticObject) {
 		if (errorAcceptor != null) {
@@ -84,7 +84,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAuthorAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getAuthorAccess().getEmailSTRINGTerminalRuleCall_1_0(), semanticObject.getEmail());
+		feeder.accept(grammarAccess.getAuthorAccess().getEmailQSTRINGTerminalRuleCall_1_0(), semanticObject.getEmail());
 		feeder.finish();
 	}
 	
@@ -106,7 +106,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     FoodCategory returns FoodCategory
 	 *
 	 * Constraint:
-	 *     name=STRING
+	 *     name=QSTRING
 	 */
 	protected void sequence_FoodCategory(ISerializationContext context, FoodCategory semanticObject) {
 		if (errorAcceptor != null) {
@@ -114,7 +114,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.FOOD_CATEGORY__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFoodCategoryAccess().getNameSTRINGTerminalRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFoodCategoryAccess().getNameQSTRINGTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -124,7 +124,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Ingredient returns Ingredient
 	 *
 	 * Constraint:
-	 *     ((name=STRING amount=INT unit=Unit veganismLevel=VeganismLevel) | recipe=[Recipe|ID])
+	 *     ((name=INGEREDIENTSTRING amount=INT unit=Unit veganismLevel=VeganismLevel) | recipe=[Recipe|ID])
 	 */
 	protected void sequence_Ingredient(ISerializationContext context, Ingredient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -136,10 +136,16 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     KitchenUtensil returns KitchenUtensil
 	 *
 	 * Constraint:
-	 *     (name=STRING | name='furnace' | name='stovetop' | name='rolling pin')
+	 *     name=QSTRING
 	 */
 	protected void sequence_KitchenUtensil(ISerializationContext context, KitchenUtensil semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.KITCHEN_UTENSIL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.KITCHEN_UTENSIL__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getKitchenUtensilAccess().getNameQSTRINGTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -148,7 +154,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Rating returns Rating
 	 *
 	 * Constraint:
-	 *     (stars=INT comment=STRING author=[Author|ID])
+	 *     (stars=INT comment=QSTRING author=[Author|ID])
 	 */
 	protected void sequence_Rating(ISerializationContext context, Rating semanticObject) {
 		if (errorAcceptor != null) {
@@ -161,8 +167,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRatingAccess().getStarsINTTerminalRuleCall_0_0(), semanticObject.getStars());
-		feeder.accept(grammarAccess.getRatingAccess().getCommentSTRINGTerminalRuleCall_2_0(), semanticObject.getComment());
-		feeder.accept(grammarAccess.getRatingAccess().getAuthorAuthorIDTerminalRuleCall_4_0_1(), semanticObject.eGet(MyDslPackage.Literals.RATING__AUTHOR, false));
+		feeder.accept(grammarAccess.getRatingAccess().getCommentQSTRINGTerminalRuleCall_1_0(), semanticObject.getComment());
+		feeder.accept(grammarAccess.getRatingAccess().getAuthorAuthorIDTerminalRuleCall_3_0_1(), semanticObject.eGet(MyDslPackage.Literals.RATING__AUTHOR, false));
 		feeder.finish();
 	}
 	

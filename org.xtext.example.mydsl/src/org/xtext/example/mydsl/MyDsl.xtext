@@ -12,37 +12,37 @@ RecipeManager:
 
 
 Author:
-	name = ID  Email=STRING EOL
+	name = ID  Email=QSTRING
 ;
 
 
 Rating:
-	 stars=INT ','comment=STRING 'von' author=[Author]
+	 stars=INT comment=QSTRING 'von' author=[Author] EOL
 ;
 
 Recipe:
 	name=ID 'von' author=[Author] ',' vegan=VeganismLevel ',' duration=INT 'min' ',' difficulty=DifficultyLevel EOL
-	'Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil EOL ( kitchenUtensils+=KitchenUtensil EOL)*
-	'Food Categories' EOL foodCategory+=FoodCategory EOL ( foodCategory+=FoodCategory EOL)*
-	'Ingredients' EOL '- ' ingredient+=Ingredient EOL ('- ' ingredient+=Ingredient EOL)*
-	'Ratings' EOL ratings += Rating EOL ( ratings+=Rating EOL)*
+	'Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil  ( kitchenUtensils+=KitchenUtensil )*
+	'Food Categories' EOL foodCategory+=FoodCategory  ( foodCategory+=FoodCategory )*
+	'Ingredients' EOL ingredient+=Ingredient  (ingredient+=Ingredient )*
+	'Ratings' EOL ratings += Rating  ( ratings+=Rating )*
 ;
 
 KitchenUtensil:
-	name=(STRING | 'furnace' | 'stovetop' | 'rolling pin')
+	name=(QSTRING)
 ;
 DifficultyLevel:
 	name=('easy' | 'medium' | 'hard')
 ;
 
 FoodCategory:
-	name=STRING
+	name=QSTRING
 ;
 
 Ingredient:
-	((name=STRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel)
+	((name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel)
  	| recipe=[Recipe]
- 	)
+ 	) EOL
 ;
 
 VeganismLevel:
@@ -61,3 +61,10 @@ terminal SL_COMMENT:
 	
 terminal NEWLINE:
 	('\r'? '\n');
+	
+terminal INGEREDIENTSTRING:
+	"- " ('a'..'z'|'A'..'Z')* ","
+;
+terminal QSTRING:
+	 "- " ('a'..'z'|'A'..'Z'|' '|'.'|'@')* (NEWLINE | SL_COMMENT)
+;
