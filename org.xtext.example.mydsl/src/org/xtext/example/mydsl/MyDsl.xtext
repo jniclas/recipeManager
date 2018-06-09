@@ -40,9 +40,9 @@ FoodCategory:
 ;
 
 Ingredient:
-	((name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel)
- 	| recipe=[Recipe]
- 	) EOL
+	("--" recipe=[Recipe] | 
+		(name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel)
+	) EOL
 ;
 
 VeganismLevel:
@@ -60,7 +60,7 @@ terminal SL_COMMENT:
 	'//' !('\n'|'\r')* ('\r'? '\n')?;
 	
 terminal NEWLINE:
-	('\r'? '\n');
+	('\r'? '\n' '\t'*)+;
 	
 terminal INGEREDIENTSTRING:
 	"- " ('a'..'z'|'A'..'Z')* ","

@@ -124,7 +124,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Ingredient returns Ingredient
 	 *
 	 * Constraint:
-	 *     ((name=INGEREDIENTSTRING amount=INT unit=Unit veganismLevel=VeganismLevel) | recipe=[Recipe|ID])
+	 *     (recipe=[Recipe|ID] | (name=INGEREDIENTSTRING amount=INT unit=Unit veganismLevel=VeganismLevel))
 	 */
 	protected void sequence_Ingredient(ISerializationContext context, Ingredient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

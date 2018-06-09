@@ -785,11 +785,31 @@ ruleIngredient returns [EObject current=null]
 	(
 		(
 			(
+				otherlv_0='--'
+				{
+					newLeafNode(otherlv_0, grammarAccess.getIngredientAccess().getHyphenMinusHyphenMinusKeyword_0_0_0());
+				}
 				(
 					(
-						lv_name_0_0=RULE_INGEREDIENTSTRING
 						{
-							newLeafNode(lv_name_0_0, grammarAccess.getIngredientAccess().getNameINGEREDIENTSTRINGTerminalRuleCall_0_0_0_0());
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getIngredientRule());
+							}
+						}
+						otherlv_1=RULE_ID
+						{
+							newLeafNode(otherlv_1, grammarAccess.getIngredientAccess().getRecipeRecipeCrossReference_0_0_1_0());
+						}
+					)
+				)
+			)
+			    |
+			(
+				(
+					(
+						lv_name_2_0=RULE_INGEREDIENTSTRING
+						{
+							newLeafNode(lv_name_2_0, grammarAccess.getIngredientAccess().getNameINGEREDIENTSTRINGTerminalRuleCall_0_1_0_0());
 						}
 						{
 							if ($current==null) {
@@ -798,16 +818,16 @@ ruleIngredient returns [EObject current=null]
 							setWithLastConsumed(
 								$current,
 								"name",
-								lv_name_0_0,
+								lv_name_2_0,
 								"org.xtext.example.mydsl.MyDsl.INGEREDIENTSTRING");
 						}
 					)
 				)
 				(
 					(
-						lv_amount_1_0=RULE_INT
+						lv_amount_3_0=RULE_INT
 						{
-							newLeafNode(lv_amount_1_0, grammarAccess.getIngredientAccess().getAmountINTTerminalRuleCall_0_0_1_0());
+							newLeafNode(lv_amount_3_0, grammarAccess.getIngredientAccess().getAmountINTTerminalRuleCall_0_1_1_0());
 						}
 						{
 							if ($current==null) {
@@ -816,7 +836,7 @@ ruleIngredient returns [EObject current=null]
 							setWithLastConsumed(
 								$current,
 								"amount",
-								lv_amount_1_0,
+								lv_amount_3_0,
 								"org.eclipse.xtext.common.Terminals.INT");
 						}
 					)
@@ -824,9 +844,9 @@ ruleIngredient returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getIngredientAccess().getUnitUnitParserRuleCall_0_0_2_0());
+							newCompositeNode(grammarAccess.getIngredientAccess().getUnitUnitParserRuleCall_0_1_2_0());
 						}
-						lv_unit_2_0=ruleUnit
+						lv_unit_4_0=ruleUnit
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getIngredientRule());
@@ -834,22 +854,22 @@ ruleIngredient returns [EObject current=null]
 							set(
 								$current,
 								"unit",
-								lv_unit_2_0,
+								lv_unit_4_0,
 								"org.xtext.example.mydsl.MyDsl.Unit");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
-				otherlv_3=','
+				otherlv_5=','
 				{
-					newLeafNode(otherlv_3, grammarAccess.getIngredientAccess().getCommaKeyword_0_0_3());
+					newLeafNode(otherlv_5, grammarAccess.getIngredientAccess().getCommaKeyword_0_1_3());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getIngredientAccess().getVeganismLevelVeganismLevelParserRuleCall_0_0_4_0());
+							newCompositeNode(grammarAccess.getIngredientAccess().getVeganismLevelVeganismLevelParserRuleCall_0_1_4_0());
 						}
-						lv_veganismLevel_4_0=ruleVeganismLevel
+						lv_veganismLevel_6_0=ruleVeganismLevel
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getIngredientRule());
@@ -857,25 +877,11 @@ ruleIngredient returns [EObject current=null]
 							set(
 								$current,
 								"veganismLevel",
-								lv_veganismLevel_4_0,
+								lv_veganismLevel_6_0,
 								"org.xtext.example.mydsl.MyDsl.VeganismLevel");
 							afterParserOrEnumRuleCall();
 						}
 					)
-				)
-			)
-			    |
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getIngredientRule());
-						}
-					}
-					otherlv_5=RULE_ID
-					{
-						newLeafNode(otherlv_5, grammarAccess.getIngredientAccess().getRecipeRecipeCrossReference_0_1_0());
-					}
 				)
 			)
 		)
@@ -1027,7 +1033,7 @@ ruleEOL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
-RULE_NEWLINE : '\r'? '\n';
+RULE_NEWLINE : ('\r'? '\n' '\t'*)+;
 
 RULE_INGEREDIENTSTRING : '- ' ('a'..'z'|'A'..'Z')* ',';
 

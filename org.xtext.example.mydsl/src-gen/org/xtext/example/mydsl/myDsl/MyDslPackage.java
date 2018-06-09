@@ -372,13 +372,22 @@ public interface MyDslPackage extends EPackage
   int INGREDIENT = 7;
 
   /**
+   * The feature id for the '<em><b>Recipe</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INGREDIENT__RECIPE = 0;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INGREDIENT__NAME = 0;
+  int INGREDIENT__NAME = 1;
 
   /**
    * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -387,7 +396,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INGREDIENT__AMOUNT = 1;
+  int INGREDIENT__AMOUNT = 2;
 
   /**
    * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -396,7 +405,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INGREDIENT__UNIT = 2;
+  int INGREDIENT__UNIT = 3;
 
   /**
    * The feature id for the '<em><b>Veganism Level</b></em>' attribute.
@@ -405,16 +414,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INGREDIENT__VEGANISM_LEVEL = 3;
-
-  /**
-   * The feature id for the '<em><b>Recipe</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INGREDIENT__RECIPE = 4;
+  int INGREDIENT__VEGANISM_LEVEL = 4;
 
   /**
    * The number of structural features of the '<em>Ingredient</em>' class.
@@ -716,6 +716,17 @@ public interface MyDslPackage extends EPackage
   EClass getIngredient();
 
   /**
+   * Returns the meta object for the reference '{@link org.xtext.example.mydsl.myDsl.Ingredient#getRecipe <em>Recipe</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Recipe</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Ingredient#getRecipe()
+   * @see #getIngredient()
+   * @generated
+   */
+  EReference getIngredient_Recipe();
+
+  /**
    * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Ingredient#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -758,17 +769,6 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EAttribute getIngredient_VeganismLevel();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.example.mydsl.myDsl.Ingredient#getRecipe <em>Recipe</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Recipe</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Ingredient#getRecipe()
-   * @see #getIngredient()
-   * @generated
-   */
-  EReference getIngredient_Recipe();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1026,6 +1026,14 @@ public interface MyDslPackage extends EPackage
     EClass INGREDIENT = eINSTANCE.getIngredient();
 
     /**
+     * The meta object literal for the '<em><b>Recipe</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INGREDIENT__RECIPE = eINSTANCE.getIngredient_Recipe();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1056,14 +1064,6 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute INGREDIENT__VEGANISM_LEVEL = eINSTANCE.getIngredient_VeganismLevel();
-
-    /**
-     * The meta object literal for the '<em><b>Recipe</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INGREDIENT__RECIPE = eINSTANCE.getIngredient_Recipe();
 
   }
 

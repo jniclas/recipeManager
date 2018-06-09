@@ -404,68 +404,76 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
-		private final Assignment cNameAssignment_0_0_0 = (Assignment)cGroup_0_0.eContents().get(0);
-		private final RuleCall cNameINGEREDIENTSTRINGTerminalRuleCall_0_0_0_0 = (RuleCall)cNameAssignment_0_0_0.eContents().get(0);
-		private final Assignment cAmountAssignment_0_0_1 = (Assignment)cGroup_0_0.eContents().get(1);
-		private final RuleCall cAmountINTTerminalRuleCall_0_0_1_0 = (RuleCall)cAmountAssignment_0_0_1.eContents().get(0);
-		private final Assignment cUnitAssignment_0_0_2 = (Assignment)cGroup_0_0.eContents().get(2);
-		private final RuleCall cUnitUnitParserRuleCall_0_0_2_0 = (RuleCall)cUnitAssignment_0_0_2.eContents().get(0);
-		private final Keyword cCommaKeyword_0_0_3 = (Keyword)cGroup_0_0.eContents().get(3);
-		private final Assignment cVeganismLevelAssignment_0_0_4 = (Assignment)cGroup_0_0.eContents().get(4);
-		private final RuleCall cVeganismLevelVeganismLevelParserRuleCall_0_0_4_0 = (RuleCall)cVeganismLevelAssignment_0_0_4.eContents().get(0);
-		private final Assignment cRecipeAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
-		private final CrossReference cRecipeRecipeCrossReference_0_1_0 = (CrossReference)cRecipeAssignment_0_1.eContents().get(0);
-		private final RuleCall cRecipeRecipeIDTerminalRuleCall_0_1_0_1 = (RuleCall)cRecipeRecipeCrossReference_0_1_0.eContents().get(1);
+		private final Keyword cHyphenMinusHyphenMinusKeyword_0_0_0 = (Keyword)cGroup_0_0.eContents().get(0);
+		private final Assignment cRecipeAssignment_0_0_1 = (Assignment)cGroup_0_0.eContents().get(1);
+		private final CrossReference cRecipeRecipeCrossReference_0_0_1_0 = (CrossReference)cRecipeAssignment_0_0_1.eContents().get(0);
+		private final RuleCall cRecipeRecipeIDTerminalRuleCall_0_0_1_0_1 = (RuleCall)cRecipeRecipeCrossReference_0_0_1_0.eContents().get(1);
+		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
+		private final Assignment cNameAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
+		private final RuleCall cNameINGEREDIENTSTRINGTerminalRuleCall_0_1_0_0 = (RuleCall)cNameAssignment_0_1_0.eContents().get(0);
+		private final Assignment cAmountAssignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
+		private final RuleCall cAmountINTTerminalRuleCall_0_1_1_0 = (RuleCall)cAmountAssignment_0_1_1.eContents().get(0);
+		private final Assignment cUnitAssignment_0_1_2 = (Assignment)cGroup_0_1.eContents().get(2);
+		private final RuleCall cUnitUnitParserRuleCall_0_1_2_0 = (RuleCall)cUnitAssignment_0_1_2.eContents().get(0);
+		private final Keyword cCommaKeyword_0_1_3 = (Keyword)cGroup_0_1.eContents().get(3);
+		private final Assignment cVeganismLevelAssignment_0_1_4 = (Assignment)cGroup_0_1.eContents().get(4);
+		private final RuleCall cVeganismLevelVeganismLevelParserRuleCall_0_1_4_0 = (RuleCall)cVeganismLevelAssignment_0_1_4.eContents().get(0);
 		private final RuleCall cEOLParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//Ingredient:
-		//	(name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel | recipe=[Recipe]) EOL;
+		//	("--" recipe=[Recipe] | name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel) EOL;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel | recipe=[Recipe]) EOL
+		//("--" recipe=[Recipe] | name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel) EOL
 		public Group getGroup() { return cGroup; }
 		
-		//name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel | recipe=[Recipe]
+		//"--" recipe=[Recipe] | name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
-		//name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel
+		//"--" recipe=[Recipe]
 		public Group getGroup_0_0() { return cGroup_0_0; }
 		
-		//name=INGEREDIENTSTRING
-		public Assignment getNameAssignment_0_0_0() { return cNameAssignment_0_0_0; }
-		
-		//INGEREDIENTSTRING
-		public RuleCall getNameINGEREDIENTSTRINGTerminalRuleCall_0_0_0_0() { return cNameINGEREDIENTSTRINGTerminalRuleCall_0_0_0_0; }
-		
-		//amount=INT
-		public Assignment getAmountAssignment_0_0_1() { return cAmountAssignment_0_0_1; }
-		
-		//INT
-		public RuleCall getAmountINTTerminalRuleCall_0_0_1_0() { return cAmountINTTerminalRuleCall_0_0_1_0; }
-		
-		//unit=Unit
-		public Assignment getUnitAssignment_0_0_2() { return cUnitAssignment_0_0_2; }
-		
-		//Unit
-		public RuleCall getUnitUnitParserRuleCall_0_0_2_0() { return cUnitUnitParserRuleCall_0_0_2_0; }
-		
-		//','
-		public Keyword getCommaKeyword_0_0_3() { return cCommaKeyword_0_0_3; }
-		
-		//veganismLevel=VeganismLevel
-		public Assignment getVeganismLevelAssignment_0_0_4() { return cVeganismLevelAssignment_0_0_4; }
-		
-		//VeganismLevel
-		public RuleCall getVeganismLevelVeganismLevelParserRuleCall_0_0_4_0() { return cVeganismLevelVeganismLevelParserRuleCall_0_0_4_0; }
+		//"--"
+		public Keyword getHyphenMinusHyphenMinusKeyword_0_0_0() { return cHyphenMinusHyphenMinusKeyword_0_0_0; }
 		
 		//recipe=[Recipe]
-		public Assignment getRecipeAssignment_0_1() { return cRecipeAssignment_0_1; }
+		public Assignment getRecipeAssignment_0_0_1() { return cRecipeAssignment_0_0_1; }
 		
 		//[Recipe]
-		public CrossReference getRecipeRecipeCrossReference_0_1_0() { return cRecipeRecipeCrossReference_0_1_0; }
+		public CrossReference getRecipeRecipeCrossReference_0_0_1_0() { return cRecipeRecipeCrossReference_0_0_1_0; }
 		
 		//ID
-		public RuleCall getRecipeRecipeIDTerminalRuleCall_0_1_0_1() { return cRecipeRecipeIDTerminalRuleCall_0_1_0_1; }
+		public RuleCall getRecipeRecipeIDTerminalRuleCall_0_0_1_0_1() { return cRecipeRecipeIDTerminalRuleCall_0_0_1_0_1; }
+		
+		//name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel
+		public Group getGroup_0_1() { return cGroup_0_1; }
+		
+		//name=INGEREDIENTSTRING
+		public Assignment getNameAssignment_0_1_0() { return cNameAssignment_0_1_0; }
+		
+		//INGEREDIENTSTRING
+		public RuleCall getNameINGEREDIENTSTRINGTerminalRuleCall_0_1_0_0() { return cNameINGEREDIENTSTRINGTerminalRuleCall_0_1_0_0; }
+		
+		//amount=INT
+		public Assignment getAmountAssignment_0_1_1() { return cAmountAssignment_0_1_1; }
+		
+		//INT
+		public RuleCall getAmountINTTerminalRuleCall_0_1_1_0() { return cAmountINTTerminalRuleCall_0_1_1_0; }
+		
+		//unit=Unit
+		public Assignment getUnitAssignment_0_1_2() { return cUnitAssignment_0_1_2; }
+		
+		//Unit
+		public RuleCall getUnitUnitParserRuleCall_0_1_2_0() { return cUnitUnitParserRuleCall_0_1_2_0; }
+		
+		//','
+		public Keyword getCommaKeyword_0_1_3() { return cCommaKeyword_0_1_3; }
+		
+		//veganismLevel=VeganismLevel
+		public Assignment getVeganismLevelAssignment_0_1_4() { return cVeganismLevelAssignment_0_1_4; }
+		
+		//VeganismLevel
+		public RuleCall getVeganismLevelVeganismLevelParserRuleCall_0_1_4_0() { return cVeganismLevelVeganismLevelParserRuleCall_0_1_4_0; }
 		
 		//EOL
 		public RuleCall getEOLParserRuleCall_1() { return cEOLParserRuleCall_1; }
@@ -701,7 +709,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Ingredient:
-	//	(name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel | recipe=[Recipe]) EOL;
+	//	("--" recipe=[Recipe] | name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel) EOL;
 	public IngredientElements getIngredientAccess() {
 		return pIngredient;
 	}
@@ -747,7 +755,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal NEWLINE:
-	//	'\r'? '\n';
+	//	'\r'? '\n' '\t'*+;
 	public TerminalRule getNEWLINERule() {
 		return tNEWLINE;
 	}

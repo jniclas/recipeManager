@@ -14,11 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Ingredient#getRecipe <em>Recipe</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Ingredient#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Ingredient#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Ingredient#getUnit <em>Unit</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Ingredient#getVeganismLevel <em>Veganism Level</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Ingredient#getRecipe <em>Recipe</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngredient()
@@ -27,6 +27,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Ingredient extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Recipe</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Recipe</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Recipe</em>' reference.
+   * @see #setRecipe(Recipe)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngredient_Recipe()
+   * @model
+   * @generated
+   */
+  Recipe getRecipe();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Ingredient#getRecipe <em>Recipe</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Recipe</em>' reference.
+   * @see #getRecipe()
+   * @generated
+   */
+  void setRecipe(Recipe value);
+
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -130,31 +156,5 @@ public interface Ingredient extends EObject
    * @generated
    */
   void setVeganismLevel(String value);
-
-  /**
-   * Returns the value of the '<em><b>Recipe</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Recipe</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Recipe</em>' reference.
-   * @see #setRecipe(Recipe)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getIngredient_Recipe()
-   * @model
-   * @generated
-   */
-  Recipe getRecipe();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Ingredient#getRecipe <em>Recipe</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Recipe</em>' reference.
-   * @see #getRecipe()
-   * @generated
-   */
-  void setRecipe(Recipe value);
 
 } // Ingredient

@@ -423,9 +423,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIngredient_Name()
+  public EReference getIngredient_Recipe()
   {
-    return (EAttribute)ingredientEClass.getEStructuralFeatures().get(0);
+    return (EReference)ingredientEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -433,7 +433,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIngredient_Amount()
+  public EAttribute getIngredient_Name()
   {
     return (EAttribute)ingredientEClass.getEStructuralFeatures().get(1);
   }
@@ -443,7 +443,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIngredient_Unit()
+  public EAttribute getIngredient_Amount()
   {
     return (EAttribute)ingredientEClass.getEStructuralFeatures().get(2);
   }
@@ -453,7 +453,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIngredient_VeganismLevel()
+  public EAttribute getIngredient_Unit()
   {
     return (EAttribute)ingredientEClass.getEStructuralFeatures().get(3);
   }
@@ -463,9 +463,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getIngredient_Recipe()
+  public EAttribute getIngredient_VeganismLevel()
   {
-    return (EReference)ingredientEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)ingredientEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -532,11 +532,11 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEAttribute(foodCategoryEClass, FOOD_CATEGORY__NAME);
 
     ingredientEClass = createEClass(INGREDIENT);
+    createEReference(ingredientEClass, INGREDIENT__RECIPE);
     createEAttribute(ingredientEClass, INGREDIENT__NAME);
     createEAttribute(ingredientEClass, INGREDIENT__AMOUNT);
     createEAttribute(ingredientEClass, INGREDIENT__UNIT);
     createEAttribute(ingredientEClass, INGREDIENT__VEGANISM_LEVEL);
-    createEReference(ingredientEClass, INGREDIENT__RECIPE);
   }
 
   /**
@@ -604,11 +604,11 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEAttribute(getFoodCategory_Name(), ecorePackage.getEString(), "name", null, 0, 1, FoodCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ingredientEClass, Ingredient.class, "Ingredient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIngredient_Recipe(), this.getRecipe(), null, "recipe", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIngredient_Name(), ecorePackage.getEString(), "name", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIngredient_Amount(), ecorePackage.getEInt(), "amount", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIngredient_Unit(), ecorePackage.getEString(), "unit", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIngredient_VeganismLevel(), ecorePackage.getEString(), "veganismLevel", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIngredient_Recipe(), this.getRecipe(), null, "recipe", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

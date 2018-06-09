@@ -43,6 +43,7 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRecipeAccess().getGroup(), "rule__Recipe__Group__0");
 					put(grammarAccess.getIngredientAccess().getGroup(), "rule__Ingredient__Group__0");
 					put(grammarAccess.getIngredientAccess().getGroup_0_0(), "rule__Ingredient__Group_0_0__0");
+					put(grammarAccess.getIngredientAccess().getGroup_0_1(), "rule__Ingredient__Group_0_1__0");
 					put(grammarAccess.getRecipeManagerAccess().getAuthorsAssignment_2(), "rule__RecipeManager__AuthorsAssignment_2");
 					put(grammarAccess.getRecipeManagerAccess().getAuthorsAssignment_3(), "rule__RecipeManager__AuthorsAssignment_3");
 					put(grammarAccess.getRecipeManagerAccess().getRecipesAssignment_4_2(), "rule__RecipeManager__RecipesAssignment_4_2");
@@ -68,11 +69,11 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getKitchenUtensilAccess().getNameAssignment(), "rule__KitchenUtensil__NameAssignment");
 					put(grammarAccess.getDifficultyLevelAccess().getNameAssignment(), "rule__DifficultyLevel__NameAssignment");
 					put(grammarAccess.getFoodCategoryAccess().getNameAssignment(), "rule__FoodCategory__NameAssignment");
-					put(grammarAccess.getIngredientAccess().getNameAssignment_0_0_0(), "rule__Ingredient__NameAssignment_0_0_0");
-					put(grammarAccess.getIngredientAccess().getAmountAssignment_0_0_1(), "rule__Ingredient__AmountAssignment_0_0_1");
-					put(grammarAccess.getIngredientAccess().getUnitAssignment_0_0_2(), "rule__Ingredient__UnitAssignment_0_0_2");
-					put(grammarAccess.getIngredientAccess().getVeganismLevelAssignment_0_0_4(), "rule__Ingredient__VeganismLevelAssignment_0_0_4");
-					put(grammarAccess.getIngredientAccess().getRecipeAssignment_0_1(), "rule__Ingredient__RecipeAssignment_0_1");
+					put(grammarAccess.getIngredientAccess().getRecipeAssignment_0_0_1(), "rule__Ingredient__RecipeAssignment_0_0_1");
+					put(grammarAccess.getIngredientAccess().getNameAssignment_0_1_0(), "rule__Ingredient__NameAssignment_0_1_0");
+					put(grammarAccess.getIngredientAccess().getAmountAssignment_0_1_1(), "rule__Ingredient__AmountAssignment_0_1_1");
+					put(grammarAccess.getIngredientAccess().getUnitAssignment_0_1_2(), "rule__Ingredient__UnitAssignment_0_1_2");
+					put(grammarAccess.getIngredientAccess().getVeganismLevelAssignment_0_1_4(), "rule__Ingredient__VeganismLevelAssignment_0_1_4");
 				}
 			};
 		}
