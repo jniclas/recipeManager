@@ -67,12 +67,15 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
     {
       case MyDslPackage.RECIPE_MANAGER: return createRecipeManager();
       case MyDslPackage.AUTHOR: return createAuthor();
-      case MyDslPackage.RATING: return createRating();
       case MyDslPackage.RECIPE: return createRecipe();
       case MyDslPackage.KITCHEN_UTENSIL: return createKitchenUtensil();
       case MyDslPackage.DIFFICULTY_LEVEL: return createDifficultyLevel();
       case MyDslPackage.FOOD_CATEGORY: return createFoodCategory();
       case MyDslPackage.INGREDIENT: return createIngredient();
+      case MyDslPackage.LINEAR: return createLinear();
+      case MyDslPackage.LINEAR_ELEMENT: return createLinearElement();
+      case MyDslPackage.VIDEO: return createVideo();
+      case MyDslPackage.RATING: return createRating();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -98,17 +101,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     AuthorImpl author = new AuthorImpl();
     return author;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Rating createRating()
-  {
-    RatingImpl rating = new RatingImpl();
-    return rating;
   }
 
   /**
@@ -164,6 +156,50 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     IngredientImpl ingredient = new IngredientImpl();
     return ingredient;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Linear createLinear()
+  {
+    LinearImpl linear = new LinearImpl();
+    return linear;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LinearElement createLinearElement()
+  {
+    LinearElementImpl linearElement = new LinearElementImpl();
+    return linearElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Video createVideo()
+  {
+    VideoImpl video = new VideoImpl();
+    return video;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Rating createRating()
+  {
+    RatingImpl rating = new RatingImpl();
+    return rating;
   }
 
   /**

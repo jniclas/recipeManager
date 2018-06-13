@@ -19,10 +19,13 @@ import org.xtext.example.mydsl.myDsl.DifficultyLevel;
 import org.xtext.example.mydsl.myDsl.FoodCategory;
 import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.KitchenUtensil;
+import org.xtext.example.mydsl.myDsl.Linear;
+import org.xtext.example.mydsl.myDsl.LinearElement;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Rating;
 import org.xtext.example.mydsl.myDsl.Recipe;
 import org.xtext.example.mydsl.myDsl.RecipeManager;
+import org.xtext.example.mydsl.myDsl.Video;
 import org.xtext.example.mydsl.services.MyDslGrammarAccess;
 
 @SuppressWarnings("all")
@@ -54,6 +57,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.KITCHEN_UTENSIL:
 				sequence_KitchenUtensil(context, (KitchenUtensil) semanticObject); 
 				return; 
+			case MyDslPackage.LINEAR:
+				sequence_Linear(context, (Linear) semanticObject); 
+				return; 
+			case MyDslPackage.LINEAR_ELEMENT:
+				sequence_LinearElement(context, (LinearElement) semanticObject); 
+				return; 
 			case MyDslPackage.RATING:
 				sequence_Rating(context, (Rating) semanticObject); 
 				return; 
@@ -62,6 +71,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case MyDslPackage.RECIPE_MANAGER:
 				sequence_RecipeManager(context, (RecipeManager) semanticObject); 
+				return; 
+			case MyDslPackage.VIDEO:
+				sequence_Video(context, (Video) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -151,6 +163,39 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     LinearElement returns LinearElement
+	 *
+	 * Constraint:
+	 *     (order=INT comment=QSTRING)
+	 */
+	protected void sequence_LinearElement(ISerializationContext context, LinearElement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.LINEAR_ELEMENT__ORDER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.LINEAR_ELEMENT__ORDER));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.LINEAR_ELEMENT__COMMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.LINEAR_ELEMENT__COMMENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLinearElementAccess().getOrderINTTerminalRuleCall_0_0(), semanticObject.getOrder());
+		feeder.accept(grammarAccess.getLinearElementAccess().getCommentQSTRINGTerminalRuleCall_2_0(), semanticObject.getComment());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Linear returns Linear
+	 *
+	 * Constraint:
+	 *     elements+=LinearElement+
+	 */
+	protected void sequence_Linear(ISerializationContext context, Linear semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Rating returns Rating
 	 *
 	 * Constraint:
@@ -196,18 +241,36 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         vegan=VeganismLevel 
 	 *         duration=INT 
 	 *         difficulty=DifficultyLevel 
-	 *         kitchenUtensils+=KitchenUtensil 
-	 *         kitchenUtensils+=KitchenUtensil* 
+	 *         (kitchenUtensils+=KitchenUtensil kitchenUtensils+=KitchenUtensil*)? 
 	 *         foodCategory+=FoodCategory 
 	 *         foodCategory+=FoodCategory* 
 	 *         ingredient+=Ingredient 
 	 *         ingredient+=Ingredient* 
-	 *         ratings+=Rating 
-	 *         ratings+=Rating*
+	 *         preparation=Linear 
+	 *         video=Video? 
+	 *         (ratings+=Rating ratings+=Rating*)?
 	 *     )
 	 */
 	protected void sequence_Recipe(ISerializationContext context, Recipe semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Video returns Video
+	 *
+	 * Constraint:
+	 *     name=STRING
+	 */
+	protected void sequence_Video(ISerializationContext context, Video semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.VIDEO__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.VIDEO__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVideoAccess().getNameSTRINGTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	

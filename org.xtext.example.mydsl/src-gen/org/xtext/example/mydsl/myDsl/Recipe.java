@@ -24,6 +24,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.mydsl.myDsl.Recipe#getKitchenUtensils <em>Kitchen Utensils</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Recipe#getFoodCategory <em>Food Category</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Recipe#getIngredient <em>Ingredient</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Recipe#getPreparation <em>Preparation</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Recipe#getVideo <em>Video</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Recipe#getRatings <em>Ratings</em>}</li>
  * </ul>
  *
@@ -210,6 +212,58 @@ public interface Recipe extends EObject
    * @generated
    */
   EList<Ingredient> getIngredient();
+
+  /**
+   * Returns the value of the '<em><b>Preparation</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Preparation</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Preparation</em>' containment reference.
+   * @see #setPreparation(Linear)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRecipe_Preparation()
+   * @model containment="true"
+   * @generated
+   */
+  Linear getPreparation();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Recipe#getPreparation <em>Preparation</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Preparation</em>' containment reference.
+   * @see #getPreparation()
+   * @generated
+   */
+  void setPreparation(Linear value);
+
+  /**
+   * Returns the value of the '<em><b>Video</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Video</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Video</em>' containment reference.
+   * @see #setVideo(Video)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRecipe_Video()
+   * @model containment="true"
+   * @generated
+   */
+  Video getVideo();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Recipe#getVideo <em>Video</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Video</em>' containment reference.
+   * @see #getVideo()
+   * @generated
+   */
+  void setVideo(Video value);
 
   /**
    * Returns the value of the '<em><b>Ratings</b></em>' containment reference list.

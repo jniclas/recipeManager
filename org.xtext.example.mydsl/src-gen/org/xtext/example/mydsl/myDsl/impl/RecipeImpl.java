@@ -24,9 +24,11 @@ import org.xtext.example.mydsl.myDsl.DifficultyLevel;
 import org.xtext.example.mydsl.myDsl.FoodCategory;
 import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.KitchenUtensil;
+import org.xtext.example.mydsl.myDsl.Linear;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Rating;
 import org.xtext.example.mydsl.myDsl.Recipe;
+import org.xtext.example.mydsl.myDsl.Video;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,6 +46,8 @@ import org.xtext.example.mydsl.myDsl.Recipe;
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl#getKitchenUtensils <em>Kitchen Utensils</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl#getFoodCategory <em>Food Category</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl#getIngredient <em>Ingredient</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl#getPreparation <em>Preparation</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl#getVideo <em>Video</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl#getRatings <em>Ratings</em>}</li>
  * </ul>
  *
@@ -160,6 +164,26 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * @ordered
    */
   protected EList<Ingredient> ingredient;
+
+  /**
+   * The cached value of the '{@link #getPreparation() <em>Preparation</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPreparation()
+   * @generated
+   * @ordered
+   */
+  protected Linear preparation;
+
+  /**
+   * The cached value of the '{@link #getVideo() <em>Video</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVideo()
+   * @generated
+   * @ordered
+   */
+  protected Video video;
 
   /**
    * The cached value of the '{@link #getRatings() <em>Ratings</em>}' containment reference list.
@@ -399,6 +423,102 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * <!-- end-user-doc -->
    * @generated
    */
+  public Linear getPreparation()
+  {
+    return preparation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPreparation(Linear newPreparation, NotificationChain msgs)
+  {
+    Linear oldPreparation = preparation;
+    preparation = newPreparation;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE__PREPARATION, oldPreparation, newPreparation);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPreparation(Linear newPreparation)
+  {
+    if (newPreparation != preparation)
+    {
+      NotificationChain msgs = null;
+      if (preparation != null)
+        msgs = ((InternalEObject)preparation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RECIPE__PREPARATION, null, msgs);
+      if (newPreparation != null)
+        msgs = ((InternalEObject)newPreparation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RECIPE__PREPARATION, null, msgs);
+      msgs = basicSetPreparation(newPreparation, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE__PREPARATION, newPreparation, newPreparation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Video getVideo()
+  {
+    return video;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetVideo(Video newVideo, NotificationChain msgs)
+  {
+    Video oldVideo = video;
+    video = newVideo;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE__VIDEO, oldVideo, newVideo);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVideo(Video newVideo)
+  {
+    if (newVideo != video)
+    {
+      NotificationChain msgs = null;
+      if (video != null)
+        msgs = ((InternalEObject)video).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RECIPE__VIDEO, null, msgs);
+      if (newVideo != null)
+        msgs = ((InternalEObject)newVideo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RECIPE__VIDEO, null, msgs);
+      msgs = basicSetVideo(newVideo, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.RECIPE__VIDEO, newVideo, newVideo));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Rating> getRatings()
   {
     if (ratings == null)
@@ -426,6 +546,10 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
         return ((InternalEList<?>)getFoodCategory()).basicRemove(otherEnd, msgs);
       case MyDslPackage.RECIPE__INGREDIENT:
         return ((InternalEList<?>)getIngredient()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.RECIPE__PREPARATION:
+        return basicSetPreparation(null, msgs);
+      case MyDslPackage.RECIPE__VIDEO:
+        return basicSetVideo(null, msgs);
       case MyDslPackage.RECIPE__RATINGS:
         return ((InternalEList<?>)getRatings()).basicRemove(otherEnd, msgs);
     }
@@ -459,6 +583,10 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
         return getFoodCategory();
       case MyDslPackage.RECIPE__INGREDIENT:
         return getIngredient();
+      case MyDslPackage.RECIPE__PREPARATION:
+        return getPreparation();
+      case MyDslPackage.RECIPE__VIDEO:
+        return getVideo();
       case MyDslPackage.RECIPE__RATINGS:
         return getRatings();
     }
@@ -503,6 +631,12 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
         getIngredient().clear();
         getIngredient().addAll((Collection<? extends Ingredient>)newValue);
         return;
+      case MyDslPackage.RECIPE__PREPARATION:
+        setPreparation((Linear)newValue);
+        return;
+      case MyDslPackage.RECIPE__VIDEO:
+        setVideo((Video)newValue);
+        return;
       case MyDslPackage.RECIPE__RATINGS:
         getRatings().clear();
         getRatings().addAll((Collection<? extends Rating>)newValue);
@@ -545,6 +679,12 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
       case MyDslPackage.RECIPE__INGREDIENT:
         getIngredient().clear();
         return;
+      case MyDslPackage.RECIPE__PREPARATION:
+        setPreparation((Linear)null);
+        return;
+      case MyDslPackage.RECIPE__VIDEO:
+        setVideo((Video)null);
+        return;
       case MyDslPackage.RECIPE__RATINGS:
         getRatings().clear();
         return;
@@ -578,6 +718,10 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
         return foodCategory != null && !foodCategory.isEmpty();
       case MyDslPackage.RECIPE__INGREDIENT:
         return ingredient != null && !ingredient.isEmpty();
+      case MyDslPackage.RECIPE__PREPARATION:
+        return preparation != null;
+      case MyDslPackage.RECIPE__VIDEO:
+        return video != null;
       case MyDslPackage.RECIPE__RATINGS:
         return ratings != null && !ratings.isEmpty();
     }

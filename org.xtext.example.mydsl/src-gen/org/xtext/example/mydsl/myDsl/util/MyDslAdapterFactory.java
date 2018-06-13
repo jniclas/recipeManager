@@ -86,11 +86,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createAuthorAdapter();
       }
       @Override
-      public Adapter caseRating(Rating object)
-      {
-        return createRatingAdapter();
-      }
-      @Override
       public Adapter caseRecipe(Recipe object)
       {
         return createRecipeAdapter();
@@ -114,6 +109,26 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseIngredient(Ingredient object)
       {
         return createIngredientAdapter();
+      }
+      @Override
+      public Adapter caseLinear(Linear object)
+      {
+        return createLinearAdapter();
+      }
+      @Override
+      public Adapter caseLinearElement(LinearElement object)
+      {
+        return createLinearElementAdapter();
+      }
+      @Override
+      public Adapter caseVideo(Video object)
+      {
+        return createVideoAdapter();
+      }
+      @Override
+      public Adapter caseRating(Rating object)
+      {
+        return createRatingAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -163,21 +178,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAuthorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Rating <em>Rating</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.Rating
-   * @generated
-   */
-  public Adapter createRatingAdapter()
   {
     return null;
   }
@@ -253,6 +253,66 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIngredientAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Linear <em>Linear</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.Linear
+   * @generated
+   */
+  public Adapter createLinearAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.LinearElement <em>Linear Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.LinearElement
+   * @generated
+   */
+  public Adapter createLinearElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Video <em>Video</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.Video
+   * @generated
+   */
+  public Adapter createVideoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Rating <em>Rating</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.Rating
+   * @generated
+   */
+  public Adapter createRatingAdapter()
   {
     return null;
   }

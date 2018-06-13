@@ -6,7 +6,7 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
 
 RecipeManager:
-	'authors' EOL authors+= Author (authors+= Author)* 
+	'authors' EOL authors+=Author (authors+= Author)* 
 	('recipes' EOL recipes+=Recipe (recipes+=Recipe)*)?
 ;
 
@@ -15,17 +15,14 @@ Author:
 	name = ID  Email=QSTRING
 ;
 
-
-Rating:
-	 stars=INT comment=QSTRING 'von' author=[Author] EOL
-;
-
 Recipe:
-	name=ID 'von' author=[Author] ',' vegan=VeganismLevel ',' duration=INT 'min' ',' difficulty=DifficultyLevel EOL
-	'Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil  ( kitchenUtensils+=KitchenUtensil )*
+	name=ID 'from' author=[Author] ',' vegan=VeganismLevel ',' duration=INT 'min' ',' difficulty=DifficultyLevel EOL
+	('Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil  ( kitchenUtensils+=KitchenUtensil )*)?
 	'Food Categories' EOL foodCategory+=FoodCategory  ( foodCategory+=FoodCategory )*
 	'Ingredients' EOL ingredient+=Ingredient  (ingredient+=Ingredient )*
-	'Ratings' EOL ratings += Rating  ( ratings+=Rating )*
+	'Preparation' EOL preparation=Linear
+	('Video' EOL video=Video EOL)?
+	('Ratings' EOL ratings += Rating  ( ratings+=Rating )*)?
 ;
 
 KitchenUtensil:
@@ -43,6 +40,22 @@ Ingredient:
 	("--" recipe=[Recipe] | 
 		(name=INGEREDIENTSTRING amount=INT unit=Unit ',' veganismLevel=VeganismLevel)
 	) EOL
+;
+
+Linear:
+	(elements+=LinearElement)+
+;
+
+LinearElement:
+	order=INT ')' comment=QSTRING
+;
+
+Video:
+	name=STRING
+;
+
+Rating:
+	 stars=INT comment=QSTRING 'from' author=[Author] EOL
 ;
 
 VeganismLevel:
@@ -66,5 +79,5 @@ terminal INGEREDIENTSTRING:
 	"- " ('a'..'z'|'A'..'Z')* ","
 ;
 terminal QSTRING:
-	 "- " ('a'..'z'|'A'..'Z'|' '|'.'|'@')* (NEWLINE | SL_COMMENT)
+	 "- " ('a'..'z'|'A'..'Z'|' '|'.'|'@'|'0'..'9'|'!'|'?'|'-'|':'|';'|'('|')')* (NEWLINE | SL_COMMENT)
 ;

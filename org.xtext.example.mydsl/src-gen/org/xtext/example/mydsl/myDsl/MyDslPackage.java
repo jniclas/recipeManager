@@ -132,52 +132,6 @@ public interface MyDslPackage extends EPackage
   int AUTHOR_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.RatingImpl <em>Rating</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.RatingImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getRating()
-   * @generated
-   */
-  int RATING = 2;
-
-  /**
-   * The feature id for the '<em><b>Stars</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RATING__STARS = 0;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RATING__COMMENT = 1;
-
-  /**
-   * The feature id for the '<em><b>Author</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RATING__AUTHOR = 2;
-
-  /**
-   * The number of structural features of the '<em>Rating</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RATING_FEATURE_COUNT = 3;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl <em>Recipe</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -185,7 +139,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getRecipe()
    * @generated
    */
-  int RECIPE = 3;
+  int RECIPE = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -260,13 +214,31 @@ public interface MyDslPackage extends EPackage
   int RECIPE__INGREDIENT = 7;
 
   /**
+   * The feature id for the '<em><b>Preparation</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECIPE__PREPARATION = 8;
+
+  /**
+   * The feature id for the '<em><b>Video</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECIPE__VIDEO = 9;
+
+  /**
    * The feature id for the '<em><b>Ratings</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECIPE__RATINGS = 8;
+  int RECIPE__RATINGS = 10;
 
   /**
    * The number of structural features of the '<em>Recipe</em>' class.
@@ -275,7 +247,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECIPE_FEATURE_COUNT = 9;
+  int RECIPE_FEATURE_COUNT = 11;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.KitchenUtensilImpl <em>Kitchen Utensil</em>}' class.
@@ -285,7 +257,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getKitchenUtensil()
    * @generated
    */
-  int KITCHEN_UTENSIL = 4;
+  int KITCHEN_UTENSIL = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -313,7 +285,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getDifficultyLevel()
    * @generated
    */
-  int DIFFICULTY_LEVEL = 5;
+  int DIFFICULTY_LEVEL = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -341,7 +313,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFoodCategory()
    * @generated
    */
-  int FOOD_CATEGORY = 6;
+  int FOOD_CATEGORY = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -369,7 +341,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getIngredient()
    * @generated
    */
-  int INGREDIENT = 7;
+  int INGREDIENT = 6;
 
   /**
    * The feature id for the '<em><b>Recipe</b></em>' reference.
@@ -424,6 +396,145 @@ public interface MyDslPackage extends EPackage
    * @ordered
    */
   int INGREDIENT_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.LinearImpl <em>Linear</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.LinearImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLinear()
+   * @generated
+   */
+  int LINEAR = 7;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINEAR__ELEMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>Linear</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINEAR_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.LinearElementImpl <em>Linear Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.LinearElementImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLinearElement()
+   * @generated
+   */
+  int LINEAR_ELEMENT = 8;
+
+  /**
+   * The feature id for the '<em><b>Order</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINEAR_ELEMENT__ORDER = 0;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINEAR_ELEMENT__COMMENT = 1;
+
+  /**
+   * The number of structural features of the '<em>Linear Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINEAR_ELEMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.VideoImpl <em>Video</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.VideoImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getVideo()
+   * @generated
+   */
+  int VIDEO = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIDEO__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Video</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIDEO_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.RatingImpl <em>Rating</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.RatingImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getRating()
+   * @generated
+   */
+  int RATING = 10;
+
+  /**
+   * The feature id for the '<em><b>Stars</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RATING__STARS = 0;
+
+  /**
+   * The feature id for the '<em><b>Comment</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RATING__COMMENT = 1;
+
+  /**
+   * The feature id for the '<em><b>Author</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RATING__AUTHOR = 2;
+
+  /**
+   * The number of structural features of the '<em>Rating</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RATING_FEATURE_COUNT = 3;
 
 
   /**
@@ -489,49 +600,6 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EAttribute getAuthor_Email();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Rating <em>Rating</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Rating</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Rating
-   * @generated
-   */
-  EClass getRating();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Rating#getStars <em>Stars</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Stars</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Rating#getStars()
-   * @see #getRating()
-   * @generated
-   */
-  EAttribute getRating_Stars();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Rating#getComment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Comment</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Rating#getComment()
-   * @see #getRating()
-   * @generated
-   */
-  EAttribute getRating_Comment();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.example.mydsl.myDsl.Rating#getAuthor <em>Author</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Author</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Rating#getAuthor()
-   * @see #getRating()
-   * @generated
-   */
-  EReference getRating_Author();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Recipe <em>Recipe</em>}'.
@@ -630,6 +698,28 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EReference getRecipe_Ingredient();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Recipe#getPreparation <em>Preparation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Preparation</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Recipe#getPreparation()
+   * @see #getRecipe()
+   * @generated
+   */
+  EReference getRecipe_Preparation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Recipe#getVideo <em>Video</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Video</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Recipe#getVideo()
+   * @see #getRecipe()
+   * @generated
+   */
+  EReference getRecipe_Video();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Recipe#getRatings <em>Ratings</em>}'.
@@ -771,6 +861,123 @@ public interface MyDslPackage extends EPackage
   EAttribute getIngredient_VeganismLevel();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Linear <em>Linear</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Linear</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Linear
+   * @generated
+   */
+  EClass getLinear();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Linear#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Linear#getElements()
+   * @see #getLinear()
+   * @generated
+   */
+  EReference getLinear_Elements();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.LinearElement <em>Linear Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Linear Element</em>'.
+   * @see org.xtext.example.mydsl.myDsl.LinearElement
+   * @generated
+   */
+  EClass getLinearElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.LinearElement#getOrder <em>Order</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Order</em>'.
+   * @see org.xtext.example.mydsl.myDsl.LinearElement#getOrder()
+   * @see #getLinearElement()
+   * @generated
+   */
+  EAttribute getLinearElement_Order();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.LinearElement#getComment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Comment</em>'.
+   * @see org.xtext.example.mydsl.myDsl.LinearElement#getComment()
+   * @see #getLinearElement()
+   * @generated
+   */
+  EAttribute getLinearElement_Comment();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Video <em>Video</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Video</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Video
+   * @generated
+   */
+  EClass getVideo();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Video#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Video#getName()
+   * @see #getVideo()
+   * @generated
+   */
+  EAttribute getVideo_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Rating <em>Rating</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rating</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Rating
+   * @generated
+   */
+  EClass getRating();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Rating#getStars <em>Stars</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Stars</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Rating#getStars()
+   * @see #getRating()
+   * @generated
+   */
+  EAttribute getRating_Stars();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Rating#getComment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Comment</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Rating#getComment()
+   * @see #getRating()
+   * @generated
+   */
+  EAttribute getRating_Comment();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.mydsl.myDsl.Rating#getAuthor <em>Author</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Author</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Rating#getAuthor()
+   * @see #getRating()
+   * @generated
+   */
+  EReference getRating_Author();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -846,40 +1053,6 @@ public interface MyDslPackage extends EPackage
     EAttribute AUTHOR__EMAIL = eINSTANCE.getAuthor_Email();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.RatingImpl <em>Rating</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.RatingImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getRating()
-     * @generated
-     */
-    EClass RATING = eINSTANCE.getRating();
-
-    /**
-     * The meta object literal for the '<em><b>Stars</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute RATING__STARS = eINSTANCE.getRating_Stars();
-
-    /**
-     * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute RATING__COMMENT = eINSTANCE.getRating_Comment();
-
-    /**
-     * The meta object literal for the '<em><b>Author</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RATING__AUTHOR = eINSTANCE.getRating_Author();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.RecipeImpl <em>Recipe</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -952,6 +1125,22 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EReference RECIPE__INGREDIENT = eINSTANCE.getRecipe_Ingredient();
+
+    /**
+     * The meta object literal for the '<em><b>Preparation</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECIPE__PREPARATION = eINSTANCE.getRecipe_Preparation();
+
+    /**
+     * The meta object literal for the '<em><b>Video</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECIPE__VIDEO = eINSTANCE.getRecipe_Video();
 
     /**
      * The meta object literal for the '<em><b>Ratings</b></em>' containment reference list feature.
@@ -1064,6 +1253,102 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute INGREDIENT__VEGANISM_LEVEL = eINSTANCE.getIngredient_VeganismLevel();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.LinearImpl <em>Linear</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.LinearImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLinear()
+     * @generated
+     */
+    EClass LINEAR = eINSTANCE.getLinear();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LINEAR__ELEMENTS = eINSTANCE.getLinear_Elements();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.LinearElementImpl <em>Linear Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.LinearElementImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLinearElement()
+     * @generated
+     */
+    EClass LINEAR_ELEMENT = eINSTANCE.getLinearElement();
+
+    /**
+     * The meta object literal for the '<em><b>Order</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LINEAR_ELEMENT__ORDER = eINSTANCE.getLinearElement_Order();
+
+    /**
+     * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LINEAR_ELEMENT__COMMENT = eINSTANCE.getLinearElement_Comment();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.VideoImpl <em>Video</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.VideoImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getVideo()
+     * @generated
+     */
+    EClass VIDEO = eINSTANCE.getVideo();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VIDEO__NAME = eINSTANCE.getVideo_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.RatingImpl <em>Rating</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.RatingImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getRating()
+     * @generated
+     */
+    EClass RATING = eINSTANCE.getRating();
+
+    /**
+     * The meta object literal for the '<em><b>Stars</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RATING__STARS = eINSTANCE.getRating_Stars();
+
+    /**
+     * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RATING__COMMENT = eINSTANCE.getRating_Comment();
+
+    /**
+     * The meta object literal for the '<em><b>Author</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RATING__AUTHOR = eINSTANCE.getRating_Author();
 
   }
 

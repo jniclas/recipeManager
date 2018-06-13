@@ -42,15 +42,6 @@ public interface MyDslFactory extends EFactory
   Author createAuthor();
 
   /**
-   * Returns a new object of class '<em>Rating</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Rating</em>'.
-   * @generated
-   */
-  Rating createRating();
-
-  /**
    * Returns a new object of class '<em>Recipe</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,6 +85,42 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   Ingredient createIngredient();
+
+  /**
+   * Returns a new object of class '<em>Linear</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Linear</em>'.
+   * @generated
+   */
+  Linear createLinear();
+
+  /**
+   * Returns a new object of class '<em>Linear Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Linear Element</em>'.
+   * @generated
+   */
+  LinearElement createLinearElement();
+
+  /**
+   * Returns a new object of class '<em>Video</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Video</em>'.
+   * @generated
+   */
+  Video createVideo();
+
+  /**
+   * Returns a new object of class '<em>Rating</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rating</em>'.
+   * @generated
+   */
+  Rating createRating();
 
   /**
    * Returns the package supported by this factory.

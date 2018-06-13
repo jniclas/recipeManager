@@ -234,85 +234,6 @@ ruleAuthor returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleRating
-entryRuleRating returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getRatingRule()); }
-	iv_ruleRating=ruleRating
-	{ $current=$iv_ruleRating.current; }
-	EOF;
-
-// Rule Rating
-ruleRating returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_stars_0_0=RULE_INT
-				{
-					newLeafNode(lv_stars_0_0, grammarAccess.getRatingAccess().getStarsINTTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRatingRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"stars",
-						lv_stars_0_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		(
-			(
-				lv_comment_1_0=RULE_QSTRING
-				{
-					newLeafNode(lv_comment_1_0, grammarAccess.getRatingAccess().getCommentQSTRINGTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRatingRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"comment",
-						lv_comment_1_0,
-						"org.xtext.example.mydsl.MyDsl.QSTRING");
-				}
-			)
-		)
-		otherlv_2='von'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getRatingAccess().getVonKeyword_2());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRatingRule());
-					}
-				}
-				otherlv_3=RULE_ID
-				{
-					newLeafNode(otherlv_3, grammarAccess.getRatingAccess().getAuthorAuthorCrossReference_3_0());
-				}
-			)
-		)
-		{
-			newCompositeNode(grammarAccess.getRatingAccess().getEOLParserRuleCall_4());
-		}
-		ruleEOL
-		{
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
 // Entry rule entryRuleRecipe
 entryRuleRecipe returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getRecipeRule()); }
@@ -347,9 +268,9 @@ ruleRecipe returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='von'
+		otherlv_1='from'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getRecipeAccess().getVonKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getRecipeAccess().getFromKeyword_1());
 		}
 		(
 			(
@@ -443,61 +364,63 @@ ruleRecipe returns [EObject current=null]
 		{
 			afterParserOrEnumRuleCall();
 		}
-		otherlv_11='Kitchen Utensils'
-		{
-			newLeafNode(otherlv_11, grammarAccess.getRecipeAccess().getKitchenUtensilsKeyword_11());
-		}
-		{
-			newCompositeNode(grammarAccess.getRecipeAccess().getEOLParserRuleCall_12());
-		}
-		ruleEOL
-		{
-			afterParserOrEnumRuleCall();
-		}
 		(
+			otherlv_11='Kitchen Utensils'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getRecipeAccess().getKitchenUtensilsKeyword_11_0());
+			}
+			{
+				newCompositeNode(grammarAccess.getRecipeAccess().getEOLParserRuleCall_11_1());
+			}
+			ruleEOL
+			{
+				afterParserOrEnumRuleCall();
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getRecipeAccess().getKitchenUtensilsKitchenUtensilParserRuleCall_13_0());
-				}
-				lv_kitchenUtensils_13_0=ruleKitchenUtensil
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRecipeRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getRecipeAccess().getKitchenUtensilsKitchenUtensilParserRuleCall_11_2_0());
 					}
-					add(
-						$current,
-						"kitchenUtensils",
-						lv_kitchenUtensils_13_0,
-						"org.xtext.example.mydsl.MyDsl.KitchenUtensil");
-					afterParserOrEnumRuleCall();
-				}
+					lv_kitchenUtensils_13_0=ruleKitchenUtensil
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getRecipeRule());
+						}
+						add(
+							$current,
+							"kitchenUtensils",
+							lv_kitchenUtensils_13_0,
+							"org.xtext.example.mydsl.MyDsl.KitchenUtensil");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
-		(
 			(
-				{
-					newCompositeNode(grammarAccess.getRecipeAccess().getKitchenUtensilsKitchenUtensilParserRuleCall_14_0());
-				}
-				lv_kitchenUtensils_14_0=ruleKitchenUtensil
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRecipeRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getRecipeAccess().getKitchenUtensilsKitchenUtensilParserRuleCall_11_3_0());
 					}
-					add(
-						$current,
-						"kitchenUtensils",
-						lv_kitchenUtensils_14_0,
-						"org.xtext.example.mydsl.MyDsl.KitchenUtensil");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
+					lv_kitchenUtensils_14_0=ruleKitchenUtensil
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getRecipeRule());
+						}
+						add(
+							$current,
+							"kitchenUtensils",
+							lv_kitchenUtensils_14_0,
+							"org.xtext.example.mydsl.MyDsl.KitchenUtensil");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+		)?
 		otherlv_15='Food Categories'
 		{
-			newLeafNode(otherlv_15, grammarAccess.getRecipeAccess().getFoodCategoriesKeyword_15());
+			newLeafNode(otherlv_15, grammarAccess.getRecipeAccess().getFoodCategoriesKeyword_12());
 		}
 		{
-			newCompositeNode(grammarAccess.getRecipeAccess().getEOLParserRuleCall_16());
+			newCompositeNode(grammarAccess.getRecipeAccess().getEOLParserRuleCall_13());
 		}
 		ruleEOL
 		{
@@ -506,7 +429,7 @@ ruleRecipe returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRecipeAccess().getFoodCategoryFoodCategoryParserRuleCall_17_0());
+					newCompositeNode(grammarAccess.getRecipeAccess().getFoodCategoryFoodCategoryParserRuleCall_14_0());
 				}
 				lv_foodCategory_17_0=ruleFoodCategory
 				{
@@ -525,7 +448,7 @@ ruleRecipe returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRecipeAccess().getFoodCategoryFoodCategoryParserRuleCall_18_0());
+					newCompositeNode(grammarAccess.getRecipeAccess().getFoodCategoryFoodCategoryParserRuleCall_15_0());
 				}
 				lv_foodCategory_18_0=ruleFoodCategory
 				{
@@ -543,10 +466,10 @@ ruleRecipe returns [EObject current=null]
 		)*
 		otherlv_19='Ingredients'
 		{
-			newLeafNode(otherlv_19, grammarAccess.getRecipeAccess().getIngredientsKeyword_19());
+			newLeafNode(otherlv_19, grammarAccess.getRecipeAccess().getIngredientsKeyword_16());
 		}
 		{
-			newCompositeNode(grammarAccess.getRecipeAccess().getEOLParserRuleCall_20());
+			newCompositeNode(grammarAccess.getRecipeAccess().getEOLParserRuleCall_17());
 		}
 		ruleEOL
 		{
@@ -555,7 +478,7 @@ ruleRecipe returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRecipeAccess().getIngredientIngredientParserRuleCall_21_0());
+					newCompositeNode(grammarAccess.getRecipeAccess().getIngredientIngredientParserRuleCall_18_0());
 				}
 				lv_ingredient_21_0=ruleIngredient
 				{
@@ -574,7 +497,7 @@ ruleRecipe returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRecipeAccess().getIngredientIngredientParserRuleCall_22_0());
+					newCompositeNode(grammarAccess.getRecipeAccess().getIngredientIngredientParserRuleCall_19_0());
 				}
 				lv_ingredient_22_0=ruleIngredient
 				{
@@ -590,12 +513,12 @@ ruleRecipe returns [EObject current=null]
 				}
 			)
 		)*
-		otherlv_23='Ratings'
+		otherlv_23='Preparation'
 		{
-			newLeafNode(otherlv_23, grammarAccess.getRecipeAccess().getRatingsKeyword_23());
+			newLeafNode(otherlv_23, grammarAccess.getRecipeAccess().getPreparationKeyword_20());
 		}
 		{
-			newCompositeNode(grammarAccess.getRecipeAccess().getEOLParserRuleCall_24());
+			newCompositeNode(grammarAccess.getRecipeAccess().getEOLParserRuleCall_21());
 		}
 		ruleEOL
 		{
@@ -604,41 +527,112 @@ ruleRecipe returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRecipeAccess().getRatingsRatingParserRuleCall_25_0());
+					newCompositeNode(grammarAccess.getRecipeAccess().getPreparationLinearParserRuleCall_22_0());
 				}
-				lv_ratings_25_0=ruleRating
+				lv_preparation_25_0=ruleLinear
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRecipeRule());
 					}
-					add(
+					set(
 						$current,
-						"ratings",
-						lv_ratings_25_0,
-						"org.xtext.example.mydsl.MyDsl.Rating");
+						"preparation",
+						lv_preparation_25_0,
+						"org.xtext.example.mydsl.MyDsl.Linear");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
+			otherlv_26='Video'
+			{
+				newLeafNode(otherlv_26, grammarAccess.getRecipeAccess().getVideoKeyword_23_0());
+			}
+			{
+				newCompositeNode(grammarAccess.getRecipeAccess().getEOLParserRuleCall_23_1());
+			}
+			ruleEOL
+			{
+				afterParserOrEnumRuleCall();
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getRecipeAccess().getRatingsRatingParserRuleCall_26_0());
-				}
-				lv_ratings_26_0=ruleRating
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRecipeRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getRecipeAccess().getVideoVideoParserRuleCall_23_2_0());
 					}
-					add(
-						$current,
-						"ratings",
-						lv_ratings_26_0,
-						"org.xtext.example.mydsl.MyDsl.Rating");
-					afterParserOrEnumRuleCall();
-				}
+					lv_video_28_0=ruleVideo
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getRecipeRule());
+						}
+						set(
+							$current,
+							"video",
+							lv_video_28_0,
+							"org.xtext.example.mydsl.MyDsl.Video");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)*
+			{
+				newCompositeNode(grammarAccess.getRecipeAccess().getEOLParserRuleCall_23_3());
+			}
+			ruleEOL
+			{
+				afterParserOrEnumRuleCall();
+			}
+		)?
+		(
+			otherlv_30='Ratings'
+			{
+				newLeafNode(otherlv_30, grammarAccess.getRecipeAccess().getRatingsKeyword_24_0());
+			}
+			{
+				newCompositeNode(grammarAccess.getRecipeAccess().getEOLParserRuleCall_24_1());
+			}
+			ruleEOL
+			{
+				afterParserOrEnumRuleCall();
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getRecipeAccess().getRatingsRatingParserRuleCall_24_2_0());
+					}
+					lv_ratings_32_0=ruleRating
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getRecipeRule());
+						}
+						add(
+							$current,
+							"ratings",
+							lv_ratings_32_0,
+							"org.xtext.example.mydsl.MyDsl.Rating");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getRecipeAccess().getRatingsRatingParserRuleCall_24_3_0());
+					}
+					lv_ratings_33_0=ruleRating
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getRecipeRule());
+						}
+						add(
+							$current,
+							"ratings",
+							lv_ratings_33_0,
+							"org.xtext.example.mydsl.MyDsl.Rating");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+		)?
 	)
 ;
 
@@ -895,6 +889,215 @@ ruleIngredient returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleLinear
+entryRuleLinear returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLinearRule()); }
+	iv_ruleLinear=ruleLinear
+	{ $current=$iv_ruleLinear.current; }
+	EOF;
+
+// Rule Linear
+ruleLinear returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getLinearAccess().getElementsLinearElementParserRuleCall_0());
+			}
+			lv_elements_0_0=ruleLinearElement
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getLinearRule());
+				}
+				add(
+					$current,
+					"elements",
+					lv_elements_0_0,
+					"org.xtext.example.mydsl.MyDsl.LinearElement");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)+
+;
+
+// Entry rule entryRuleLinearElement
+entryRuleLinearElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLinearElementRule()); }
+	iv_ruleLinearElement=ruleLinearElement
+	{ $current=$iv_ruleLinearElement.current; }
+	EOF;
+
+// Rule LinearElement
+ruleLinearElement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_order_0_0=RULE_INT
+				{
+					newLeafNode(lv_order_0_0, grammarAccess.getLinearElementAccess().getOrderINTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLinearElementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"order",
+						lv_order_0_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_1=')'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getLinearElementAccess().getRightParenthesisKeyword_1());
+		}
+		(
+			(
+				lv_comment_2_0=RULE_QSTRING
+				{
+					newLeafNode(lv_comment_2_0, grammarAccess.getLinearElementAccess().getCommentQSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLinearElementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"comment",
+						lv_comment_2_0,
+						"org.xtext.example.mydsl.MyDsl.QSTRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleVideo
+entryRuleVideo returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVideoRule()); }
+	iv_ruleVideo=ruleVideo
+	{ $current=$iv_ruleVideo.current; }
+	EOF;
+
+// Rule Video
+ruleVideo returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_name_0_0=RULE_STRING
+			{
+				newLeafNode(lv_name_0_0, grammarAccess.getVideoAccess().getNameSTRINGTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getVideoRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"name",
+					lv_name_0_0,
+					"org.eclipse.xtext.common.Terminals.STRING");
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleRating
+entryRuleRating returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRatingRule()); }
+	iv_ruleRating=ruleRating
+	{ $current=$iv_ruleRating.current; }
+	EOF;
+
+// Rule Rating
+ruleRating returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_stars_0_0=RULE_INT
+				{
+					newLeafNode(lv_stars_0_0, grammarAccess.getRatingAccess().getStarsINTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRatingRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"stars",
+						lv_stars_0_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		(
+			(
+				lv_comment_1_0=RULE_QSTRING
+				{
+					newLeafNode(lv_comment_1_0, grammarAccess.getRatingAccess().getCommentQSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRatingRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"comment",
+						lv_comment_1_0,
+						"org.xtext.example.mydsl.MyDsl.QSTRING");
+				}
+			)
+		)
+		otherlv_2='from'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getRatingAccess().getFromKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRatingRule());
+					}
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getRatingAccess().getAuthorAuthorCrossReference_3_0());
+				}
+			)
+		)
+		{
+			newCompositeNode(grammarAccess.getRatingAccess().getEOLParserRuleCall_4());
+		}
+		ruleEOL
+		{
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
 // Entry rule entryRuleVeganismLevel
 entryRuleVeganismLevel returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getVeganismLevelRule()); }
@@ -1037,7 +1240,7 @@ RULE_NEWLINE : ('\r'? '\n' '\t'*)+;
 
 RULE_INGEREDIENTSTRING : '- ' ('a'..'z'|'A'..'Z')* ',';
 
-RULE_QSTRING : '- ' ('a'..'z'|'A'..'Z'|' '|'.'|'@')* (RULE_NEWLINE|RULE_SL_COMMENT);
+RULE_QSTRING : '- ' ('a'..'z'|'A'..'Z'|' '|'.'|'@'|'0'..'9'|'!'|'?'|'-'|':'|';'|'('|')')* (RULE_NEWLINE|RULE_SL_COMMENT);
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
