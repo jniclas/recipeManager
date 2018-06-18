@@ -111,14 +111,14 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createIngredientAdapter();
       }
       @Override
-      public Adapter caseLinear(Linear object)
+      public Adapter caseList(List object)
       {
-        return createLinearAdapter();
+        return createListAdapter();
       }
       @Override
-      public Adapter caseLinearElement(LinearElement object)
+      public Adapter caseListElement(ListElement object)
       {
-        return createLinearElementAdapter();
+        return createListElementAdapter();
       }
       @Override
       public Adapter caseVideo(Video object)
@@ -258,31 +258,31 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Linear <em>Linear</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.List <em>List</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.Linear
+   * @see org.xtext.example.mydsl.myDsl.List
    * @generated
    */
-  public Adapter createLinearAdapter()
+  public Adapter createListAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.LinearElement <em>Linear Element</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.ListElement <em>List Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.LinearElement
+   * @see org.xtext.example.mydsl.myDsl.ListElement
    * @generated
    */
-  public Adapter createLinearElementAdapter()
+  public Adapter createListElementAdapter()
   {
     return null;
   }

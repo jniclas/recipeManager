@@ -20,7 +20,7 @@ Recipe:
 	('Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil  ( kitchenUtensils+=KitchenUtensil )*)?
 	'Food Categories' EOL foodCategory+=FoodCategory  ( foodCategory+=FoodCategory )*
 	'Ingredients' EOL ingredient+=Ingredient  (ingredient+=Ingredient )*
-	'Preparation' EOL preparation=Linear
+	'Preparation' EOL preparation=List
 	('Video' EOL video=Video EOL)?
 	('Ratings' EOL ratings += Rating  ( ratings+=Rating )*)?
 ;
@@ -42,11 +42,11 @@ Ingredient:
 	) EOL
 ;
 
-Linear:
-	(elements+=LinearElement)+
+List:
+	(elements+=ListElement)+
 ;
 
-LinearElement:
+ListElement:
 	order=INT ')' comment=QSTRING
 ;
 

@@ -9,25 +9,25 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Linear</b></em>'.
+ * A representation of the model object '<em><b>List</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Linear#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.List#getElements <em>Elements</em>}</li>
  * </ul>
  *
- * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getLinear()
+ * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getList()
  * @model
  * @generated
  */
-public interface Linear extends EObject
+public interface List extends EObject
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.LinearElement}.
+   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.ListElement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
@@ -35,10 +35,10 @@ public interface Linear extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getLinear_Elements()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getList_Elements()
    * @model containment="true"
    * @generated
    */
-  EList<LinearElement> getElements();
+  EList<ListElement> getElements();
 
-} // Linear
+} // List

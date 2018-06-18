@@ -527,9 +527,9 @@ ruleRecipe returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRecipeAccess().getPreparationLinearParserRuleCall_22_0());
+					newCompositeNode(grammarAccess.getRecipeAccess().getPreparationListParserRuleCall_22_0());
 				}
-				lv_preparation_25_0=ruleLinear
+				lv_preparation_25_0=ruleList
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRecipeRule());
@@ -538,7 +538,7 @@ ruleRecipe returns [EObject current=null]
 						$current,
 						"preparation",
 						lv_preparation_25_0,
-						"org.xtext.example.mydsl.MyDsl.Linear");
+						"org.xtext.example.mydsl.MyDsl.List");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -889,15 +889,15 @@ ruleIngredient returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleLinear
-entryRuleLinear returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getLinearRule()); }
-	iv_ruleLinear=ruleLinear
-	{ $current=$iv_ruleLinear.current; }
+// Entry rule entryRuleList
+entryRuleList returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getListRule()); }
+	iv_ruleList=ruleList
+	{ $current=$iv_ruleList.current; }
 	EOF;
 
-// Rule Linear
-ruleLinear returns [EObject current=null]
+// Rule List
+ruleList returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -907,33 +907,33 @@ ruleLinear returns [EObject current=null]
 	(
 		(
 			{
-				newCompositeNode(grammarAccess.getLinearAccess().getElementsLinearElementParserRuleCall_0());
+				newCompositeNode(grammarAccess.getListAccess().getElementsListElementParserRuleCall_0());
 			}
-			lv_elements_0_0=ruleLinearElement
+			lv_elements_0_0=ruleListElement
 			{
 				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getLinearRule());
+					$current = createModelElementForParent(grammarAccess.getListRule());
 				}
 				add(
 					$current,
 					"elements",
 					lv_elements_0_0,
-					"org.xtext.example.mydsl.MyDsl.LinearElement");
+					"org.xtext.example.mydsl.MyDsl.ListElement");
 				afterParserOrEnumRuleCall();
 			}
 		)
 	)+
 ;
 
-// Entry rule entryRuleLinearElement
-entryRuleLinearElement returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getLinearElementRule()); }
-	iv_ruleLinearElement=ruleLinearElement
-	{ $current=$iv_ruleLinearElement.current; }
+// Entry rule entryRuleListElement
+entryRuleListElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getListElementRule()); }
+	iv_ruleListElement=ruleListElement
+	{ $current=$iv_ruleListElement.current; }
 	EOF;
 
-// Rule LinearElement
-ruleLinearElement returns [EObject current=null]
+// Rule ListElement
+ruleListElement returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -945,11 +945,11 @@ ruleLinearElement returns [EObject current=null]
 			(
 				lv_order_0_0=RULE_INT
 				{
-					newLeafNode(lv_order_0_0, grammarAccess.getLinearElementAccess().getOrderINTTerminalRuleCall_0_0());
+					newLeafNode(lv_order_0_0, grammarAccess.getListElementAccess().getOrderINTTerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLinearElementRule());
+						$current = createModelElement(grammarAccess.getListElementRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -961,17 +961,17 @@ ruleLinearElement returns [EObject current=null]
 		)
 		otherlv_1=')'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getLinearElementAccess().getRightParenthesisKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getListElementAccess().getRightParenthesisKeyword_1());
 		}
 		(
 			(
 				lv_comment_2_0=RULE_QSTRING
 				{
-					newLeafNode(lv_comment_2_0, grammarAccess.getLinearElementAccess().getCommentQSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_comment_2_0, grammarAccess.getListElementAccess().getCommentQSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLinearElementRule());
+						$current = createModelElement(grammarAccess.getListElementRule());
 					}
 					setWithLastConsumed(
 						$current,

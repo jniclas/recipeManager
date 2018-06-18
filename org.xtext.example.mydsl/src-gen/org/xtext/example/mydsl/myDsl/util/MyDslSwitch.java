@@ -122,17 +122,17 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.LINEAR:
+      case MyDslPackage.LIST:
       {
-        Linear linear = (Linear)theEObject;
-        T result = caseLinear(linear);
+        List list = (List)theEObject;
+        T result = caseList(list);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.LINEAR_ELEMENT:
+      case MyDslPackage.LIST_ELEMENT:
       {
-        LinearElement linearElement = (LinearElement)theEObject;
-        T result = caseLinearElement(linearElement);
+        ListElement listElement = (ListElement)theEObject;
+        T result = caseListElement(listElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -267,33 +267,33 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Linear</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>List</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Linear</em>'.
+   * @return the result of interpreting the object as an instance of '<em>List</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLinear(Linear object)
+  public T caseList(List object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Linear Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>List Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Linear Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>List Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLinearElement(LinearElement object)
+  public T caseListElement(ListElement object)
   {
     return null;
   }

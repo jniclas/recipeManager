@@ -17,24 +17,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.example.mydsl.myDsl.Linear;
-import org.xtext.example.mydsl.myDsl.LinearElement;
+import org.xtext.example.mydsl.myDsl.List;
+import org.xtext.example.mydsl.myDsl.ListElement;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Linear</b></em>'.
+ * An implementation of the model object '<em><b>List</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.LinearImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.ListImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class LinearImpl extends MinimalEObjectImpl.Container implements Linear
+public class ListImpl extends MinimalEObjectImpl.Container implements List
 {
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -44,14 +44,14 @@ public class LinearImpl extends MinimalEObjectImpl.Container implements Linear
    * @generated
    * @ordered
    */
-  protected EList<LinearElement> elements;
+  protected EList<ListElement> elements;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected LinearImpl()
+  protected ListImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class LinearImpl extends MinimalEObjectImpl.Container implements Linear
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.LINEAR;
+    return MyDslPackage.Literals.LIST;
   }
 
   /**
@@ -72,11 +72,11 @@ public class LinearImpl extends MinimalEObjectImpl.Container implements Linear
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<LinearElement> getElements()
+  public EList<ListElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<LinearElement>(LinearElement.class, this, MyDslPackage.LINEAR__ELEMENTS);
+      elements = new EObjectContainmentEList<ListElement>(ListElement.class, this, MyDslPackage.LIST__ELEMENTS);
     }
     return elements;
   }
@@ -91,7 +91,7 @@ public class LinearImpl extends MinimalEObjectImpl.Container implements Linear
   {
     switch (featureID)
     {
-      case MyDslPackage.LINEAR__ELEMENTS:
+      case MyDslPackage.LIST__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -107,7 +107,7 @@ public class LinearImpl extends MinimalEObjectImpl.Container implements Linear
   {
     switch (featureID)
     {
-      case MyDslPackage.LINEAR__ELEMENTS:
+      case MyDslPackage.LIST__ELEMENTS:
         return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -124,9 +124,9 @@ public class LinearImpl extends MinimalEObjectImpl.Container implements Linear
   {
     switch (featureID)
     {
-      case MyDslPackage.LINEAR__ELEMENTS:
+      case MyDslPackage.LIST__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends LinearElement>)newValue);
+        getElements().addAll((Collection<? extends ListElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,7 +142,7 @@ public class LinearImpl extends MinimalEObjectImpl.Container implements Linear
   {
     switch (featureID)
     {
-      case MyDslPackage.LINEAR__ELEMENTS:
+      case MyDslPackage.LIST__ELEMENTS:
         getElements().clear();
         return;
     }
@@ -159,10 +159,10 @@ public class LinearImpl extends MinimalEObjectImpl.Container implements Linear
   {
     switch (featureID)
     {
-      case MyDslPackage.LINEAR__ELEMENTS:
+      case MyDslPackage.LIST__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //LinearImpl
+} //ListImpl

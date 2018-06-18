@@ -7,22 +7,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Linear Element</b></em>'.
+ * A representation of the model object '<em><b>List Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.LinearElement#getOrder <em>Order</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.LinearElement#getComment <em>Comment</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.ListElement#getOrder <em>Order</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.ListElement#getComment <em>Comment</em>}</li>
  * </ul>
  *
- * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getLinearElement()
+ * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getListElement()
  * @model
  * @generated
  */
-public interface LinearElement extends EObject
+public interface ListElement extends EObject
 {
   /**
    * Returns the value of the '<em><b>Order</b></em>' attribute.
@@ -34,14 +34,14 @@ public interface LinearElement extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Order</em>' attribute.
    * @see #setOrder(int)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getLinearElement_Order()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getListElement_Order()
    * @model
    * @generated
    */
   int getOrder();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.LinearElement#getOrder <em>Order</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.ListElement#getOrder <em>Order</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Order</em>' attribute.
@@ -60,14 +60,14 @@ public interface LinearElement extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Comment</em>' attribute.
    * @see #setComment(String)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getLinearElement_Comment()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getListElement_Comment()
    * @model
    * @generated
    */
   String getComment();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.LinearElement#getComment <em>Comment</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.ListElement#getComment <em>Comment</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Comment</em>' attribute.
@@ -76,4 +76,4 @@ public interface LinearElement extends EObject
    */
   void setComment(String value);
 
-} // LinearElement
+} // ListElement

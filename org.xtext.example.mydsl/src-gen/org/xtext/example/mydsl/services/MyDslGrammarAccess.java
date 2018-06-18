@@ -155,7 +155,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPreparationKeyword_20 = (Keyword)cGroup.eContents().get(20);
 		private final RuleCall cEOLParserRuleCall_21 = (RuleCall)cGroup.eContents().get(21);
 		private final Assignment cPreparationAssignment_22 = (Assignment)cGroup.eContents().get(22);
-		private final RuleCall cPreparationLinearParserRuleCall_22_0 = (RuleCall)cPreparationAssignment_22.eContents().get(0);
+		private final RuleCall cPreparationListParserRuleCall_22_0 = (RuleCall)cPreparationAssignment_22.eContents().get(0);
 		private final Group cGroup_23 = (Group)cGroup.eContents().get(23);
 		private final Keyword cVideoKeyword_23_0 = (Keyword)cGroup_23.eContents().get(0);
 		private final RuleCall cEOLParserRuleCall_23_1 = (RuleCall)cGroup_23.eContents().get(1);
@@ -175,14 +175,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	('Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil kitchenUtensils+=KitchenUtensil*)?
 		//	'Food Categories' EOL foodCategory+=FoodCategory foodCategory+=FoodCategory*
 		//	'Ingredients' EOL ingredient+=Ingredient ingredient+=Ingredient*
-		//	'Preparation' EOL preparation=Linear ('Video' EOL video=Video EOL)? ('Ratings' EOL ratings+=Rating
-		//	ratings+=Rating*)?;
+		//	'Preparation' EOL preparation=List ('Video' EOL video=Video EOL)? ('Ratings' EOL ratings+=Rating ratings+=Rating*)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//name=ID 'from' author=[Author] ',' vegan=VeganismLevel ',' duration=INT 'min' ',' difficulty=DifficultyLevel EOL
 		//('Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil kitchenUtensils+=KitchenUtensil*)? 'Food Categories' EOL
 		//foodCategory+=FoodCategory foodCategory+=FoodCategory* 'Ingredients' EOL ingredient+=Ingredient
-		//ingredient+=Ingredient* 'Preparation' EOL preparation=Linear ('Video' EOL video=Video EOL)? ('Ratings' EOL
+		//ingredient+=Ingredient* 'Preparation' EOL preparation=List ('Video' EOL video=Video EOL)? ('Ratings' EOL
 		//ratings+=Rating ratings+=Rating*)?
 		public Group getGroup() { return cGroup; }
 		
@@ -300,11 +299,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EOL
 		public RuleCall getEOLParserRuleCall_21() { return cEOLParserRuleCall_21; }
 		
-		//preparation=Linear
+		//preparation=List
 		public Assignment getPreparationAssignment_22() { return cPreparationAssignment_22; }
 		
-		//Linear
-		public RuleCall getPreparationLinearParserRuleCall_22_0() { return cPreparationLinearParserRuleCall_22_0; }
+		//List
+		public RuleCall getPreparationListParserRuleCall_22_0() { return cPreparationListParserRuleCall_22_0; }
 		
 		//('Video' EOL video=Video EOL)?
 		public Group getGroup_23() { return cGroup_23; }
@@ -481,23 +480,23 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EOL
 		public RuleCall getEOLParserRuleCall_1() { return cEOLParserRuleCall_1; }
 	}
-	public class LinearElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Linear");
+	public class ListElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.List");
 		private final Assignment cElementsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cElementsLinearElementParserRuleCall_0 = (RuleCall)cElementsAssignment.eContents().get(0);
+		private final RuleCall cElementsListElementParserRuleCall_0 = (RuleCall)cElementsAssignment.eContents().get(0);
 		
-		//Linear:
-		//	elements+=LinearElement+;
+		//List:
+		//	elements+=ListElement+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//elements+=LinearElement+
+		//elements+=ListElement+
 		public Assignment getElementsAssignment() { return cElementsAssignment; }
 		
-		//LinearElement
-		public RuleCall getElementsLinearElementParserRuleCall_0() { return cElementsLinearElementParserRuleCall_0; }
+		//ListElement
+		public RuleCall getElementsListElementParserRuleCall_0() { return cElementsListElementParserRuleCall_0; }
 	}
-	public class LinearElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.LinearElement");
+	public class ListElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.ListElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cOrderAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cOrderINTTerminalRuleCall_0_0 = (RuleCall)cOrderAssignment_0.eContents().get(0);
@@ -505,7 +504,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cCommentAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cCommentQSTRINGTerminalRuleCall_2_0 = (RuleCall)cCommentAssignment_2.eContents().get(0);
 		
-		//LinearElement:
+		//ListElement:
 		//	order=INT ')' comment=QSTRING;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -683,8 +682,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final DifficultyLevelElements pDifficultyLevel;
 	private final FoodCategoryElements pFoodCategory;
 	private final IngredientElements pIngredient;
-	private final LinearElements pLinear;
-	private final LinearElementElements pLinearElement;
+	private final ListElements pList;
+	private final ListElementElements pListElement;
 	private final VideoElements pVideo;
 	private final RatingElements pRating;
 	private final VeganismLevelElements pVeganismLevel;
@@ -711,8 +710,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDifficultyLevel = new DifficultyLevelElements();
 		this.pFoodCategory = new FoodCategoryElements();
 		this.pIngredient = new IngredientElements();
-		this.pLinear = new LinearElements();
-		this.pLinearElement = new LinearElementElements();
+		this.pList = new ListElements();
+		this.pListElement = new ListElementElements();
 		this.pVideo = new VideoElements();
 		this.pRating = new RatingElements();
 		this.pVeganismLevel = new VeganismLevelElements();
@@ -776,8 +775,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	('Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil kitchenUtensils+=KitchenUtensil*)?
 	//	'Food Categories' EOL foodCategory+=FoodCategory foodCategory+=FoodCategory*
 	//	'Ingredients' EOL ingredient+=Ingredient ingredient+=Ingredient*
-	//	'Preparation' EOL preparation=Linear ('Video' EOL video=Video EOL)? ('Ratings' EOL ratings+=Rating
-	//	ratings+=Rating*)?;
+	//	'Preparation' EOL preparation=List ('Video' EOL video=Video EOL)? ('Ratings' EOL ratings+=Rating ratings+=Rating*)?;
 	public RecipeElements getRecipeAccess() {
 		return pRecipe;
 	}
@@ -826,24 +824,24 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getIngredientAccess().getRule();
 	}
 	
-	//Linear:
-	//	elements+=LinearElement+;
-	public LinearElements getLinearAccess() {
-		return pLinear;
+	//List:
+	//	elements+=ListElement+;
+	public ListElements getListAccess() {
+		return pList;
 	}
 	
-	public ParserRule getLinearRule() {
-		return getLinearAccess().getRule();
+	public ParserRule getListRule() {
+		return getListAccess().getRule();
 	}
 	
-	//LinearElement:
+	//ListElement:
 	//	order=INT ')' comment=QSTRING;
-	public LinearElementElements getLinearElementAccess() {
-		return pLinearElement;
+	public ListElementElements getListElementAccess() {
+		return pListElement;
 	}
 	
-	public ParserRule getLinearElementRule() {
-		return getLinearElementAccess().getRule();
+	public ParserRule getListElementRule() {
+		return getListElementAccess().getRule();
 	}
 	
 	//Video:

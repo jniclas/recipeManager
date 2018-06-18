@@ -46,7 +46,7 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIngredientAccess().getGroup(), "rule__Ingredient__Group__0");
 					put(grammarAccess.getIngredientAccess().getGroup_0_0(), "rule__Ingredient__Group_0_0__0");
 					put(grammarAccess.getIngredientAccess().getGroup_0_1(), "rule__Ingredient__Group_0_1__0");
-					put(grammarAccess.getLinearElementAccess().getGroup(), "rule__LinearElement__Group__0");
+					put(grammarAccess.getListElementAccess().getGroup(), "rule__ListElement__Group__0");
 					put(grammarAccess.getRatingAccess().getGroup(), "rule__Rating__Group__0");
 					put(grammarAccess.getRecipeManagerAccess().getAuthorsAssignment_2(), "rule__RecipeManager__AuthorsAssignment_2");
 					put(grammarAccess.getRecipeManagerAccess().getAuthorsAssignment_3(), "rule__RecipeManager__AuthorsAssignment_3");
@@ -77,9 +77,9 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIngredientAccess().getAmountAssignment_0_1_1(), "rule__Ingredient__AmountAssignment_0_1_1");
 					put(grammarAccess.getIngredientAccess().getUnitAssignment_0_1_2(), "rule__Ingredient__UnitAssignment_0_1_2");
 					put(grammarAccess.getIngredientAccess().getVeganismLevelAssignment_0_1_4(), "rule__Ingredient__VeganismLevelAssignment_0_1_4");
-					put(grammarAccess.getLinearAccess().getElementsAssignment(), "rule__Linear__ElementsAssignment");
-					put(grammarAccess.getLinearElementAccess().getOrderAssignment_0(), "rule__LinearElement__OrderAssignment_0");
-					put(grammarAccess.getLinearElementAccess().getCommentAssignment_2(), "rule__LinearElement__CommentAssignment_2");
+					put(grammarAccess.getListAccess().getElementsAssignment(), "rule__List__ElementsAssignment");
+					put(grammarAccess.getListElementAccess().getOrderAssignment_0(), "rule__ListElement__OrderAssignment_0");
+					put(grammarAccess.getListElementAccess().getCommentAssignment_2(), "rule__ListElement__CommentAssignment_2");
 					put(grammarAccess.getVideoAccess().getNameAssignment(), "rule__Video__NameAssignment");
 					put(grammarAccess.getRatingAccess().getStarsAssignment_0(), "rule__Rating__StarsAssignment_0");
 					put(grammarAccess.getRatingAccess().getCommentAssignment_1(), "rule__Rating__CommentAssignment_1");

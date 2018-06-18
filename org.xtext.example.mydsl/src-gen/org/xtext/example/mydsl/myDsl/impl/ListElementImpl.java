@@ -10,24 +10,24 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.example.mydsl.myDsl.LinearElement;
+import org.xtext.example.mydsl.myDsl.ListElement;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Linear Element</b></em>'.
+ * An implementation of the model object '<em><b>List Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.LinearElementImpl#getOrder <em>Order</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.LinearElementImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.ListElementImpl#getOrder <em>Order</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.ListElementImpl#getComment <em>Comment</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class LinearElementImpl extends MinimalEObjectImpl.Container implements LinearElement
+public class ListElementImpl extends MinimalEObjectImpl.Container implements ListElement
 {
   /**
    * The default value of the '{@link #getOrder() <em>Order</em>}' attribute.
@@ -74,7 +74,7 @@ public class LinearElementImpl extends MinimalEObjectImpl.Container implements L
    * <!-- end-user-doc -->
    * @generated
    */
-  protected LinearElementImpl()
+  protected ListElementImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class LinearElementImpl extends MinimalEObjectImpl.Container implements L
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.LINEAR_ELEMENT;
+    return MyDslPackage.Literals.LIST_ELEMENT;
   }
 
   /**
@@ -110,7 +110,7 @@ public class LinearElementImpl extends MinimalEObjectImpl.Container implements L
     int oldOrder = order;
     order = newOrder;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.LINEAR_ELEMENT__ORDER, oldOrder, order));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.LIST_ELEMENT__ORDER, oldOrder, order));
   }
 
   /**
@@ -133,7 +133,7 @@ public class LinearElementImpl extends MinimalEObjectImpl.Container implements L
     String oldComment = comment;
     comment = newComment;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.LINEAR_ELEMENT__COMMENT, oldComment, comment));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.LIST_ELEMENT__COMMENT, oldComment, comment));
   }
 
   /**
@@ -146,9 +146,9 @@ public class LinearElementImpl extends MinimalEObjectImpl.Container implements L
   {
     switch (featureID)
     {
-      case MyDslPackage.LINEAR_ELEMENT__ORDER:
+      case MyDslPackage.LIST_ELEMENT__ORDER:
         return getOrder();
-      case MyDslPackage.LINEAR_ELEMENT__COMMENT:
+      case MyDslPackage.LIST_ELEMENT__COMMENT:
         return getComment();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -164,10 +164,10 @@ public class LinearElementImpl extends MinimalEObjectImpl.Container implements L
   {
     switch (featureID)
     {
-      case MyDslPackage.LINEAR_ELEMENT__ORDER:
+      case MyDslPackage.LIST_ELEMENT__ORDER:
         setOrder((Integer)newValue);
         return;
-      case MyDslPackage.LINEAR_ELEMENT__COMMENT:
+      case MyDslPackage.LIST_ELEMENT__COMMENT:
         setComment((String)newValue);
         return;
     }
@@ -184,10 +184,10 @@ public class LinearElementImpl extends MinimalEObjectImpl.Container implements L
   {
     switch (featureID)
     {
-      case MyDslPackage.LINEAR_ELEMENT__ORDER:
+      case MyDslPackage.LIST_ELEMENT__ORDER:
         setOrder(ORDER_EDEFAULT);
         return;
-      case MyDslPackage.LINEAR_ELEMENT__COMMENT:
+      case MyDslPackage.LIST_ELEMENT__COMMENT:
         setComment(COMMENT_EDEFAULT);
         return;
     }
@@ -204,9 +204,9 @@ public class LinearElementImpl extends MinimalEObjectImpl.Container implements L
   {
     switch (featureID)
     {
-      case MyDslPackage.LINEAR_ELEMENT__ORDER:
+      case MyDslPackage.LIST_ELEMENT__ORDER:
         return order != ORDER_EDEFAULT;
-      case MyDslPackage.LINEAR_ELEMENT__COMMENT:
+      case MyDslPackage.LIST_ELEMENT__COMMENT:
         return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
     }
     return super.eIsSet(featureID);
@@ -231,4 +231,4 @@ public class LinearElementImpl extends MinimalEObjectImpl.Container implements L
     return result.toString();
   }
 
-} //LinearElementImpl
+} //ListElementImpl

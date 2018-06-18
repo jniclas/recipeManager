@@ -19,8 +19,8 @@ import org.xtext.example.mydsl.myDsl.DifficultyLevel;
 import org.xtext.example.mydsl.myDsl.FoodCategory;
 import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.KitchenUtensil;
-import org.xtext.example.mydsl.myDsl.Linear;
-import org.xtext.example.mydsl.myDsl.LinearElement;
+import org.xtext.example.mydsl.myDsl.List;
+import org.xtext.example.mydsl.myDsl.ListElement;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Rating;
 import org.xtext.example.mydsl.myDsl.Recipe;
@@ -57,11 +57,11 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.KITCHEN_UTENSIL:
 				sequence_KitchenUtensil(context, (KitchenUtensil) semanticObject); 
 				return; 
-			case MyDslPackage.LINEAR:
-				sequence_Linear(context, (Linear) semanticObject); 
+			case MyDslPackage.LIST:
+				sequence_List(context, (List) semanticObject); 
 				return; 
-			case MyDslPackage.LINEAR_ELEMENT:
-				sequence_LinearElement(context, (LinearElement) semanticObject); 
+			case MyDslPackage.LIST_ELEMENT:
+				sequence_ListElement(context, (ListElement) semanticObject); 
 				return; 
 			case MyDslPackage.RATING:
 				sequence_Rating(context, (Rating) semanticObject); 
@@ -163,33 +163,33 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     LinearElement returns LinearElement
+	 *     ListElement returns ListElement
 	 *
 	 * Constraint:
 	 *     (order=INT comment=QSTRING)
 	 */
-	protected void sequence_LinearElement(ISerializationContext context, LinearElement semanticObject) {
+	protected void sequence_ListElement(ISerializationContext context, ListElement semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.LINEAR_ELEMENT__ORDER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.LINEAR_ELEMENT__ORDER));
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.LINEAR_ELEMENT__COMMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.LINEAR_ELEMENT__COMMENT));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.LIST_ELEMENT__ORDER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.LIST_ELEMENT__ORDER));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.LIST_ELEMENT__COMMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.LIST_ELEMENT__COMMENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLinearElementAccess().getOrderINTTerminalRuleCall_0_0(), semanticObject.getOrder());
-		feeder.accept(grammarAccess.getLinearElementAccess().getCommentQSTRINGTerminalRuleCall_2_0(), semanticObject.getComment());
+		feeder.accept(grammarAccess.getListElementAccess().getOrderINTTerminalRuleCall_0_0(), semanticObject.getOrder());
+		feeder.accept(grammarAccess.getListElementAccess().getCommentQSTRINGTerminalRuleCall_2_0(), semanticObject.getComment());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Linear returns Linear
+	 *     List returns List
 	 *
 	 * Constraint:
-	 *     elements+=LinearElement+
+	 *     elements+=ListElement+
 	 */
-	protected void sequence_Linear(ISerializationContext context, Linear semanticObject) {
+	protected void sequence_List(ISerializationContext context, List semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -246,7 +246,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         foodCategory+=FoodCategory* 
 	 *         ingredient+=Ingredient 
 	 *         ingredient+=Ingredient* 
-	 *         preparation=Linear 
+	 *         preparation=List 
 	 *         video=Video? 
 	 *         (ratings+=Rating ratings+=Rating*)?
 	 *     )

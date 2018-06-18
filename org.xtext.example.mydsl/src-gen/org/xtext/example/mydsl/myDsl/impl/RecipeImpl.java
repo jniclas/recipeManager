@@ -24,7 +24,7 @@ import org.xtext.example.mydsl.myDsl.DifficultyLevel;
 import org.xtext.example.mydsl.myDsl.FoodCategory;
 import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.KitchenUtensil;
-import org.xtext.example.mydsl.myDsl.Linear;
+import org.xtext.example.mydsl.myDsl.List;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Rating;
 import org.xtext.example.mydsl.myDsl.Recipe;
@@ -173,7 +173,7 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * @generated
    * @ordered
    */
-  protected Linear preparation;
+  protected List preparation;
 
   /**
    * The cached value of the '{@link #getVideo() <em>Video</em>}' containment reference.
@@ -423,7 +423,7 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * <!-- end-user-doc -->
    * @generated
    */
-  public Linear getPreparation()
+  public List getPreparation()
   {
     return preparation;
   }
@@ -433,9 +433,9 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPreparation(Linear newPreparation, NotificationChain msgs)
+  public NotificationChain basicSetPreparation(List newPreparation, NotificationChain msgs)
   {
-    Linear oldPreparation = preparation;
+    List oldPreparation = preparation;
     preparation = newPreparation;
     if (eNotificationRequired())
     {
@@ -450,7 +450,7 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPreparation(Linear newPreparation)
+  public void setPreparation(List newPreparation)
   {
     if (newPreparation != preparation)
     {
@@ -632,7 +632,7 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
         getIngredient().addAll((Collection<? extends Ingredient>)newValue);
         return;
       case MyDslPackage.RECIPE__PREPARATION:
-        setPreparation((Linear)newValue);
+        setPreparation((List)newValue);
         return;
       case MyDslPackage.RECIPE__VIDEO:
         setVideo((Video)newValue);
@@ -680,7 +680,7 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
         getIngredient().clear();
         return;
       case MyDslPackage.RECIPE__PREPARATION:
-        setPreparation((Linear)null);
+        setPreparation((List)null);
         return;
       case MyDslPackage.RECIPE__VIDEO:
         setVideo((Video)null);

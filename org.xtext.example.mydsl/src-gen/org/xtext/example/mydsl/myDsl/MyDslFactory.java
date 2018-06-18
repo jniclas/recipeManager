@@ -87,22 +87,22 @@ public interface MyDslFactory extends EFactory
   Ingredient createIngredient();
 
   /**
-   * Returns a new object of class '<em>Linear</em>'.
+   * Returns a new object of class '<em>List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Linear</em>'.
+   * @return a new object of class '<em>List</em>'.
    * @generated
    */
-  Linear createLinear();
+  List createList();
 
   /**
-   * Returns a new object of class '<em>Linear Element</em>'.
+   * Returns a new object of class '<em>List Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Linear Element</em>'.
+   * @return a new object of class '<em>List Element</em>'.
    * @generated
    */
-  LinearElement createLinearElement();
+  ListElement createListElement();
 
   /**
    * Returns a new object of class '<em>Video</em>'.

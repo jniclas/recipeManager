@@ -222,12 +222,12 @@ public interface Recipe extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Preparation</em>' containment reference.
-   * @see #setPreparation(Linear)
+   * @see #setPreparation(List)
    * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getRecipe_Preparation()
    * @model containment="true"
    * @generated
    */
-  Linear getPreparation();
+  List getPreparation();
 
   /**
    * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Recipe#getPreparation <em>Preparation</em>}' containment reference.
@@ -237,7 +237,7 @@ public interface Recipe extends EObject
    * @see #getPreparation()
    * @generated
    */
-  void setPreparation(Linear value);
+  void setPreparation(List value);
 
   /**
    * Returns the value of the '<em><b>Video</b></em>' containment reference.

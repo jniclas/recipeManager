@@ -43,12 +43,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Ingredient/unit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Ingredient/veganismLevel"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//Linear">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Linear/elements"/>
+    <genClasses ecoreClass="MyDsl.ecore#//List">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//List/elements"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//LinearElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//LinearElement/order"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//LinearElement/comment"/>
+    <genClasses ecoreClass="MyDsl.ecore#//ListElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ListElement/order"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ListElement/comment"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Video">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Video/name"/>

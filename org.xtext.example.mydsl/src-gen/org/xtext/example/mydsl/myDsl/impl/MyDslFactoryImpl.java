@@ -72,8 +72,8 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.DIFFICULTY_LEVEL: return createDifficultyLevel();
       case MyDslPackage.FOOD_CATEGORY: return createFoodCategory();
       case MyDslPackage.INGREDIENT: return createIngredient();
-      case MyDslPackage.LINEAR: return createLinear();
-      case MyDslPackage.LINEAR_ELEMENT: return createLinearElement();
+      case MyDslPackage.LIST: return createList();
+      case MyDslPackage.LIST_ELEMENT: return createListElement();
       case MyDslPackage.VIDEO: return createVideo();
       case MyDslPackage.RATING: return createRating();
       default:
@@ -163,10 +163,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Linear createLinear()
+  public List createList()
   {
-    LinearImpl linear = new LinearImpl();
-    return linear;
+    ListImpl list = new ListImpl();
+    return list;
   }
 
   /**
@@ -174,10 +174,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public LinearElement createLinearElement()
+  public ListElement createListElement()
   {
-    LinearElementImpl linearElement = new LinearElementImpl();
-    return linearElement;
+    ListElementImpl listElement = new ListElementImpl();
+    return listElement;
   }
 
   /**

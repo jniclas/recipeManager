@@ -398,14 +398,14 @@ public interface MyDslPackage extends EPackage
   int INGREDIENT_FEATURE_COUNT = 5;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.LinearImpl <em>Linear</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ListImpl <em>List</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.LinearImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLinear()
+   * @see org.xtext.example.mydsl.myDsl.impl.ListImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getList()
    * @generated
    */
-  int LINEAR = 7;
+  int LIST = 7;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -414,26 +414,26 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LINEAR__ELEMENTS = 0;
+  int LIST__ELEMENTS = 0;
 
   /**
-   * The number of structural features of the '<em>Linear</em>' class.
+   * The number of structural features of the '<em>List</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINEAR_FEATURE_COUNT = 1;
+  int LIST_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.LinearElementImpl <em>Linear Element</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ListElementImpl <em>List Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.LinearElementImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLinearElement()
+   * @see org.xtext.example.mydsl.myDsl.impl.ListElementImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getListElement()
    * @generated
    */
-  int LINEAR_ELEMENT = 8;
+  int LIST_ELEMENT = 8;
 
   /**
    * The feature id for the '<em><b>Order</b></em>' attribute.
@@ -442,7 +442,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LINEAR_ELEMENT__ORDER = 0;
+  int LIST_ELEMENT__ORDER = 0;
 
   /**
    * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -451,16 +451,16 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LINEAR_ELEMENT__COMMENT = 1;
+  int LIST_ELEMENT__COMMENT = 1;
 
   /**
-   * The number of structural features of the '<em>Linear Element</em>' class.
+   * The number of structural features of the '<em>List Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINEAR_ELEMENT_FEATURE_COUNT = 2;
+  int LIST_ELEMENT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.VideoImpl <em>Video</em>}' class.
@@ -861,57 +861,57 @@ public interface MyDslPackage extends EPackage
   EAttribute getIngredient_VeganismLevel();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Linear <em>Linear</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.List <em>List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Linear</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Linear
+   * @return the meta object for class '<em>List</em>'.
+   * @see org.xtext.example.mydsl.myDsl.List
    * @generated
    */
-  EClass getLinear();
+  EClass getList();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Linear#getElements <em>Elements</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.List#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Elements</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Linear#getElements()
-   * @see #getLinear()
+   * @see org.xtext.example.mydsl.myDsl.List#getElements()
+   * @see #getList()
    * @generated
    */
-  EReference getLinear_Elements();
+  EReference getList_Elements();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.LinearElement <em>Linear Element</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.ListElement <em>List Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Linear Element</em>'.
-   * @see org.xtext.example.mydsl.myDsl.LinearElement
+   * @return the meta object for class '<em>List Element</em>'.
+   * @see org.xtext.example.mydsl.myDsl.ListElement
    * @generated
    */
-  EClass getLinearElement();
+  EClass getListElement();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.LinearElement#getOrder <em>Order</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.ListElement#getOrder <em>Order</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Order</em>'.
-   * @see org.xtext.example.mydsl.myDsl.LinearElement#getOrder()
-   * @see #getLinearElement()
+   * @see org.xtext.example.mydsl.myDsl.ListElement#getOrder()
+   * @see #getListElement()
    * @generated
    */
-  EAttribute getLinearElement_Order();
+  EAttribute getListElement_Order();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.LinearElement#getComment <em>Comment</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.ListElement#getComment <em>Comment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Comment</em>'.
-   * @see org.xtext.example.mydsl.myDsl.LinearElement#getComment()
-   * @see #getLinearElement()
+   * @see org.xtext.example.mydsl.myDsl.ListElement#getComment()
+   * @see #getListElement()
    * @generated
    */
-  EAttribute getLinearElement_Comment();
+  EAttribute getListElement_Comment();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Video <em>Video</em>}'.
@@ -1255,14 +1255,14 @@ public interface MyDslPackage extends EPackage
     EAttribute INGREDIENT__VEGANISM_LEVEL = eINSTANCE.getIngredient_VeganismLevel();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.LinearImpl <em>Linear</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ListImpl <em>List</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.LinearImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLinear()
+     * @see org.xtext.example.mydsl.myDsl.impl.ListImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getList()
      * @generated
      */
-    EClass LINEAR = eINSTANCE.getLinear();
+    EClass LIST = eINSTANCE.getList();
 
     /**
      * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
@@ -1270,17 +1270,17 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LINEAR__ELEMENTS = eINSTANCE.getLinear_Elements();
+    EReference LIST__ELEMENTS = eINSTANCE.getList_Elements();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.LinearElementImpl <em>Linear Element</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ListElementImpl <em>List Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.LinearElementImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLinearElement()
+     * @see org.xtext.example.mydsl.myDsl.impl.ListElementImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getListElement()
      * @generated
      */
-    EClass LINEAR_ELEMENT = eINSTANCE.getLinearElement();
+    EClass LIST_ELEMENT = eINSTANCE.getListElement();
 
     /**
      * The meta object literal for the '<em><b>Order</b></em>' attribute feature.
@@ -1288,7 +1288,7 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LINEAR_ELEMENT__ORDER = eINSTANCE.getLinearElement_Order();
+    EAttribute LIST_ELEMENT__ORDER = eINSTANCE.getListElement_Order();
 
     /**
      * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
@@ -1296,7 +1296,7 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LINEAR_ELEMENT__COMMENT = eINSTANCE.getLinearElement_Comment();
+    EAttribute LIST_ELEMENT__COMMENT = eINSTANCE.getListElement_Comment();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.VideoImpl <em>Video</em>}' class.

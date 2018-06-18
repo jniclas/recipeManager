@@ -1,0 +1,93 @@
+import "platform:/resource/recipeManger/model/MyDsl.ecore"
+
+pattern noSelfRating {
+	author: Author
+	rating: Rating {
+		-author -> author
+	}
+	recipe: Recipe {
+		-ratings -> rating
+		-author -> author
+	}
+}
+
+
+pattern onlyOneRatingPerRecipeByAuther {
+	author: Author
+	rating1: Rating {
+		-author -> author
+	}
+	rating2: Rating {
+		-author -> author
+	}
+	recipe: Recipe {
+		-ratings -> rating1
+		-ratings -> rating2
+	}
+}
+
+
+pattern recipeNotContainingItSelf {
+	ingredient: Ingredient {
+		-recipe -> recipe
+	}
+	recipe: Recipe {
+		-ingredient -> ingredient
+	}
+}
+
+
+pattern recipeManagerExists {
+	recipeManager: RecipeManager
+}
+
+
+pattern recipeWithAuthorExists {
+	author: Author
+	recipe: Recipe {
+		-author -> author
+	}
+}
+
+
+pattern recipeExists {
+	recipe: Recipe
+}
+
+condition recipeExistent = enforce recipeExists
+
+pattern recipeHasAuthor {
+	author: Author
+	recipe: Recipe {
+		-author -> author
+	}
+} when recipeExistent
+
+pattern recipeHasIngredient {
+	ingredient: Ingredient
+	recipe: Recipe {
+		-ingredient -> ingredient
+	}
+} when recipeExistent
+
+
+pattern recipeIsIngredientOfRecipe {
+	recipe1: Recipe
+	ingredient: Ingredient {
+		-recipe -> recipe1
+	}
+	recipe2: Recipe {
+		-ingredient -> ingredient
+	}
+}
+
+condition recipeIsIngredientOfRecipe = enforce recipeIsIngredientOfRecipe
+
+pattern recipeHasTwoIngredients {
+	ingredient: Ingredient
+	ingredient2: Ingredient
+	recipe2: Recipe {
+		-ingredient -> ingredient
+		-ingredient -> ingredient2
+	}
+} when recipeIsIngredientOfRecipe
