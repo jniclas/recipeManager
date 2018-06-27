@@ -3,9 +3,12 @@
  */
 package org.xtext.example.mydsl.validation;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
-import org.eclipse.xtext.xbase.lib.InputOutput;
-import org.xtext.example.mydsl.myDsl.RecipeManager;
+import org.eclipse.xtext.xbase.lib.Conversions;
+import org.xtext.example.mydsl.myDsl.MyDslPackage;
+import org.xtext.example.mydsl.myDsl.Rating;
+import org.xtext.example.mydsl.myDsl.Recipe;
 import org.xtext.example.mydsl.validation.AbstractMyDslValidator;
 
 /**
@@ -16,7 +19,14 @@ import org.xtext.example.mydsl.validation.AbstractMyDslValidator;
 @SuppressWarnings("all")
 public class MyDslValidator extends AbstractMyDslValidator {
   @Check
-  public String test(final RecipeManager r) {
-    return InputOutput.<String>println("test");
+  public void NoSelfRating(final Recipe recipe) {
+    EList<Rating> ratings = recipe.getRatings();
+    for (int i = 0; (i < ((Object[])Conversions.unwrapArray(ratings, Object.class)).length); i++) {
+      boolean _equals = ratings.get(i).getAuthor().equals(recipe.getAuthor());
+      if (_equals) {
+        this.error("Self rating is not allowed", 
+          MyDslPackage.Literals.RECIPE__RATINGS, i);
+      }
+    }
   }
 }
