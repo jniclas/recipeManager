@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.0"?><plugin>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="myDsl.MyDslPackage" genModel="model/RecipeManger.genmodel" uri="http://www.xtext.org/example/mydsl/MyDsl"/>
+    <package class="recipeManger.RecipeMangerPackage" genModel="model/RecipeManger.genmodel" uri="platform:/resource/recipeManger/model/RecipeManger.ecore"/>
   </extension>
 </plugin>

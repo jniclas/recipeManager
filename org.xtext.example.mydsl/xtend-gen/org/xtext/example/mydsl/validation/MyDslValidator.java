@@ -3,6 +3,9 @@
  */
 package org.xtext.example.mydsl.validation;
 
+import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.xtext.example.mydsl.myDsl.RecipeManager;
 import org.xtext.example.mydsl.validation.AbstractMyDslValidator;
 
 /**
@@ -12,4 +15,8 @@ import org.xtext.example.mydsl.validation.AbstractMyDslValidator;
  */
 @SuppressWarnings("all")
 public class MyDslValidator extends AbstractMyDslValidator {
+  @Check
+  public String test(final RecipeManager r) {
+    return InputOutput.<String>println("test");
+  }
 }
