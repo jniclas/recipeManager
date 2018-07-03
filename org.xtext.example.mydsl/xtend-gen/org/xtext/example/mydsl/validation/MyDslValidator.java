@@ -6,6 +6,8 @@ package org.xtext.example.mydsl.validation;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Conversions;
+import org.xtext.example.mydsl.myDsl.Author;
+import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Rating;
 import org.xtext.example.mydsl.myDsl.Recipe;
@@ -24,8 +26,46 @@ public class MyDslValidator extends AbstractMyDslValidator {
     for (int i = 0; (i < ((Object[])Conversions.unwrapArray(ratings, Object.class)).length); i++) {
       boolean _equals = ratings.get(i).getAuthor().equals(recipe.getAuthor());
       if (_equals) {
-        this.error("Self rating is not allowed", 
+        this.error("Self rating is not allowed!", 
           MyDslPackage.Literals.RECIPE__RATINGS, i);
+      }
+    }
+  }
+  
+  @Check
+  public void onlyOneRatingPerRecipeByAuthor(final Recipe recipe) {
+    EList<Rating> ratings = recipe.getRatings();
+    for (int i = 0; (i < ((Object[])Conversions.unwrapArray(ratings, Object.class)).length); i++) {
+      {
+        Author author1 = ratings.get(i).getAuthor();
+        for (int j = (i + 1); (i < ((Object[])Conversions.unwrapArray(ratings, Object.class)).length); i++) {
+          {
+            Author author2 = ratings.get(j).getAuthor();
+            boolean _equals = author1.equals(author2);
+            if (_equals) {
+              this.error("You can only make one rating per recipe!", 
+                MyDslPackage.Literals.RECIPE__RATINGS, j);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @Check
+  public void recipeNotContainingItSelf(final Recipe recipe) {
+    String recipeName = recipe.getName();
+    EList<Ingredient> ingredients = recipe.getIngredient();
+    for (int i = 0; (i < ((Object[])Conversions.unwrapArray(ingredients, Object.class)).length); i++) {
+      {
+        String ingredientName = ingredients.get(i).getName();
+        ingredientName = ingredientName.replaceAll("\\-\\s", "");
+        ingredientName = ingredientName.replaceAll(",", "");
+        boolean _equals = recipeName.equals(ingredientName);
+        if (_equals) {
+          this.error("A recipe cannot contain itself!", 
+            MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+        }
       }
     }
   }

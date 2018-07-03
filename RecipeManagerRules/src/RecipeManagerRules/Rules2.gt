@@ -12,7 +12,7 @@ pattern noSelfRating {
 }
 
 
-pattern onlyOneRatingPerRecipeByAuther {
+pattern onlyOneRatingPerRecipeByAuthor {
 	author: Author
 	rating1: Rating {
 		-author -> author
