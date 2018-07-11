@@ -67,4 +67,34 @@ class MyDslValidator extends AbstractMyDslValidator {
           	}
    		}
    }
+   
+   @Check
+   def recipeHasAuthor(Recipe recipe) {
+   		if (recipe.author === null) {
+   			error("Every recipe must have an author!", 
+	          			MyDslPackage.Literals.RECIPE__AUTHOR);
+	 	}
+   }
+   
+   @Check
+   def recipeHasIngredient(Recipe recipe) {
+   		if (recipe.ingredient === null) {
+   			error("Every recipe must have an ingredient!", 
+	          			MyDslPackage.Literals.RECIPE__INGREDIENT);
+	 	}
+   }
+   
+   @Check
+   def recipeIsIngredientOfRecipe(Recipe recipe) {
+   		var ingredients = recipe.ingredient;
+   		// if there exists only one ingredient
+   		if (ingredients.length == 1) {
+   			var ingredientName = ingredients.get(0).name;
+   			// if it is a recipe, name is null
+   			if (ingredientName === null) {
+   				error("A recipe must not copy another recipe! Please add a second ingredient", 
+          			MyDslPackage.Literals.RECIPE__INGREDIENT);
+   			}
+   		}
+   }
 }

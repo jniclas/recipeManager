@@ -69,4 +69,39 @@ public class MyDslValidator extends AbstractMyDslValidator {
       }
     }
   }
+  
+  @Check
+  public void recipeHasAuthor(final Recipe recipe) {
+    Author _author = recipe.getAuthor();
+    boolean _tripleEquals = (_author == null);
+    if (_tripleEquals) {
+      this.error("Every recipe must have an author!", 
+        MyDslPackage.Literals.RECIPE__AUTHOR);
+    }
+  }
+  
+  @Check
+  public void recipeHasIngredient(final Recipe recipe) {
+    EList<Ingredient> _ingredient = recipe.getIngredient();
+    boolean _tripleEquals = (_ingredient == null);
+    if (_tripleEquals) {
+      this.error("Every recipe must have an ingredient!", 
+        MyDslPackage.Literals.RECIPE__INGREDIENT);
+    }
+  }
+  
+  @Check
+  public void recipeIsIngredientOfRecipe(final Recipe recipe) {
+    EList<Ingredient> ingredients = recipe.getIngredient();
+    final EList<Ingredient> _converted_ingredients = (EList<Ingredient>)ingredients;
+    int _length = ((Object[])Conversions.unwrapArray(_converted_ingredients, Object.class)).length;
+    boolean _equals = (_length == 1);
+    if (_equals) {
+      String ingredientName = ingredients.get(0).getName();
+      if ((ingredientName == null)) {
+        this.error("A recipe must not copy another recipe! Please add a second ingredient", 
+          MyDslPackage.Literals.RECIPE__INGREDIENT);
+      }
+    }
+  }
 }
