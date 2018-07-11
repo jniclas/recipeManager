@@ -3,6 +3,7 @@
  */
 package org.xtext.example.mydsl.validation;
 
+import com.google.common.base.Objects;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Conversions;
@@ -11,6 +12,7 @@ import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Rating;
 import org.xtext.example.mydsl.myDsl.Recipe;
+import org.xtext.example.mydsl.myDsl.RecipeManager;
 import org.xtext.example.mydsl.validation.AbstractMyDslValidator;
 
 /**
@@ -20,6 +22,32 @@ import org.xtext.example.mydsl.validation.AbstractMyDslValidator;
  */
 @SuppressWarnings("all")
 public class MyDslValidator extends AbstractMyDslValidator {
+  @Check
+  public void recipeManagerExists(final RecipeManager recipeManager) {
+    if ((recipeManager == null)) {
+      this.error("Please add a recipe manager, by starting with an author!", 
+        MyDslPackage.Literals.RECIPE__AUTHOR);
+    }
+  }
+  
+  @Check
+  public void recipeWithAuthorExists(final Recipe recipe) {
+    Author _author = recipe.getAuthor();
+    boolean _tripleEquals = (_author == null);
+    if (_tripleEquals) {
+      this.error("Please add an author!", 
+        MyDslPackage.Literals.RECIPE__AUTHOR);
+    }
+  }
+  
+  @Check
+  public void recipeExists(final Recipe recipe) {
+    if ((recipe == null)) {
+      this.error("Please add a recipe!", 
+        MyDslPackage.Literals.RECIPE__NAME);
+    }
+  }
+  
   @Check
   public void NoSelfRating(final Recipe recipe) {
     EList<Rating> ratings = recipe.getRatings();
@@ -101,6 +129,25 @@ public class MyDslValidator extends AbstractMyDslValidator {
       if ((ingredientName == null)) {
         this.error("A recipe must not copy another recipe! Please add a second ingredient", 
           MyDslPackage.Literals.RECIPE__INGREDIENT);
+      }
+    }
+  }
+  
+  @Check
+  public void veganRecipeHasVegetaricIngredient(final Recipe recipe) {
+    String _vegan = recipe.getVegan();
+    boolean _equals = Objects.equal(_vegan, "Vegan");
+    if (_equals) {
+      EList<Ingredient> ingredients = recipe.getIngredient();
+      for (int i = 0; (i < ((Object[])Conversions.unwrapArray(ingredients, Object.class)).length); i++) {
+        {
+          String veganismLevel = ingredients.get(i).getVeganismLevel();
+          boolean _notEquals = (!Objects.equal(veganismLevel, "Vegan"));
+          if (_notEquals) {
+            this.error("A vegan recipe cannot contain non-vegan ingredients!", 
+              MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+          }
+        }
       }
     }
   }

@@ -14,17 +14,30 @@ import org.xtext.example.mydsl.myDsl.RecipeManager
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class MyDslValidator extends AbstractMyDslValidator {
-	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					MyDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+
+	@Check
+	def recipeManagerExists(RecipeManager recipeManager) {
+		if (recipeManager === null) {
+			error("Please add a recipe manager, by starting with an author!", 
+          			MyDslPackage.Literals.RECIPE__AUTHOR);
+		}
+	}
+
+	@Check
+	def recipeWithAuthorExists(Recipe recipe) {
+		if (recipe.author === null) {
+			error("Please add an author!", 
+          			MyDslPackage.Literals.RECIPE__AUTHOR);
+		}
+	}
+
+	@Check
+	def recipeExists(Recipe recipe) {
+		if (recipe === null) {
+			error("Please add a recipe!", 
+          			MyDslPackage.Literals.RECIPE__NAME);
+		}
+	}
 	
 	@Check
 	def NoSelfRating(Recipe recipe) {
@@ -33,8 +46,7 @@ class MyDslValidator extends AbstractMyDslValidator {
       		if (ratings.get(i).getAuthor().equals(recipe.getAuthor())) {
         		error("Self rating is not allowed!", 
           			MyDslPackage.Literals.RECIPE__RATINGS, i);
-          			
-          			}
+          	}
       }
    }
    
@@ -52,12 +64,14 @@ class MyDslValidator extends AbstractMyDslValidator {
    		}
    }
    
+   //TODO: not working
    @Check
    def recipeNotContainingItSelf(Recipe recipe) {
    		var recipeName = recipe.name;
    		var ingredients = recipe.ingredient;
    		for (var i = 0; i < ingredients.length; i++) {
    			var ingredientName = ingredients.get(i).name;
+   			//TODO: problem: all ingredient properties null, if recipe as ingredient, as wrong datatype
    			// remove blanks and hyphens and commas
    			ingredientName = ingredientName.replaceAll("\\-\\s","");
    			ingredientName = ingredientName.replaceAll(",","");
@@ -97,4 +111,26 @@ class MyDslValidator extends AbstractMyDslValidator {
    			}
    		}
    }
+   
+   //TODO: in rules: delete noSelfRating; onlyOneRatingPerRecipeByAuther
+//TODO: veganRecipeHasCanivorousIngredient - not working; easier as if vegan than all ingredients == vegan
+	@Check
+	def veganRecipeHasVegetaricIngredient(Recipe recipe) {
+		if (recipe.vegan == "Vegan") {
+			var ingredients = recipe.ingredient;
+			for (var i = 0; i < ingredients.length; i++) {
+	   			var veganismLevel = ingredients.get(i).veganismLevel;
+	   			//TODO: check for recipes
+	   			if (veganismLevel != "Vegan") {
+	   				error("A vegan recipe cannot contain non-vegan ingredients!", 
+	          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+	   			}
+   			}
+		}
+	}
+//TODO: veganRecipeHasVegetaricIngredient
+//TODO: veganRecipeHasCanivorousRecipe
+//TODO: veganRecipeHasVegetaricRecipe
+//TODO: vegetaricRecipeHasCanivorousRecipe
+//TODO: vegetaricRecipeHasCanivorousIngredient
 }
