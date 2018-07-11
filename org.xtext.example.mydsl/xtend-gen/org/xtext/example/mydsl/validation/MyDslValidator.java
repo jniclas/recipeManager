@@ -87,13 +87,16 @@ public class MyDslValidator extends AbstractMyDslValidator {
     EList<Ingredient> ingredients = recipe.getIngredient();
     for (int i = 0; (i < ((Object[])Conversions.unwrapArray(ingredients, Object.class)).length); i++) {
       {
-        String ingredientName = ingredients.get(i).getName();
-        ingredientName = ingredientName.replaceAll("\\-\\s", "");
-        ingredientName = ingredientName.replaceAll(",", "");
-        boolean _equals = recipeName.equals(ingredientName);
-        if (_equals) {
-          this.error("A recipe cannot contain itself!", 
-            MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+        Ingredient ingredient = ingredients.get(i);
+        String _name = ingredient.getName();
+        boolean _tripleEquals = (_name == null);
+        if (_tripleEquals) {
+          String ingredientName = ingredient.getRecipe().getName();
+          boolean _equals = recipeName.equals(ingredientName);
+          if (_equals) {
+            this.error("A recipe must not contain itself!", 
+              MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+          }
         }
       }
     }
@@ -144,20 +147,9 @@ public class MyDslValidator extends AbstractMyDslValidator {
         {
           Ingredient ingredient = ingredients.get(i);
           String veganismLevel = ingredient.getVeganismLevel();
-          if ((veganismLevel == null)) {
-            try {
-              veganismLevel = ingredient.getRecipe().getVegan();
-            } catch (final Throwable _t) {
-              if (_t instanceof Error) {
-                final Error e = (Error)_t;
-              } else {
-                throw Exceptions.sneakyThrow(_t);
-              }
-            }
-          }
-          boolean _notEquals = (!Objects.equal(veganismLevel, "Vegan"));
-          if (_notEquals) {
-            this.error("A vegan recipe cannot contain non-vegan ingredients!", 
+          boolean _equals_1 = veganismLevel.equals("Vegatric");
+          if (_equals_1) {
+            this.error("A vegan recipe cannot contain a non-vegetaric ingredient!", 
               MyDslPackage.Literals.RECIPE__INGREDIENT, i);
           }
         }
@@ -188,7 +180,7 @@ public class MyDslValidator extends AbstractMyDslValidator {
           } else {
             veganismLevel = "Vegan";
           }
-          boolean _equals_1 = Objects.equal(veganismLevel, "Canivorous");
+          boolean _equals_1 = veganismLevel.equals("Canivorous");
           if (_equals_1) {
             this.error("A vegan recipe cannot contain a canivorous ingredient!", 
               MyDslPackage.Literals.RECIPE__INGREDIENT, i);
@@ -221,7 +213,7 @@ public class MyDslValidator extends AbstractMyDslValidator {
           } else {
             veganismLevel = "Vegan";
           }
-          boolean _equals_1 = Objects.equal(veganismLevel, "Vegetaric");
+          boolean _equals_1 = veganismLevel.equals("Vegetaric");
           if (_equals_1) {
             this.error("A vegan recipe cannot contain a vegetaric recipe!", 
               MyDslPackage.Literals.RECIPE__INGREDIENT, i);
@@ -254,7 +246,7 @@ public class MyDslValidator extends AbstractMyDslValidator {
           } else {
             veganismLevel = "Vegetaric";
           }
-          boolean _equals_1 = Objects.equal(veganismLevel, "Canivorous");
+          boolean _equals_1 = veganismLevel.equals("Canivorous");
           if (_equals_1) {
             this.error("A vegetaric recipe cannot contain canivorous recipe!", 
               MyDslPackage.Literals.RECIPE__INGREDIENT, i);
@@ -274,10 +266,7 @@ public class MyDslValidator extends AbstractMyDslValidator {
         {
           Ingredient ingredient = ingredients.get(i);
           String veganismLevel = ingredient.getVeganismLevel();
-          if ((veganismLevel == null)) {
-            veganismLevel = "Vegetaric";
-          }
-          boolean _equals_1 = Objects.equal(veganismLevel, "Canivorous");
+          boolean _equals_1 = veganismLevel.equals("Canivorous");
           if (_equals_1) {
             this.error("A vegetaric recipe cannot contain a canivorous ingredient!", 
               MyDslPackage.Literals.RECIPE__INGREDIENT, i);

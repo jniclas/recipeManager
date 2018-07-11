@@ -64,23 +64,22 @@ class MyDslValidator extends AbstractMyDslValidator {
    		}
    }
    
-   //TODO: not working
    @Check
-   def recipeNotContainingItSelf(Recipe recipe) {
-   		var recipeName = recipe.name;
-   		var ingredients = recipe.ingredient;
-   		for (var i = 0; i < ingredients.length; i++) {
-   			var ingredientName = ingredients.get(i).name;
-   			//TODO: problem: all ingredient properties null, if recipe as ingredient, as wrong datatype
-   			// remove blanks and hyphens and commas
-   			ingredientName = ingredientName.replaceAll("\\-\\s","");
-   			ingredientName = ingredientName.replaceAll(",","");
-   			if(recipeName.equals(ingredientName)) {
-   				error("A recipe cannot contain itself!", 
-          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
-          	}
-   		}
-   }
+	def recipeNotContainingItSelf(Recipe recipe) {
+		var recipeName = recipe.name;
+		var ingredients = recipe.ingredient;
+		for (var i = 0; i < ingredients.length; i++) {
+			var ingredient = ingredients.get(i);
+			if (ingredient.name === null) {
+				// we've got a recipe
+				var ingredientName = ingredient.recipe.name;
+				if (recipeName.equals(ingredientName)) {
+					error("A recipe must not contain itself!", 
+	          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+				}
+			}
+		}
+	}
    
    @Check
    def recipeHasAuthor(Recipe recipe) {
@@ -112,7 +111,6 @@ class MyDslValidator extends AbstractMyDslValidator {
    		}
    }
    
-   //TODO: in rules: delete noSelfRating; onlyOneRatingPerRecipeByAuther
 	@Check
 	def veganRecipeHasVegetaricIngredient(Recipe recipe) {
 		if (recipe.vegan == "Vegan") {
@@ -120,16 +118,8 @@ class MyDslValidator extends AbstractMyDslValidator {
 			for (var i = 0; i < ingredients.length; i++) {
 				var ingredient = ingredients.get(i);
 	   			var veganismLevel = ingredient.veganismLevel;
-	   			if (veganismLevel === null) {
-	   				// Assume that ingredient is recipe
-	   				try {
-	   					veganismLevel = ingredient.recipe.vegan;
-	   				} catch (Error e) {
-	   					// Obviously something went wrong
-	   				}
-	   			}
-	   			if (veganismLevel != "Vegan") {
-	   				error("A vegan recipe cannot contain non-vegan ingredients!", 
+	   			if (veganismLevel.equals("Vegatric")) {
+	   				error("A vegan recipe cannot contain a non-vegetaric ingredient!", 
 	          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
 	   			}
    			}
@@ -153,7 +143,7 @@ class MyDslValidator extends AbstractMyDslValidator {
 	   			} else {
 	   				veganismLevel = "Vegan";
 	   			}
-	   			if (veganismLevel == "Canivorous") {
+	   			if (veganismLevel.equals("Canivorous")) {
 	   				error("A vegan recipe cannot contain a canivorous ingredient!", 
 	          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
 	   			}
@@ -178,7 +168,7 @@ class MyDslValidator extends AbstractMyDslValidator {
 	   			} else {
 	   				veganismLevel = "Vegan";
 	   			}
-	   			if (veganismLevel == "Vegetaric") {
+	   			if (veganismLevel.equals("Vegetaric")) {
 	   				error("A vegan recipe cannot contain a vegetaric recipe!", 
 	          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
 	   			}
@@ -203,7 +193,7 @@ class MyDslValidator extends AbstractMyDslValidator {
 	   			} else {
 	   				veganismLevel = "Vegetaric";
 	   			}
-	   			if (veganismLevel == "Canivorous") {
+	   			if (veganismLevel.equals("Canivorous")) {
 	   				error("A vegetaric recipe cannot contain canivorous recipe!", 
 	          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
 	   			}
@@ -218,11 +208,7 @@ class MyDslValidator extends AbstractMyDslValidator {
 			for (var i = 0; i < ingredients.length; i++) {
 				var ingredient = ingredients.get(i);
 	   			var veganismLevel = ingredient.veganismLevel;
-	   			if (veganismLevel === null) {
-	   				// Assume that ingredient is recipe and therefore labeled correctly
-	   				veganismLevel = "Vegetaric";
-	   			}
-	   			if (veganismLevel == "Canivorous") {
+	   			if (veganismLevel.equals("Canivorous")) {
 	   				error("A vegetaric recipe cannot contain a canivorous ingredient!", 
 	          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
 	   			}
