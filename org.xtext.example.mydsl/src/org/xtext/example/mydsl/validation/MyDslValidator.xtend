@@ -113,14 +113,21 @@ class MyDslValidator extends AbstractMyDslValidator {
    }
    
    //TODO: in rules: delete noSelfRating; onlyOneRatingPerRecipeByAuther
-//TODO: veganRecipeHasCanivorousIngredient - not working; easier as if vegan than all ingredients == vegan
 	@Check
 	def veganRecipeHasVegetaricIngredient(Recipe recipe) {
 		if (recipe.vegan == "Vegan") {
 			var ingredients = recipe.ingredient;
 			for (var i = 0; i < ingredients.length; i++) {
-	   			var veganismLevel = ingredients.get(i).veganismLevel;
-	   			//TODO: check for recipes
+				var ingredient = ingredients.get(i);
+	   			var veganismLevel = ingredient.veganismLevel;
+	   			if (veganismLevel === null) {
+	   				// Assume that ingredient is recipe
+	   				try {
+	   					veganismLevel = ingredient.recipe.vegan;
+	   				} catch (Error e) {
+	   					// Obviously something went wrong
+	   				}
+	   			}
 	   			if (veganismLevel != "Vegan") {
 	   				error("A vegan recipe cannot contain non-vegan ingredients!", 
 	          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
@@ -128,9 +135,98 @@ class MyDslValidator extends AbstractMyDslValidator {
    			}
 		}
 	}
-//TODO: veganRecipeHasVegetaricIngredient
-//TODO: veganRecipeHasCanivorousRecipe
-//TODO: veganRecipeHasVegetaricRecipe
-//TODO: vegetaricRecipeHasCanivorousRecipe
-//TODO: vegetaricRecipeHasCanivorousIngredient
+
+	@Check
+	def veganRecipeHasCanivorousRecipe(Recipe recipe) {
+		if (recipe.vegan == "Vegan") {
+			var ingredients = recipe.ingredient;
+			for (var i = 0; i < ingredients.length; i++) {
+				var ingredient = ingredients.get(i);
+	   			var veganismLevel = ingredient.veganismLevel;
+	   			if (veganismLevel === null) {
+	   				// Assume that ingredient is recipe, therefore check
+	   				try {
+	   					veganismLevel = ingredient.recipe.vegan;
+	   				} catch (Error e) {
+	   					// Obviously something went wrong
+	   				}
+	   			} else {
+	   				veganismLevel = "Vegan";
+	   			}
+	   			if (veganismLevel == "Canivorous") {
+	   				error("A vegan recipe cannot contain a canivorous ingredient!", 
+	          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+	   			}
+   			}
+		}
+	}
+
+	@Check
+	def veganRecipeHasVegetaricRecipe(Recipe recipe) {
+		if (recipe.vegan == "Vegan") {
+			var ingredients = recipe.ingredient;
+			for (var i = 0; i < ingredients.length; i++) {
+				var ingredient = ingredients.get(i);
+	   			var veganismLevel = ingredient.veganismLevel;
+	   			if (veganismLevel === null) {
+	   				// Assume that ingredient is recipe, therefore check
+	   				try {
+	   					veganismLevel = ingredient.recipe.vegan;
+	   				} catch (Error e) {
+	   					// Obviously something went wrong
+	   				}
+	   			} else {
+	   				veganismLevel = "Vegan";
+	   			}
+	   			if (veganismLevel == "Vegetaric") {
+	   				error("A vegan recipe cannot contain a vegetaric recipe!", 
+	          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+	   			}
+   			}
+		}
+	}
+	
+	@Check
+	def vegetaricRecipeHasCanivorousRecipe(Recipe recipe) {
+		if (recipe.vegan == "Vegetaric") {
+			var ingredients = recipe.ingredient;
+			for (var i = 0; i < ingredients.length; i++) {
+				var ingredient = ingredients.get(i);
+	   			var veganismLevel = ingredient.veganismLevel;
+	   			if (veganismLevel === null) {
+	   				// Assume that ingredient is recipe, therefore check
+	   				try {
+	   					veganismLevel = ingredient.recipe.vegan;
+	   				} catch (Error e) {
+	   					// Obviously something went wrong
+	   				}
+	   			} else {
+	   				veganismLevel = "Vegetaric";
+	   			}
+	   			if (veganismLevel == "Canivorous") {
+	   				error("A vegetaric recipe cannot contain canivorous recipe!", 
+	          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+	   			}
+   			}
+		}
+	}
+	
+	@Check
+	def vegetaricRecipeHasCanivorousIngredient(Recipe recipe) {
+		if (recipe.vegan == "Vegetaric") {
+			var ingredients = recipe.ingredient;
+			for (var i = 0; i < ingredients.length; i++) {
+				var ingredient = ingredients.get(i);
+	   			var veganismLevel = ingredient.veganismLevel;
+	   			if (veganismLevel === null) {
+	   				// Assume that ingredient is recipe and therefore labeled correctly
+	   				veganismLevel = "Vegetaric";
+	   			}
+	   			if (veganismLevel == "Canivorous") {
+	   				error("A vegetaric recipe cannot contain a canivorous ingredient!", 
+	          			MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+	   			}
+   			}
+		}
+	}
 }

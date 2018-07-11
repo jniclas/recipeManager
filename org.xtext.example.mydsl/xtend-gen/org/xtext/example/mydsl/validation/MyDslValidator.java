@@ -7,6 +7,7 @@ import com.google.common.base.Objects;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.xtext.example.mydsl.myDsl.Author;
 import org.xtext.example.mydsl.myDsl.Ingredient;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
@@ -141,10 +142,144 @@ public class MyDslValidator extends AbstractMyDslValidator {
       EList<Ingredient> ingredients = recipe.getIngredient();
       for (int i = 0; (i < ((Object[])Conversions.unwrapArray(ingredients, Object.class)).length); i++) {
         {
-          String veganismLevel = ingredients.get(i).getVeganismLevel();
+          Ingredient ingredient = ingredients.get(i);
+          String veganismLevel = ingredient.getVeganismLevel();
+          if ((veganismLevel == null)) {
+            try {
+              veganismLevel = ingredient.getRecipe().getVegan();
+            } catch (final Throwable _t) {
+              if (_t instanceof Error) {
+                final Error e = (Error)_t;
+              } else {
+                throw Exceptions.sneakyThrow(_t);
+              }
+            }
+          }
           boolean _notEquals = (!Objects.equal(veganismLevel, "Vegan"));
           if (_notEquals) {
             this.error("A vegan recipe cannot contain non-vegan ingredients!", 
+              MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+          }
+        }
+      }
+    }
+  }
+  
+  @Check
+  public void veganRecipeHasCanivorousRecipe(final Recipe recipe) {
+    String _vegan = recipe.getVegan();
+    boolean _equals = Objects.equal(_vegan, "Vegan");
+    if (_equals) {
+      EList<Ingredient> ingredients = recipe.getIngredient();
+      for (int i = 0; (i < ((Object[])Conversions.unwrapArray(ingredients, Object.class)).length); i++) {
+        {
+          Ingredient ingredient = ingredients.get(i);
+          String veganismLevel = ingredient.getVeganismLevel();
+          if ((veganismLevel == null)) {
+            try {
+              veganismLevel = ingredient.getRecipe().getVegan();
+            } catch (final Throwable _t) {
+              if (_t instanceof Error) {
+                final Error e = (Error)_t;
+              } else {
+                throw Exceptions.sneakyThrow(_t);
+              }
+            }
+          } else {
+            veganismLevel = "Vegan";
+          }
+          boolean _equals_1 = Objects.equal(veganismLevel, "Canivorous");
+          if (_equals_1) {
+            this.error("A vegan recipe cannot contain a canivorous ingredient!", 
+              MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+          }
+        }
+      }
+    }
+  }
+  
+  @Check
+  public void veganRecipeHasVegetaricRecipe(final Recipe recipe) {
+    String _vegan = recipe.getVegan();
+    boolean _equals = Objects.equal(_vegan, "Vegan");
+    if (_equals) {
+      EList<Ingredient> ingredients = recipe.getIngredient();
+      for (int i = 0; (i < ((Object[])Conversions.unwrapArray(ingredients, Object.class)).length); i++) {
+        {
+          Ingredient ingredient = ingredients.get(i);
+          String veganismLevel = ingredient.getVeganismLevel();
+          if ((veganismLevel == null)) {
+            try {
+              veganismLevel = ingredient.getRecipe().getVegan();
+            } catch (final Throwable _t) {
+              if (_t instanceof Error) {
+                final Error e = (Error)_t;
+              } else {
+                throw Exceptions.sneakyThrow(_t);
+              }
+            }
+          } else {
+            veganismLevel = "Vegan";
+          }
+          boolean _equals_1 = Objects.equal(veganismLevel, "Vegetaric");
+          if (_equals_1) {
+            this.error("A vegan recipe cannot contain a vegetaric recipe!", 
+              MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+          }
+        }
+      }
+    }
+  }
+  
+  @Check
+  public void vegetaricRecipeHasCanivorousRecipe(final Recipe recipe) {
+    String _vegan = recipe.getVegan();
+    boolean _equals = Objects.equal(_vegan, "Vegetaric");
+    if (_equals) {
+      EList<Ingredient> ingredients = recipe.getIngredient();
+      for (int i = 0; (i < ((Object[])Conversions.unwrapArray(ingredients, Object.class)).length); i++) {
+        {
+          Ingredient ingredient = ingredients.get(i);
+          String veganismLevel = ingredient.getVeganismLevel();
+          if ((veganismLevel == null)) {
+            try {
+              veganismLevel = ingredient.getRecipe().getVegan();
+            } catch (final Throwable _t) {
+              if (_t instanceof Error) {
+                final Error e = (Error)_t;
+              } else {
+                throw Exceptions.sneakyThrow(_t);
+              }
+            }
+          } else {
+            veganismLevel = "Vegetaric";
+          }
+          boolean _equals_1 = Objects.equal(veganismLevel, "Canivorous");
+          if (_equals_1) {
+            this.error("A vegetaric recipe cannot contain canivorous recipe!", 
+              MyDslPackage.Literals.RECIPE__INGREDIENT, i);
+          }
+        }
+      }
+    }
+  }
+  
+  @Check
+  public void vegetaricRecipeHasCanivorousIngredient(final Recipe recipe) {
+    String _vegan = recipe.getVegan();
+    boolean _equals = Objects.equal(_vegan, "Vegetaric");
+    if (_equals) {
+      EList<Ingredient> ingredients = recipe.getIngredient();
+      for (int i = 0; (i < ((Object[])Conversions.unwrapArray(ingredients, Object.class)).length); i++) {
+        {
+          Ingredient ingredient = ingredients.get(i);
+          String veganismLevel = ingredient.getVeganismLevel();
+          if ((veganismLevel == null)) {
+            veganismLevel = "Vegetaric";
+          }
+          boolean _equals_1 = Objects.equal(veganismLevel, "Canivorous");
+          if (_equals_1) {
+            this.error("A vegetaric recipe cannot contain a canivorous ingredient!", 
               MyDslPackage.Literals.RECIPE__INGREDIENT, i);
           }
         }
