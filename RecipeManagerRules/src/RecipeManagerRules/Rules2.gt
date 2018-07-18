@@ -36,6 +36,15 @@ pattern recipeNotContainingItSelf {
 	}
 }
 
+pattern recipeHasTwoIngredients {
+	ingredient: Ingredient
+	ingredient2: Ingredient
+	recipe2: Recipe {
+		-ingredient -> ingredient
+		-ingredient -> ingredient2
+	}
+} when recipeIsIngredientOfRecipe
+
 
 pattern recipeManagerExists {
 	recipeManager: RecipeManager
@@ -83,11 +92,3 @@ pattern recipeIsIngredientOfRecipe {
 
 condition recipeIsIngredientOfRecipe = enforce recipeIsIngredientOfRecipe
 
-pattern recipeHasTwoIngredients {
-	ingredient: Ingredient
-	ingredient2: Ingredient
-	recipe2: Recipe {
-		-ingredient -> ingredient
-		-ingredient -> ingredient2
-	}
-} when recipeIsIngredientOfRecipe

@@ -15,6 +15,10 @@ Author:
 	name = ID  Email=QSTRING
 ;
 
+terminal QSTRING:
+	 "- " ('a'..'z'|'A'..'Z'|' '|'.'|'@'|'0'..'9'|'!'|'?'|'-'|':'|';'|'('|')')* (NEWLINE | SL_COMMENT)
+;
+
 Recipe:
 	name=ID 'from' author=[Author] ',' vegan=VeganismLevel ',' duration=INT 'min' ',' difficulty=DifficultyLevel EOL
 	('Kitchen Utensils' EOL kitchenUtensils+=KitchenUtensil  ( kitchenUtensils+=KitchenUtensil )*)?
@@ -77,7 +81,4 @@ terminal NEWLINE:
 	
 terminal INGEREDIENTSTRING:
 	"- " ('a'..'z'|'A'..'Z')* ","
-;
-terminal QSTRING:
-	 "- " ('a'..'z'|'A'..'Z'|' '|'.'|'@'|'0'..'9'|'!'|'?'|'-'|':'|';'|'('|')')* (NEWLINE | SL_COMMENT)
 ;
