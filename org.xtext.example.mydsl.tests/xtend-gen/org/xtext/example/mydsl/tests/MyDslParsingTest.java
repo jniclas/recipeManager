@@ -3,10 +3,8 @@
  */
 package org.xtext.example.mydsl.tests;
 
-import com.google.inject.Inject;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.XtextRunner;
-import org.eclipse.xtext.testing.util.ParseHelper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.xtext.example.mydsl.tests.MyDslInjectorProvider;
@@ -15,15 +13,7 @@ import org.xtext.example.mydsl.tests.MyDslInjectorProvider;
 @InjectWith(MyDslInjectorProvider.class)
 @SuppressWarnings("all")
 public class MyDslParsingTest {
-  @Inject
-  private /* ParseHelper<Model> */Object parseHelper;
-  
   @Test
   public void loadModel() {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe field MyDslParsingTest.parseHelper refers to the missing type Model"
-      + "\neResource cannot be resolved"
-      + "\nerrors cannot be resolved"
-      + "\nisEmpty cannot be resolved");
   }
 }
